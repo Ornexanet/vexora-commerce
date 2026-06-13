@@ -43,7 +43,7 @@ const TopHeader = () => {
                 <SelectValue />
               </SelectTrigger>
               <SelectContent className="min-w-[220px]">
-                <SelectItem value={"All Categories"}>All Categories</SelectItem>
+                <SelectItem value={"All Categories"}>Alla kategorier</SelectItem>
                 {categoriesList.map(({ id, label }) => (
                   <SelectItem key={id} value={label}>
                     {label}
@@ -54,7 +54,7 @@ const TopHeader = () => {
           </div>
           <InputGroup className="h-auto border-none rounded-[47px] [&_svg]:size-5 lg:[&_svg]:size-6 lg:pl-[25px] has-[[data-slot=input-group-control]:focus-visible]:ring-0">
             <InputGroupInput
-              placeholder="Bluetooth headphones..."
+              placeholder="Sök efter produkter..."
               className="py-[15px] h-auto rounded-[47px] placeholder:text-[#B0B5BB] text-[#B0B5BB] font-medium"
             />
             <InputGroupAddon align={"inline-end"} className="text-foreground ">
