@@ -14,20 +14,20 @@ export interface heroDataType {
 export const heroData: heroDataType[] = [
   {
     id: 1,
-    title: "Zypher X1",
-    description: "Leading the Way in Aerial Photography and Performance",
+    title: "PX8 McLaren Edition",
+    description: "Exlusivt premiumljud inspirerat av McLaren prestanda och design",
     image: "/images/hero/img-1.png",
     backgroundImage: "/images/hero/bg-1.png",
     features: [
       {
         id: 1,
         icon: "VideoRecorder",
-        name: "4K UHD Camera",
+        name: "Aktiv brudreducering",
       },
       {
         id: 2,
         icon: "BatteryCharging",
-        name: "Extended Flight Time",
+        name: "40 timmars batteritid",
       },
       {
         id: 3,
@@ -38,49 +38,49 @@ export const heroData: heroDataType[] = [
   },
   {
     id: 2,
-    title: "Hushr Pro",
-    description: "Engineered for Immersive Sound and Seamless Comfort",
+    title: "Ornexa Sound Pro",
+    description: "Trådlösa premiumhörlurar med aktiv brusreducering och kristallklart ljud för hela dagen.",
     image: "/images/hero/img-2.png",
     backgroundImage: "/images/hero/bg-1.png",
     features: [
       {
         id: 1,
         icon: "SoundDecibel",
-        name: "Noise Cancellation",
+        name: "Aktiv Brusreducering",
       },
       {
         id: 2,
         icon: "BatteryCharging",
-        name: "30hrs Playback",
+        name: "40 timmars batteritid",
       },
       {
         id: 3,
         icon: "Bluetooth",
-        name: "Bluetooth 5.2 with aptX™",
+        name: "Bluetooth 5.3",
       },
     ],
   },
   {
     id: 3,
-    title: "Harmoniq Z",
-    description: "Designed for Pure Audio Bliss and All-Day Comfort",
+    title: "Ornexa Audio Max",
+    description: "Premiumhörlurar med fylligt ljud, aktiv brusreducering och komfort hela dagen.",
     image: "/images/hero/img-3.png",
     backgroundImage: "/images/hero/bg-1.png",
     features: [
       {
         id: 1,
         icon: "SoundDecibel",
-        name: "Noise Cancellation",
+        name: "Aktiv Brusreducering",
       },
       {
         id: 2,
         icon: "BatteryCharging",
-        name: "30hrs Playback",
+        name: "30 timmars batteritid",
       },
       {
         id: 3,
         icon: "Bluetooth",
-        name: "Bluetooth 5.2 with aptX™",
+        name: "Bluetooth 5.3™",
       },
     ],
   },
