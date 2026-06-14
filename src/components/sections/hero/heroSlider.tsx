@@ -85,14 +85,14 @@ const HeroSlider = () => {
                       </div>
                       <div className="lg:mt-[70px] mt-10 flex items-center max-[447px]:flex-col flex-row gap-x-9 gap-y-5">
                         <Button className="max-[447px]:w-full w-auto">
-                          <Link href={"/product-details"}>Buy Zypher X1</Link>
+                          <Link href={"/product-details"}>Köp nu</Link>
                         </Button>
                         <Button
                           className="max-[447px]:w-full w-auto"
                           variant={"outline"}
                           onClick={() => setOpen(true)}
                         >
-                          Watch video
+                          Se produktvideo
                         </Button>
                       </div>
                     </div>
@@ -118,7 +118,7 @@ const HeroSlider = () => {
       <Dialog open={isOpen} onOpenChange={setOpen}>
         <DialogContent className="sm:max-w-[700px] p-0 overflow-hidden border-none bg-transparent shadow-none">
           <DialogHeader className="sr-only">
-            <DialogTitle>Video Player</DialogTitle>
+            <DialogTitle>Produktvideo</DialogTitle>
           </DialogHeader>
           <div className="aspect-video w-full">
             <iframe
