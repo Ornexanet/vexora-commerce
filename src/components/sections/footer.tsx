@@ -12,7 +12,7 @@ export const categories: FooterLinkType[] = [
   {
     id: 1,
     label: "All Products",
-    href: "/products",
+    href: "/shop",
   },
   {
     id: 2,
