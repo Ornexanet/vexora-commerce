@@ -49,7 +49,7 @@ const CartSidebar = ({ cartIconTwo }: { cartIconTwo?: boolean }) => {
       >
         <SheetHeader className="py-6 px-6 border-b flex flex-row items-center justify-between">
           <SheetTitle className="font-extrabold text-[22px]">
-            Your Cart
+            Din Varukorg
           </SheetTitle>
           <SheetClose className="rounded-full size-10 flex items-center justify-center border border-light-dark hover:border-black transition-all duration-500">
             <XIcon size={20} />
@@ -68,7 +68,7 @@ const CartSidebar = ({ cartIconTwo }: { cartIconTwo?: boolean }) => {
 
             {cartItems.length === 0 ? (
               <div className="px-6 py-12 text-center">
-                <p className="text-light-dark">Your cart is empty</p>
+                <p className="text-light-dark">Din varukorg är tom</p>
               </div>
             ) : (
               <div className="max-h-[calc(100vh-380px)] overflow-y-auto">
@@ -127,7 +127,7 @@ const CartSidebar = ({ cartIconTwo }: { cartIconTwo?: boolean }) => {
           <div className="border-t">
             <div className="px-6 pt-4 flex items-center justify-between">
               <p className="font-semibold text-light-dark text-lg leading-normal">
-                Subtotal
+                Delsumma
               </p>
               <p className="text-lg font-semibold leading-normal">
                 ${getCartTotal().toFixed(2)}
@@ -135,10 +135,10 @@ const CartSidebar = ({ cartIconTwo }: { cartIconTwo?: boolean }) => {
             </div>
             <div className="flex items-center gap-2.5 px-6 pt-5 pb-7 justify-between">
               <Button asChild variant={"secondary"}>
-                <Link href={"/cart"}>View Cart</Link>
+                <Link href={"/cart"}>Visa varukorg</Link>
               </Button>
               <Button asChild>
-                <Link href={"/checkout"}>Checkout</Link>
+                <Link href={"/checkout"}>Till kassan</Link>
               </Button>
             </div>
           </div>
