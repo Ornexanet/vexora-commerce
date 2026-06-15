@@ -50,7 +50,7 @@ export const pagesOne: FooterLinkType[] = [
   {
     id: 3,
     label: "Help",
-    href: "/help",
+    href: "/contact",
   },
   {
     id: 4,
