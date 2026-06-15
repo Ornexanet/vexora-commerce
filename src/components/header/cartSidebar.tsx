@@ -38,7 +38,7 @@ const CartSidebar = ({ cartIconTwo }: { cartIconTwo?: boolean }) => {
               <span className="text-xs font-bold bg-blue text-white px-2 py-px block rounded-[49px]">
                 {getCartCount()}
               </span>
-              <span className="text-sm font-bold">Cart</span>
+              <span className="text-sm font-bold">Varukorg</span>
             </span>
           </span>
         )}
