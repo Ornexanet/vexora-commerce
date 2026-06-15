@@ -40,12 +40,12 @@ export const pagesOne: FooterLinkType[] = [
   {
     id: 1,
     label: "Track Order",
-    href: "/track-order",
+    href: "/dashboard/orders",
   },
   {
     id: 2,
     label: "Shipping Info",
-    href: "/shipping-info",
+    href: "/dashboard/orders",
   },
   {
     id: 3,
