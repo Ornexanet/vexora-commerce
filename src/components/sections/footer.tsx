@@ -54,7 +54,7 @@ export const pagesOne: FooterLinkType[] = [
   },
   {
     id: 4,
-    label: "Privacy Policy",
+    label: "privacy policy",
     href: "/privacy-policy",
   },
   {
