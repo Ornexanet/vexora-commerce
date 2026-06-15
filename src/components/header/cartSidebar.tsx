@@ -130,7 +130,7 @@ const CartSidebar = ({ cartIconTwo }: { cartIconTwo?: boolean }) => {
                 Delsumma
               </p>
               <p className="text-lg font-semibold leading-normal">
-                ${getCartTotal().toFixed(2)}
+                {getCartTotal().toFixed(2)} kr
               </p>
             </div>
             <div className="flex items-center gap-2.5 px-6 pt-5 pb-7 justify-between">
