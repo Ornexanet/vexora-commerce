@@ -73,12 +73,12 @@ export const pagesTwo: FooterLinkType[] = [
   {
     id: 2,
     label: "My account",
-    href: "/account",
+    href: "/dashboard/orders",
   },
   {
     id: 3,
     label: "My Orders",
-    href: "/orders",
+    href: "/dashboard/orders",
   },
   {
     id: 4,
