@@ -69,14 +69,14 @@ export const products: Products = {
     },
     {
       id: 2,
-      title: "DJI mini 4 pro",
-      thumbnail: "/images/new-stock/product-2.png",
+      title: "Sony WH-1000XM6",
+      thumbnail: "/images/products/sony-wh-1000xm6-main.webp",
       description:
-        "Celebrating the long-standing, award-winning partnership between Bowers & Wilkins and McLaren Automotive and the McLaren supercars and hypercars in which Bowers & Wilkins has been integrated.",
-      price: 1299,
+        "Trådlösa premiumhörlurar med avancerad brusreducering, klart ljud och upp till 30 timmars batteritid.",
+      price: 3990,
       tag: null,
       discount: null,
-      categories: ["Electronics", "Drone"],
+      categories: ["Hörlurar"],
       backgroundColor: "#F3F5F8",
     },
     {
