@@ -32,12 +32,12 @@ export const colorVariant = [
 
 const mockProduct: ProductType = {
   id: 999,
-  title: "Px8 McLaren Edition",
-  price: 799,
+  title: "Sony WH-1000XM6",
+  price: 3990,
   description:
-    "Celebrating the long-standing, award-winning partnership between Bowers & Wilkins and McLaren Automotive and the McLaren supercars and hypercars in which Bowers & Wilkins has been integrated.",
-  thumbnail: "/images/product-details/product-single-1.png",
-  categories: ["Headphones"],
+    "Sony WH-1000XM6 är trådlösa premiumhörlurar med avancerad brusreducering, klart ljud och bekväm design för arbete, resor och musik.",
+  thumbnail: "/images/products/sony-wh-1000xm6-main.webp",
+  categories: ["Hörlurar"],
   tag: null,
   discount: null,
 };
