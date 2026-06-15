@@ -17,22 +17,22 @@ export const categories: FooterLinkType[] = [
   {
     id: 2,
     label: "Bluetooth Speakers",
-    href: "/products/bluetooth-speakers",
+    href: "/shop",
   },
   {
     id: 3,
     label: "Headphones",
-    href: "/products/headphones",
+    href: "/shop"
   },
   {
     id: 4,
     label: "Drones",
-    href: "/products/drones",
+    href: "/shop",
   },
   {
     id: 5,
     label: "Cameras",
-    href: "/products/cameras",
+    href: "/shop",
   },
 ];
 
