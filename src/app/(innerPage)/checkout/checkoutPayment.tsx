@@ -131,9 +131,8 @@ const CheckoutPayment = () => {
               </Label>
             </div>
             <p className="text-gray-1-foreground mt-3">
-              Make your payment directly into our bank account. Please your
-              Order ID as the payment reference. Your order will not be shipped
-              until the funds have cleared in our account.
+              Betala direkt till vårt bankkonto. Använd ditt ordernummer som betalningsreferens. Din beställning skickas först när betalningen har registrerats på vårt konto.
+
             </p>
           </div>
           <div className="flex items-center space-x-2 ">
@@ -161,7 +160,7 @@ const CheckoutPayment = () => {
               htmlFor="cash-on-delivery"
               className="text-secondary-foreground text-base"
             >
-              Cash on delivery
+              Betalning vid leverans
             </Label>
           </div>
           <div className="flex items-center space-x-2 ">
@@ -193,7 +192,7 @@ const CheckoutPayment = () => {
           >
             Jag har läst ochgodkänner webbplatsens{" "}
             <Link href={"/returer-och-aterbetalningar"} className="underline">
-              terms and conditions
+              Villkor
             </Link>
             <span className="text-primary-foreground">*</span>{" "}
           </Label>
