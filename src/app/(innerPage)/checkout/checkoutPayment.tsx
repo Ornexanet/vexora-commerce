@@ -192,7 +192,7 @@ const CheckoutPayment = () => {
             className="lg:text-lg text-base font-normal text-secondary-foreground"
           >
             I have read and agree to the website{" "}
-            <Link href={"/terms-conditions"} className="underline">
+            <Link href={"/returer-och-aterbetalningar"} className="underline">
               terms and conditions
             </Link>
             <span className="text-primary-foreground">*</span>{" "}
