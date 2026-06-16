@@ -55,12 +55,12 @@ export const pagesOne: FooterLinkType[] = [
   {
     id: 4,
     label: "privacy policy",
-    href: "/Privacy-policy",
+    href: "/Pssrivacy-policy",
   },
   {
     id: 5,
-    label: "Returns & Refund Policy",
-    href: "/returns-refund-policy",
+    label: "Returer och återbetalningar",
+    href: "/returer-och-aterbetalningar",
   },
 ];
 
