@@ -127,7 +127,7 @@ const PriceSummary = () => {
 
           <div className="mt-7.5 flex items-center justify-between">
             <span className="text-lg leading-normal">
-              Leverns till <span className="font-bold text-black">New York</span>
+              Leverns till <span className="font-bold text-black"></span>
             </span>
             <button className="text-blue text-lg underline-offset-4 underline">
               Ändra address 
