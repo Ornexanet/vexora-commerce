@@ -15,7 +15,7 @@ const CheckoutForm = () => {
         <div className="flex flex-col gap-7.5">
           <div className="flex sm:flex-row flex-col justify-between gap-x-[22px] gap-y-7.5">
             <label htmlFor="first_name" className="w-full text-lg">
-              First name<span className="text-red-400">*</span>
+              Förnamn<span className="text-red-400">*</span>
               <Input
                 className={"py-3 mt-2"}
                 type={"text"}
@@ -25,7 +25,7 @@ const CheckoutForm = () => {
               />
             </label>
             <label htmlFor="last_name" className="w-full text-lg">
-              Last name<span className="text-red-400">*</span>
+              Efternamn<span className="text-red-400">*</span>
               <Input
                 className={"py-3 mt-2"}
                 type={"text"}
@@ -37,7 +37,7 @@ const CheckoutForm = () => {
           </div>
           <div className="flex sm:flex-row flex-col justify-between gap-x-[22px] gap-y-7.5">
             <label htmlFor="email" className="w-full text-lg">
-              Email address<span className="text-red-400">*</span>
+              E-postadress<span className="text-red-400">*</span>
               <Input
                 className={"py-3 mt-2"}
                 type={"email"}
@@ -47,7 +47,7 @@ const CheckoutForm = () => {
               />
             </label>
             <label htmlFor="phone" className="w-full text-lg">
-              Phone<span className="text-red-400">*</span>
+              Telefon<span className="text-red-400">*</span>
               <Input
                 className={"py-3 mt-2"}
                 type={"number"}
@@ -62,14 +62,14 @@ const CheckoutForm = () => {
               htmlFor="country"
               className="text-gray-1-foreground text-base"
             >
-              Country/Region<span className="text-red-400">*</span>
+              Land/Region<span className="text-red-400">*</span>
             </label>
             <Select name="country" required>
               <SelectTrigger
                 id="country"
                 className="data-[size=default]:h-12.5 w-full py-2.5 mt-2.5"
               >
-                <SelectValue placeholder="Select a country" />
+                <SelectValue placeholder="Väla land" />
               </SelectTrigger>
               <SelectContent className="py-[14px] bg-background ">
                 <SelectItem value="united-states" className="cursor-pointer">
@@ -86,7 +86,7 @@ const CheckoutForm = () => {
           </div>
           <div>
             <label htmlFor="town" className="w-full text-lg">
-              Town / City<span className="text-red-400">*</span>
+               Stad<span className="text-red-400">*</span>
               <Input
                 className={"py-3 mt-2"}
                 type={"text"}
@@ -98,7 +98,7 @@ const CheckoutForm = () => {
           </div>
           <div>
             <label htmlFor="street" className="w-full text-lg">
-              Street address<span className="text-red-400">*</span>
+              Gatuadress<span className="text-red-400">*</span>
               <Input
                 className={"py-3 mt-2"}
                 type={"text"}
@@ -110,7 +110,7 @@ const CheckoutForm = () => {
           </div>
           <div>
             <label htmlFor="zip" className="w-full text-lg">
-              ZIP Code<span className="text-red-400">*</span>
+              Postnummer<span className="text-red-400">*</span>
               <Input
                 className={"py-3 mt-2"}
                 type={"text"}
@@ -121,7 +121,7 @@ const CheckoutForm = () => {
             </label>
           </div>
           <label htmlFor="notes" className="w-full text-lg">
-            Additional information (optional)
+            Ytterligare information (valfritt)
             <Textarea
               className={"py-3 mt-2 min-h-[140px]"}
               name={"notes"}
