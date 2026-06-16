@@ -10,6 +10,10 @@ export const metadata: Metadata = {
     alternates: {
       canonical: "https://shop.ornexa.net/checkout",
     },
+    robots: {
+      index: false,
+      follow: true,
+    },
 };
 const Checkout = () => {
  const checkoutSchema = [
