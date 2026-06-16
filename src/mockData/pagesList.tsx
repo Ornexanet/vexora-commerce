@@ -103,22 +103,22 @@ export const pagesSubmenuList: PagesSubmenuListType[] = [
       },
       {
         id: 2,
-        href: "/account",
-        label: "My Account",
+        href: "/login",
+        label: " account",
       },
       {
         id: 3,
-        href: "/orders",
+        href: "/dashboard/orders",
         label: "My Orders",
       },
       {
         id: 4,
-        href: "#",
+        href: "/dashboard/orders",
         label: "Track Order",
       },
       {
         id: 5,
-        href: "#",
+        href: "/dashboard/orders",
         label: "Order Details",
       },
       {
@@ -144,22 +144,22 @@ export const pagesSubmenuList: PagesSubmenuListType[] = [
       },
       {
         id: 3,
-        href: "#",
+        href: "/dashboard/orders",
         label: "Shipping Information",
       },
       {
         id: 4,
-        href: "#",
+        href: "/dashboard/orders",
         label: "Payment",
       },
       {
         id: 5,
-        href: "#",
+        href: "/dashboard/orders",
         label: "Order Completed",
       },
       {
         id: 6,
-        href: "/not-found",
+        href: "/about",
         label: "404 Page",
       },
     ],
@@ -212,7 +212,7 @@ export const pagesList: PageListType[] = [
   },
   {
     id: 2,
-    href: "#",
+    href: "/dashboard/orders",
     label: "Pages",
     subMenu: pagesSubmenuList,
   },
