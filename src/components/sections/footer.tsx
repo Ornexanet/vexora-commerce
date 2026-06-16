@@ -11,27 +11,27 @@ export interface FooterLinkType {
 export const categories: FooterLinkType[] = [
   {
     id: 1,
-    label: "All Products",
+    label: "Alla produkter",
     href: "/shop",
   },
   {
     id: 2,
-    label: "Bluetooth Speakers",
+    label: "Mobiler",
     href: "/shop",
   },
   {
     id: 3,
-    label: "Headphones",
+    label: "Hörlurar",
     href: "/shop"
   },
   {
     id: 4,
-    label: "Drones",
+    label: "Smartklockor",
     href: "/shop",
   },
   {
     id: 5,
-    label: "Cameras",
+    label: "Tillbehör",
     href: "/shop",
   },
 ];
@@ -39,22 +39,22 @@ export const categories: FooterLinkType[] = [
 export const pagesOne: FooterLinkType[] = [
   {
     id: 1,
-    label: "Track Order",
+    label: "Spåra order",
     href: "/dashboard/orders",
   },
   {
     id: 2,
-    label: "Shipping Info",
+    label: "Leveransinformation",
     href: "/dashboard/orders",
   },
   {
     id: 3,
-    label: "Help",
+    label: "Hjälp",
     href: "/contact",
   },
   {
     id: 4,
-    label: "privacy policy",
+    label: "Integritetspolicy",
     href: "/Privacy-policy",
   },
   {
@@ -67,29 +67,25 @@ export const pagesOne: FooterLinkType[] = [
 export const pagesTwo: FooterLinkType[] = [
   {
     id: 1,
-    label: "Cart",
+    label: "Varukorg",
     href: "/cart",
   },
   {
     id: 2,
-    label: "My account",
+    label: "Mitt konto",
     href: "/login",
   },
   {
     id: 3,
-    label: "My Orders",
+    label: "Mina beställningar",
     href: "/dashboard/orders",
   },
   {
     id: 4,
-    label: "Wishlist",
+    label: "Önskelista",
     href: "/wishlist",
   },
-  {
-    id: 5,
-    label: "Affiliate Program",
-    href: "/affiliate",
-  },
+  
 ];
 
 const Footer = () => {
@@ -105,7 +101,7 @@ const Footer = () => {
             size="28"
             className="text-light-dark font-medium mb-2.5"
           >
-            <h5>Let’s get this started</h5>
+            <h5>Låt oss komma igång</h5>
           </Title>
           <Title asChild>
             <Link href={"mail:info@Vexora.com"}>info@Vexora.com</Link>
@@ -165,7 +161,7 @@ const Footer = () => {
                     href={"#"}
                     className="text-light-dark md:text-lg md:leading-normal hover:text-blue transition-all duration-500"
                   >
-                    Who we are
+                    Om oss
                   </Link>
                 </li>
                 <li>
@@ -173,7 +169,7 @@ const Footer = () => {
                     href={"#"}
                     className="text-light-dark md:text-lg md:leading-normal hover:text-blue transition-all duration-500"
                   >
-                    Contact Us
+                    Kontakta oss
                   </Link>
                 </li>
                 <li>
@@ -181,7 +177,7 @@ const Footer = () => {
                     href={"#"}
                     className="text-light-dark md:text-lg md:leading-normal hover:text-blue transition-all duration-500"
                   >
-                    Careers
+                    Karriär
                   </Link>
                 </li>
                 <li>
@@ -189,7 +185,7 @@ const Footer = () => {
                     href={"#"}
                     className="text-light-dark md:text-lg md:leading-normal hover:text-blue transition-all duration-500"
                   >
-                    Sitemap
+                    Webbplatskarta
                   </Link>
                 </li>
               </ul>
@@ -237,13 +233,13 @@ const Footer = () => {
       <div className="pt-9 xl:pb-10.5 pb-20">
         <div className="container flex sm:flex-row flex-col justify-between sm:items-center gap-y-5">
           <p className="md:text-lg font-medium md:leading-normal text-light-dark">
-            © {new Date().getFullYear()} Vexora Electronic Ltd. All Rights
+            © {new Date().getFullYear()} Ornexa. Alla rättigheter förbehållna.
             Reserved
           </p>
           <div className="flex items-center gap-2.5">
             <Glob />
             <span className="md:text-lg font-medium md:leading-normal text-light-dark">
-              Other Regions / English
+              Sverige / Svenska
             </span>
           </div>
         </div>
