@@ -10,16 +10,16 @@ const CheckoutPayment = () => {
     <div className="bg-[#F5F5F5] sm:p-10 p-7 rounded-xl">
       <div className="border border-[#999796] sm:p-7.5 p-5 rounded-lg">
         <p className="bg-primary text-white lg:py-[15px] py-3 lg:text-2xl sm:text-xl text-lg lg:leading-[125%] font-semibold text-center rounded-md">
-          Order Details
+          Orderöversikt
         </p>
         <div className="overflow-x-auto">
           <div className="mt-7.5  min-w-[350px]">
             <div className="flex justify-between border-b-[1.5px] border-b-[#999796] pb-5">
               <p className="lg:text-2xl sm:text-xl text-lg lg:leading-[125%] font-semibold text-secondary-foreground">
-                Product
+                Produkt
               </p>
               <p className="lg:text-2xl sm:text-xl text-lg lg:leading-[125%] font-semibold text-secondary-foreground">
-                Subtotal
+                Delsumma
               </p>
             </div>
 
@@ -38,7 +38,7 @@ const CheckoutPayment = () => {
                       Go360 4Pro
                     </p>
                     <span className="text-base text-secondary-foreground">
-                      Qty: 2
+                      Antal: 2
                     </span>
                   </div>
                 </div>
@@ -50,7 +50,7 @@ const CheckoutPayment = () => {
 
             <div className="flex justify-between border-b-[1.5px] border-b-[#999796] pb-5 mt-7.5">
               <p className="lg:text-xl text-lg lg:leading-[150%] font-medium text-secondary-foreground">
-                Subtotal
+                Delsumma
               </p>
               <p className="lg:text-xl text-lg lg:leading-[150%] font-medium text-secondary-foreground">
                 $1000.00
@@ -59,7 +59,7 @@ const CheckoutPayment = () => {
 
             <div className="flex justify-between items-center border-b-[1.5px] border-b-[#999796] pb-5 mt-7.5">
               <p className="lg:text-xl text-lg lg:leading-[150%] font-medium text-secondary-foreground">
-                Shipping
+                Frakt
               </p>
               <RadioGroup
                 name="shipping_method"
@@ -77,7 +77,7 @@ const CheckoutPayment = () => {
                     htmlFor="free-shipping"
                     className="text-gray-1-foreground text-base"
                   >
-                    Free Shipping
+                    Fri frakt
                   </Label>
                 </div>
                 <div className="flex items-center space-x-2 ">
@@ -91,7 +91,7 @@ const CheckoutPayment = () => {
                     htmlFor="fat-rate"
                     className="text-gray-1-foreground text-base"
                   >
-                    Fat Rate $10.00
+                    Fast frakt $10.00
                   </Label>
                 </div>
               </RadioGroup>
@@ -99,7 +99,7 @@ const CheckoutPayment = () => {
 
             <div className="flex justify-between mt-7.5">
               <p className="text-xl leading-[150%] font-medium text-secondary-foreground">
-                Total
+                Totalt
               </p>
               <p className="text-xl leading-[150%] font-medium text-secondary-foreground">
                 $1025.00
@@ -127,7 +127,7 @@ const CheckoutPayment = () => {
                 htmlFor="bank-transfer"
                 className="text-secondary-foreground text-base"
               >
-                Direct bank transfer
+                Direkt banköverföring
               </Label>
             </div>
             <p className="text-gray-1-foreground mt-3">
@@ -138,7 +138,7 @@ const CheckoutPayment = () => {
           </div>
           <div className="flex items-center space-x-2 ">
             <RadioGroupItem
-              value="check-payment"
+              value="check payments"
               id="check-payment"
               aria-label="radio"
               className="border-light-dark text-transparent"
@@ -147,7 +147,7 @@ const CheckoutPayment = () => {
               htmlFor="check-payment"
               className="text-secondary-foreground text-base"
             >
-              Check payments
+              Checkbetalning
             </Label>
           </div>
           <div className="flex items-center space-x-2 ">
@@ -191,7 +191,7 @@ const CheckoutPayment = () => {
             htmlFor="terms"
             className="lg:text-lg text-base font-normal text-secondary-foreground"
           >
-            I have read and agree to the website{" "}
+            Jag har läst ochgodkänner webbplatsens{" "}
             <Link href={"/returer-och-aterbetalningar"} className="underline">
               terms and conditions
             </Link>
@@ -203,7 +203,7 @@ const CheckoutPayment = () => {
           type="submit"
           className="lg:py-3 w-full mt-10 lg:leading-[166%] lg:text-lg"
         >
-          Place Order
+          Lägg order
         </Button>
       </div>
     </div>
