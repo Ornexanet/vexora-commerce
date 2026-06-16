@@ -22,12 +22,12 @@ const PriceSummary = () => {
   return (
     <div className="sticky top-0">
       <Title size="28" className="font-bold leading-normal mb-2.5">
-        Cart Totals
+        Ordersammanfattning
       </Title>
       <div className="border border-light-gray rounded-2xl py-7.5">
         {/* Subtotal */}
         <div className="flex items-center justify-between pl-5 pr-7.5 pb-5 border-b border-light-gray">
-          <span className="font-bold text-lg leading-normal">Subtotal</span>
+          <span className="font-bold text-lg leading-normal">Delsumma</span>
           <span className="font-bold text-lg leading-normal">
             ${subtotal.toFixed(2)}
           </span>
@@ -36,21 +36,21 @@ const PriceSummary = () => {
         {/* Coupon */}
         <div className="flex items-center justify-between pl-5 pr-7.5 py-5 border-b border-light-gray">
           <span className="font-bold leading-normal text-lg">
-            Coupon: get20off
+            Rabattkod: get20off
           </span>
           <div className="text-right">
             <span className="font-bold leading-normal text-lg block">
               ${couponDiscount}
             </span>
             <button className="text-blue underline hover:no-underline">
-              [remove]
+              [Ta bort]
             </button>
           </div>
         </div>
 
         {/* Shipping */}
         <div className="py-5 pl-5 pr-7.5 border-b border-light-gray">
-          <span className="font-bold leading-normal text-lg">Shipping</span>
+          <span className="font-bold leading-normal text-lg">Leverans</span>
           <div className="space-y-2 mt-5">
             <label className="flex items-center justify-between cursor-pointer group">
               <div className="flex items-center gap-2">
@@ -70,10 +70,10 @@ const PriceSummary = () => {
                   onChange={() => setShippingMethod("free")}
                 />
                 <span className="font-medium text-lg text-[#252F4A]">
-                  Free Shipping
+                  Fri frakt
                 </span>
               </div>
-              <span className="font-bold text-lg">$0.00</span>
+              <span className="font-bold text-lg">$0 kr</span>
             </label>
 
             <label className="flex items-center justify-between cursor-pointer group">
@@ -94,10 +94,10 @@ const PriceSummary = () => {
                   onChange={() => setShippingMethod("local")}
                 />
                 <span className="font-medium text-lg text-[#252F4A]">
-                  Local Pickup:
+                  Hämta i butik:
                 </span>
               </div>
-              <span className="font-bold text-lg">$5.00</span>
+              <span className="font-bold text-lg">5 kr</span>
             </label>
 
             <label className="flex items-center justify-between cursor-pointer group">
@@ -118,37 +118,37 @@ const PriceSummary = () => {
                   onChange={() => setShippingMethod("flat")}
                 />
                 <span className="font-medium text-lg text-[#252F4A]">
-                  Flat rate:
+                  Fast fraktavgift:
                 </span>
               </div>
-              <span className="font-bold text-lg">$15.00</span>
+              <span className="font-bold text-lg">15 kr</span>
             </label>
           </div>
 
           <div className="mt-7.5 flex items-center justify-between">
             <span className="text-lg leading-normal">
-              Shipping to <span className="font-bold text-black">New York</span>
+              Leverns till <span className="font-bold text-black">New York</span>
             </span>
             <button className="text-blue text-lg underline-offset-4 underline">
-              Change address
+              Ändra address 
             </button>
           </div>
         </div>
 
         {/* Total */}
         <div className="flex items-center justify-between pt-5 pr-7.5 pl-5">
-          <span className="font-bold text-lg">Total</span>
-          <span className="font-bold text-lg">${total.toFixed(2)}</span>
+          <span className="font-bold text-lg">Totalt</span>
+          <span className="font-bold text-lg">{total.toFixed(2)} kr</span>
         </div>
 
         <div className="my-7.5 pr-7.5 pl-5">
           <Button asChild className="w-full">
-            <Link href="/checkout">Proceed to checkout</Link>
+            <Link href="/checkout">Gå till kassan</Link>
           </Button>
         </div>
 
         <p className="text-center text-lg font-medium">
-          Safe And Secure Checkout
+          Säker och trygg betalning
         </p>
 
         {/* Payment Icons */}
