@@ -4,14 +4,17 @@ import CheckoutPageWrapper from "./checkoutPageWrapper";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Vexora - Checkout",
+  title: "Kassa | Ornexa Shop",
   description:
-    "Vexora - Single Product eCommerce Next.js Template for Tech and Gadget Stores",
+    "Slutför ditt köp tryggt och enkelt hos Ornexa. Ange dina uppgifter, granska din order och välj betalningsmetod.",
+    alternates: {
+      canonical: "https://shop.ornexa.net/checkout",
+    },
 };
 const Checkout = () => {
   return (
     <main>
-      <PageHeader title="Checkout" currentPageName="Checkout" />
+      <PageHeader title="Kassa" currentPageName="Kassa" />
       <div className="container mt-7.5">
         <CheckoutPageWrapper />
       </div>
