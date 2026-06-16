@@ -29,7 +29,7 @@ const PriceSummary = () => {
         <div className="flex items-center justify-between pl-5 pr-7.5 pb-5 border-b border-light-gray">
           <span className="font-bold text-lg leading-normal">Delsumma</span>
           <span className="font-bold text-lg leading-normal">
-            ${subtotal.toFixed(2)}
+            {subtotal.toFixed(2)} kr
           </span>
         </div>
 
@@ -40,7 +40,7 @@ const PriceSummary = () => {
           </span>
           <div className="text-right">
             <span className="font-bold leading-normal text-lg block">
-              ${couponDiscount}
+              {couponDiscount} kr
             </span>
             <button className="text-blue underline hover:no-underline">
               [Ta bort]
@@ -73,7 +73,7 @@ const PriceSummary = () => {
                   Fri frakt
                 </span>
               </div>
-              <span className="font-bold text-lg">$0 kr</span>
+              <span className="font-bold text-lg">0 kr</span>
             </label>
 
             <label className="flex items-center justify-between cursor-pointer group">
