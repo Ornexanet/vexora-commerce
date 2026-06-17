@@ -41,8 +41,10 @@ const CompanyFeaturesSlider = ({
       <div className="container">
         <div ref={containerRef}></div>
         <Title>
-          Why Vexora is the best{" "}
-          <span className="block">place to buy your Gadgets?</span>{" "}
+          Varför Ornexa är det bästa
+{" "}
+          <span className="block">stället att köpa dina teknikprodukter?
+</span>{" "}
         </Title>
       </div>
       <div className="pt-[50px] relative">
