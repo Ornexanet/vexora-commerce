@@ -49,7 +49,7 @@ const WishlistProducts = () => {
     <div className="container mt-20">
       {wishlistItems.length === 0 ? (
         <div className="lg:p-12 p-8 text-center">
-          <p className="text-xl text-light-dark">Your wishlist is empty</p>
+          <p className="text-xl text-light-dark">Din önskelista är tom</p>
         </div>
       ) : (
         <div className="overflow-x-auto">
@@ -57,16 +57,16 @@ const WishlistProducts = () => {
             <TableHeader>
               <TableRow>
                 <TableHead className="leading-normal px-0 pb-2.5 mt-0">
-                  Product
+                  Produkt
                 </TableHead>
                 <TableHead className="leading-normal px-0 pb-2.5 mt-0">
-                  Price
+                  Pris
                 </TableHead>
                 <TableHead className="leading-normal px-0 pb-2.5 mt-0">
-                  Quantity
+                  Antal
                 </TableHead>
                 <TableHead className="leading-normal px-0 pb-2.5 mt-0">
-                  Subtotal
+                  Delsumma
                 </TableHead>
                 <TableHead className="w-6 px-0 py-2.5 mt-0"></TableHead>
               </TableRow>
@@ -109,7 +109,7 @@ const WishlistProducts = () => {
 
                     {/* Price */}
                     <TableCell className="text-lg font-medium px-0 py-6">
-                      ${itemPrice}
+                      {itemPrice} kr
                     </TableCell>
 
                     {/* Quantity Controls */}
@@ -136,14 +136,14 @@ const WishlistProducts = () => {
 
                     {/* Subtotal */}
                     <TableCell className="text-lg font-semibold px-0 py-6">
-                      ${subtotal}
+                      {subtotal} kr
                     </TableCell>
 
                     {/* Remove Button */}
                     <TableCell className="px-0 py-6">
                       <div className="flex items-center gap-5">
                         <Button onClick={() => handleAddToCart(item)}>
-                          Add To Cart
+                          Gå till kassa
                         </Button>
                         <button
                           onClick={() => removeFromWishlist(item.id)}
