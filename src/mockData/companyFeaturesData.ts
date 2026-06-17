@@ -9,31 +9,31 @@ export const companyFeaturesData: CompanyFeature[] = [
     {
         id: 1,
         icon: "/images/companyFeatures/icon-1.png",
-        title: "Personalize your Products for free.",
-        description: "Engrave your Gadget with your initials or favorite emoji — free."
+        title: "Personanpassa dina produkter kostnadsfritt.",
+        description: "Gravera din produkt med initialer eller favoritemoji utan extra kostnad."
     },
     {
         id: 2,
         icon: "/images/companyFeatures/icon-2.png",
-        title: "Get flexible delivery and easy pickup.",
-        description: "Choose from 2-hour delivery from our Store, free delivery or easy pickup options."
+        title: "Få flexibel leverans och enkel upphämtning.",
+        description: "Välj mellan snabb leverans, fri frakt eller smidiga upphämtningsalternativ."
     },
     {
         id: 3,
         icon: "/images/companyFeatures/icon-3.png",
-        title: "Pay over time, interest-free.",
-        description: "When you choose to check out with Credit Card Monthly Installments."
+        title: "Betala över tid utan ränta.",
+        description: "Välj delbetalning vid kassan för en flexibel köpupplevelse."
     },
     {
         id: 4,
         icon: "/images/companyFeatures/icon-4.png",
-        title: "Shop live with a Specialist.",
-        description: "Let us guide you live over video and answer all of your questions."
+        title: "Handla med hjälp av en specialist.",
+        description: "Få personlig vägledning via video och svar på dina frågor."
     },
     {
         id: 5,
         icon: "/images/companyFeatures/icon-5.png",
-        title: "Explore a shopping experience designed around you.",
-        description: "Use the Vexora Store app to get a more personal way to shop."
+        title: "Upptäck en shoppingupplevelse anpassad för dig.",
+        description: "Använd Ornexa-appen för en mer personlig köpupplevelse."
     }
 ];
