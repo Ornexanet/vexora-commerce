@@ -82,7 +82,7 @@ const itemsOne = [
     icon: <Heart className="size-6 text-light-dark stroke-2" />,
   },
   {
-    label: "Cart",
+    label: "Varukorg",
     href: "/cart",
     icon: <ShoppingCartSmIcon className="size-6 text-light-dark" />,
   },
