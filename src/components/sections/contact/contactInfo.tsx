@@ -6,10 +6,10 @@ const ContactInfo = () => {
   return (
     <div className="bg-[#F5F5F7] rounded-[15px] xl:px-12 lg:px-8 md:px-6 px-4 py-12.5">
       <Title size="60" className="font-bold leading-[130%]">
-        Get in Touch
+        Kontakta oss
       </Title>
       <p className="mt-5 text-xl leading-[180%] text-light-dark">
-        Reach us directly through phone, email, or visit one of our locations.
+        Kontakta oss via telefon, e-post eller genom att besöka vårt kontor.
       </p>
       <div className="mt-12.5 space-y-8">
         <div className="flex items-center gap-4">
@@ -18,9 +18,9 @@ const ContactInfo = () => {
           </div>
           <div>
             <strong className="text-lg leading-[180%] block">
-              Head Office
+              Stockholm, Sverige
             </strong>
-            <p className="mt-1 text-lg">689 5th Ave, New York, NY 10022, USA</p>
+            <p className="mt-1 text-lg">Stockholm, Sverige</p>
           </div>
         </div>
         <div className="flex items-center gap-4">
@@ -28,13 +28,13 @@ const ContactInfo = () => {
             <Mail size={32} strokeWidth={1.5} />
           </div>
           <div>
-            <strong className="text-lg leading-[180%] block">Our Email</strong>
+            <strong className="text-lg leading-[180%] block">E-post</strong>
             <p className="mt-1 text-lg ">
               <a
-                href="mailto:info@Vexora.com"
+                href="mailto:info@shop.ornexa.net"
                 className=" hover:text-blue transition-all duration-500"
               >
-                info@Vexora.com
+                info@shop.ornexa.net
               </a>
             </p>
           </div>
@@ -45,14 +45,14 @@ const ContactInfo = () => {
           </div>
           <div>
             <strong className="text-lg leading-[180%] block">
-              Support Email
+              Support
             </strong>
             <p className="mt-1 text-lg ">
               <a
                 href="mailto:support@Vexora.com"
                 className=" hover:text-blue transition-all duration-500"
               >
-                support@Vexora.com
+                support@shop.ornexa.net
               </a>
             </p>
           </div>
@@ -62,7 +62,7 @@ const ContactInfo = () => {
             <Phone size={32} strokeWidth={1.5} />
           </div>
           <div>
-            <strong className="text-lg leading-[180%] block">Phone Call</strong>
+            <strong className="text-lg leading-[180%] block">Telefon</strong>
             <p className="mt-1 text-lg ">
               <a
                 href="tal:+8355621423567"
