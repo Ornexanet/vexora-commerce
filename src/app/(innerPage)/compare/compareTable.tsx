@@ -37,7 +37,7 @@ const CompareTable = () => {
                   >
                     {index === 0 && (
                       <p className="font-medium lg:text-xl text-lg text-secondary-foreground 2xl:w-[280px] lg:w-[200px] w-[160px]">
-                        Products
+                        Produkter
                       </p>
                     )}
                     <div>
@@ -98,7 +98,7 @@ const CompareTable = () => {
                   >
                     {index === 0 && (
                       <p className="font-medium lg:text-xl text-lg text-secondary-foreground 2xl:w-[280px] lg:w-[200px] w-[160px]">
-                        Price
+                        Pris
                       </p>
                     )}
                     <p className="text-secondary-foreground lg:text-xl text-lg">
@@ -117,17 +117,17 @@ const CompareTable = () => {
                   >
                     {index === 0 && (
                       <p className="font-medium text-secondary-foreground lg:text-xl text-lg 2xl:w-[280px] lg:w-[200px] w-[160px]">
-                        Availability
+                        Tillgänglighet
                       </p>
                     )}
                     {stock ? (
                       <p className="text-[#66995C] lg:text-xl text-lg">
                         {" "}
-                        In Stock
+                        Finns i lager
                       </p>
                     ) : (
                       <p className="lg:text-xl text-lg text-secondary-foreground">
-                        Out of stock
+                        Slut i lager
                       </p>
                     )}
                   </div>
@@ -143,7 +143,7 @@ const CompareTable = () => {
                       size={"sm"}
                       onClick={() => handleAddToCart(product)}
                     >
-                      Add to Cart
+                      Lägg i varukorg
                     </Button>
                   </div>
                 </div>
@@ -152,7 +152,7 @@ const CompareTable = () => {
           </div>
         ) : (
           <p className="text-secondary-foreground font-semibold text-2xl text-center capitalize">
-            No Products in your compare page
+            Inga produkter finns på jämförelsesidan
           </p>
         )}
       </div>
