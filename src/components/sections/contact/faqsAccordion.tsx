@@ -8,37 +8,40 @@ import {
 import { Plus, Minus } from "lucide-react";
 
 const faqData = [
-  {
+  
+     {
     id: "item-1",
-    question: "What is the warranty period for your products?",
+    question: "Vilken garanti gäller för era produkter?",
     answer:
-      "Most of our products come with a 12-month warranty. Specific warranty details are listed on each product page.",
+      "Alla produkter omfattas av den lagstadgade reklamationsrätten enligt svensk konsumentlagstiftning. Garantitiden kan variera beroende på tillverkare och produktkategori. Information om eventuell tillverkargaranti finns på respektive produktsida.",
   },
   {
     id: "item-2",
-    question: "How long does shipping take?",
+    question: "Hur lång är leveranstiden?",
     answer:
-      "Shipping typically takes 3-5 business days for domestic orders and 7-14 business days for international orders.",
+      "Beställningar skickas normalt inom 1–2 arbetsdagar. Leveranstiden inom Sverige är vanligtvis 2–5 arbetsdagar beroende på produktens tillgänglighet och vald leveransmetod.",
   },
   {
     id: "item-3",
-    question: "Can I return or exchange a product?",
+    question: "Kan jag returnera eller byta en vara?",
     answer:
-      "Yes, you can return or exchange any product within 30 days of purchase, provided it is in its original condition.",
+      "Ja. Du har 14 dagars ångerrätt enligt distansavtalslagen. Produkten ska returneras i gott skick tillsammans med samtliga tillbehör och originalförpackning.",
   },
   {
     id: "item-4",
-    question: "Do you ship internationally?",
+    question: "Levererar ni till hela Sverige?",
     answer:
-      "Yes, we ship to over 50 countries worldwide. Shipping costs and delivery times vary by location.",
+      "Ja, vi levererar till kunder i hela Sverige. Leveransalternativ och fraktkostnader visas i kassan innan du slutför ditt köp.",
   },
   {
     id: "item-5",
-    question: "How can I track my order?",
+    question: "Hur kan jag spåra min beställning?",
     answer:
-      "Once your order is shipped, you will receive a tracking number via email to monitor your package's progress.",
+      "När din beställning har skickats får du en leveransbekräftelse via e-post med spårningsinformation så att du kan följa paketets status.",
   },
 ];
+
+
 
 const FaqsAccordion = () => {
   return (
