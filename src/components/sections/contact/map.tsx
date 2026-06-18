@@ -14,9 +14,9 @@ const StoreMap = () => {
     storeLocations[0],
   );
   const [viewState, setViewState] = useState({
-    longitude: 0,
-    latitude: 20,
-    zoom: 1.5,
+    longitude: 18.0686,
+    latitude: 59.3293
+    zoom: 10,
   });
   const [showLocations, setShowLocations] = useState(false);
 
@@ -40,11 +40,10 @@ const StoreMap = () => {
       <div className="container">
         <div className="text-center space-y-4 mb-15">
           <Title size="60" className="font-bold">
-            Find a Vexora Store Near You
+            Hitta Ornexa i Sverige
           </Title>
           <p className="text-light-dark text-xl">
-            Experience our cutting-edge tech firsthand at one of our global
-            locations.
+            Vi hjälper kunder över hela Sverige med elektronik, tillbehör och teknisk support.
           </p>
         </div>
 
@@ -103,7 +102,7 @@ const StoreMap = () => {
                       fill="#1279F2"
                     />
                   </svg>
-                  <span className="sm:block hidden">Directions</span>
+                  <span className="sm:block hidden">Visa på karta</span>
                 </button>
               </div>
             </div>
