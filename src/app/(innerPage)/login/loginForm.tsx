@@ -10,7 +10,7 @@ function LoginForm() {
   return (
     <form className="min-w-[360px] mx-auto border border-[#F1F1F4] rounded-xl p-10 space-y-7.5 max-w-[480px] shadow-[0px_3px_4px_0px_#00000008]">
       <div className="text-center">
-        <h6 className="font-medium text-[22px] mb-2.5">Login</h6>
+        <h6 className="font-medium text-[22px] mb-2.5">Logga in</h6>
         <p className="text-light-dark">
           Har du inget konto?{" "}
           <Link
