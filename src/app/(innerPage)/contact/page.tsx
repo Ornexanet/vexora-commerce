@@ -1,10 +1,14 @@
 import ContactForm from "@/components/sections/contact/contactForm";
 import ContactInfo from "@/components/sections/contact/contactInfo";
 import FaqsAccordion from "@/components/sections/contact/faqsAccordion";
-import Map from "@/components/sections/contact/map";
+const Map = dynamic(() => import("@/components/sections/contact/map"), {
+  ssr: false,
+});
+
 import PageHeaderWithImg from "@/components/sections/pageHeaderWithImg";
 import Title from "@/components/ui/title";
 import React from "react";
+import dynamic from "next/dynamic";
 
 const Contact = () => {
   return (
