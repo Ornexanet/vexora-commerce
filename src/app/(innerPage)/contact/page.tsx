@@ -21,11 +21,10 @@ const Contact = () => {
         <div className="container grid lg:grid-cols-[680fr_882fr] gap-7.5">
           <div>
             <Title size="60" className="font-bold leading-[130%]">
-              Need Answers? We’ve Got You Covered
+              Svar på vanliga frågor 
             </Title>
             <p className="text-light-dark text-xl mt-5">
-              Explore common questions about our products, shipping, returns,
-              and more.
+              Här hittar du svar på vanliga frågor om produkter, leverans, betalning, returer och kundservice
             </p>
           </div>
           <FaqsAccordion />
