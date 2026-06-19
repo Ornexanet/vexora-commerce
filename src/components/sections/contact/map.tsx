@@ -15,8 +15,8 @@ const StoreMap = () => {
   );
   const [viewState, setViewState] = useState({
     longitude: 18.0686,
-    latitude: 59.3293
-    zoom: 10,
+    latitude: 59.3293,
+    zoom: 11
   });
   const [showLocations, setShowLocations] = useState(false);
 
