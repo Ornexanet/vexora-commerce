@@ -9,7 +9,11 @@ import React from "react";
 const Contact = () => {
   return (
     <main>
-      <PageHeaderWithImg title="Contact Us" titleClass="" />
+      <PageHeaderWithImg 
+      title="Kontakta oss" 
+      titleClass=""
+      bgImage="/ornexa-contact-tech-products.png"
+       />
       <Map />
       <section className="lg:mt-37.5 md:mt-25 mt-20">
         <div className="container grid lg:grid-cols-[649fr_913fr] gap-7.5">
