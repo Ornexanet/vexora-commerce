@@ -1,7 +1,7 @@
 import ContactForm from "@/components/sections/contact/contactForm";
 import ContactInfo from "@/components/sections/contact/contactInfo";
 import FaqsAccordion from "@/components/sections/contact/faqsAccordion";
-import Map from "@/components/sections/contact/map";
+import MapClient from "@/components/sections/contact/MapClient";
 import PageHeaderWithImg from "@/components/sections/pageHeaderWithImg";
 import Title from "@/components/ui/title";
 import React from "react";
@@ -15,7 +15,7 @@ const Contact = () => {
       titleClass=""
       bgImage="/images/ornexa-contact-tech-products.webp"
        />
-      <Map />
+      <MapClient />
       <section className="lg:mt-37.5 md:mt-25 mt-20">
         <div className="container grid lg:grid-cols-[649fr_913fr] gap-7.5">
           <ContactInfo />
