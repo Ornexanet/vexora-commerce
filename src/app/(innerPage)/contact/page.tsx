@@ -12,7 +12,7 @@ const Contact = () => {
       <PageHeaderWithImg 
       title="Kontakta oss" 
       titleClass=""
-      bgImage="/images/ornexa-contact-tech-products.png"
+      bgImage="/images/ornexa-contact-tech-products.webp"
        />
       <Map />
       <section className="lg:mt-37.5 md:mt-25 mt-20">
