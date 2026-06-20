@@ -16,6 +16,8 @@ const StoreMap = () => {
   const [viewState, setViewState] = useState({
     longitude: 18.0686,
     latitude: 59.3293,
+
+
     zoom: 11
   });
   const [showLocations, setShowLocations] = useState(false);
@@ -52,7 +54,7 @@ const StoreMap = () => {
           <div className="relative rounded-2xl overflow-hidden">
             <Map
               {...viewState}
-              onMove={(evt) => setViewState(evt.viewState)}
+              // onMove={(evt) => setViewState(evt.viewState)}
               mapStyle="https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json"
               style={{ width: "100%", height: "100%" }}
               attributionControl={false}
