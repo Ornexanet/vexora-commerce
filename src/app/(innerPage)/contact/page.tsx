@@ -9,10 +9,8 @@ const ContactInfo = dynamic(() => import("@/components/sections/contact/contactI
 
 const FaqsAccordion = dynamic(() => import("@/components/sections/contact/faqsAccordion"));
 
-const MapClient = dynamic(
-  () => import("@/components/sections/contact/MapClient"),
-  { ssr: false }
-);
+const MapClient = dynamic(() => import("@/components/sections/contact/MapClient"));
+
 
 
 const Contact = () => {
