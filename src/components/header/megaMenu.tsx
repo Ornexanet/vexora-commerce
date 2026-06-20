@@ -65,7 +65,8 @@ const MegaMenu = ({ category = "all" }: Props) => {
             modules={[Navigation]}
             onSlideChange={handleSlideChange}
             onInit={handleSlideChange}
-      
+            observer={true}
+            observeParents={true}
           >
             {filteredProducts.map((product) => (
               <SwiperSlide key={product.id}>
