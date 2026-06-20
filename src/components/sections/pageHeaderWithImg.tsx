@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import React from "react";
+import Image from "next/image";
 
 const PageHeaderWithImg = ({
   bgImage = "/images/page-header.png",
@@ -12,9 +13,16 @@ const PageHeaderWithImg = ({
 }) => {
   return (
     <section
-      className="bg-cover bg-center"
-      style={{ backgroundImage: `url(${bgImage})` }}
-    >
+   className="relative overflow-hidden">
+  <Image
+    src={bgImage}
+    alt={title}
+    fill
+    priority
+    sizes="100vw"
+    className="object-cover object-center -z-10"
+  />
+
       <div className="container xl:pt-[600px] lg:pt-[400px] pt-75">
         <div className="relative">
           <div className="absolute lg:-bottom-7.5 bottom-0 left-0">
