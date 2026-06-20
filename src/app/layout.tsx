@@ -3,7 +3,6 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/contextApi/providers";
 import { Toaster } from "@/components/ui/sonner";
-import WellcomeModal from "@/components/sections/wellcomeModal";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
@@ -27,7 +26,7 @@ export default function RootLayout({
         <Providers>
           {children}
           <Toaster richColors position="bottom-right" />
-          <WellcomeModal />
+         {/* <WellcomeModal /> */}
         </Providers>
       </body>
     </html>
