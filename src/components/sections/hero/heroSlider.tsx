@@ -38,7 +38,7 @@ const HeroSlider = () => {
   const [isOpen, setOpen] = useState(false);
   return (
     <section>
-      <Swiper  speed={1000} modules={[Autoplay]} loop>
+      <Swiper  speed={1000}>
         {heroData.map(
           ({ backgroundImage, image, description, features, id, title }) => {
             return (
