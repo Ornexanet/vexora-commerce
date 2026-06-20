@@ -24,16 +24,16 @@ export const useCart = () => {
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   // Load cart from localStorage on mount
-  // useEffect(() => {
-   //  const savedCart = localStorage.getItem("Vexora-cart");
-   // if (savedCart) {
-   //   setCartItems(JSON.parse(savedCart));
-  //  }
-   // setIsLoaded(true);
- // }, []);
+  useEffect(() => {
+    const savedCart = localStorage.getItem("Vexora-cart");
+    if (savedCart) {
+      setCartItems(JSON.parse(savedCart));
+    }
+    setIsLoaded(true);
+  }, []);
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
