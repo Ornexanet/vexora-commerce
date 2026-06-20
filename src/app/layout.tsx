@@ -21,14 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${plusJakartaSans.variable} antialiased`}>
-        <Providers>
-          {children}
-          <Toaster richColors position="bottom-right" />
-         {/* <WellcomeModal /> */}
-        </Providers>
-      </body>
-    </html>
+     <html lang="en">
+    <body className={`${plusJakartaSans.variable} antialiased`}>
+      {children}
+    </body>
+  </html>
+
   );
 }
