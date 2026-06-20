@@ -3,13 +3,21 @@ import PageHeaderWithImg from "@/components/sections/pageHeaderWithImg";
 import Title from "@/components/ui/title";
 import React from "react";
 import dynamic from "next/dynamic";
-const ContactForm = dynamic(() => import("@/components/sections/contact/contactForm"));
+const ContactForm = dynamic(() => import("@/components/sections/contact/contactForm"), {
+  loading: () => null,
+});
 
-const ContactInfo = dynamic(() => import("@/components/sections/contact/contactInfo"));
+const ContactInfo = dynamic(() => import("@/components/sections/contact/contactInfo"), {
+  loading: () => null,
+});
 
-const FaqsAccordion = dynamic(() => import("@/components/sections/contact/faqsAccordion"));
+const FaqsAccordion = dynamic(() => import("@/components/sections/contact/faqsAccordion"), {
+  loading: () => null,
+});
 
-const MapClient = dynamic(() => import("@/components/sections/contact/MapClient"));
+const MapClient = dynamic(() => import("@/components/sections/contact/MapClient"), {
+  loading: () => null,
+});
 
 
 
