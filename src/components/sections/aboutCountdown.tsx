@@ -6,26 +6,27 @@ import CountUp from "react-countup";
 
 const data = [
   {
-    number: 10,
-    label: "Products <br> Delivered",
+    number: 4,
+    label: "Produktkategorier <br> i butiken",
     prefix: "+",
   },
   {
-    number: 2.5,
-    label: "5-Star <br> Reviews",
-    prefix: "k+",
-  },
-  {
-    number: 98,
-    label: "Customer <br> Satisfaction",
+    number: 100,
+    label: "Fokus på <br> kundupplevelse",
     prefix: "%",
   },
   {
-    number: 45,
-    label: "Countries <br> Served",
-    prefix: "+",
+    number: 24,
+    label: "Tillgänglig butik <br> online",
+    prefix: "/7",
+  },
+  {
+    number: 1,
+    label: "Svensk e-handel <br> under utveckling",
+    prefix: "",
   },
 ];
+
 
 const AboutCountdown = () => {
   const { ref, inView } = useInView({
