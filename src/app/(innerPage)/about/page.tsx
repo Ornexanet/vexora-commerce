@@ -4,7 +4,6 @@ import CompanyFeaturesSlider from "@/components/sections/companyFeaturesSlider";
 import OurDifferences from "@/components/sections/OurDifferences";
 import OurStory from "@/components/sections/ourStory";
 import PageHeaderWithImg from "@/components/sections/pageHeaderWithImg";
-import TestimonialSlider from "@/components/sections/testimonialSlider";
 import { Metadata } from "next";
 import React from "react";
 
@@ -22,7 +21,7 @@ const About = () => {
       <AboutCountdown />
       <OurDifferences />
       <BrandsSlider />
-      <TestimonialSlider />
+      {/* <TestimonialSlider /> */}
       <CompanyFeaturesSlider
         className="bg-transparent pt-0"
         cardClassName="bg-[#F5F5F7]"
