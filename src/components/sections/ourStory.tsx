@@ -20,31 +20,32 @@ const OurStory = () => {
           </div>
           <div>
             <Title size="60" className="tracking-[-1.5px] mb-4">
-              Our Story
+              Om Ornexa
             </Title>
             <div className="text-light-dark sm:text-xl text-lg space-y-4">
-              <p>
-                At Vexora, we believe technology isn’t just about performance —
-                it’s about connection, creativity, and lifestyle. What began as
-                a small passion project by a group of tech enthusiasts turned
-                into a full-fledged destination for the latest and smartest
-                gadgets.
-              </p>
-              <p>
-                From the first smartwatch we sold, to today`s expansive lineup
-                of earbuds, action cameras, drones, smart speakers, and more —
-                our mission has remained the same:
-              </p>
-              <p>
-                Today, Vexora is trusted by thousands of customers and
-                professionals across the globe, not just because of what we sell
-                — but because of how we make you feel supported, inspired, and
-                confident in your choices.
-              </p>
-              <p> Welcome to Vexora.Where technology meets personality.</p>
+             <p>
+  På Ornexa gör vi modern elektronik enklare att välja. Vi erbjuder noggrant utvalda mobiler,
+  smartklockor, hörlurar och tillbehör för kunder som vill ha kvalitet, funktion och en smidig
+  köpupplevelse.
+</p>
+
+<p>
+  Vårt mål är att samla produkter som passar både vardag, arbete och träning – från pålitliga
+  smartphones till smarta tillbehör som gör tekniken mer användbar i livet varje dag.
+</p>
+
+<p>
+  Vi bygger Ornexa som en tydlig, snabb och pålitlig e-handelsbutik där produkterna presenteras
+  med relevant information, enkel navigering och ett professionellt fokus på kundens behov.
+</p>
+
+<p>
+  Välkommen till Ornexa – din butik för smart elektronik och tillbehör.
+</p>
+
             </div>
             <Button asChild className="mt-10">
-              <Link href={"#"}>See Our History</Link>
+              <Link href={"/shop"}>Utforska våra produkter</Link>
             </Button>
           </div>
         </div>

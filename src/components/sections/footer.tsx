@@ -166,7 +166,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href={"#"}
+                    href={"/about"}
                     className="text-light-dark md:text-lg md:leading-normal hover:text-blue transition-all duration-500"
                   >
                     Kontakta oss
