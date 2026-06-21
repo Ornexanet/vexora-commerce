@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const About = () => {
   return (
     <main>
-      <PageHeaderWithImg title="About Us" />
+      <PageHeaderWithImg title="Om Ornexa" />
       <OurStory />
       <AboutCountdown />
       <OurDifferences />

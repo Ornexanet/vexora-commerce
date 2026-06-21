@@ -14,7 +14,7 @@ const OurStory = () => {
               width={720}
               height={850}
               sizes="100vw"
-              src="/images/our-story.png"
+              src="/images/ornexa-about-hero.webp"
               alt="Our Story"
             />
           </div>
