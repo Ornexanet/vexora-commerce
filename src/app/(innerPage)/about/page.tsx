@@ -8,14 +8,90 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Vexora - About Us",
+  title: "Om Ornexa | Elektronikbutik för mobiler och tillbehör",
   description:
-    "Vexora - Single Product eCommerce Next.js Template for Tech and Gadget Stores",
+    "Lär känna Ornexa, en modern elektronikbutik för mobiler, smartklockor, hörlurar och tillbehör med fokus på tydliga produktval och smidig shopping.",
+  alternates: {
+    canonical: "https://shop.ornexa.net/about",
+  },
+  openGraph: {
+    title: "Om Ornexa | Elektronikbutik för mobiler och tillbehör",
+    description:
+      "Ornexa erbjuder utvalda teknikprodukter, mobiler, smartklockor, hörlurar och tillbehör för en smartare vardag.",
+    url: "https://shop.ornexa.net/about",
+    siteName: "Ornexa",
+    images: [
+      {
+        url: "https://shop.ornexa.net/images/ornexa-about-hero.webp",
+        width: 1200,
+        height: 630,
+        alt: "Modern elektronik hos Ornexa",
+      },
+    ],
+    locale: "sv_SE",
+    type: "website",
+  },
 };
+
 
 const About = () => {
   return (
     <main>
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "AboutPage",
+          "@id": "https://shop.ornexa.net/about#webpage",
+          url: "https://shop.ornexa.net/about",
+          name: "Om Ornexa",
+          description:
+            "Ornexa är en svensk e-handelsbutik för mobiler, smartklockor, hörlurar och tillbehör.",
+          inLanguage: "sv-SE",
+          isPartOf: {
+            "@type": "WebSite",
+            name: "Ornexa",
+            url: "https://shop.ornexa.net",
+          },
+          about: {
+            "@type": "Store",
+            name: "Ornexa",
+            url: "https://shop.ornexa.net",
+            description:
+              "En modern elektronikbutik med fokus på smart teknik, tydliga produktval och en smidig köpupplevelse.",
+            image: "https://shop.ornexa.net/images/ornexa-about-hero.webp",
+            areaServed: {
+              "@type": "Country",
+              name: "Sweden",
+            },
+          },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://shop.ornexa.net/about#breadcrumb",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Hem",
+              item: "https://shop.ornexa.net",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Om Ornexa",
+              item: "https://shop.ornexa.net/about",
+            },
+          ],
+        },
+      ],
+    }),
+  }}
+/>
+
       <PageHeaderWithImg 
       title="Om Ornexa"
       bgImage="/images/ornexa-about-hero.webp"/>
