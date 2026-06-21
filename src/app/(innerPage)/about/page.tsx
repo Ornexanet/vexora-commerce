@@ -16,7 +16,9 @@ export const metadata: Metadata = {
 const About = () => {
   return (
     <main>
-      <PageHeaderWithImg title="Om Ornexa" />
+      <PageHeaderWithImg 
+      title="Om Ornexa"
+      bgImage="/images/ornexa-about-hero.webp"/>
       <OurStory />
       <AboutCountdown />
       <OurDifferences />
