@@ -19,11 +19,103 @@ const MapClient = dynamic(() => import("@/components/sections/contact/MapClient"
   loading: () => null,
 });
 
+export const metadata = {
+  title: "Kontakta Ornexa | Elektronik, mobiler och tillbehör",
+  description:
+    "Kontakta Ornexa för frågor om mobiler, smartklockor, hörlurar, tillbehör, beställningar och kundservice.",
+  alternates: {
+    canonical: "https://shop.ornexa.net/contact",
+  },
+  openGraph: {
+    title: "Kontakta Ornexa | Elektronik, mobiler och tillbehör",
+    description:
+      "Har du frågor om produkter, beställningar eller support? Kontakta Ornexa kundservice.",
+    url: "https://shop.ornexa.net/contact",
+    siteName: "Ornexa",
+    images: [
+  {
+    url: "https://shop.ornexa.net/images/ornexa-contact-tech-products.webp",
+    width: 1200,
+    height: 630,
+    alt: "Ornexa elektronikbutik för mobiler, smartklockor och tillbehör",
+  },
+],
+
+    locale: "sv_SE",
+    type: "website",
+  },
+};
+
+
 
 
 const Contact = () => {
   return (
     <main>
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Store",
+          "@id": "https://shop.ornexa.net/#store",
+          name: "Ornexa",
+          url: "https://shop.ornexa.net",
+          description:
+            "Ornexa är en svensk elektronikbutik för mobiler, smartklockor, hörlurar och tillbehör.",
+          image:
+            "https://shop.ornexa.net/images/ornexa-contact-tech-products.webp",
+          areaServed: {
+            "@type": "Country",
+            name: "Sweden",
+          },
+          contactPoint: {
+            "@type": "ContactPoint",
+            contactType: "customer service",
+            availableLanguage: ["sv", "en"],
+            url: "https://shop.ornexa.net/contact",
+          },
+        },
+        {
+          "@type": "ContactPage",
+          "@id": "https://shop.ornexa.net/contact#webpage",
+          url: "https://shop.ornexa.net/contact",
+          name: "Kontakta Ornexa",
+          description:
+            "Kontaktsida för Ornexa kundservice, produktfrågor och beställningssupport.",
+          inLanguage: "sv-SE",
+          isPartOf: {
+            "@id": "https://shop.ornexa.net/#website",
+          },
+          about: {
+            "@id": "https://shop.ornexa.net/#store",
+          },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://shop.ornexa.net/contact#breadcrumb",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Hem",
+              item: "https://shop.ornexa.net",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Kontakt",
+              item: "https://shop.ornexa.net/contact",
+            },
+          ],
+        },
+      ],
+    }),
+  }}
+/>
+
       <PageHeaderWithImg 
       title="Kontakta oss" 
       titleClass=""
