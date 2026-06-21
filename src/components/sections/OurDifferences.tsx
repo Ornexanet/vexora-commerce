@@ -11,30 +11,30 @@ import {
 const differentcesData = [
   {
     icon: <BoltOutlineIcon />,
-    title: "Innovation at the Core",
+    title: "Noggrant utvalda produkter",
     description:
-      "TaskHub is built to work seamlessly on mobile devices, ensuring you can connected.",
+      "Vi fokuserar på elektronik och tillbehör som är relevanta, praktiska och enkla att jämföra.",
     img: "/images/differences/img-1.png",
   },
   {
     icon: <CupIcon />,
-    title: "Customer-First Experience",
+    title: "Tydlig köpupplevelse",
     description:
-      "TaskHub is built to work seamlessly on mobile devices, ensuring you can connected.",
+      "Vår butik är byggd för enkel navigering, tydliga kategorier och snabb väg till rätt produkt.",
     img: "/images/differences/img-2.png",
   },
   {
     icon: <ShieldCheckIcon />,
-    title: "Integrity & Transparency",
+    title: "Fokus på kunden",
     description:
-      "TaskHub is built to work seamlessly on mobile devices, ensuring you can connected.",
+      "Vi vill göra det enkelt att hitta rätt mobil, smartklocka, hörlurar eller tillbehör efter behov.",
     img: "/images/differences/img-3.png",
   },
   {
     icon: <LeafIcon />,
-    title: "Sustainable Tech Choices",
+    title: "Modern elektronik",
     description:
-      "TaskHub is built to work seamlessly on mobile devices, ensuring you can connected.",
+      "Ornexa samlar produkter för vardag, arbete, träning och en mer uppkopplad livsstil.",
     img: "/images/differences/img-4.png",
   },
 ];
@@ -45,11 +45,12 @@ const OurDifferences = () => {
       <div className="container">
         <div className="text-center">
           <Title size="60" className="tracking-[-1.5px]">
-            What makes us different
+             Därför väljer kunder Ornexa
           </Title>
           <p className="text-xl text-light-dark mt-4 max-w-[722px] mx-auto">
-            Simplify project planning, streamline collaboration, and boost
-            productivity all with TaskHub task management solution
+            Vi kombinerar tydliga produktval, modern elektronik och en smidig köpupplevelse
+  för dig som vill köpa mobiler, smartklockor, hörlurar och tillbehör på ett enkelt sätt.
+
           </p>
         </div>
         <div className="mt-15 grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-7.5">
