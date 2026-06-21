@@ -174,7 +174,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href={"#"}
+                    href={"/contact"}
                     className="text-light-dark md:text-lg md:leading-normal hover:text-blue transition-all duration-500"
                   >
                     Karriär
@@ -182,7 +182,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href={"#"}
+                    href={"/about"}
                     className="text-light-dark md:text-lg md:leading-normal hover:text-blue transition-all duration-500"
                   >
                     Webbplatskarta
@@ -194,7 +194,7 @@ const Footer = () => {
               <ul className="flex items-center gap-9">
                 <li>
                   <Link
-                    href={"#"}
+                    href={"/about"}
                     className="w-[30px] h-[30px] flex items-center justify-center hover:text-blue transition-all duration-500"
                   >
                     <Whatsapp />
