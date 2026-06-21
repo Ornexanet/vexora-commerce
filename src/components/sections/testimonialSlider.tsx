@@ -13,11 +13,13 @@ const TestimonialSlider = () => {
       <div className="container">
         <div className="text-center mb-12.5">
           <Title className="font-bold tracking-[-1.5px] leading-[120%]">
-            Words That Inspire Us
+           
+Vad våra kunder uppskattar
+
           </Title>
           <p className="mt-4 text-lg lg:text-xl leading-[160%] max-w-[626px] mx-auto text-light-dark">
-            We’re proud to collaborate with visionary brands that shape the
-            future of technology
+            Vi strävar efter att erbjuda en enkel, trygg och modern köpupplevelse för alla som söker elektronik och smarta tillbehör.
+
           </p>
         </div>
         <div>
