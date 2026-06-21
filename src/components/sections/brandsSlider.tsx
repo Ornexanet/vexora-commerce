@@ -17,11 +17,11 @@ const BrandsSlider = () => {
       <div className="container">
         <div className="text-center mb-12.5">
           <Title className="font-bold tracking-[-1.5px] leading-[120%]">
-            Brands That Believe in Vexora
+            Varumärken och produkter hos Ornexa
+
           </Title>
           <p className="mt-4 text-lg lg:text-xl leading-[160%] max-w-[626px] mx-auto text-light-dark">
-            We’re proud to collaborate with visionary brands that shape the
-            future of technology
+            Vi fokuserar på populära teknikprodukter inom mobiler, smartklockor, hörlurar och tillbehör från välkända varumärken.
           </p>
         </div>
       </div>
