@@ -7,12 +7,11 @@ import { CompareProvider } from "./compareContext";
 
 export const Providers = memo(({ children }: { children: React.ReactNode }) => {
   return (
-    <CartProvider>
-      <WishlistProvider>
-        <CompareProvider>{children}</CompareProvider>
-      </WishlistProvider>
-    </CartProvider>
-  );
+  <>
+    {children}
+  </>
+);
+
 });
 
 Providers.displayName = "Providers";
