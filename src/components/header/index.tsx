@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <StickyHeader>
       <div className="container lg:pt-[26px] lg:pb-6 pb-3 pt-3">
-        <TopHeader />
+        {/*<TopHeader /> */}
       </div>
       <div className="w-full h-px bg-light-gray"></div>
       <div className="container xl:block hidden">
