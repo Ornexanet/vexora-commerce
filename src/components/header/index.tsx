@@ -1,10 +1,7 @@
 import { categoriesList } from "@/mockData/categoriesList";
 import { pagesList } from "@/mockData/pagesList";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-
-const MegaMenu = dynamic(() => import("./megaMenu"));
-
+import MegaMenu from "./megaMenu";
 import TopHeader from "./topHeader";
 import StickyHeader from "./stickyHeader";
 
