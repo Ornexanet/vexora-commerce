@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${plusJakartaSans.variable} antialiased`}>
         <Providers>
           {children}
-         {/* <Toaster richColors position="bottom-right" />*/}
+          <Toaster richColors position="bottom-right" />
          {/* <WellcomeModal /> */}
         </Providers>
       </body>
