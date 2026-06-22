@@ -33,13 +33,13 @@ const Home = () => {
         <FeaturesProduct />
         <GroupOfProducts />
         <BestProducts />
-        <HeadPhonesHeilight />
-        <Ads />
+        {/*<HeadPhonesHeilight /> */}
+        {/*<Ads /> /*/}
         <CompanyFeatures />
         <FeaturesProductTwo />
         <FeaturesProductThree />
-        <CompanyFeaturesSlider />
-        <Testimonial />
+       {/* <CompanyFeaturesSlider />*/}
+        {/* <Testimonial /> /*/}
         <BlogSlider />
       </main>
       <Footer />
