@@ -19,6 +19,7 @@ const Header = () => {
               <li key={id} className="group/category ">
                 <Link
                   href={href}
+                  prefetch={false}
                   className="text-lg font-medium flex items-center gap-2.5 py-3 group-hover/category:text-blue transition-all duration-500"
                 >
                   <span className="shrink-0 flex items-center">{icon}</span>
@@ -35,6 +36,7 @@ const Header = () => {
               <li key={id} className="group/pages">
                 <Link
                   href={href}
+                   prefetch={false}
                   className="text-lg font-medium group-hover/pages:text-blue transition-all duration-500 py-3"
                 >
                   <span className="h-[57px] flex items-center"> {label}</span>
@@ -45,6 +47,7 @@ const Header = () => {
                       <li key={id}>
                         <Link
                           href={href}
+                           prefetch={false}
                           className="px-2.5 py-2.5 rounded-sm flex text-lg text-light-dark leading-6 hover:text-foreground hover:bg-[#F9F9F9] transition-all duration-500"
                         >
                           {label}
