@@ -22,7 +22,6 @@ const GroupOfProducts = dynamic(
 const HeadPhonesHeilight = dynamic(
   () => import("@/components/sections/headPhonesHeilight")
 );
-
 import HeroSlider from "@/components/sections/hero/heroSlider";
 const HotDeal = dynamic(
   () => import("@/components/sections/hotDeal")
@@ -45,7 +44,7 @@ const Home = () => {
       <Header />
       <MobileHeader />
       <main>
-        <HeroSlider />
+       {/* <HeroSlider />*/}
        <HotDeal /> 
        <NewStock /> 
         <FeaturesProduct />
