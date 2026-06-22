@@ -27,12 +27,12 @@ const Home = () => {
       <Header />
       <MobileHeader />
       <main>
-       {/* <HeroSlider /> */}
+        <HeroSlider />
         <HotDeal />
         <NewStock />
         <FeaturesProduct />
-       {/* <GroupOfProducts /> */}
-       {/* <BestProducts /> */}
+        <GroupOfProducts />
+        <BestProducts />
         <HeadPhonesHeilight />
         <Ads />
         <CompanyFeatures />
@@ -40,7 +40,7 @@ const Home = () => {
         <FeaturesProductThree />
         <CompanyFeaturesSlider />
         <Testimonial />
-       {/* <BlogSlider />*/}
+        <BlogSlider />
       </main>
       <Footer />
     </>
