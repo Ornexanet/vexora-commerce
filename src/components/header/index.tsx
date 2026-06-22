@@ -14,7 +14,7 @@ const Header = () => {
       <div className="w-full h-px bg-light-gray"></div>
       <div className="container xl:block hidden">
         <div className="flex items-center justify-between relative max-h-[60px]">
-          <ul className="flex items-center gap-7.5">
+          {/*<ul className="flex items-center gap-7.5">
             {categoriesList.map(({ href, icon, id, label }) => (
               <li key={id} className="group/category ">
                 <Link
@@ -30,7 +30,7 @@ const Header = () => {
                 </div>
               </li>
             ))}
-          </ul>
+          </ul> */}
           <ul className="flex items-center gap-x-10">
             {pagesList.map(({ href, id, label, subMenu, dropdownMenu }) => (
               <li key={id} className="group/pages">
