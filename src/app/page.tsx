@@ -27,7 +27,7 @@ const Home = () => {
       <Header />
       <MobileHeader />
       <main>
-        <HeroSlider />
+       {/* <HeroSlider /> */}
         <HotDeal />
         <NewStock />
         <FeaturesProduct />
