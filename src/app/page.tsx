@@ -23,11 +23,28 @@ export const metadata: Metadata = {
 
 const Home = () => {
   return (
-  <>
-    <HeroSlider/>
-  </>
-);
-
+    <>
+      <Header />
+      <MobileHeader />
+      <main>
+        <HeroSlider />
+       <HotDeal /> 
+       <NewStock /> 
+        <FeaturesProduct />
+        <GroupOfProducts />
+        <BestProducts />
+        <HeadPhonesHeilight /> 
+        <Ads />
+        <CompanyFeatures />
+        <FeaturesProductTwo />
+        <FeaturesProductThree />
+       <CompanyFeaturesSlider />
+        <Testimonial /> 
+        <BlogSlider />
+      </main>
+      <Footer />
+    </>
+  );
 };
 
 export default Home;
