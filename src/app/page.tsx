@@ -11,7 +11,7 @@ import FeaturesProductThree from "@/components/sections/featuresProductThree";
 import FeaturesProductTwo from "@/components/sections/featuresProductTwo";
 import GroupOfProducts from "@/components/sections/groupOfProducts";
 import HeadPhonesHeilight from "@/components/sections/headPhonesHeilight";
-import HeroSlider from "@/components/sections/hero/heroSlider";
+import HeroSliderClient from "@/components/sections/hero/HeroSliderClient";
 import HotDeal from "@/components/sections/hotDeal";
 import NewStock from "@/components/sections/newStock";
 import Testimonial from "@/components/sections/testimonial";
@@ -27,7 +27,7 @@ const Home = () => {
       <Header />
       <MobileHeader />
       <main>
-        <HeroSlider />
+        <HeroSliderClient />
        <HotDeal /> 
        <NewStock /> 
         <FeaturesProduct />
