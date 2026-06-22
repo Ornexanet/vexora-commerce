@@ -56,6 +56,7 @@ const HeroSlider = () => {
                       src={image}
                       sizes="100vw"
                       alt={title}
+                      priority
                     />
                   </div>
                   <div className="container relative z-10">
