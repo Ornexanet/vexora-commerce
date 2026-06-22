@@ -11,17 +11,11 @@ import FeaturesProductThree from "@/components/sections/featuresProductThree";
 import FeaturesProductTwo from "@/components/sections/featuresProductTwo";
 import GroupOfProducts from "@/components/sections/groupOfProducts";
 import HeadPhonesHeilight from "@/components/sections/headPhonesHeilight";
-import dynamic from "next/dynamic";
+import HeroSlider from "@/components/sections/hero/heroSlider";
 import HotDeal from "@/components/sections/hotDeal";
 import NewStock from "@/components/sections/newStock";
 import Testimonial from "@/components/sections/testimonial";
 import { Metadata } from "next";
-const HeroSlider = dynamic(
-  () => import("@/components/sections/hero/heroSlider"),
-  { ssr: false }
-);
-
-
 
 export const metadata: Metadata = {
   title: "Vexora - Home",
