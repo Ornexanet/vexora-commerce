@@ -32,7 +32,7 @@ const Home = () => {
         <NewStock />
         <FeaturesProduct />
        {/* <GroupOfProducts /> */}
-        <BestProducts />
+       {/* <BestProducts /> */}
         <HeadPhonesHeilight />
         <Ads />
         <CompanyFeatures />
