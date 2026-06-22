@@ -23,9 +23,9 @@ export const metadata: Metadata = {
 
 const Home = () => {
   return (
-  <main>
-    <h1>Performance Test</h1>
-  </main>
+  <>
+    <HeroSlider/>
+  </>
 );
 
 };
