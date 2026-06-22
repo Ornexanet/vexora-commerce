@@ -40,7 +40,7 @@ const Home = () => {
         <FeaturesProductThree />
         <CompanyFeaturesSlider />
         <Testimonial />
-        <BlogSlider />
+       {/* <BlogSlider />*/}
       </main>
       <Footer />
     </>
