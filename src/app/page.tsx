@@ -28,8 +28,8 @@ const Home = () => {
       <MobileHeader />
       <main>
         <HeroSlider />
-        <HotDeal />
-        <NewStock />
+       {/* <HotDeal /> */}
+       {/* <NewStock /> */}
         <FeaturesProduct />
         <GroupOfProducts />
         <BestProducts />
