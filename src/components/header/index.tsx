@@ -25,8 +25,8 @@ const Header = () => {
                   {label}
                 </Link>
                 <div className="absolute top-full left-0 z-50 w-full hidden group-hover/category:block">
-                  <MegaMenu category={label.toLocaleLowerCase()} />
-                </div>
+                  <div></div>MegaMenu Disabled</div>
+              
               </li>
             ))}
           </ul>
