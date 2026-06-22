@@ -31,7 +31,7 @@ const Home = () => {
         <HotDeal />
         <NewStock />
         <FeaturesProduct />
-        <GroupOfProducts />
+       {/* <GroupOfProducts /> */}
         <BestProducts />
         <HeadPhonesHeilight />
         <Ads />
