@@ -1,8 +1,11 @@
+import dynamic from "next/dynamic";
 import Footer from "@/components/sections/footer";
 import Header from "@/components/header";
 import MobileHeader from "@/components/header/mobileHeader";
 import Ads from "@/components/sections/ads";
-import BestProducts from "@/components/sections/bestProducts";
+const BestProducts = dynamic(
+  () => import("@/components/sections/bestProducts")
+);
 import BlogSlider from "@/components/sections/blogs/blogSlider";
 import CompanyFeatures from "@/components/sections/companyFeatures";
 import CompanyFeaturesSlider from "@/components/sections/companyFeaturesSlider";
@@ -12,8 +15,14 @@ import FeaturesProductTwo from "@/components/sections/featuresProductTwo";
 import GroupOfProducts from "@/components/sections/groupOfProducts";
 import HeadPhonesHeilight from "@/components/sections/headPhonesHeilight";
 import HeroSlider from "@/components/sections/hero/heroSlider";
-import HotDeal from "@/components/sections/hotDeal";
-import NewStock from "@/components/sections/newStock";
+const HotDeal = dynamic(
+  () => import("@/components/sections/hotDeal")
+);
+
+const NewStock = dynamic(
+  () => import("@/components/sections/newStock")
+);
+
 import Testimonial from "@/components/sections/testimonial";
 import { Metadata } from "next";
 
