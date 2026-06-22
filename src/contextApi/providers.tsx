@@ -9,7 +9,7 @@ export const Providers = memo(({ children }: { children: React.ReactNode }) => {
   return (
     <CartProvider>
       <WishlistProvider>
-        <CompareProvider>{children}</CompareProvider>
+        {children}
       </WishlistProvider>
     </CartProvider>
   );
