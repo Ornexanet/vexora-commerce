@@ -10,19 +10,24 @@ const BestProducts = () => {
   const [selectValue, setSelectValue] = useState("cameras");
 
   const filterList = [
-    {
-      label: "Cameras",
-      value: "cameras",
-    },
-    {
-      label: "Headphones",
-      value: "headphones",
-    },
-    {
-      label: "Smart Watches",
-      value: "smartWatch",
-    },
-  ];
+  {
+    label: "Mobiler",
+    value: "mobiler",
+  },
+  {
+    label: "Hörlurar",
+    value: "headphones",
+  },
+  {
+    label: "Smarta klockor",
+    value: "smartWatch",
+  },
+  {
+    label: "Tillbehör",
+    value: "accessories",
+  },
+];
+
 
   const handleTabClick = (value: string) => {
     setSelectValue(value);
