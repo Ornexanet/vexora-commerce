@@ -15,35 +15,26 @@ import { useEffect, useRef, useState } from "react";
 const categoriesList = [
   {
     id: 1,
-    title: "Smart Watch",
+    title: "Mobiler",
     icon: <Watch />,
   },
   {
     id: 2,
-    title: "Drone",
-    icon: <Drone />,
-  },
-  {
-    id: 3,
-    title: "Headphones",
+    title: "Hörlurar",
     icon: <Headphones />,
   },
   {
+    id: 3,
+    title: "Smarta klockor",
+    icon: <Watch />,
+  },
+  {
     id: 4,
-    title: "Accessories",
+    title: "Tillbehör",
     icon: <Cable />,
   },
-  {
-    id: 5,
-    title: "Cameras",
-    icon: <Camera />,
-  },
-  {
-    id: 6,
-    title: "Speakers",
-    icon: <Speaker />,
-  },
 ];
+
 const HomeCategories = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
