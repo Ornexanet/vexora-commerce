@@ -7,7 +7,7 @@ import { Button } from "../ui/button";
 import Card from "../ui/card";
 import Title from "../ui/title";
 const BestProducts = () => {
-  const [selectValue, setSelectValue] = useState("cameras");
+  const [selectValue, setSelectValue] = useState("mobiler");
 
   const filterList = [
   {
@@ -36,7 +36,7 @@ const BestProducts = () => {
   return (
     <section className="lg:mt-37.5 md:mt-25 mt-20">
       <div className="container">
-        <Tabs defaultValue="cameras">
+        <Tabs value={selectValue} defaultValue="mobiler">
           <div className="flex justify-between items-center flex-wrap gap-x-5 gap-y-5">
             <div>
               <div className="flex lg:flex-row flex-col lg:items-center gap-2">

@@ -1,7 +1,10 @@
+import path from "path";
+
 export const categoriesList = [
   {
     id: 1,
     label: "Mobiler",
+    path: "/mobiler",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
