@@ -18,14 +18,13 @@ export const metadata: Metadata = {
     "Vexora - Single Product eCommerce Next.js Template for Tech and Gadget Stores",
 };
 type Props = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
-
-const ProductDetails = ({ params }: Props) => {
-const product = products.bestProductsData.find((item) => item.id === Number(params.id));
-
+const ProductDetails = async ({ params }: Props) => {
+const { id } = await params;
+const product = products.bestProductsData.find((item) => item.id === Number(id));
 if (!product) {
   return <div>Product not found</div>;
 }
