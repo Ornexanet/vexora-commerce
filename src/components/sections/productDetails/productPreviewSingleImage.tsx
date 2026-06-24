@@ -17,8 +17,9 @@ const productImage = [
     src: "/images/product-details/product-single-4.png",
   },
 ];
-const ProductPreviewSingleImage = () => {
-  const [currentImage, setCurrentImage] = useState(productImage[0].src);
+const ProductPreviewSingleImage = ({ product }: { product: any }) => {
+
+const [currentImage, setCurrentImage] = useState(product.thumbnail);
   return (
     <div className="grid xl:grid-cols-[190fr_701fr] gap-7.5">
       <div className="space-y-7.5 max-xl:flex max-xl:gap-5 overflow-x-auto order-2 xl:order-1">

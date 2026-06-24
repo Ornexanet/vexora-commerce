@@ -35,7 +35,7 @@ if (!product) {
         <div className="container">
           <div className="grid xl:grid-cols-[921fr_649fr] lg:grid-cols-[800fr_770fr] gap-7.5">
             <div className="min-w-0">
-              <ProductPreviewSingleImage />
+              <ProductPreviewSingleImage product={product} />
               <HighlightedFeatures />
             </div>
             <ProductOverview product={product} />
