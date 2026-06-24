@@ -9,6 +9,19 @@ export interface ProductType {
   categories: string[];
   backgroundColor?: string;
   filter?: string;
+  brand?: string;
+model?: string;
+storage?: string;
+color?: string;
+display?: string;
+processor?: string;
+camera?: string;
+battery?: string;
+os?: string;
+warranty?: string;
+availability?: string;
+
+
 }
 
 export interface Products {
@@ -115,6 +128,17 @@ description: "iPhone 16 Plus med stor skärm, snabb prestanda och avancerad kame
   discount: null,
   categories: ["mobiler"],
   filter: "mobiler",
+  brand: "Apple",
+model: "iPhone 16 Plus",
+storage: "256 GB",
+color: "Ultramarine",
+display: "6.7-tums Super Retina XDR OLED",
+processor: "Apple A18",
+camera: "48 MP huvudkamera + 12 MP ultravidvinkel",
+battery: "Upp till 27 timmars videouppspelning",
+os: "iOS 26",
+warranty: "2 års garanti",
+availability: "Finns i lager",
   backgroundColor: "#ECF2F9",
 },
 
