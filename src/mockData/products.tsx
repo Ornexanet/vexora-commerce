@@ -21,7 +21,6 @@ os?: string;
 warranty?: string;
 availability?: string;
 
-
 }
 
 export interface Products {
