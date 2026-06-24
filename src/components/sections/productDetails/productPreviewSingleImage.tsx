@@ -17,7 +17,12 @@ const productImage = [
     src: "/images/product-details/product-single-4.png",
   },
 ];
-const ProductPreviewSingleImage = ({ product }: { product: any }) => {
+const ProductPreviewSingleImage = ({
+  product,
+}: {
+  product: { thumbnail: string };
+}) => {
+
 
 const [currentImage, setCurrentImage] = useState(product.thumbnail);
   return (
