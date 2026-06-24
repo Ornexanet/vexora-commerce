@@ -107,10 +107,11 @@ export const products: Products = {
   bestProductsData: [
     {
   id: 1,
-  title: "Apple iPhone 16 Pro",
-  thumbnail: "/images/bestProducts/camera-1.png",
-  description: "Apple iPhone 16 Pro med stark prestanda, avancerad kamera och premiumdesign.",
-  price: 14990,
+  title: "iPhone 16 Plus",
+thumbnail: "/images/mobiles/iphone-16-plus.webp",
+price: 11990,
+description: "iPhone 16 Plus med stor skärm, snabb prestanda och avancerad kamera för arbete, underhållning och vardag.",
+
   tag: "Ny",
   discount: null,
   categories: ["mobiler"],
