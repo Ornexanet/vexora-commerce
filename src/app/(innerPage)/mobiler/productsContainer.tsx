@@ -23,7 +23,7 @@ const ProductsContainer = () => {
   }
   return (
     <div className={cn("grid  gap-[30px] mt-[30px]", getGridStyle(shopView))}>
-      {products.bestProductsData.map((product) => (
+      {products.bestProductsData.slice(0, 5).map((product) => (
         <Fragment key={product.id}>
           {shopView === "list" ? (
             <CardHorizontal product={product} />
