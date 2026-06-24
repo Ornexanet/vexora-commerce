@@ -121,7 +121,7 @@ description: "iPhone 16 Plus med stor skärm, snabb prestanda och avancerad kame
     {
   id: 2,
   title: "iPhone 17 Pro",
-  thumbnail: "/images/mobiles/iphone17pro-2.jpg",
+  thumbnail: "/images/mobiles/iphone-17-pro-orange.webp",
   description: "iPhone 17 Pro med premiumdesign, kraftfull prestanda och avancerat kamerasystem för professionell användning.",
   price: 14990,
   tag: "Ny",
