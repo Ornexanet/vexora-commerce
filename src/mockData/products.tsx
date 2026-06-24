@@ -121,7 +121,7 @@ description: "iPhone 16 Plus med stor skärm, snabb prestanda och avancerad kame
     {
   id: 2,
   title: "iPhone 17 Pro",
-  thumbnail: "/images/mobiles/iphone17pro-1.jpg",
+  thumbnail: "/images/mobiles/iphone17pro-2.jpg",
   description: "iPhone 17 Pro med premiumdesign, kraftfull prestanda och avancerat kamerasystem för professionell användning.",
   price: 14990,
   tag: "Ny",
@@ -160,7 +160,7 @@ description: "iPhone 16 Plus med stor skärm, snabb prestanda och avancerad kame
     {
   id: 5,
   title: "Xiaomi 17T Pro",
-  thumbnail: "/images/mobiles/xiaomi17tpro1.webp",
+  thumbnail: "/images/mobiles/xiaomi 17t pro1.webp",
   description: "Xiaomi 17T Pro med snabb prestanda, stilren design och kraftfull kamera till ett konkurrenskraftigt pris.",
   price: 8990,
   tag: null,
