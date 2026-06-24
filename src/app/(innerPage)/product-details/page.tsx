@@ -27,7 +27,7 @@ const ProductDetails = () => {
               <ProductPreviewSingleImage />
               <HighlightedFeatures />
             </div>
-            <ProductOverview />
+            <ProductOverview product={products.bestProductsData[0]} />
           </div>
         </div>
       </section>

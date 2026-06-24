@@ -38,7 +38,7 @@ if (!product) {
               <ProductPreviewSingleImage />
               <HighlightedFeatures />
             </div>
-            <ProductOverview />
+            <ProductOverview product={product} />
           </div>
         </div>
       </section>

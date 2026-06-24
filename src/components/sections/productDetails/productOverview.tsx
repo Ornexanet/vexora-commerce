@@ -42,7 +42,8 @@ const mockProduct: ProductType = {
   discount: null,
 };
 
-const ProductOverview = () => {
+const ProductOverview = ({ product }: { product: ProductType }) => {
+
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [activeColor, setActiveColor] = useState(0);
@@ -52,15 +53,18 @@ const ProductOverview = () => {
     setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
   const handleAddToCart = () => {
-    addToCart(mockProduct, quantity);
+    addToCart(product, quantity);
+
   };
   return (
     <div className="overflow-hidden">
-      <strong className="text-lg text-light-dark">Headphones</strong>
+      <strong className="text-lg text-light-dark">
+  {product.categories?.[0] || "Mobiler"}
+</strong>
       <div>
         <div className="mb-10">
           <div className="flex items-end justify-between gap-x-5">
-            <Title size="52">Px8 McLaren Edition</Title>
+            <Title size="52">{product.title}</Title>
             <Title size="28" asChild className="font-medium">
               <p>
                 $799.00
