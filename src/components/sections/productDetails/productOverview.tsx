@@ -67,7 +67,7 @@ const ProductOverview = ({ product }: { product: ProductType }) => {
             <Title size="52">{product.title}</Title>
             <Title size="28" asChild className="font-medium">
               <p>
-                $799.00
+                {product.price} kr
                 {/* {product.discount ? (
                   <span className="flex gap-[14px]">
                     <span className="text-blue">
@@ -95,9 +95,6 @@ const ProductOverview = ({ product }: { product: ProductType }) => {
           </div>
         </div>
         <p className="text-lg text-light-dark">
-          Celebrating the long-standing, award-winning partnership between
-          Bowers & Wilkins and McLaren Automotive and the McLaren supercars and
-          hypercars in which Bowers & Wilkins has been integrated.
         </p>
       </div>
       <hr className="my-10 border-light-gray"></hr>
