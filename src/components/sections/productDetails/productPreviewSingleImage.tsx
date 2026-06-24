@@ -23,12 +23,12 @@ const ProductPreviewSingleImage = ({
   product: { thumbnail: string };
 }) => {
 
-
 const [currentImage, setCurrentImage] = useState(product.thumbnail);
   return (
     <div className="grid xl:grid-cols-[190fr_701fr] gap-7.5">
       <div className="space-y-7.5 max-xl:flex max-xl:gap-5 overflow-x-auto order-2 xl:order-1">
-        {productImage.map((image, index) => (
+        {[{ src: product.thumbnail }].map((image, index) => (
+
           <div
             key={index}
             onClick={() => setCurrentImage(image.src)}
