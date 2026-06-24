@@ -86,7 +86,7 @@ const Card = ({
           style={{ backgroundColor: `${product.backgroundColor || "#f1f1f1"}` }}
         >
           <Link
-            href={"/product-details"}
+            href={`/product-details/${product.id}`}
             className={cn(
               "flex items-center justify-center p-5 hover:scale-105 transition-all duration-500 w-full h-full",
               imgWrapper,
