@@ -66,17 +66,13 @@ const ProductOverview = ({ product }: { product: ProductType }) => {
             <Title size="52">{product.title}</Title>
             <Title size="28" asChild className="font-medium">
               <p>
-                $799.00
-                {/* {product.discount ? (
-                  <span className="flex gap-[14px]">
-                    <span className="text-blue">
-                      ${product.price - product.discount}
-                    </span>
-                    <del>${product.price}</del>
-                  </span>
-                ) : (
-                  <span>${product.price}</span>
-                )} */}
+                
+                <Title size="28" asChild className="font-medium">
+  <p>
+    <span>{product.price} kr</span>
+  </p>
+</Title>
+
               </p>
             </Title>
           </div>
