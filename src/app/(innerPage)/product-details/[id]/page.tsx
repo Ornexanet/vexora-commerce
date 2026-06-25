@@ -42,8 +42,8 @@ if (!product) {
           </div>
         </div>
       </section>
-      <ProductDetailsVideo />
-      <ProductFeatures />
+     {/* <ProductDetailsVideo /> */}
+     {/* <ProductFeatures /> */}
       {/* <ProductSortInfo /> */}
      {/* <ProductDetailsTable /> */}
      {/* <Testimonial /> */}
