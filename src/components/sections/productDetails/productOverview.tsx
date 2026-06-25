@@ -53,8 +53,7 @@ const ProductOverview = ({ product }: { product: ProductType }) => {
     setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
   const handleAddToCart = () => {
-    addToCart(product, quantity);
-
+    addToCart(mockProduct, quantity);
   };
   return (
     <div className="overflow-hidden">
@@ -67,7 +66,7 @@ const ProductOverview = ({ product }: { product: ProductType }) => {
             <Title size="52">{product.title}</Title>
             <Title size="28" asChild className="font-medium">
               <p>
-                {product.price} kr
+                $799.00
                 {/* {product.discount ? (
                   <span className="flex gap-[14px]">
                     <span className="text-blue">
@@ -95,40 +94,28 @@ const ProductOverview = ({ product }: { product: ProductType }) => {
           </div>
         </div>
         <p className="text-lg text-light-dark">
+          Celebrating the long-standing, award-winning partnership between
+          Bowers & Wilkins and McLaren Automotive and the McLaren supercars and
+          hypercars in which Bowers & Wilkins has been integrated.
         </p>
-      </div>
-      <hr className="my-10 border-light-gray"></hr>
-      <div>
-        <Title asChild size="28" className="mb-5 font-extrabold">
-          <p>Choose a finish</p>
-        </Title>
-        <div className="flex gap-x-7.5 gap-y-5 flex-wrap items-start">
-          {colorVariant.map((value, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveColor(index)}
-              className="text-center lg:w-[111px] w-20 cursor-pointer group"
-            >
-              <div
-                className={cn(
-                  "w-full lg:h-20 h-15 flex items-center justify-center border border-light-gray rounded-2xl group-hover:border-blue transition",
-                  activeColor === index && "border-blue",
-                )}
-              >
-                <div
-                  className="lg:size-12.5 size-10 rounded-full"
-                  style={{
-                    background: `linear-gradient(180deg, ${value.colors.top} 50%, ${value.colors.bottom} 50%)`,
-                  }}
-                ></div>
-              </div>
-              <p className="mt-2.5 text-sm text-light-dark group-hover:font-bold transition">
-                {value.name}
-              </p>
-            </button>
-          ))}
-        </div>
-      </div>
+  <div>
+  <Title asChild size="28" className="mb-5 font-extrabold">
+    <p>Tekniska specifikationer</p>
+  </Title>
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base text-light-dark">
+    <p><strong>Varumärke:</strong> {product.brand}</p>
+    <p><strong>Modell:</strong> {product.model}</p>
+    <p><strong>Lagring:</strong> {product.storage}</p>
+    <p><strong>Färg:</strong> {product.color}</p>
+    <p><strong>Skärm:</strong> {product.display}</p>
+    <p><strong>Processor:</strong> {product.processor}</p>
+    <p><strong>Kamera:</strong> {product.camera}</p>
+    <p><strong>Batteri:</strong> {product.battery}</p>
+    <p><strong>Operativsystem:</strong> {product.os}</p>
+    <p><strong>Garanti:</strong> {product.warranty}</p>
+    <p><strong>Lagerstatus:</strong> {product.availability}</p>
+  </div>
+</div>
       <hr className="my-10 border-light-gray"></hr>
       <div className="bg-[#F4F6F8] rounded-2xl lg:py-7.5 py-5 lg:px-6 px-4">
         <div className="flex items-center lg:gap-6 gap-4 lg:mb-8.5 mb-5">
@@ -180,6 +167,7 @@ const ProductOverview = ({ product }: { product: ProductType }) => {
         </div>
       </div>
       <CompatibleAccessories />
+    </div>
     </div>
   );
 };
