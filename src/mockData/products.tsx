@@ -224,44 +224,147 @@ availability: "Finns i lager",
 },
 
 
-    {
+{
   id: 3,
   title: "Samsung Galaxy S25",
   thumbnail: "/images/mobiles/samsung-galaxy-s25-1.png",
-  description: "Samsung Galaxy S25 med modern design, skarp AMOLED-skärm och kraftfull kamera för en snabb och smidig mobilupplevelse.",
+  gallery: [
+    "/images/mobiles/samsung-galaxy-s25-1.png",
+    "/images/mobiles/samsung-galaxy-s25-2.png",
+  ],
+  description:
+    "Samsung Galaxy S25 med modern design, skarp AMOLED-skärm och kraftfull prestanda för arbete, foto, appar och vardagsanvändning.",
   price: 10990,
   tag: null,
   discount: null,
   categories: ["mobiler"],
   filter: "mobiler",
+  brand: "Samsung",
+  model: "Galaxy S25",
+  storage: "256 GB",
+  color: "Svart",
+  display: "6.2-tums Dynamic AMOLED",
+  processor: "Snapdragon / Exynos premiumprocessor",
+  camera: "50 MP huvudkamera",
+  battery: "Batteri för hela dagen",
+  os: "Android 15",
+  warranty: "2 års garanti",
+  availability: "Finns i lager",
   backgroundColor: "#ECF2F9",
+  features: [
+    {
+      icon: "display",
+      title: "AMOLED-skärm",
+      text: "Skarp och ljusstark skärm för video, bilder och vardag.",
+    },
+    {
+      icon: "camera",
+      title: "Kraftfull kamera",
+      text: "50 MP huvudkamera för tydliga bilder och video.",
+    },
+    {
+      icon: "performance",
+      title: "Snabb prestanda",
+      text: "Byggd för appar, multitasking och smidig användning.",
+    },
+  ],
 },
 
-    {
+
+   {
   id: 4,
   title: "Samsung Galaxy S26 Ultra",
   thumbnail: "/images/mobiles/samsung-galaxy-s26-ultra-1.png",
-  description: "Samsung Galaxy S26 Ultra med avancerad kamera, stor AMOLED-skärm och prestanda i toppklass för krävande användare.",
+  gallery: [
+    "/images/mobiles/samsung-galaxy-s26-ultra-1.png",
+    "/images/mobiles/samsung-galaxy-s26-ultra-2.png",
+  ],
+  description:
+    "Samsung Galaxy S26 Ultra med avancerad kamera, stor AMOLED-skärm och prestanda i toppklass för foto, video, arbete och krävande appar.",
   price: 13990,
   tag: "Ny",
   discount: null,
   categories: ["mobiler"],
   filter: "mobiler",
+  brand: "Samsung",
+  model: "Galaxy S26 Ultra",
+  storage: "256 GB",
+  color: "Titanium Black",
+  display: "6.8-tums Dynamic AMOLED",
+  processor: "Snapdragon / Exynos Ultra",
+  camera: "200 MP huvudkamera",
+  battery: "Batteri för hela dagen",
+  os: "Android 16",
+  warranty: "2 års garanti",
+  availability: "Finns i lager",
   backgroundColor: "#ECF2F9",
+  features: [
+    {
+      icon: "camera",
+      title: "200 MP kamera",
+      text: "Avancerat kamerasystem för skarpa bilder och video.",
+    },
+    {
+      icon: "display",
+      title: "Stor AMOLED-skärm",
+      text: "6.8-tums skärm för arbete, film och multitasking.",
+    },
+    {
+      icon: "performance",
+      title: "Ultra-prestanda",
+      text: "Byggd för krävande appar, spel och produktivitet.",
+    },
+  ],
 },
 
-    {
+
+  
+{
   id: 5,
   title: "Xiaomi 17T Pro",
   thumbnail: "/images/mobiles/xiaomi 17t pro1.webp",
-  description: "Xiaomi 17T Pro med snabb prestanda, stilren design och kraftfull kamera till ett konkurrenskraftigt pris.",
+  gallery: [
+    "/images/mobiles/xiaomi 17t pro1.webp",
+    "/images/mobiles/xiaomi 17tpro2.webp",
+  ],
+  description:
+    "Xiaomi 17T Pro med snabb prestanda, stilren design och kraftfull kamera till ett konkurrenskraftigt pris för vardag, foto och spel.",
   price: 8990,
   tag: null,
   discount: null,
   categories: ["mobiler"],
   filter: "mobiler",
+  brand: "Xiaomi",
+  model: "17T Pro",
+  storage: "256 GB",
+  color: "Svart",
+  display: "6.7-tums AMOLED",
+  processor: "MediaTek Dimensity / Snapdragon Pro",
+  camera: "50 MP huvudkamera",
+  battery: "Snabbladdning och lång batteritid",
+  os: "Android 16",
+  warranty: "2 års garanti",
+  availability: "Finns i lager",
   backgroundColor: "#ECF2F9",
+  features: [
+    {
+      icon: "performance",
+      title: "Snabb prestanda",
+      text: "Byggd för appar, spel och daglig multitasking.",
+    },
+    {
+      icon: "camera",
+      title: "Kraftfull kamera",
+      text: "50 MP kamera för skarpa bilder och video.",
+    },
+    {
+      icon: "battery",
+      title: "Snabbladdning",
+      text: "Lång batteritid med snabb laddning för vardagen.",
+    },
+  ],
 },
+
 
     {
       id: 6,
