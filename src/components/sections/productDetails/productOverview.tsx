@@ -94,9 +94,7 @@ const ProductOverview = ({ product }: { product: ProductType }) => {
           </div>
         </div>
         <p className="text-lg text-light-dark">
-          Celebrating the long-standing, award-winning partnership between
-          Bowers & Wilkins and McLaren Automotive and the McLaren supercars and
-          hypercars in which Bowers & Wilkins has been integrated.
+         iPhone 16 Plus är byggd för dig som vill ha en stor och ljusstark skärm, snabb prestanda och lång batteritid i vardagen. Med Apple A18-chip, avancerad kamera och 6,7-tums Super Retina XDR OLED-skärm passar den för arbete, foto, video, spel och streaming.
         </p>
   <div>
   <Title asChild size="28" className="mb-5 font-extrabold">
