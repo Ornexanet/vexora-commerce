@@ -44,10 +44,10 @@ if (!product) {
       </section>
       <ProductDetailsVideo />
       <ProductFeatures />
-      <ProductSortInfo />
-      <ProductDetailsTable />
-      <Testimonial />
-      <ReviewInput />
+      {/* <ProductSortInfo /> */}
+     {/* <ProductDetailsTable /> */}
+     {/* <Testimonial /> */}
+     {/* <ReviewInput /> */}
       <section className="lg:mt-37.5 md:mt-25 mt-20">
         <div className="container">
           <Title size="52" className="font-extrabold text-center">
