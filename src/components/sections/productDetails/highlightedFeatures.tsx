@@ -43,7 +43,8 @@ const HighlightedFeatures = ({ product }: { product: ProductType }) => {
               className="rounded-xl py-[15px] px-3 bg-[#F5F5F7] flex items-center gap-4 min-w-fit"
             >
             {/* eslint-disable-next-line*/}
-              <img src={feature.icon} alt="icon" className="max-h-[37px]"/>
+              <span className="text-2xl">✓</span>
+
               <div className="mt-2.5">
                 <p className="font-medium text-sm">{feature.title}
 </p>
