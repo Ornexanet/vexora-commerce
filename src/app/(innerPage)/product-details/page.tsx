@@ -24,8 +24,9 @@ const ProductDetails = () => {
         <div className="container">
           <div className="grid xl:grid-cols-[921fr_649fr] lg:grid-cols-[800fr_770fr] gap-7.5">
             <div className="min-w-0">
-              <ProductPreviewSingleImage product={products.bestProductsData[0]} />
-              <HighlightedFeatures />
+                <ProductPreviewSingleImage product={products.bestProductsData[0]} />
+              <HighlightedFeatures product={products.bestProductsData[0]} />
+
             </div>
             <ProductOverview product={products.bestProductsData[0]} />
           </div>

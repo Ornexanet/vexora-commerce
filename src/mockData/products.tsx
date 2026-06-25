@@ -20,6 +20,12 @@ battery?: string;
 os?: string;
 warranty?: string;
 availability?: string;
+features?: {
+  icon: string;
+  title: string;
+  text: string;
+}[];
+
 
 }
 
@@ -139,6 +145,29 @@ os: "iOS 26",
 warranty: "2 års garanti",
 availability: "Finns i lager",
   backgroundColor: "#ECF2F9",
+  features: [
+  {
+    icon: "battery",
+    title: "Lång batteritid",
+    text: "Upp till 27 timmars videouppspelning."
+  },
+  {
+    icon: "display",
+    title: "Stor OLED-skärm",
+    text: "6,7-tums Super Retina XDR OLED."
+  },
+  {
+    icon: "camera",
+    title: "48 MP kamera",
+    text: "Huvudkamera med 12 MP ultravidvinkel."
+  },
+  {
+    icon: "chip",
+    title: "Apple A18",
+    text: "Snabb prestanda för appar, spel och foto."
+  }
+],
+
 },
 
     {

@@ -1,4 +1,5 @@
-import React from "react";
+import { ProductType } from "@/mockData/products";
+
 
 const featuresList = [
   {
@@ -28,7 +29,7 @@ const featuresList = [
   },
 ];
 
-const HighlightedFeatures = () => {
+const HighlightedFeatures = ({ product }: { product: ProductType }) => {
   return (
     <div className="mt-11">
       <div className="border border-[#E0E4E9] rounded-[15px] py-7.5 pl-7.5 pr-2.5 relative">
@@ -36,7 +37,7 @@ const HighlightedFeatures = () => {
           Highlighted Features
         </span>
         <div className="flex gap-3 overflow-x-auto">
-          {featuresList.map((feature, index) => (
+          {product.features?.map((feature, index) => (
             <div
               key={index}
               className="rounded-xl py-[15px] px-3 bg-[#F5F5F7] flex items-center gap-4 min-w-fit"
@@ -44,8 +45,10 @@ const HighlightedFeatures = () => {
             {/* eslint-disable-next-line*/}
               <img src={feature.icon} alt="icon" className="max-h-[37px]"/>
               <div className="mt-2.5">
-                <p className="font-medium text-sm">{feature.name}</p>
-                <p className="text-sm text-light-dark">{feature.message}</p>
+                <p className="font-medium text-sm">{feature.title}
+</p>
+                <p className="text-sm text-light-dark">{feature.text}
+</p>
               </div>
             </div>
           ))}

@@ -36,7 +36,7 @@ if (!product) {
           <div className="grid xl:grid-cols-[921fr_649fr] lg:grid-cols-[800fr_770fr] gap-7.5">
             <div className="min-w-0">
               <ProductPreviewSingleImage product={product} />
-              <HighlightedFeatures />
+              <HighlightedFeatures product={product} />
             </div>
             <ProductOverview product={product} />
           </div>
