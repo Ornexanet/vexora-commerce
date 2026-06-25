@@ -2,6 +2,7 @@ export interface ProductType {
   id: number;
   title: string;
   thumbnail: string;
+  gallery?: string[];
   description: string;
   price: number;
   tag: null | string;
@@ -127,6 +128,12 @@ export const products: Products = {
   id: 1,
   title: "iPhone 16 Plus",
 thumbnail: "/images/mobiles/iphone-16-plus.webp",
+gallery: [
+  "/images/mobiles/iphone-16-plus.webp",
+  "/images/mobiles/iphone-16-plus-2.webp",
+],
+
+
 price: 11990,
 description: "iPhone 16 Plus med stor skärm, snabb prestanda och avancerad kamera för arbete, underhållning och vardag.",
   tag: "Ny",
