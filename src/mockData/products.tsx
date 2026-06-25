@@ -177,18 +177,52 @@ availability: "Finns i lager",
 
 },
 
-    {
+   {
   id: 2,
   title: "iPhone 17 Pro",
   thumbnail: "/images/mobiles/iphone-17-pro-orange.webp",
-  description: "iPhone 17 Pro med premiumdesign, kraftfull prestanda och avancerat kamerasystem för professionell användning.",
+  gallery: [
+    "/images/mobiles/iphone-17-pro-orange.webp",
+    "/images/mobiles/iphone-17-pro-orange1.webp",
+  ],
+  description:
+    "iPhone 17 Pro med premiumdesign, kraftfull prestanda och avancerat kamerasystem för professionell fotografering, video, arbete och spel.",
   price: 14990,
   tag: "Ny",
   discount: null,
   categories: ["mobiler"],
   filter: "mobiler",
+  brand: "Apple",
+  model: "iPhone 17 Pro",
+  storage: "256 GB",
+  color: "Svart / Orange",
+  display: "6.3-tums ProMotion OLED",
+  processor: "Apple A19 Pro",
+  camera: "Pro-kamerasystem med 48 MP",
+  battery: "Batteri för hela dagen",
+  os: "iOS 26",
+  warranty: "2 års garanti",
+  availability: "Finns i lager",
   backgroundColor: "#ECF2F9",
+  features: [
+    {
+      icon: "battery",
+      title: "Lång batteritid",
+      text: "Optimerad för arbete, video och spel hela dagen.",
+    },
+    {
+      icon: "display",
+      title: "ProMotion-skärm",
+      text: "6.3-tums OLED med hög uppdateringsfrekvens.",
+    },
+    {
+      icon: "camera",
+      title: "Pro-kamera",
+      text: "48 MP kamerasystem för professionella bilder.",
+    },
+  ],
 },
+
 
     {
   id: 3,
