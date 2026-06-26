@@ -745,7 +745,11 @@ gallery: [
     {
       id: 19,
       title: "Apple Watch Series 9",
-      thumbnail: "/images/bestProducts/smart-watch-5.png",
+      thumbnail: "/images/smarta-klockor/smart-watch-5.png",
+      gallery: [
+  "/images/smarta-klockor/smart-watch-5.png",
+],
+
       description: "Compact wireless earbuds with smart features",
       price: 180,
       tag: null,
@@ -757,7 +761,11 @@ gallery: [
     {
       id: 20,
       title: "Apple Watch Series 5",
-      thumbnail: "/images/bestProducts/smart-watch-6.png",
+      thumbnail: "/images/smarta-klockor/smart-watch-6.png",
+      gallery: [
+  "/images/smarta-klockor/smarta-watch-6.png",
+],
+
       description: "Compact wireless earbuds with smart features",
       price: 120,
       tag: null,
@@ -769,7 +777,11 @@ gallery: [
     {
       id: 20.1,
       title: "Samsung Watch",
-      thumbnail: "/images/bestProducts/smart-watch-7.png",
+      thumbnail: "/images/smarta-klockor/smart-watch-7.png",
+      gallery: [
+  "/images/smarta-klockor/smart-watch-7.png",
+],
+
       description: "Compact wireless earbuds with smart features",
       price: 90,
       tag: null,
