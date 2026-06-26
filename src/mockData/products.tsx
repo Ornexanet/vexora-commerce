@@ -580,9 +580,9 @@ availability: "Finns i lager",
     {
   id: 15,
   title: "Apple Watch Series 11",
-  thumbnail: "/images/smarta-klockor/apple-watch-series11.jpg",
+  thumbnail: "/images/smarta-klockor/apple -watch- series11.jpg",
   gallery: [
-    "/images/smarta-klockor/apple-watch-series11.jpg",
+    "/images/smarta-klockor/apple -watch- series11.jpg",
   ],
   description:
     "Apple Watch Series 11 kombinerar modern design, snabb prestanda och smarta hälsofunktioner för träning, vardag och arbete.",
@@ -703,9 +703,9 @@ availability: "Finns i lager",
     {
   id: 18,
   title: "Samsung Galaxy Watch Ultra",
-  thumbnail: "/images/smarta-klockor/galaxy-watch-ultra-orange.jpg",
+  thumbnail: "/images/smarta-klockor/galaxy-watch-ultra-ornage.jpg",
   gallery: [
-    "/images/smarta-klockor/galaxy-watch-ultra-orange.jpg",
+    "/images/smarta-klockor/galaxy-watch-ultra-ornage.jpg",
   ],
   description:
     "Samsung Galaxy Watch Ultra är en kraftfull smartklocka med tålig design, tydlig skärm och avancerade funktioner för träning och vardag.",
