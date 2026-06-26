@@ -89,9 +89,9 @@ const ProductOverview = ({ product }: { product: ProductType }) => {
             <span className="text-lg text-light-dark">250 Reviews</span>
           </div>
         </div>
-        <p className="text-lg text-light-dark">
-         iPhone 16 Plus är byggd för dig som vill ha en stor och ljusstark skärm, snabb prestanda och lång batteritid i vardagen. Med Apple A18-chip, avancerad kamera och 6,7-tums Super Retina XDR OLED-skärm passar den för arbete, foto, video, spel och streaming.
-        </p>
+       <p className="text-lg text-light-dark">
+  {product.description}
+</p>
   <div>
   <Title asChild size="28" className="mb-5 font-extrabold">
     <p>Tekniska specifikationer</p>
