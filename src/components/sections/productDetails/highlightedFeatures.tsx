@@ -1,34 +1,5 @@
 import { ProductType } from "@/mockData/products";
 
-
-const featuresList = [
-  {
-    name: "40mm dynamic",
-    message: "Carbon Driver",
-    icon: "/images/product-details/features-icon-1.png",
-  },
-  {
-    name: "30 hours ",
-    message: "Playback",
-    icon: "/images/product-details/features-icon-2.png",
-  },
-  {
-    name: "5.2 with aptX™",
-    message: "Bluetooth ",
-    icon: "/images/product-details/features-icon-3.png",
-  },
-  {
-    name: "4320g",
-    message: "Net weight ",
-    icon: "/images/product-details/features-icon-4.png",
-  },
-  {
-    name: "Adaptive",
-    message: "ANC",
-    icon: "/images/product-details/features-icon-5.png",
-  },
-];
-
 const HighlightedFeatures = ({ product }: { product: ProductType }) => {
   return (
     <div className="mt-11">
@@ -45,13 +16,14 @@ const HighlightedFeatures = ({ product }: { product: ProductType }) => {
             {/* eslint-disable-next-line*/}
               <span className="text-2xl">✓</span>
 
-              <div className="mt-2.5">
-                <p className="font-medium text-sm">{feature.title}
-</p>
-                <p className="text-sm text-light-dark">{feature.text}
-</p>
+     <div className="mt-2.5">
+  <p className="font-medium text-sm">{feature.title}</p>
+  <p className="text-sm text-light-dark">{feature.text}</p>
+</div>
+
+
+
               </div>
-            </div>
           ))}
         </div>
       </div>
