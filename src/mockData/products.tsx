@@ -580,10 +580,11 @@ availability: "Finns i lager",
     {
   id: 15,
   title: "Apple Watch Series 11",
-  thumbnail: "/images/smarta-klockor/apple -watch- series11.jpg",
-  gallery: [
-    "/images/smarta-klockor/apple -watch- series11.jpg",
-  ],
+  thumbnail: "/images/smarta-klockor/apple-watch-series11.jpg",
+gallery: [
+  "/images/smarta-klockor/apple-watch-series11.jpg",
+],
+
   description:
     "Apple Watch Series 11 kombinerar modern design, snabb prestanda och smarta hälsofunktioner för träning, vardag och arbete.",
   price: 4990,
