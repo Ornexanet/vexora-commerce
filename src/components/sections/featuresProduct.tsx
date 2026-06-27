@@ -14,7 +14,7 @@ const FeaturesProduct = () => {
   const speakerProduct: ProductType = {
     id: 102,
     title: "iPhone 17 Pro",
-    thumbnail: "/images/mobiles/iphone17proslider.jpg",
+    thumbnail: "/images/mobiles/iphone-17-pro-shop-ornexa.webp",
     description:
       "iPhone 17 Pro kombinerar premiumdesign, kraftfull prestanda och ett avancerat kamerasystem för arbete, foto, video och vardag.",
     price: 14990,
@@ -44,7 +44,7 @@ const FeaturesProduct = () => {
               Köp iPhone 17 Pro
             </Button>
             <Link
-              href={"/product-details/2"}
+              href={"//product-details/2"}
               className="font-bold text-lg leading-[28.8px] flex items-center gap-2.5 hover:text-blue hover:[&_svg]:translate-x-1 transition-all duration-300"
             >
               Läs mer{" "}
