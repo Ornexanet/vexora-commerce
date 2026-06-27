@@ -40,7 +40,7 @@ export interface Products {
 export const products: Products = {
   hotDealProducts: [
     {
-  id: 1,
+  id: 101,
   title: "Sony WH-1000XM6",
   thumbnail: "/images/headphones/WH1000XM6-shop-ornexa.webp",
   gallery: [

@@ -22,14 +22,23 @@ type Props = {
     id: string;
   }>;
 };
-const ProductDetails = async ({ params }: Props) => {
-const { id } = await params;
-const product = products.bestProductsData.find((item) => item.id === Number(id));
-if (!product) {
-  return <div>Product not found</div>;
-}
+ const ProductDetails = async ({ params }: Props) => {
+  const { id } = await params;
+
+  const allProducts = [
+    ...products.bestProductsData,
+    ...products.hotDealProducts,
+    ...products.headphonesData,
+  ];
+
+  const product = allProducts.find((item) => item.id === Number(id));
+
+  if (!product) {
+    return <div>Product not found</div>;
+  }
 
   return (
+
     <main>
       <section className="lg:pt-25 md:pt-18 pt-12">
         <div className="container">
