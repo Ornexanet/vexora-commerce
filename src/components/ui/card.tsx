@@ -250,7 +250,7 @@ const Card = ({
         </div>
         <div className="mt-5">
           <Link
-            href={"/product-details"}
+            href={`/product-details/${product.id}`}
             className="md:text-xl text-lg md:leading-normal text-light-dark font-bold hover:text-blue transition-all duration-300"
           >
             {product.title}
