@@ -40,16 +40,48 @@ export interface Products {
 export const products: Products = {
   hotDealProducts: [
     {
-      id: 1,
-      title: "B&W McLaren",
-      thumbnail: "/images/hot-deal/product-1.png",
-      description: "Special-edition over-ear noise cancelling headphones",
-      price: 50,
-      tag: null,
-      discount: null,
-      categories: [""],
-      backgroundColor: "#FFF9F5",
+  id: 1,
+  title: "Sony WH-1000XM6",
+  thumbnail: "/images/headphones/WH1000XM6-shop-ornexa.webp",
+  gallery: [
+    "/images/headphones/WH1000XM6-shop-ornexa.webp",
+    "/images/headphones/WH1000XM6-shop-ornexa1.webp",
+    "/images/headphones/WH1000XM6-shop-ornexa2.webp",
+  ],
+  description:
+    "Sony WH-1000XM6 är premiumhörlurar med avancerad brusreducering, kraftfullt ljud och lång batteritid. Perfekta för arbete, resor, musik och fokuserad användning i vardagen.",
+  price: 4490,
+  tag: "Ny",
+  discount: null,
+  categories: ["headphones"],
+  filter: "headphones",
+  brand: "Sony",
+  model: "WH-1000XM6",
+  color: "Platinsilver",
+  battery: "Upp till 30 timmars batteritid",
+  os: "Bluetooth",
+  warranty: "2 års garanti",
+  availability: "Finns i lager",
+  backgroundColor: "#FFF9F5",
+  features: [
+    {
+      icon: "check",
+      title: "Brusreducering",
+      text: "Avancerad aktiv brusreducering för arbete, resor och fokus.",
     },
+    {
+      icon: "check",
+      title: "Premiumljud",
+      text: "Kraftfullt och balanserat ljud för musik, samtal och media.",
+    },
+    {
+      icon: "check",
+      title: "Lång batteritid",
+      text: "Upp till 30 timmars användning med snabb laddning.",
+    },
+  ],
+},
+
     {
       id: 2,
       title: "Lavic 3 PRO",
