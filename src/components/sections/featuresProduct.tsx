@@ -13,14 +13,14 @@ const FeaturesProduct = () => {
   // Sample speaker product
   const speakerProduct: ProductType = {
     id: 102,
-    title: "True Wireless Stereo Speaker",
-    thumbnail: "/images/features/product.png",
+    title: "iPhone 17 Pro",
+    thumbnail: "/images/mobiles/iphone17proslider.jpg",
     description:
-      "The latest Bluetooth 5.0 technology provides more stability and better range so you can enjoy your favourite beats even at a distance.",
-    price: 199.99,
-    tag: "Featured",
+      "iPhone 17 Pro kombinerar premiumdesign, kraftfull prestanda och ett avancerat kamerasystem för arbete, foto, video och vardag.",
+    price: 14990,
+    tag: "Ny",
     discount: null,
-    categories: ["speakers"],
+    categories: ["mobiler"],
   };
 
   const handleShopSpeakers = () => {
@@ -41,13 +41,13 @@ const FeaturesProduct = () => {
               variant={"outline"}
               className="border-blue text-blue hover:text-black hover:border-black"
             >
-              Shop Speakers
+              Köp iPhone 17 Pro
             </Button>
             <Link
-              href={"/product-details"}
+              href={"/product-details/2"}
               className="font-bold text-lg leading-[28.8px] flex items-center gap-2.5 hover:text-blue hover:[&_svg]:translate-x-1 transition-all duration-300"
             >
-              Learn More{" "}
+              Läs mer{" "}
               <ChevronRight
                 size={16}
                 className="mt-1 transition-all duration-300"
