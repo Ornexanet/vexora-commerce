@@ -934,6 +934,24 @@ thumbnail: "/images/headphones/WH1000XM6-shop-ornexa.webp",
   warranty: "2 års garanti",
   availability: "Finns i lager",
   backgroundColor: "#ffffff",
+  features: [
+  {
+    icon: "check",
+    title: "Brusreducering",
+    text: "Minskar störande ljud och ger bättre fokus.",
+  },
+  {
+    icon: "check",
+    title: "Lång batteritid",
+    text: "Upp till 30 timmars användning.",
+  },
+  {
+    icon: "check",
+    title: "Bekväm passform",
+    text: "Lätta hörlurar för musik, arbete och resor.",
+  },
+],
+
 },
 
     {
