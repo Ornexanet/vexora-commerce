@@ -14,7 +14,7 @@ const FeaturesProduct = () => {
   const speakerProduct: ProductType = {
     id: 102,
     title: "True Wireless Stereo Speaker",
-    thumbnail: "/images/mobiles/iphone17proslider.jpg",
+    thumbnail: "/images/features/product.png",
     description:
       "The latest Bluetooth 5.0 technology provides more stability and better range so you can enjoy your favourite beats even at a distance.",
     price: 199.99,
