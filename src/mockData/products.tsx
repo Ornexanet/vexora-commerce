@@ -897,9 +897,10 @@ gallery: [
   ],
   headphonesData: [
     {
-      id: 1,
-      title: "B&W Pi7 S2",
-      thumbnail: "/images/headphones/product-1.png",
+      id: 101,
+title: "Sony WH-1000XM6",
+thumbnail: "/images/headphones/WH1000XM6-shop-ornexa.webp",
+
       description: "Premium wireless earbuds with adaptive noise cancellation",
       price: 319,
       tag: "New",
