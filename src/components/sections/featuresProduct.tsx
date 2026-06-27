@@ -56,14 +56,16 @@ const FeaturesProduct = () => {
           </div>
         </div>
         <div className="ms:self-end self-center">
-          <Image
-            width={446}
-            height={300}
-            sizes="100vw"
-            src={speakerProduct.thumbnail}
-            alt="img"
-          />
-        </div>
+  <Image
+    width={520}
+    height={520}
+    sizes="520px"
+    src={speakerProduct.thumbnail}
+    alt={speakerProduct.title}
+    className="w-[520px] h-[520px] object-contain"
+  />
+</div>
+
       </div>
     </section>
   );
