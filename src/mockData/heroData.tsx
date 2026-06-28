@@ -14,10 +14,11 @@ export interface heroDataType {
 export const heroData: heroDataType[] = [
   {
     id: 1,
-    title: "PX8 McLaren Edition",
-    description: "Exlusivt premiumljud inspirerat av McLaren prestanda och design",
-    image: "/images/hero/img-1.png",
-    backgroundImage: "/images/hero/bg-1.png",
+    title: "iPhone 17 Pro",
+description: "Kraftfull prestanda, avancerad kamera och premiumdesign.",
+image: "/images/hero/iphone17pro-slider.webp",
+backgroundImage: "/images/hero/bg-1.png",
+
     features: [
       {
         id: 1,
@@ -80,7 +81,7 @@ export const heroData: heroDataType[] = [
       {
         id: 3,
         icon: "Bluetooth",
-        name: "Bluetooth 5.3™",
+        name: "Bluetooth 5.™",
       },
     ],
   },
