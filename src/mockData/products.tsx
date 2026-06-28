@@ -954,18 +954,21 @@ thumbnail: "/images/headphones/WH1000XM6-shop-ornexa.webp",
 
 },
 
-    {
-      id: 3,
-      title: "B&W Px7 S2e",
-      thumbnail: "/images/headphones/product-3.png",
-      description: "Noise-cancelling over-ear headphones",
-      price: 319,
-      tag: null,
-      discount: null,
-      categories: ["headphones"],
-      filter: "headphones",
-      backgroundColor: "#ffffff",
-    },
+   {
+  id: 3,
+  title: "AirPods 4",
+  thumbnail: "/images/headphones/airpods-4-shop-ornexa.jpg",
+  description: "AirPods 4 ger en lätt och bekväm lyssningsupplevelse med klart ljud, stabil anslutning och smidig användning tillsammans med Apple-enheter.",
+  price: 1790,
+  tag: "Ny",
+  discount: null,
+  categories: ["headphones", "accessories"],
+  filter: "headphones",
+  backgroundColor: "#ECF2F9",
+},
+
+
+
     {
       id: 4,
       title: "SoundPods",
