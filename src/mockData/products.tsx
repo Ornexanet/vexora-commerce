@@ -600,7 +600,7 @@ availability: "Finns i lager",
     {
   id: 15,
   title: "Apple Watch Series 11",
-  thumbnail: "/images/smarta-klockor/apple-watch-series11.jpg",
+  thumbnail: "/images/smarta-klockor/apple -watch- series11.jpg",
 gallery: [
   "/images/smarta-klockor/apple-watch-series11.jpg",
 ],
