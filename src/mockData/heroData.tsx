@@ -64,26 +64,27 @@ backgroundImage: "/images/hero/bg-1.png",
   },
   {
     id: 3,
-    title: "Ornexa Audio Max",
-    description: "Premiumhörlurar med fylligt ljud, aktiv brusreducering och komfort hela dagen.",
-    image: "/images/hero/img-3.png",
+    title: "Xiaomi 17T Pro",
+    description: "Flaggskeppsprestanda med blixtsnabb laddning, avancerad AI-kamera och en imponerande AMOLED-skärm för en förstklassig mobilupplevelse.",
+    image: "/images/hero/xiaomi 17t- pro-shop-ornexa-heroslider",
     backgroundImage: "/images/hero/bg-1.png",
     features: [
-      {
-        id: 1,
-        icon: "SoundDecibel",
-        name: "Aktiv Brusreducering",
-      },
-      {
-        id: 2,
-        icon: "BatteryCharging",
-        name: "30 timmars batteritid",
-      },
-      {
-        id: 3,
-        icon: "Bluetooth",
-        name: "Bluetooth 5.™",
-      },
-    ],
+  {
+    id: 1,
+    icon: "Cpu",
+    name: "Flaggskeppsprestanda",
+  },
+  {
+    id: 2,
+    icon: "BatteryCharging",
+    name: "120W snabbladdning",
+  },
+  {
+    id: 3,
+    icon: "Camera",
+    name: "AI-kamera 200 MP",
+  },
+],
+
   },
 ];
