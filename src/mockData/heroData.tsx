@@ -1,5 +1,6 @@
 export interface heroDataType {
   id: number;
+  productId: number;
   title: string;
   description: string;
   backgroundImage: string;
@@ -15,6 +16,7 @@ export interface heroDataType {
 export const heroData: heroDataType[] = [
   {
     id: 1,
+    productId: 2,
     title: "iPhone 17 Pro",
 description: "Kraftfull prestanda, avancerad kamera och premiumdesign.",
 image: "/images/hero/iphone-17-pro-shop-ornexa-herslider.webp",
@@ -42,6 +44,7 @@ backgroundImage: "/images/hero/bg-1.png",
   },
   {
     id: 2,
+    productId: 4,
     title: "Galaxy Ultra S26",
     description: "Upplev kraftfullt ljud med aktiv brusreducering, bekväm passform och upp till 40 timmars batteritid – perfekta för både arbete och fritid.",
     image: "/images/hero/galagxy-ultras26-shop-ornexa-heroslider.webp",
@@ -68,6 +71,7 @@ backgroundImage: "/images/hero/bg-1.png",
   },
   {
     id: 3,
+    productId: 5,
     title: "Xiaomi 17T Pro",
     description: "Flaggskeppsprestanda med blixtsnabb laddning, avancerad AI-kamera och en imponerande AMOLED-skärm för en förstklassig mobilupplevelse.",
     image: "/images/hero/xiaomi17t-pro-shop-ornexa-heroslider.webp",

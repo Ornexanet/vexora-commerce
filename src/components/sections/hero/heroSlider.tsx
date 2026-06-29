@@ -42,7 +42,16 @@ const HeroSlider = () => {
     <section>
       <Swiper  speed={1000}>
         {heroData.map(
-          ({ backgroundImage, image, description, features, id, title, videoUrl }: heroDataType) => {
+          ({ 
+            backgroundImage, 
+            image, 
+            description,
+             features, 
+             id, 
+             productId, 
+             title, 
+             videoUrl,
+            }: heroDataType)=> {
 
             return (
               <SwiperSlide key={id} className="relative overflow-hidden">
@@ -89,7 +98,7 @@ const HeroSlider = () => {
                       </div>
                       <div className="lg:mt-[70px] mt-10 flex items-center max-[447px]:flex-col flex-row gap-x-9 gap-y-5">
                         <Button className="max-[447px]:w-full w-auto">
-                          <Link href={"/product-details/2"}>Köp nu</Link>
+                          <Link href={`/product-details/${productId}`}>Köp nu</Link>
                         </Button>
                         <Button
                           className="max-[447px]:w-full w-auto"
