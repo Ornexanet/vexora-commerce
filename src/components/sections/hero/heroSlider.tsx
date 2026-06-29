@@ -89,7 +89,7 @@ const HeroSlider = () => {
                       </div>
                       <div className="lg:mt-[70px] mt-10 flex items-center max-[447px]:flex-col flex-row gap-x-9 gap-y-5">
                         <Button className="max-[447px]:w-full w-auto">
-                          <Link href={"/product-details"}>Köp nu</Link>
+                          <Link href={"/product-details/2"}>Köp nu</Link>
                         </Button>
                         <Button
                           className="max-[447px]:w-full w-auto"
