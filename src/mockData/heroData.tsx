@@ -39,27 +39,28 @@ backgroundImage: "/images/hero/bg-1.png",
   },
   {
     id: 2,
-    title: "Ornexa Sound Pro",
-    description: "Trådlösa premiumhörlurar med aktiv brusreducering och kristallklart ljud för hela dagen.",
-    image: "/images/hero/img-2.png",
+    title: "Galaxy Ultra S26",
+    description: "Upplev kraftfullt ljud med aktiv brusreducering, bekväm passform och upp till 40 timmars batteritid – perfekta för både arbete och fritid.",
+    image: "/images/hero/galagxy-ultras26-shop-ornexa-heroslider.webp",
     backgroundImage: "/images/hero/bg-1.png",
     features: [
-      {
-        id: 1,
-        icon: "SoundDecibel",
-        name: "Aktiv Brusreducering",
-      },
-      {
-        id: 2,
-        icon: "BatteryCharging",
-        name: "40 timmars batteritid",
-      },
-      {
-        id: 3,
-        icon: "Bluetooth",
-        name: "Bluetooth 5.3",
-      },
-    ],
+  {
+    id: 1,
+    icon: "SoundDecibel",
+    name: "Aktiv brusreducering",
+  },
+  {
+    id: 2,
+    icon: "BatteryCharging",
+    name: "Upp till 40 timmars batteritid",
+  },
+  {
+    id: 3,
+    icon: "Bluetooth",
+    name: "Bluetooth 5.3",
+  },
+],
+
   },
   {
     id: 3,
