@@ -71,7 +71,7 @@ backgroundImage: "/images/hero/bg-1.png",
     title: "Xiaomi 17T Pro",
     description: "Flaggskeppsprestanda med blixtsnabb laddning, avancerad AI-kamera och en imponerande AMOLED-skärm för en förstklassig mobilupplevelse.",
     image: "/images/hero/xiaomi17t-pro-shop-ornexa-heroslider.webp",
-    videoUrl: "",
+    videoUrl: "https://youtube.com/embed/tVYv9Yxe2mk?autoplay=1",
     backgroundImage: "/images/hero/bg-1.png",
     features: [
   {
