@@ -8,7 +8,8 @@ import {
   SoundDecibel,
   VideoRecorder,
 } from "@/lib/icons";
-import { heroData } from "@/mockData/heroData";
+
+import { heroData, heroDataType } from "@/mockData/heroData";
 import Link from "next/link";
 import { JSX, useState } from "react";
 import {
@@ -36,11 +37,13 @@ function IconsFinder(iconName: string) {
 
 const HeroSlider = () => {
   const [isOpen, setOpen] = useState(false);
+  const [activeVideoUrl, setActiveVideoUrl] = useState("");
   return (
     <section>
       <Swiper  speed={1000}>
         {heroData.map(
-          ({ backgroundImage, image, description, features, id, title }) => {
+          ({ backgroundImage, image, description, features, id, title, videoUrl }: heroDataType) => {
+
             return (
               <SwiperSlide key={id} className="relative overflow-hidden">
                 <div
@@ -91,7 +94,10 @@ const HeroSlider = () => {
                         <Button
                           className="max-[447px]:w-full w-auto"
                           variant={"outline"}
-                          onClick={() => setOpen(true)}
+                          onClick={() => {
+  setActiveVideoUrl(videoUrl);
+  setOpen(true);
+}}
                         >
                           Se produktvideo
                         </Button>
@@ -116,7 +122,13 @@ const HeroSlider = () => {
           },
         )}
       </Swiper>
-      <Dialog open={isOpen} onOpenChange={setOpen}>
+      <Dialog
+  open={isOpen}
+  onOpenChange={(open) => {
+    setOpen(open);
+    if (!open) setActiveVideoUrl("");
+  }}
+>
         <DialogContent className="sm:max-w-[700px] p-0 overflow-hidden border-none bg-transparent shadow-none">
           <DialogHeader className="sr-only">
             <DialogTitle>Produktvideo</DialogTitle>
@@ -125,8 +137,7 @@ const HeroSlider = () => {
             <iframe
               width="100%"
               height="100%"
-              src={isOpen?
-                `https://www.youtube.com/embed/TKnufs85hXk?autoplay=1` : ""}
+              src={isOpen ? activeVideoUrl : ""}
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
