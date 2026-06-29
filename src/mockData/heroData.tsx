@@ -18,7 +18,7 @@ export const heroData: heroDataType[] = [
     title: "iPhone 17 Pro",
 description: "Kraftfull prestanda, avancerad kamera och premiumdesign.",
 image: "/images/hero/iphone-17-pro-shop-ornexa-herslider.webp",
-videoUrl: "https://youtu.com/embed/vcq5nMeg2SA?autoplay=1",
+videoUrl: "https://youtube.com/embed/vcq5nMeg2SA?autoplay=1",
 
 backgroundImage: "/images/hero/bg-1.png",
 
