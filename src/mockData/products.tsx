@@ -83,7 +83,7 @@ export const products: Products = {
 },
 
     {
-      id: 2,
+      id: 12,
       title: "Samsung Galaxy Buds4 Pro",
       thumbnail: "/images/headphones/galaxy buds4 pro-shop-ornexa.png",
       description: "Galaxy Buds4 Pro erbjuder kristallklart ljud, aktiv brusreducering och bekväm passform för vardag och träning.",
