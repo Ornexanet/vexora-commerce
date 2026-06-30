@@ -17,7 +17,7 @@ const FeaturesProductTwo = () => {
       <div className="container">
         <div
           className="bg-cover sm:bg-center bg-[55%] bg-no-repeat rounded-[30px] pb-10 sm:pt-[313px] pt-50 relative"
-          style={{ backgroundImage: `url("/images/features/bg.png")` }}
+          style={{ backgroundImage: `url("/images/features/apple-watch-ultra3 (2).webp")` }}
         >
           <div className="h-[358px]">
             <div className="flex absolute xl:right-[33%] lg:right-[23%] right-[13%]">
@@ -27,19 +27,19 @@ const FeaturesProductTwo = () => {
                     width={196}
                     height={222}
                     sizes="100vw"
-                    src={"/images/features/product-2.png"}
+                    src={"/images/smarta-klockor/apple-watch-ultra3.webp"}
                     alt="img"
                     className="hover:scale-105 transition-all duration-500"
                   />
                 </Link>
                 <div className="pt-7">
                   <Link
-                    href={"/product-details"}
+                    href={"/product-details/16"}
                     className="font-bold text-xl leading-normal hover:text-blue transition-all duration-500"
                   >
                     WATCH PRO 2
                   </Link>
-                  <p className="text-lg leading-normal mt-2">$159</p>
+                  <p className="text-lg leading-normal mt-2">9990</p> kr 
                 </div>
               </div>
               <div className="mt-16 relative">
