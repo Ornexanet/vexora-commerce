@@ -14,7 +14,7 @@ const FeaturesProduct = () => {
   const speakerProduct: ProductType = {
     id: 102,
     title: "iPhone 17 Pro",
-    thumbnail: "/images/mobiles/iPhone 17 Pro kombinerar",
+    thumbnail: "/images/mobiles/iphone17pro-3-ornexa-shop.webp",
     description:
       "iPhone 17 Pro kombinerar premiumdesign, kraftfull prestanda och ett avancerat kamerasystem för arbete, foto, video och vardag.",
     price: 14990,
