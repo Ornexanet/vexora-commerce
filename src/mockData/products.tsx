@@ -84,10 +84,12 @@ export const products: Products = {
 
     {
       id: 2,
-      title: "Lavic 3 PRO",
-      thumbnail: "/images/hot-deal/product-2.png",
-      description: "Fly Longer, Sense More Industry-Leading Performance",
-      price: 50,
+      title: "Samsung Galaxy Buds4 Pro",
+      thumbnail: "/images/headphones/galaxy buds4 pro-shop-ornexa.png",
+      description: "Galaxy Buds4 Pro erbjuder kristallklart ljud, aktiv brusreducering och bekväm passform för vardag och träning.",
+      price: 2490,
+      brand: "Samsung",
+      model: "Galaxy Buds4 Pro",
       tag: null,
       discount: null,
       categories: [""],
