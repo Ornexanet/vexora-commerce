@@ -604,9 +604,9 @@ availability: "Finns i lager",
     {
   id: 15,
   title: "Apple Watch Series 11",
-  thumbnail: "/images/smarta-klockor/apple -watch- series11.jpg",
+  thumbnail: "/images/smarta-klockor/apple-watch-ultra3.webp",
 gallery: [
-  "/images/smarta-klockor/apple-watch-series11.jpg",
+  "/images/smarta-klockor/apple-watch-ultra3.webp",
 ],
 
   description:
@@ -646,9 +646,9 @@ gallery: [
     {
   id: 16,
   title: "Apple Watch Ultra 3",
-  thumbnail: "/images/smarta-klockor/apple-watch-ultra3.jpg",
+  thumbnail: "/images/smarta-klockor/apple-watch-ultra3.webp",
   gallery: [
-    "/images/smarta-klockor/apple-watch-ultra3.jpg",
+    "/images/smarta-klockor/apple-watch-ultra3.webp",
   ],
   description:
     "Apple Watch Ultra 3 är en robust och avancerad smartklocka för träning, äventyr och vardag med stark prestanda och tydlig skärm.",
@@ -687,9 +687,9 @@ gallery: [
     {
   id: 17,
   title: "Samsung Galaxy Watch 8 Classic",
-  thumbnail: "/images/smarta-klockor/galaxy-watch8-classic-with-black.webp",
+  thumbnail: "/images/smarta-klockor/galaxy-watch8-classic-with-black2.webp",
   gallery: [
-    "/images/smarta-klockor/galaxy-watch8-classic-with-black.webp",
+    "/images/smarta-klockor/galaxy-watch8-classic-with-black2.webp",
   ],
   description:
     "Samsung Galaxy Watch 8 Classic kombinerar klassisk design, tydlig AMOLED-skärm och smarta hälsofunktioner för träning och vardag.",
@@ -728,9 +728,9 @@ gallery: [
     {
   id: 18,
   title: "Samsung Galaxy Watch Ultra",
-  thumbnail: "/images/smarta-klockor/galaxy-watch-ultra-ornage.jpg",
+  thumbnail: "/images/smarta-klockor/galaxy-watch-ultra-1.webp",
   gallery: [
-    "/images/smarta-klockor/galaxy-watch-ultra-ornage.jpg",
+    "/images/smarta-klockor/galaxy-watch-ultra-1.webp",
   ],
   description:
     "Samsung Galaxy Watch Ultra är en kraftfull smartklocka med tålig design, tydlig skärm och avancerade funktioner för träning och vardag.",
