@@ -37,16 +37,14 @@ const HotDeal = () => {
                         className="mt-1 transition-all duration-300"
                       />
                     </button>
-                    <Link
-                      href={'/product-details/${product.id}'}
-                      className="font-medium text-lg leading-[28.8px] flex items-center gap-px hover:text-blue hover:[&_svg]:translate-x-1 transition-all duration-300"
-                    >
-                      Läs mer{" "}
-                      <ChevronRight
-                        size={16}
-                        className="mt-1 transition-all duration-300"
-                      />
-                    </Link>
+                   <Link
+                 href={`/product-details/${product.id}`}
+                 className="font-medium text-lg leading-[28.8px] flex items-center gap-px"
+                >
+                 Läs mer{" "}
+                 <ChevronRight size={16} className="mt-1 transition-all duration-300" />
+                 </Link>
+
                   </div>
                 </div>
                 <div className="mt-5 max-h-[514px] overflow-hidden">
