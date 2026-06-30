@@ -31,7 +31,7 @@ const HotDeal = () => {
                       onClick={() => addToCart(product)}
                       className="font-medium text-lg leading-[28.8px] flex items-center gap-px hover:text-blue hover:[&_svg]:translate-x-1 transition-all duration-300"
                     >
-                      Buy now{" "}
+                      Köp nu{" "}
                       <ChevronRight
                         size={16}
                         className="mt-1 transition-all duration-300"
@@ -41,7 +41,7 @@ const HotDeal = () => {
                       href={'/product-details/${product.id}'}
                       className="font-medium text-lg leading-[28.8px] flex items-center gap-px hover:text-blue hover:[&_svg]:translate-x-1 transition-all duration-300"
                     >
-                      Learn More{" "}
+                      Läs mer{" "}
                       <ChevronRight
                         size={16}
                         className="mt-1 transition-all duration-300"
