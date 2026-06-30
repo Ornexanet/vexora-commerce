@@ -16,7 +16,7 @@ const Ads = () => {
                 width={443}
                 height={534}
                 sizes="100vw"
-                src={"/images/ads/product-1.png"}
+                src={"/images/smarta-klockor/galaxy-watch-ultra-1.webp"}
                 alt="img"
                 className="hover:scale-105 transition-all duration-500 mx-auto"
               />
