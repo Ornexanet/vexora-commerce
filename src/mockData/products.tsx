@@ -98,7 +98,7 @@ export const products: Products = {
     {
       id: 16,
       title: "Apple Watch Ultra 3",
-      thumbnail: "/images/smarta-klockor/apple-watch-ultra3.jpg",
+      thumbnail: "/images/smarta-klockor/apple-watch-ultra3.webp",
       description: "Apple Watch Ultra 3 är en robust och avancerad smartklocka för träning, äventyr och vardag med stark prestanda och tydlig skärm.",
       price: 9990,
       tag: "Ny",
