@@ -25,7 +25,7 @@ const Ads = () => {
               size="28"
               className="text-center hover:text-blue transition-all duration-500"
             >
-              <Link href={"/product-details"}>
+              <Link href={"/product-details/18"}>
                 Ultra Durable & All Weather Smart Watch
               </Link>
             </Title>
