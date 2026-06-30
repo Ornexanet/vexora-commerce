@@ -441,9 +441,9 @@ availability: "Finns i lager",
     {
   id: 9,
   title: "AirPods 4",
-  thumbnail: "/images/headphones/airpods-4-shop-ornexa.jpg",
+  thumbnail: "/images/headphones/airpods-4-shop-ornexa1.webp",
   gallery: [
-    "/images/headphones/airpods-4-shop-ornexa.jpg",
+    "/images/headphones/airpods-4-shop-ornexa1.webp",
   ],
   description: "AirPods 4 ger en lätt och bekväm lyssningsupplevelse med klart ljud, stabil anslutning och smidig användning tillsammans med Apple-enheter.",
   price: 1790,
@@ -604,9 +604,9 @@ availability: "Finns i lager",
     {
   id: 15,
   title: "Apple Watch Series 11",
-  thumbnail: "/images/smarta-klockor/apple-watch-ultra3.webp",
+  thumbnail: "/images/smarta-klockor/apple-watch-series11.webp",
 gallery: [
-  "/images/smarta-klockor/apple-watch-ultra3.webp",
+  "/images/smarta-klockor/apple-watch-series11.webp",
 ],
 
   description:
