@@ -216,10 +216,10 @@ availability: "Finns i lager",
    {
   id: 2,
   title: "iPhone 17 Pro",
-  thumbnail: "/images/mobiles/iphone-17-pro-orange.webp",
+  thumbnail: "/images/mobiles/iphone17pro-3-ornexa-shop.webp",
   gallery: [
-    "/images/mobiles/iphone-17-pro-orange.webp",
-    "/images/mobiles/iphone-17-pro-orange1.webp",
+    "/images/mobiles/iphone17pro-3-ornexa-shop.webp",
+    "/images/mobiles/iphone17pro-3-ornexa-shop.webp",
   ],
   description:
     "iPhone 17 Pro med premiumdesign, kraftfull prestanda och avancerat kamerasystem för professionell fotografering, video, arbete och spel.",
