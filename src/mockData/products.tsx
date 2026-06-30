@@ -85,7 +85,7 @@ export const products: Products = {
     {
       id: 12,
       title: "Samsung Galaxy Buds4 Pro",
-      thumbnail: "/images/headphones/galaxy buds4 pro-shop-ornexa.png",
+      thumbnail: "/images/headphones/galaxy buds4 pro-shop-ornexa1.webp",
       description: "Galaxy Buds4 Pro erbjuder kristallklart ljud, aktiv brusreducering och bekväm passform för vardag och träning.",
       price: 2490,
       brand: "Samsung",
@@ -522,9 +522,9 @@ availability: "Finns i lager",
     {
   id: 12,
   title: "Samsung Galaxy Buds4 Pro",
-  thumbnail: "/images/headphones/galaxy buds4 pro-shop-ornexa.png",
+  thumbnail: "/images/headphones/galaxy buds4 pro-shop-ornexa1.webp",
   gallery: [
-    "/images/headphones/galaxy buds4 pro-shop-ornexa.png",
+    "/images/headphones/galaxy buds4 pro-shop-ornexa1.webp",
   ],
   description:
     "Galaxy Buds4 Pro erbjuder kristallklart ljud, aktiv brusreducering och bekväm passform för arbete, träning och vardag.",
