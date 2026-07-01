@@ -133,8 +133,8 @@ const HeaderExtraInfo = () => {
           <span className="flex items-center gap-2.5">
             <User className="size-[35px]" />
             <span>
-              <span className="block font-normal text-sm">Welcome</span>
-              <span className="block">Sign in / Register</span>
+              <span className="block font-normal text-sm">Välkommen</span>
+              <span className="block">Logga in / Registrera</span>
             </span>
           </span>
           <ChevronDownIcon className="size-6 shrink-0" />
