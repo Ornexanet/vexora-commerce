@@ -24,67 +24,67 @@ export const pagesSubmenuList: PagesSubmenuListType[] = [
     id: 0,
     title: "Information",
     pages: [
-     
+      {
+        id: 1,
+        href: "/about",
+        label: "Om oss",
+      },
+      {
+        id: 2,
+        href: "/contact",
+        label: "Kontakt",
+      },
       {
         id: 3,
-        href: "/about",
-        label: "About Us",
+        href: "/faqs",
+        label: "Vanliga frågor",
       },
       {
         id: 4,
-        href: "/contact",
-        label: "Contact Us",
+        href: "/privacy-policy",
+        label: "Integritetspolicy",
       },
       {
         id: 5,
-        href: "/faqs",
-        label: "FAQs",
+        href: "/returns-refund-policy",
+        label: "Retur & återbetalning",
       },
-      
     ],
   },
-  
   {
-    id: 2,
-    title: "User Account",
+    id: 1,
+    title: "Konto",
     pages: [
       {
         id: 1,
         href: "/login",
-        label: "Login / Register",
+        label: "Logga in / Registrera",
       },
       {
         id: 2,
-        href: "/login",
-        label: " account",
+        href: "/account",
+        label: "Mitt konto",
       },
-     
       {
-        id: 6,
+        id: 3,
         href: "/wishlist",
-        label: "Wishlist",
+        label: "Önskelista",
       },
     ],
   },
   {
-    id: 3,
-    title: "Cart & Checkout",
+    id: 2,
+    title: "Köp",
     pages: [
       {
         id: 1,
         href: "/cart",
-        label: "Cart",
+        label: "Varukorg",
       },
       {
         id: 2,
         href: "/checkout",
-        label: "Checkout",
-      },
-      
-      {
-        id: 2,
-        href: "/blog",
-        label: "Blog",
+        label: "Kassa",
       },
     ],
   },
@@ -94,39 +94,12 @@ export const pagesList: PageListType[] = [
   {
     id: 1,
     href: "#",
-    label: "Blog",
-    dropdownMenu: [
-      {
-        id: 0,
-        label: "Blog Modern",
-        href: "/blog",
-      },
-      {
-        id: 1,
-        label: "Blog Classic",
-        href: "/blog-classic",
-      },
-      {
-        id: 2,
-        label: "Blog Details",
-        href: "/blog-details",
-      },
-      {
-        id: 3,
-        label: "Blog Details Two",
-        href: "/blog-details-two",
-      },
-    ],
-  },
-  {
-    id: 2,
-    href: "/dashboard/orders",
     label: "Information",
     subMenu: pagesSubmenuList,
   },
   {
-    id: 3,
+    id: 2,
     href: "/contact",
-    label: "Get help",
+    label: "Kundservice",
   },
 ];
