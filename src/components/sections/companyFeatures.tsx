@@ -9,27 +9,36 @@ import { useInView } from "react-intersection-observer";
 const VexoraFeatures = [
   {
     icon: (inView: boolean) => <IconOne inView={inView} />,
-    title: "Advanced Products",
+    title: "Avancerade produkter",
+
     description:
-      "Vexora offers a wide range of cutting-edge electronics and accessories.",
+  "Ornexa erbjuder ett noggrant utvalt sortiment av modern elektronik och smarta tillbehör från ledande varumärken.",
+
+
   },
   {
     icon: (inView: boolean) => <IconTwo inView={inView} />,
-    title: "Quality Assurance",
+    title: "Hög kvalitet",
+
     description:
-      "Vexora offers a wide range of cutting-edge electronics and accessories.",
+    "Alla produkter är utvalda med fokus på kvalitet, prestanda och lång hållbarhet för en trygg köpupplevelse.",
+
   },
   {
     icon: (inView: boolean) => <IconThree inView={inView} />,
-    title: "Inventive Design",
+    title: "Modern design",
+
     description:
-      "Vexora offers a wide range of cutting-edge electronics and accessories.",
+    "Upptäck innovativ teknik och stilren design som passar både arbete, fritid och vardagens behov.",
+
   },
   {
     icon: (inView: boolean) => <IconFour inView={inView} />,
-    title: "Customer Experience",
+    title: "Kundupplevelse",
+
     description:
-      "Vexora offers a wide range of cutting-edge electronics and accessories.",
+    "Vi strävar efter att erbjuda snabb service, säker betalning och en smidig shoppingupplevelse från början till slut.",
+
   },
 ];
 
@@ -74,7 +83,7 @@ const CompanyFeatures = () => {
               })}
             </div>
             <Button asChild className="rounded-lg mt-12">
-              <Link href={"/about"}>Know more About Us</Link>
+              <Link href={"/about"}>Läs mer om oss</Link>
             </Button>
           </div>
         </div>
