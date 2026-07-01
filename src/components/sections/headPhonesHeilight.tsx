@@ -18,11 +18,10 @@ const HeadPhonesHeilight = () => {
             />
           </div>
           <div className="w-full grow">
-            <Title>Music on the GO</Title>
+            <Title>Musik på språng</Title>
             <p className="text-lg leading-7 mt-[18px] max-w-[622px]">
-              Get really close to the music with a pair of headphones. Whatever
-              you are into in-ears, over-ears or when you need the world to go
-              on mute.
+              Njut av ett kraftfullt ljud med våra hörlurar. 
+              Välj mellan in-ear och over-ear för musik, samtal och en bekväm lyssningsupplevelse varje dag.
             </p>
             <div className="mt-12.5 grid xl:grid-cols-3 grid-cols-2 sm:gap-x-7.5 gap-x-5 gap-y-12.5">
               {products.headphonesData.map((product) => (
