@@ -55,8 +55,8 @@ const CompanyFeatures = () => {
           </div>
           <div>
             <Title className="max-w-[785px] xl:leading-[78px]">
-              Power Up Your Purchase: See What Makes Vexora the Future of
-              Electronics Shopping
+              Gör ditt köp smartare: Upptäck produkter som passar 
+              din digitala vardag
             </Title>
             <div className="grid sm:grid-cols-2 gap-x-[30px] gap-y-16 mt-14">
               {VexoraFeatures.map(({ description, icon, title }, index) => {
