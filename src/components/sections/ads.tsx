@@ -7,7 +7,8 @@ const Ads = () => {
     <section className="lg:mt-37.5 md:mt-25 mt-20">
       <div className="container">
         <Title className="">
-          Smarter living <span className="block">A new experience</span>
+          Upplev nästa generation av smarta klockor
+ <span className="block"></span>
         </Title>
         <div className="flex lg:flex-row flex-col mt-[50px]">
           <div className="lg:max-w-[483px] bg-[#F4F6F8] rounded-tl-[30px] rounded-bl-[30px] max-lg:rounded-[30px] px-5 pb-5 overflow-hidden">
@@ -26,7 +27,8 @@ const Ads = () => {
               className="text-center hover:text-blue transition-all duration-500"
             >
               <Link href={"/product-details/18"}>
-                Ultra Durable & All Weather Smart Watch
+                Kraftfull prestanda
+                för alla utmaningar
               </Link>
             </Title>
           </div>
