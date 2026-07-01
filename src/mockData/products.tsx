@@ -1064,27 +1064,53 @@ thumbnail: "/images/headphones/WH1000XM6-shop-ornexa.webp",
 
 },
 
-   {
-  id: 3,
+ {
+  id: 9,
   title: "AirPods 4",
-  thumbnail: "/images/headphones/airpods-4-shop-ornexa.jpg",
+  thumbnail: "/images/headphones/airpods-4-shop-ornexa1.webp",
+  gallery: [
+    "/images/headphones/airpods-4-shop-ornexa1.webp",
+  ],
   description: "AirPods 4 ger en lätt och bekväm lyssningsupplevelse med klart ljud, stabil anslutning och smidig användning tillsammans med Apple-enheter.",
   price: 1790,
   tag: "Ny",
   discount: null,
   categories: ["headphones", "accessories"],
   filter: "headphones",
+  brand: "Apple",
+  model: "AirPods 4",
+  color: "Vit",
+  battery: "Upp till 30 timmar med laddningsetuiet",
+  os: "iOS, iPadOS, macOS",
+  warranty: "1 års garanti",
+  availability: "Finns i lager",
   backgroundColor: "#ECF2F9",
+  features: [
+    {
+      icon: "check",
+      title: "Klart ljud",
+      text: "Förbättrad ljudkvalitet för musik, samtal och vardagsanvändning.",
+    },
+    {
+      icon: "check",
+      title: "Lång batteritid",
+      text: "Upp till 30 timmars lyssning med laddningsetuiet.",
+    },
+    {
+      icon: "check",
+      title: "Bekväm passform",
+      text: "Lätt design som sitter bekvämt under längre användning.",
+    },
+  ],
 },
 
 
-
     {
-  id: 4,
+  id: 12,
   title: "Samsung Galaxy Buds4 Pro",
-  thumbnail: "/images/headphones/galaxy buds4 pro-shop-ornexa.png",
+  thumbnail: "/images/headphones/galaxy buds4 pro-shop-ornexa1.webp",
   gallery: [
-    "/images/headphones/galaxy buds4 pro-shop-ornexa.png",
+    "/images/headphones/galaxy buds4 pro-shop-ornexa1.webp",
   ],
   description:
     "Galaxy Buds4 Pro erbjuder kristallklart ljud, aktiv brusreducering och bekväm passform för arbete, träning och vardag.",
