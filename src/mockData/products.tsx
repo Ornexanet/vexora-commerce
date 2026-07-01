@@ -111,17 +111,47 @@ export const products: Products = {
   ],
   newStockProducts: [
     {
-      id: 1,
-      title: "Go360 4Pro",
-      thumbnail: "/images/new-stock/product-1.png",
-      description:
-        "Celebrating the long-standing, award-winning partnership between Bowers & Wilkins and McLaren Automotive and the McLaren supercars and hypercars in which Bowers & Wilkins has been integrated.",
-      price: 449,
-      tag: "Featured",
-      discount: null,
-      categories: ["Electronics", "Camera"],
-      backgroundColor: "#F4EEE9",
+  id: 101,
+  title: "Sony WH-1000XM6",
+  thumbnail: "/images/headphones/WH1000XM6-shop-ornexa.webp",
+  gallery: [
+    "/images/headphones/WH1000XM6-shop-ornexa.webp",
+    "/images/headphones/WH1000XM6-shop-ornexa1.webp",
+    "/images/headphones/WH1000XM6-shop-ornexa2.webp",
+  ],
+  description:
+    "Sony WH-1000XM6 är premiumhörlurar med avancerad brusreducering, kraftfullt ljud och lång batteritid. Perfekta för arbete, resor, musik och fokuserad användning i vardagen.",
+  price: 4490,
+  tag: "Ny",
+  discount: null,
+  categories: ["headphones"],
+  filter: "headphones",
+  brand: "Sony",
+  model: "WH-1000XM6",
+  color: "Platinsilver",
+  battery: "Upp till 30 timmars batteritid",
+  os: "Bluetooth",
+  warranty: "2 års garanti",
+  availability: "Finns i lager",
+  backgroundColor: "#FFF9F5",
+  features: [
+    {
+      icon: "check",
+      title: "Brusreducering",
+      text: "Avancerad aktiv brusreducering för arbete, resor och fokus.",
     },
+    {
+      icon: "check",
+      title: "Premiumljud",
+      text: "Kraftfullt och balanserat ljud för musik, samtal och media.",
+    },
+    {
+      icon: "check",
+      title: "Lång batteritid",
+      text: "Upp till 30 timmars användning med snabb laddning.",
+    },
+  ],
+},
     {
       id: 2,
       title: "Sony WH-1000XM6",
