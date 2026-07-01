@@ -92,9 +92,8 @@ const Footer = () => {
   return (
     <footer className="bg-[#F5F5F7] pt-25 mt-25">
       <div
-        className="bg-no-repeat max-xl:bg-contain bg-right-bottom"
-        style={{ backgroundImage: `url('/images/logo-whit-big.png')` }}
-      >
+        className="bg-no-repeat max-xl:bg-contain bg-right-bottom">
+      
         <div className="container">
           <Title
             asChild
@@ -104,7 +103,7 @@ const Footer = () => {
             <h5>Låt oss komma igång</h5>
           </Title>
           <Title asChild>
-            <Link href={"mail:info@Vexora.com"}>info@Vexora.com</Link>
+            <Link href={"mail:info@shop.ornexa.net"}>info@shop.ornexa.net</Link>
           </Title>
           <div className="pt-[70px] max-w-[717px] flex sm:flex-row flex-col gap-y-10 justify-between">
             <div>
