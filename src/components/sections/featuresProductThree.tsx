@@ -17,7 +17,7 @@ const FeaturesProductThree = () => {
   const product: ProductType = {
     id: 101,
     title: "Buds Pro 2",
-    thumbnail: "/images/features/product-3.png",
+    thumbnail: "/images/features/1000x-serie-shop-ornexa2.webp",
     description:
       "Spatial Audio Effect is based on the Head-Related Transfer Function (HRTF) for spatial sound supported by unlimited Bluetooth devices and audio sources.",
     price: 295.0,
@@ -53,7 +53,7 @@ const FeaturesProductThree = () => {
                 width={378}
                 height={477}
                 sizes="100vw"
-                src={"/images/features/product-3.png"}
+                src={"/images/features/1000x-serie-shop-ornexa1 .webp"}
                 alt="img"
               />
             </div>
@@ -62,7 +62,7 @@ const FeaturesProductThree = () => {
                 width={380}
                 height={477}
                 sizes="100vw"
-                src={"/images/features/product-4.png"}
+                src={"/images/features/1000x-serie-shop-ornexa2.webp"}
                 alt="img"
               />
             </div>
