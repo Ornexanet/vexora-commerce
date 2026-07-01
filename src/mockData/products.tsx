@@ -403,12 +403,15 @@ availability: "Finns i lager",
 
 
     {
-      id: 6,
-      title: "GoPro MAX",
-      thumbnail: "/images/bestProducts/camera-6.png",
-      description: "360-degree action camera with dual lens",
-      price: 399.99,
-      tag: null,
+      id: 9,
+       title: "AirPods 4",
+  thumbnail: "/images/headphones/airpods-4-shop-ornexa1.webp",
+  gallery: [
+    "/images/headphones/airpods-4-shop-ornexa1.webp",
+  ],
+  description: "AirPods 4 ger en lätt och bekväm lyssningsupplevelse med klart ljud, stabil anslutning och smidig användning tillsammans med Apple-enheter.",
+  price: 1790,
+  tag: "Ny",
       discount: null,
       categories: ["cameras", "accessories"],
       filter: "cameras",
@@ -481,9 +484,9 @@ availability: "Finns i lager",
     {
   id: 11,
   title: "AirPods Pro 3",
-  thumbnail: "/images/headphones/airpods-pro-3-shop-ornexa.jpg",
+  thumbnail: "/images/headphones/airpods-pro-3-shop-ornexa1.webp",
   gallery: [
-    "/images/headphones/airpods-pro-3-shop-ornexa.jpg",
+    "/images/headphones/airpods-pro-3-shop-ornexa1.webp",
   ],
   description:
     "AirPods Pro 3 erbjuder aktiv brusreducering, tydligt ljud och bekväm passform för arbete, träning, samtal och musik.",
