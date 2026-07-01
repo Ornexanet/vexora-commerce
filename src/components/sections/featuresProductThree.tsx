@@ -73,13 +73,14 @@ const FeaturesProductThree = () => {
             </strong>
             <Title>1000X SERIES</Title>
             <div className="flex items-center gap-[30px] mt-2">
-              <Title asChild size="28" className="font-normal">
-                <p>2999</p> kr
-              </Title>
-              <Title asChild size="28" className="font-normal">
-                <del className="text-[#B0B5BB]">2999</del>
-              </Title>
-            </div>
+           <Title size="28" className="font-normal">
+           2999 kr
+          </Title>
+         <p className="text-[28px] text-[#B0B5BB] line-through">
+          3499 kr
+          </p>
+          </div>
+
             <p className="text-light-dark md:leading-7 md:text-lg max-w-[711px] mt-10">
               1000X Series är utvecklad för dig som vill uppleva musik utan störningar.
              Med avancerad aktiv brusreducering, kristallklart ljud,
