@@ -102,7 +102,7 @@ const itemsTwo = [
 const HeaderExtraInfo = () => {
   return (
     <>
-      <Select>
+     {/* <Select>
         <SelectTrigger className="[&_svg:not([class*='size-'])]:first:size-[35px] [&_img]:hidden gap-1 text-sm border-none font-bold focus-visible:ring-0 data-[size=default]:h-auto p-0 items-end text-start">
           <span className="flex items-center gap-2.5">
             <Globe />
@@ -126,7 +126,7 @@ const HeaderExtraInfo = () => {
             </SelectItem>
           ))}
         </SelectContent>
-      </Select>
+      </Select> */}
 
       <DropdownMenu>
         <DropdownMenuTrigger className="min-w-max text-sm border-none font-bold text-start focus-visible:ring-0 flex items-end gap-1">
