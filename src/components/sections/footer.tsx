@@ -152,7 +152,10 @@ const Footer = () => {
           <div className="pt-[120px] pb-1 flex lg:flex-row flex-col lg:items-center justify-between gap-y-5">
             <div className="flex sm:flex-row flex-col sm:items-center gap-x-10 gap-y-5">
               <Link href={"/"} className="text-light-dark">
-                <Logo />
+                <span className="text-3xl font-bold tracking-tight text-foreground">
+                 Ornexa<span className="text-[#0066FF]">.</span>
+                </span>
+
               </Link>
               <ul className="flex sm:items-center sm:flex-row flex-col gap-x-10 gap-y-5">
                 <li>
