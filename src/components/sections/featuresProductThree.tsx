@@ -77,7 +77,7 @@ const FeaturesProductThree = () => {
                 <p>2999</p> kr
               </Title>
               <Title asChild size="28" className="font-normal">
-                <del className="text-[#B0B5BB]"></del>
+                <del className="text-[#B0B5BB]">2999</del>
               </Title>
             </div>
             <p className="text-light-dark md:leading-7 md:text-lg max-w-[711px] mt-10">
