@@ -15,8 +15,8 @@ const FeaturesProductThree = () => {
 
   // Product data for Buds Pro 2
   const product: ProductType = {
-    id: 101,
-    title: "Buds Pro 2",
+    id: 102,
+    title: "1000X SERIES",
     thumbnail: "/images/features/1000x-serie-shop-ornexa2.webp",
     description:
       "Spatial Audio Effect is based on the Head-Related Transfer Function (HRTF) for spatial sound supported by unlimited Bluetooth devices and audio sources.",
@@ -71,20 +71,20 @@ const FeaturesProductThree = () => {
             <strong className="md:text-lg md:leading-normal text-light-dark">
               Headphones
             </strong>
-            <Title>Buds Pro 2</Title>
+            <Title>1000X SERIES</Title>
             <div className="flex items-center gap-[30px] mt-2">
               <Title asChild size="28" className="font-normal">
-                <p>$295.00</p>
+                <p>2999</p> kr
               </Title>
               <Title asChild size="28" className="font-normal">
-                <del className="text-[#B0B5BB]">$349.00</del>
+                <del className="text-[#B0B5BB]"></del>
               </Title>
             </div>
             <p className="text-light-dark md:leading-7 md:text-lg max-w-[711px] mt-10">
-              Spatial Audio Effect is based on the Head-Related Transfer
-              Function (HRTF) for spatial sound supported by unlimited Bluetooth
-              devices and audio sources. Get fully surrounded by rich,
-              cinema-grade sound.
+              1000X Series är utvecklad för dig som vill uppleva musik utan störningar.
+             Med avancerad aktiv brusreducering, kristallklart ljud,
+             hög komfort och upp till flera timmars batteritid får du en premiumupplevelse varje gång du lyssnar.
+
             </p>
             <hr className="mt-10 w-full" />
             <div className="mt-10 flex sm:gap-6 gap-4">
@@ -111,12 +111,12 @@ const FeaturesProductThree = () => {
                 className="gap-x-[15px] border-blue text-blue hover:border-black hover:text-foreground max-w-[211px] max-sm:px-4 flex-1"
               >
                 <ShopingBag />
-                Add to Cart
+                Lägg i varukorgen
               </Button>
             </div>
             <div className="mt-[30px] max-w-[377px]">
               <Button onClick={handleBuyNow} className="w-full">
-                Buy it Now
+                Köp nu
               </Button>
             </div>
           </div>
