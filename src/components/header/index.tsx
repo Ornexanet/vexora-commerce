@@ -56,45 +56,7 @@ const Header = () => {
                 )}
                 {subMenu?.length && (
                   <ul className="max-w-[1585px] overflow-hidden hidden group-hover/pages:flex justify-between delay-500 w-full absolute top-full left-0 z-50 bg-background rounded-xl shadow-[0_7px_18px_0_rgba(0,0,0,0.09)] border border-[#F1F1F4]">
-                    <li className="border-r border-[#F1F1F4] bg-[#FCFCFC] pt-7.5 pb-5 px-7.5 w-full max-w-[343px]">
-                      <span className="flex px-2.5 pb-5 font-medium text-lg leading-6">
-                        Pre-Built Demos
-                      </span>
-                      <ul>
-                        <li>
-                          <Link
-                            href={"#"}
-                            className="flex items-center gap-2.5 p-2.5 text-lg text-light-dark border border-transparent rounded-md hover:text-foreground hover:border-[#F1F1F4] hover:bg-background transition-all duration-500"
-                          >
-                            Consumer Electronics
-                          </Link>
-                        </li>
-                        <li>
-                          <div className="flex items-center gap-2.5 p-2.5 text-lg text-light-dark border border-transparent rounded-md cursor-not-allowed transition-all duration-500 opacity-70">
-                            Fashion & Clothing
-                            <span className="rounded-sm text-xs font-medium leading-2.5 px-1.5 py-1 block bg-[#F1F1F4]">
-                              Soon
-                            </span>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="flex items-center gap-2.5 p-2.5 text-lg text-light-dark border border-transparent rounded-md cursor-not-allowed transition-all duration-500 opacity-70">
-                            Jewellery
-                            <span className="rounded-sm text-xs font-medium leading-2.5 px-1.5 py-1 block bg-[#F1F1F4]">
-                              Soon
-                            </span>
-                          </div>
-                        </li>
-                        <li>
-                          <div className="flex items-center gap-2.5 p-2.5 text-lg text-light-dark border border-transparent rounded-md cursor-not-allowed transition-all duration-500 opacity-70">
-                            Sports
-                            <span className="rounded-sm text-xs font-medium leading-2.5 px-1.5 py-1 block bg-[#F1F1F4]">
-                              Soon
-                            </span>
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
+                    
                     <li className="w-full overflow-x-auto">
                       <ul className="flex justify-between min-w-[1200px]">
                         {subMenu.map(({ id, title, pages }) => (
