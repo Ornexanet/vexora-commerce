@@ -44,7 +44,7 @@ const FeaturesProduct = () => {
               Köp iPhone 17 Pro
             </Button>
             <Link
-              href={"//product-details/2"}
+              href={"/product-details/2"}
               className="font-bold text-lg leading-[28.8px] flex items-center gap-2.5 hover:text-blue hover:[&_svg]:translate-x-1 transition-all duration-300"
             >
               Läs mer{""}
