@@ -1146,7 +1146,7 @@ thumbnail: "/images/headphones/WH1000XM6-shop-ornexa.webp",
   ],
 },
     {
-  id: 5,
+  id: 13,
   title: "Samsung Galaxy Buds3",
   thumbnail: "/images/headphones/galaxy-buds3-shop-ornexa.avif",
   gallery: [
@@ -1186,12 +1186,13 @@ thumbnail: "/images/headphones/WH1000XM6-shop-ornexa.webp",
   ],
 },
 
-       {
-  id: 6,
+
+ {
+  id: 11,
   title: "AirPods Pro 3",
-  thumbnail: "/images/headphones/airpods-pro-3-shop-ornexa.jpg",
+  thumbnail: "/images/headphones/airpods-pro-3-shop-ornexa1.webp",
   gallery: [
-    "/images/headphones/airpods-pro-3-shop-ornexa.jpg",
+    "/images/headphones/airpods-pro-3-shop-ornexa1.webp",
   ],
   description:
     "AirPods Pro 3 erbjuder aktiv brusreducering, tydligt ljud och bekväm passform för arbete, träning, samtal och musik.",
@@ -1226,5 +1227,6 @@ thumbnail: "/images/headphones/WH1000XM6-shop-ornexa.webp",
     },
   ],
 },
+
   ],
 };
