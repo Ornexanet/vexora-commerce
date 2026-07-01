@@ -285,10 +285,10 @@ export const products: Products = {
     {
   id: 1,
   title: "iPhone 16 Plus",
-thumbnail: "/images/mobiles/iphone-16-plus.webp",
+thumbnail: "/images/mobiles/iphone-16-plus-ornexa-shop2.webp",
 gallery: [
-  "/images/mobiles/iphone-16-plus.webp",
-  "/images/mobiles/iphone-16-plus-2.webp",
+  "/images/mobiles/iphone-16-plus-ornexa-shop2.webp",
+  "/images/mobiles/iphone-16-plus-ornexa-shop2.webp",
 ],
 
 
