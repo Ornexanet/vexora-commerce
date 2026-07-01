@@ -22,18 +22,9 @@ interface PageListType {
 export const pagesSubmenuList: PagesSubmenuListType[] = [
   {
     id: 0,
-    title: "Utility & Legal Pages",
+    title: "Information",
     pages: [
-      {
-        id: 1,
-        href: "/",
-        label: "Home-1",
-      },
-      {
-        id: 2,
-        href: "/home-2",
-        label: "Home-2",
-      },
+     
       {
         id: 3,
         href: "/about",
@@ -49,49 +40,10 @@ export const pagesSubmenuList: PagesSubmenuListType[] = [
         href: "/faqs",
         label: "FAQs",
       },
-      {
-        id: 6,
-        href: "/dashboard",
-        label: "Dashboard",
-      },
+      
     ],
   },
-  {
-    id: 1,
-    title: "Shop & Product Pages",
-    pages: [
-      {
-        id: 1,
-        href: "/shop",
-        label: "Shop",
-      },
-      {
-        id: 2,
-        href: "/shop-with-sidebar",
-        label: "Shop With Sidebar",
-      },
-      {
-        id: 3,
-        href: "/shop-list",
-        label: "Shop List",
-      },
-      {
-        id: 4,
-        href: "/product-details",
-        label: "Product Details",
-      },
-      {
-        id: 5,
-        href: "/product-details-2",
-        label: "Product Details Two",
-      },
-      {
-        id: 6,
-        href: "/compare",
-        label: "Compare",
-      },
-    ],
-  },
+  
   {
     id: 2,
     title: "User Account",
@@ -106,21 +58,7 @@ export const pagesSubmenuList: PagesSubmenuListType[] = [
         href: "/login",
         label: " account",
       },
-      {
-        id: 3,
-        href: "/dashboard/orders",
-        label: "My Orders",
-      },
-      {
-        id: 4,
-        href: "/dashboard/orders",
-        label: "Track Order",
-      },
-      {
-        id: 5,
-        href: "/dashboard/orders",
-        label: "Order Details",
-      },
+     
       {
         id: 6,
         href: "/wishlist",
@@ -142,37 +80,7 @@ export const pagesSubmenuList: PagesSubmenuListType[] = [
         href: "/checkout",
         label: "Checkout",
       },
-      {
-        id: 3,
-        href: "/dashboard/orders",
-        label: "Shipping Information",
-      },
-      {
-        id: 4,
-        href: "/dashboard/orders",
-        label: "Payment",
-      },
-      {
-        id: 5,
-        href: "/dashboard/orders",
-        label: "Order Completed",
-      },
-      {
-        id: 6,
-        href: "/about",
-        label: "404 Page",
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: "Engagement Pages",
-    pages: [
-      {
-        id: 1,
-        href: "/blog-details",
-        label: "Blog Details",
-      },
+      
       {
         id: 2,
         href: "/blog",
@@ -213,7 +121,7 @@ export const pagesList: PageListType[] = [
   {
     id: 2,
     href: "/dashboard/orders",
-    label: "Pages",
+    label: "Information",
     subMenu: pagesSubmenuList,
   },
   {
