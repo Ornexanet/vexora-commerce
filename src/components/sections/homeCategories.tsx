@@ -16,21 +16,25 @@ const categoriesList = [
   {
     id: 1,
     title: "Mobiler",
+    href: "/shop?category=mobiler",
     icon: <Watch />,
   },
   {
     id: 2,
     title: "Hörlurar",
+    href: "/shop?category=headphones",
     icon: <Headphones />,
   },
   {
     id: 3,
     title: "Smarta klockor",
+    href: "/shop?category=smartwatch",
     icon: <Watch />,
   },
   {
     id: 4,
     title: "Tillbehör",
+    href: "/shop?category=accessories",
     icon: <Cable />,
   },
 ];
