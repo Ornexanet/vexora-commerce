@@ -11,14 +11,14 @@ const NewStock = () => {
         <div className="flex justify-between items-center flex-wrap gap-5">
           <div>
             <Title asChild size="36">
-              <h4>New in</h4>
+              <h4>Nya produkter</h4>
             </Title>
             <p className="mt-2.5 text-lg leading-normal">
-              Find something that hits the right note
+              Upptäck våra senaste produkter och nyheter 
             </p>
           </div>
           <Button asChild className="rounded-lg">
-            <Link href={"/shop"}>Shop All New</Link>
+            <Link href={"/shop"}>Se alla nyheter</Link>
           </Button>
         </div>
         <div className="mt-12.5 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-2 sm:gap-7.5 gap-5">
