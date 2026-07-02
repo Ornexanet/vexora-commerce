@@ -27,7 +27,14 @@ const TopHeader = () => {
   return (
     <div className="flex justify-between items-center gap-[50px] relative">
       <Link href={"/"} className="shrink-0">
-        <Image width={120} height={40} src={"/images/logo.png"} alt="logo" />
+        <Image
+  width={160}
+  height={48}
+  src="/images/shop-ornexa-net-logo.webp"
+  alt="Ornexa logo"
+  className="h-10 w-auto"
+/>
+
       </Link>
       {/* center search input field and  category dropdown */}
       <div
@@ -89,7 +96,6 @@ const TopHeader = () => {
           </span>
         </div>
         {/* search icons for meduim devices */}
-
         <div className="xl:flex gap-[25px] hidden">
           <HeaderExtraInfo />
         </div>
