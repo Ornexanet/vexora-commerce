@@ -14,29 +14,30 @@ import { useEffect, useRef, useState } from "react";
 
 const categoriesList = [
   {
-    id: 1,
-    title: "Mobiler",
-    href: "/shop?category=mobiler",
-    icon: <Watch />,
-  },
-  {
-    id: 2,
-    title: "Hörlurar",
-    href: "/shop?category=headphones",
-    icon: <Headphones />,
-  },
-  {
-    id: 3,
-    title: "Smarta klockor",
-    href: "/shop?category=smartwatch",
-    icon: <Watch />,
-  },
-  {
-    id: 4,
-    title: "Tillbehör",
-    href: "/shop?category=accessories",
-    icon: <Cable />,
-  },
+  id: 1,
+  title: "Mobiler",
+  href: "/shop-with-sidebar?category=mobiler",
+  icon: <Watch />,
+},
+{
+  id: 2,
+  title: "Hörlurar",
+  href: "/shop-with-sidebar?category=headphones",
+  icon: <Headphones />,
+},
+{
+  id: 3,
+  title: "Smarta klockor",
+  href: "/shop-with-sidebar?category=smartWatch",
+  icon: <Watch />,
+},
+{
+  id: 4,
+  title: "Tillbehör",
+  href: "/shop-with-sidebar?category=accessories",
+  icon: <Cable />,
+},
+
 ];
 
 const HomeCategories = () => {
@@ -96,10 +97,10 @@ const HomeCategories = () => {
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             <div className="flex justify-between gap-7.5">
-              {categoriesList.map(({ icon, id, title }) => (
+              {categoriesList.map(({ icon, id, title, href }) => (
                 <div key={id} className="flex flex-col items-center">
                   <Link
-                    href={"/shop-with-sidebar"}
+                    href={href}
                     className="xl:w-[220px] xl:h-[220px] lg:w-50 lg:h-50 w-40 h-40 lg:rounded-[60px] rounded-[40px] bg-[#F3F5F8] text-light-dark flex items-center justify-center lg:mb-10 mb-5 hover:text-foreground transition-all duration-500"
                   >
                     <span className="lg:[&_svg]:size-auto [&_svg]:size-20">
@@ -107,7 +108,7 @@ const HomeCategories = () => {
                     </span>
                   </Link>
                   <Link
-                    href={"/shop-with-sidebar"}
+                    href={href}
                     className="font-medium lg:text-[22px] text-lg text-center hover:text-blue transition-all duration-500"
                   >
                     {title}
