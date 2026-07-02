@@ -27,14 +27,7 @@ const TopHeader = () => {
   return (
     <div className="flex justify-between items-center gap-[50px] relative">
       <Link href={"/"} className="shrink-0">
-        <Image
-  width={320}
-  height={80}
-  src="/images/ornexa-shop.logo12.web"
-  alt="Ornexa logo"
-  className="h-10 w-auto"
-/>
-
+        <Image width={120} height={40} src={"/images/logo.png"} alt="logo" />
       </Link>
       {/* center search input field and  category dropdown */}
       <div
