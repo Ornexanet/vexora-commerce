@@ -68,7 +68,7 @@ const itemsOne = [
   },
   {
     label: "Mitt konto",
-    href: "#",
+    href: "/login",
     icon: <User className="size-6 text-light-dark stroke-3" />,
   },
   {
@@ -88,15 +88,15 @@ const itemsOne = [
   },
   {
     label: "Adresser",
-    href: "#",
+    href: "/dashboard/orders",
     icon: <HouseIcon className="size-6 text-light-dark stroke-2" />,
   },
 ];
 const itemsTwo = [
-  { label: "Account Settings", href: "#" },
-  { label: "Payment methods", href: "#" },
-  { label: "Support / Help Center", href: "#" },
-  { label: "Return & Refund Policy", href: "#" },
+  { label: "Kontoinställningar", href: "/login" },
+  { label: "Betalningsmetoder", href: "/returer-och-aterbetalningar" },
+  { label: "Support / Hjälpcenter", href: "/contact" },
+  { label: "Retur-och återbetalningspolicy", href: "/returer-och-aterbetalningar" },
 ];
 
 const HeaderExtraInfo = () => {
