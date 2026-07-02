@@ -62,22 +62,22 @@ const countryList = [
 
 const itemsOne = [
   {
-    label: "Dashboard",
+    label: "Översikt",
     href: "/dashboard",
     icon: <MoreGridIcon className="size-6 text-light-dark" />,
   },
   {
-    label: "My Account",
+    label: "Mitt konto",
     href: "#",
     icon: <User className="size-6 text-light-dark stroke-3" />,
   },
   {
-    label: "My Orders",
+    label: "Mina beställningar",
     href: "/dashboard/orders",
     icon: <FileIcon className="size-6 text-light-dark stroke-2" />,
   },
   {
-    label: "Wishlist",
+    label: "Önskelista",
     href: "/wishlist",
     icon: <Heart className="size-6 text-light-dark stroke-2" />,
   },
@@ -87,7 +87,7 @@ const itemsOne = [
     icon: <ShoppingCartSmIcon className="size-6 text-light-dark" />,
   },
   {
-    label: "Addresses",
+    label: "Adresser",
     href: "#",
     icon: <HouseIcon className="size-6 text-light-dark stroke-2" />,
   },
@@ -142,7 +142,7 @@ const HeaderExtraInfo = () => {
         <DropdownMenuContent className="w-[299px]">
           <div className="flex flex-col gap-2 w-full">
             <Button asChild size={"sm"} className="w-full rounded-full">
-              <Link href="/login">Sign in</Link>
+              <Link href="/login">Logga in</Link>
             </Button>
             <Button
               asChild
@@ -150,7 +150,7 @@ const HeaderExtraInfo = () => {
               size={"sm"}
               className="w-full rounded-full"
             >
-              <Link href="/register">Register</Link>
+              <Link href="/register">Registrera</Link>
             </Button>
           </div>
           <hr className="border-[#F1F1F4] my-2.5" />
