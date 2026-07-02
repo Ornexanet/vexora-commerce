@@ -41,12 +41,12 @@ export const pagesSubmenuList: PagesSubmenuListType[] = [
       },
       {
         id: 4,
-        href: "/privacy-policy",
+        href: "/Privacy-policy",
         label: "Integritetspolicy",
       },
       {
         id: 5,
-        href: "/returns-refund-policy",
+        href: "/returer-och-aterbetalningar",
         label: "Retur & återbetalning",
       },
     ],
@@ -62,7 +62,7 @@ export const pagesSubmenuList: PagesSubmenuListType[] = [
       },
       {
         id: 2,
-        href: "/account",
+        href: "/login",
         label: "Mitt konto",
       },
       {
