@@ -30,7 +30,7 @@ const TopHeader = () => {
         <Image
   width={320}
   height={80}
-  src="/images/logo11.webp"
+  src="/images/ornexa-shop.logo12.web"
   alt="Ornexa logo"
   className="h-10 w-auto"
 />
