@@ -41,7 +41,7 @@ const BestProducts = () => {
             <div>
               <div className="flex lg:flex-row flex-col lg:items-center gap-2">
                 <Title size="36" className="font-medium">
-                  Best in
+                  Populärt inom
                 </Title>
                 <TabsList className="bg-transparent p-0 gap-x-5 gap-y-1 justify-start flex-wrap h-auto">
                   {filterList.map(({ label, value }) => (
@@ -57,11 +57,11 @@ const BestProducts = () => {
                 </TabsList>
               </div>
               <p className="text-lg leading-normal mt-2">
-                Shop the best products from Vexora
+                Uppräck vårt noggrant utvalda sortiment av premiumprodukter.
               </p>
             </div>
             <Button asChild className="rounded-lg capitalize">
-              <Link href={"/shop-with-sidebar"}>Shop {selectValue}</Link>
+              <Link href={"/shop-with-sidebar"}>Köp {selectValue}</Link>
             </Button>
           </div>
           {filterList.map(({ value }) => {
@@ -82,7 +82,7 @@ const BestProducts = () => {
                     size="36"
                     className="py-20 text-center text-light-dark"
                   >
-                    <h6>Product Not Found</h6>
+                    <h6>Produkten kunde inte hittas</h6>
                   </Title>
                 )}
               </TabsContent>
