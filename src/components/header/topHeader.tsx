@@ -28,8 +28,8 @@ const TopHeader = () => {
     <div className="flex justify-between items-center gap-[50px] relative">
       <Link href={"/"} className="shrink-0">
         <Image
-  width={160}
-  height={48}
+  width={320}
+  height={80}
   src="/images/shop-ornexa-net-logo.webp"
   alt="Ornexa logo"
   className="h-10 w-auto"
