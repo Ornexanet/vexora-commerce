@@ -56,7 +56,7 @@ const Home = () => {
         <FeaturesProductTwo />
         <FeaturesProductThree />
        <CompanyFeaturesSlider />
-        <Testimonial /> 
+       {/* <Testimonial /> */}
         <BlogSlider />
       </main>
       <Footer />
