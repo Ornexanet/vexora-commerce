@@ -40,7 +40,15 @@ const HeroSlider = () => {
   const [activeVideoUrl, setActiveVideoUrl] = useState("");
   return (
     <section>
-      <Swiper  speed={1000}>
+      <Swiper
+  modules={[Autoplay]}
+  speed={1000}
+  loop={true}
+  autoplay={{
+    delay: 4000,
+    disableOnInteraction: false,
+  }}
+>
         {heroData.map(
           ({ 
             backgroundImage, 
