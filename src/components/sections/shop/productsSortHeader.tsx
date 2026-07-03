@@ -57,7 +57,7 @@ const ProductsSortHeader = () => {
             htmlFor="filter"
             className="lg:text-xl text-lg text-light-dark"
           >
-            Sort by:
+            Sortera efter:
           </Label>
           <Select defaultValue="best-selling">
             <SelectTrigger
@@ -67,8 +67,8 @@ const ProductsSortHeader = () => {
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="best-selling">Best selling</SelectItem>
-              <SelectItem value="new-items">New Items</SelectItem>
+              <SelectItem value="best-selling">Bästsäljande</SelectItem>
+              <SelectItem value="new-items">Nyheter</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -77,7 +77,7 @@ const ProductsSortHeader = () => {
             htmlFor="perpage"
             className="lg:text-xl text-lg text-light-dark"
           >
-            Products per page:
+            Produkter per sida:
           </Label>
           <Select defaultValue="10">
             <SelectTrigger
