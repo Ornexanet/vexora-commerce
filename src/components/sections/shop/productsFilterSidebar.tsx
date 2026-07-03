@@ -184,12 +184,12 @@ const ProductsFilterSidebar = () => {
     <aside className="2xl:max-w-[378px] max-w-[310px] space-y-[50px] mt-3">
       <button className="md:text-xl text-lg font-medium flex items-center gap-2.5">
         <Filter />
-        Clear Filters
+        Rensa filter
       </button>
       {/* filter by category */}
       <div>
         <Title asChild size="28" className="font-extrabold mb-[30px]">
-          <h4>Product Categories</h4>
+          <h4>Produktkategorier</h4>
         </Title>
         <ul className="space-y-[15px]">
           {productCategories.map(({ id, name, subcategories }) => (
@@ -238,7 +238,7 @@ const ProductsFilterSidebar = () => {
       {/* price range slider and input */}
       <div>
         <Title asChild size="28" className="font-extrabold mb-[30px]">
-          <h4>Price Filter</h4>
+          <h4>Pris Filter</h4>
         </Title>
         <div className="flex items-center gap-[15px] mb-6 ">
           <Input
@@ -283,7 +283,7 @@ const ProductsFilterSidebar = () => {
       {/* filter by Brands */}
       <div>
         <Title asChild size="28" className="font-extrabold mb-[30px]">
-          <h4>Brands</h4>
+          <h4>Varumärken</h4>
         </Title>
         <ul className="space-y-[15px]">
           {brands.map(({ id, name }) => (
@@ -294,13 +294,13 @@ const ProductsFilterSidebar = () => {
           ))}
         </ul>
         <Button variant={"link"} className="mt-5 text-light-dark font-medium">
-          See more
+          Visa fler
         </Button>
       </div>
       {/* filter by rating */}
       <div>
         <Title asChild size="28" className="font-extrabold mb-[30px]">
-          <h4>Average Ratings</h4>
+          <h4>Genomsnittligt betyg</h4>
         </Title>
         <ul className="space-y-[15px]">
           {ratings.map(({ id, availableProducts, star }) => (
