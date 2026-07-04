@@ -22,17 +22,17 @@ export interface BlogType {
 export const blogData: BlogType[] = [
     {
         id: 1,
-        title: "Why the Vexora X1 Smartwatch Is Your Ultimate Fitness Companion",
-        thumbnail: "/images/blogs/blog-1.png",
-        description: "Smart thermostats aren’t just a fancier way to control your home’s temperature. Contemporary smart thermostats allow",
+        title: "Samsung Galaxy Watch Ultra – Den ultimata smartklockan för träning och vardag",
+        thumbnail: "/images/blogs/blogg-sho-ornexa1.webp",
+        description: "Upptäck varför Samsung Galaxy Watch Ultra är ett av marknadens mest avancerade smarta klockor med kraftfull batteritid, GPS och avancerade hälsofunktioner.",
         author: {
-            name: "Zara Hammond",
+            name: "Ornexa team",
             image: "/images/blogs/user-1.png"
         },
         date: {
-            day: "05",
-            month: "April",
-            year: 2024
+            day: "04",
+            month: "Juli",
+            year: 2026
         },
         size: "large"
     },
