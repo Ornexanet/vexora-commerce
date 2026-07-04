@@ -165,7 +165,7 @@ const BlogDetails = () => {
 <div className="max-w-[784px] mx-auto mt-12">
   <Link
     href="/product-details/18"
-    className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-4 text-white font-semibold hover:opacity-90 transition"
+    className="inline-flex items-center justify-center rounded-lg bg-[#00AEEF] px-8 py-4 text-white font-semibold hover:opacity-90 transition"
   >
     Köp Samsung Galaxy Watch Ultra
   </Link>
