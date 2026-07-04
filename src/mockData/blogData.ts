@@ -27,7 +27,7 @@ export const blogData: BlogType[] = [
         description: "Upptäck varför Samsung Galaxy Watch Ultra är ett av marknadens mest avancerade smarta klockor med kraftfull batteritid, GPS och avancerade hälsofunktioner.",
         author: {
             name: "Ornexa team",
-            image: "/images/blogs/user-1.png"
+            image: "/images/blogs/ornexa-avatar.webp"
         },
         date: {
             day: "04",
