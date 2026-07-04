@@ -12,11 +12,12 @@ import { BlockQuotation } from "@/lib/icons";
 import { blogData } from "@/mockData/blogData";
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Vexora - Blog Details",
+  title: "Samsung Galaxy Watch Ultra Guide | Ornexa",
   description:
-    "Vexora - Single Product eCommerce Next.js Template for Tech and Gadget Stores",
+    "En komplett guide till Samsung Galaxy Watch Ultra med funktioner, fördelar, träningsanvändning och köpråd från Ornexa.",
 };
 
 const BlogDetails = () => {
@@ -33,7 +34,7 @@ const BlogDetails = () => {
         <div className="max-w-[1054px] mx-auto">
           <div className="max-w-[784px] mx-auto">
             <h1 className="font-extrabold xl:text-[56px] lg:text-5xl text-4xl xl:leading-[120%]">
-              Swap Your Style: The Best Bands for Your Vexora Watch
+              Samsung Galaxy Watch Ultra – Komplett guide för träning och vardag
             </h1>
             <div className="mt-5 mb-10 flex items-center justify-between flex-wrap gap-3">
               <div className="[&_.by]:text-light-dark [&_.date]:text-foreground [&_.author-name]:text-foreground">
@@ -55,74 +56,57 @@ const BlogDetails = () => {
           <div className="[&_p]:text-lg [&_p]:text-light-dark [&_p]:leading-[160%] [&_p:not(:last-child)]:mb-5">
             <div className="max-w-[784px] mx-auto">
               <p>
-                In the ever-evolving landscape of social media, platforms
-                constantly vie for users` attention. Instagram, known for its
-                innovation in visual content, recently introduced a new feature
-                called Reels, aiming to compete with popular short-form video
-                platforms like TikTok. A new study sheds light on how Instagram
-                Reels stack up against TikTok and Facebook videos, revealing
-                surprising insights into user engagement and content
-                performance.
+                
+             Samsung Galaxy Watch Ultra är Samsungs mest avancerade smartklocka, utvecklad
+             för användare som vill kombinera träning, hälsa och vardag i en enda enhet.
+             Med robust konstruktion, lång batteritid, exakt GPS och avancerade
+             hälsofunktioner är den ett utmärkt val för både professionella idrottare och
+             vanliga användare.
+
               </p>
               <Title asChild size="36" className="mb-4 mt-20">
-                <h3>Key Findings:</h3>
+                <h3>Varför välja Samsung Galaxy Watch Ultra?</h3>
               </Title>
               <p>
-                The study, conducted by Next Agency in collaboration with
-                industry experts, analyzed thousands of videos across Instagram
-                Reels, TikTok, and Facebook to understand user behavior and
-                content trends. Here are the key findings:
+                Galaxy Watch Ultra erbjuder en kombination av hög prestanda, slitstark
+                design och intelligenta funktioner. Klockan passar både för intensiv träning,
+               vandring, löpning och daglig användning samtidigt som den ger detaljerad
+              hälsodata och smarta funktioner direkt på handleden.
               </p>
               <div>
-                <h6 className="lg:text-2xl text-xl font-extrabold mb-4">
-                  1. Higher Engagement on Instagram Reels:
+                <h6 className="lg:text-2xl text-xl font-extrabold mb-4">   
+                1. Robust design för extrema miljöer
                 </h6>
                 <p>
-                  Contrary to expectations, the study found that Instagram Reels
-                  outperformed both TikTok and Facebook videos in terms of user
-                  engagement. Reels garnered higher average likes, comments, and
-                  shares, indicating a strong preference among users for this
-                  new format.
+                  Galaxy Watch Ultra är byggd med slitstarka material och är utvecklad för att
+                  klara tuffa miljöer, vandring, löpning, cykling och andra utomhusaktiviteter.
+                  Den robusta konstruktionen gör klockan till ett pålitligt val för både
+                  vardag och äventyr.
                 </p>
               </div>
             </div>
-            <blockquote className="bg-[#F5F5F7] rounded-[30px] py-12.5 my-12.5 px-3">
-              <div className="max-w-[784px] mx-auto relative">
-                <span className="absolute -top-9 -left-8">
-                  <BlockQuotation />
-                </span>
-                <p>
-                  Success in the digital age hinges on adaptation and
-                  innovation. Our study sheds light on the transformative power
-                  of Instagram Reels, paving of the way for brands to thrive in
-                  the dynamic landscape of social media.
-                </p>
-                <b className="font-medium text-[22px] text-blue">- Elon Musk</b>
-              </div>
-            </blockquote>
-
+          
             <div className="max-w-[784px] mx-auto space-y-11">
               <div>
                 <h6 className="lg:text-2xl text-xl font-extrabold mb-4">
-                  2. Quality Over Quantity
+                  2. Lång batteritid för hela dagen
                 </h6>
                 <p>
-                  While TikTok boasts a larger user base and a plethora of
-                  content, Instagram Reels` success lies in its emphasis on
-                  quality over quantity. The study revealed that Reels with
-                  polished production value and compelling storytelling
+                  Galaxy Watch Ultra har ett kraftfullt batteri som gör att du kan använda
+                  klockan under långa träningspass, resor och arbetsdagar utan att behöva ladda
+                  den ofta. Den är utvecklad för användare som vill kunna lita på sin
+                  smartklocka hela dagen.
                 </p>
               </div>
               <div>
                 <h6 className="lg:text-2xl text-xl font-extrabold mb-4">
-                  3. Audience Demographics
+                  3. Exakt GPS och träningsspårning
                 </h6>
                 <p>
-                  Interestingly, the study also uncovered differences in
-                  audience demographics across the platforms. While TikTok
-                  remains popular among Gen Z and younger audiences, Instagram
-                  Reels attracted a broader demographic range, including
-                  Millennials and older age groups. This suggests that
+                  Med avancerad GPS och träningsspårning hjälper Galaxy Watch Ultra dig att
+                  följa löpning, cykling, vandring och andra aktiviteter med hög precision.
+                  Det gör klockan särskilt användbar för personer som vill mäta sin prestation
+                  och följa sin utveckling över tid.
                 </p>
                 <div className="mt-20">
                   <Image
@@ -138,71 +122,57 @@ const BlogDetails = () => {
             </div>
             <div className="max-w-[784px] mx-auto">
               <Title asChild size="36" className="mb-4 mt-20">
-                <h3>Implications for Marketers:</h3>
+                <h3>Tekniska specifikationer</h3>
               </Title>
               <p>
-                The study, conducted by Next Agency in collaboration with
-                industry experts, analyzed thousands of videos across Instagram
-                Reels, TikTok, and Facebook to understand user behavior and
-                content trends. Here are the key findings:
+                Samsung Galaxy Watch Ultra kombinerar en robust konstruktion, AMOLED-skärm,
+                snabb processor, avancerade sensorer och lång batteritid. Kombinationen gör
+                den till ett av de mest kompletta alternativen för både träning och daglig
+                användning.
               </p>
               <ol className="list-decimal list-inside mt-4 space-y-1">
                 <li className="text-light-dark text-lg">
-                  Diversify Your Content Strategy
-                </li>
-                <li className="text-light-dark text-lg">
-                  Focus on Quality and Creativity
-                </li>
-                <li className="text-light-dark text-lg">Know Your Audience</li>
-                <li className="text-light-dark text-lg">
-                  Platform-Specific Content Strategies
-                </li>
-                <li className="text-light-dark text-lg">
-                  Investment in Influencer Marketing
-                </li>
-                <li className="text-light-dark text-lg">
-                  Adaptation of Advertising Strategies
-                </li>
+             Skärm: AMOLED med hög ljusstyrka
+             </li>
+             <li className="text-light-dark text-lg">
+             GPS: avancerad positionering för träning och utomhusaktiviteter
+            </li>
+            <li className="text-light-dark text-lg">
+             Batteri: lång batteritid för vardag och träning
+             </li>
+             <li className="text-light-dark text-lg">
+             Hälsa: pulsmätning, sömnspårning och aktivitetsdata
+            </li>
+            <li className="text-light-dark text-lg">
+            Design: robust konstruktion för tuffare användning
+           </li>
+           <li className="text-light-dark text-lg">
+            Passar för: träning, arbete, resor och daglig användning
+            </li>
+
               </ol>
             </div>
             <div className="max-w-[784px] mx-auto">
               <Title asChild size="36" className="mb-4 mt-20">
-                <h3>Conclusion:</h3>
+                <h3>Sammanfattning</h3>
               </Title>
               <p>
-                The emergence of Instagram Reels as a formidable competitor to
-                TikTok and Facebook videos underscores the dynamic nature of
-                social media. As brands and marketers navigate this rapidly
-                evolving landscape, insights from studies like this provide
-                valuable guidance for optimizing content strategy and driving
-                engagement on social platforms. By embracing the power of
-                short-form video content and leveraging platforms like Instagram
-                Reels.
+                Samsung Galaxy Watch Ultra är ett komplett val för användare som söker en kraftfull smartklocka med lång batteritid
+                ,avancerade hälsofunktioner och robust design. 
+                Den passar både för träning, arbete och vardagsliv och är ett av Samsungs mest avancerade wearables.
               </p>
+                       
+<div className="max-w-[784px] mx-auto mt-12">
+  <Link
+    href="/product-details/18"
+    className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-4 text-white font-semibold hover:opacity-90 transition"
+  >
+    Köp Samsung Galaxy Watch Ultra
+  </Link>
+</div>
+
             </div>
           </div>
-          <div className="flex lg:flex-row flex-col justify-between items-center gap-4 mt-25 mb-12.5 max-w-[870px] mx-auto">
-            <BlogTags />
-            <BlogShareIcon />
-          </div>
-          <NextPrevPost />
-          <hr className="my-12.5 border-[#B0C2E2] max-w-[870px] mx-auto" />
-          <BlogAuthorInfo />
-          <div className="mt-17.5">
-            <div className="max-w-[870px] mx-auto">
-              <Title asChild size="36">
-                <h3>Recent Posts</h3>
-              </Title>
-            </div>
-            <div className="grid lg:grid-cols-2 gap-7.5 mt-5.5">
-              {blogData.slice(0, 2).map((blog) => (
-                <BlogCard key={blog.id} blog={blog} />
-              ))}
-            </div>
-          </div>
-          <CommentDisplay />
-          <hr className="max-w-[870px] mx-auto border-light-gray mb-12.5 mt-15.5" />
-          <CommentWrite />
         </div>
       </section>
     </main>
