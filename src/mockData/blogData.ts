@@ -23,7 +23,7 @@ export const blogData: BlogType[] = [
     {
         id: 1,
         title: "Samsung Galaxy Watch Ultra – Den ultimata smartklockan för träning och vardag",
-        thumbnail: "/images/blogs/blogg-sho-ornexa1.webp",
+        thumbnail: "/images/blogs/blogg-shop-ornexa1.webp",
         description: "Upptäck varför Samsung Galaxy Watch Ultra är ett av marknadens mest avancerade smarta klockor med kraftfull batteritid, GPS och avancerade hälsofunktioner.",
         author: {
             name: "Ornexa team",
