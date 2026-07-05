@@ -9,16 +9,40 @@ export interface DateType {
     year: number;
 }
 
-export interface BlogType {
-    id: number;
-    slug: string;
-    title: string;
-    thumbnail: string;
-    description: string;
-    author: AuthorType;
-    date: DateType;
-    size: "large" | "medium" | "small";
+export interface BlogSectionType {
+  heading: string;
+  body: string;
 }
+
+export interface BlogFaqType {
+  question: string;
+  answer: string;
+}
+
+export interface BlogSpecType {
+  label: string;
+  value: string;
+}
+
+export interface BlogType {
+  id: number;
+  slug: string;
+  title: string;
+  thumbnail: string;
+  secondImage?: string;
+  description: string;
+  intro?: string;
+  sections?: BlogSectionType[];
+  features?: string[];
+  specs?: BlogSpecType[];
+  faq?: BlogFaqType[];
+  productHref?: string;
+  ctaText?: string;
+  author: AuthorType;
+  date: DateType;
+  size: "large" | "medium" | "small";
+}
+
 
 export const blogData: BlogType[] = [
     {
@@ -38,13 +62,66 @@ export const blogData: BlogType[] = [
         },
         size: "large"
     },
-    {
+  {
   id: 2,
   slug: "iphone-17-pro-guide",
   title: "iPhone 17 Pro – komplett guide för kamera, prestanda och premiumkänsla",
   thumbnail: "/images/blogs/iphone17pro-ornexa-blog-bild1.webp",
+  secondImage: "/images/blogs/iphone17pro-ornexa-blog-bild2.webp",
   description:
     "Upptäck iPhone 17 Pro med avancerad kamera, stark prestanda, elegant design och en premiumupplevelse för arbete, foto, video och vardagsanvändning.",
+  intro:
+    "iPhone 17 Pro är ett premiumval för dig som vill ha en kraftfull mobil med hög prestanda, avancerad kamera och en smidig Apple-upplevelse i vardagen.",
+  sections: [
+    {
+      heading: "Varför välja iPhone 17 Pro?",
+      body:
+        "iPhone 17 Pro passar användare som vill kombinera snabb prestanda, hög byggkvalitet och en kamera som fungerar bra för både foto, video och sociala medier.",
+    },
+    {
+      heading: "Kamera och video",
+      body:
+        "Kamerasystemet är en av de största anledningarna att välja iPhone 17 Pro. Den passar särskilt bra för porträtt, produktbilder, video, resor och innehållsskapande.",
+    },
+    {
+      heading: "Prestanda i vardagen",
+      body:
+        "Med stark processor, snabb respons och effektiv mjukvara är iPhone 17 Pro byggd för multitasking, appar, foto, video och långsiktig användning.",
+    },
+  ],
+  features: [
+    "Avancerad kamera för foto och video",
+    "Stark prestanda för arbete och vardag",
+    "Premiumdesign med elegant känsla",
+    "Passar content creators och professionella användare",
+    "Smidig upplevelse med Apple-ekosystemet",
+  ],
+  specs: [
+    { label: "Produkt", value: "iPhone 17 Pro" },
+    { label: "Kategori", value: "Premium smartphone" },
+    { label: "Passar för", value: "Foto, video, arbete och vardag" },
+    { label: "Design", value: "Premiumkänsla och modern finish" },
+    { label: "Användning", value: "Privat, professionellt och kreativt bruk" },
+  ],
+  faq: [
+    {
+      question: "Är iPhone 17 Pro ett bra val för foto och video?",
+      answer:
+        "Ja, iPhone 17 Pro är ett starkt val för användare som vill skapa bilder och video med hög kvalitet i vardagen.",
+    },
+    {
+      question: "Passar iPhone 17 Pro för arbete?",
+      answer:
+        "Ja, modellen passar bra för produktivitet, kommunikation, foto, video och dagliga digitala uppgifter.",
+    },
+    {
+      question: "Vem bör köpa iPhone 17 Pro?",
+      answer:
+        "Den passar dig som vill ha en premiumtelefon med stark prestanda, bra kamera och långsiktig användning.",
+    },
+  ],
+  productHref: "/product-details/iphone-17-pro",
+  ctaText: "Köp iPhone 17 Pro nu",
   author: {
     name: "Ornexa team",
     image: "/images/blogs/ornexa-avatar.webp",
@@ -56,6 +133,7 @@ export const blogData: BlogType[] = [
   },
   size: "small",
 },
+
 
     {
         id: 3,
