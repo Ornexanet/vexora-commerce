@@ -12,9 +12,7 @@ const BlogDetails = async ({
 }) => {
   const { slug } = await params;
 
-  const blog = blogData.find(
-    (item) => item.slug === "samsung-galaxy-watch-ultra"
-  );
+  const blog = blogData.find((item) => item.slug === slug) ?? blogData[0];
 
   return (
     <main>
