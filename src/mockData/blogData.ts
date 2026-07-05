@@ -45,26 +45,108 @@ export interface BlogType {
 
 export const blogData: BlogType[] = [
   {
-    id: 1,
-    slug: "samsung-galaxy-watch-ultra",
-    title:
-      "Samsung Galaxy Watch Ultra – Den ultimata smartklockan för träning och vardag",
-    thumbnail: "/images/blogs/blogg-shop-ornexa1.webp",
-    description:
-      "Upptäck varför Samsung Galaxy Watch Ultra är ett av marknadens mest avancerade smarta klockor med kraftfull batteritid, GPS och avancerade hälsofunktioner.",
-    author: {
-      name: "Ornexa team",
-      image: "/images/blogs/ornexa-avatar.webp",
+  id: 1,
+  slug: "samsung-galaxy-watch-ultra",
+
+  title:
+    "Samsung Galaxy Watch Ultra – komplett guide för träning, hälsa och smart teknik",
+
+  thumbnail: "/images/blogs/ornexa-shop-her1.webp",
+
+  secondImage: "/images/blogs/ornexa-shop-her2.webp",
+
+  description:
+    "Samsung Galaxy Watch Ultra kombinerar avancerad hälsospårning, kraftfull GPS, lång batteritid och premiumdesign. Den här guiden hjälper dig att förstå varför modellen är ett av de bästa valen för både träning och vardagsanvändning.",
+
+  intro:
+    "Samsung Galaxy Watch Ultra är utvecklad för användare som vill ha en smartklocka med hög prestanda, exakt aktivitetsmätning och premiumkvalitet. Guiden går igenom funktioner, fördelar, specifikationer och vem produkten passar bäst för.",
+
+  sections: [
+    {
+      heading: "Varför välja Samsung Galaxy Watch Ultra?",
+      body:
+        "Galaxy Watch Ultra kombinerar avancerad hårdvara, elegant design och smarta funktioner för hälsa, träning och produktivitet. Den passar både aktiva användare och personer som vill ha en komplett smartklocka i vardagen.",
     },
-    date: {
-      day: "04",
-      month: "Juli",
-      year: 2026,
+    {
+      heading: "Hälsa och träning",
+      body:
+        "Klockan erbjuder pulsmätning, sömnanalys, träningsspårning, GPS och flera smarta funktioner som hjälper dig att följa din utveckling och skapa bättre träningsrutiner.",
     },
-    size: "large",
-    productHref: "/product-details/18",
-    ctaText: "Köp Samsung Galaxy Watch Ultra",
+    {
+      heading: "Design och batteritid",
+      body:
+        "Samsung Galaxy Watch Ultra är byggd med premiumkänsla och robust konstruktion. Batteriet räcker länge och gör klockan till ett bra val för både arbete, resor och intensiv träning.",
+    },
+  ],
+
+  features: [
+    "Avancerad GPS och träningsspårning",
+    "Pulsmätning och sömnanalys",
+    "Premiumdesign för vardag och sport",
+    "Lång batteritid",
+    "Snabb prestanda med Wear OS",
+    "Notifikationer, samtal och appar direkt på handleden",
+  ],
+
+  specs: [
+    {
+      label: "Produkt",
+      value: "Samsung Galaxy Watch Ultra",
+    },
+    {
+      label: "Kategori",
+      value: "Premium Smartwatch",
+    },
+    {
+      label: "Operativsystem",
+      value: "Wear OS",
+    },
+    {
+      label: "Passar för",
+      value: "Träning, hälsa, arbete och vardag",
+    },
+    {
+      label: "Styrkor",
+      value: "GPS, batteri, hälsospårning och premiumdesign",
+    },
+  ],
+
+  faq: [
+    {
+      question: "Är Samsung Galaxy Watch Ultra bra för träning?",
+      answer:
+        "Ja. Den erbjuder avancerad GPS, pulsmätning, träningsspårning och detaljerad hälsodata för både motionärer och professionella användare.",
+    },
+    {
+      question: "Passar klockan till vardagsanvändning?",
+      answer:
+        "Ja. Du kan hantera notiser, samtal, kalender, appar och hälsodata direkt från handleden vilket gör den idealisk även utanför träningen.",
+    },
+    {
+      question: "Vem bör köpa Galaxy Watch Ultra?",
+      answer:
+        "Den passar användare som söker en premiumsmartklocka med hög prestanda, lång batteritid och avancerade funktioner för både hälsa och produktivitet.",
+    },
+  ],
+
+  author: {
+    name: "Ornexa team",
+    image: "/images/blogs/ornexa-avatar.webp",
   },
+
+  date: {
+    day: "04",
+    month: "Juli",
+    year: 2026,
+  },
+
+  size: "large",
+
+  productHref: "/product-details/18",
+
+  ctaText: "Köp Samsung Galaxy Watch Ultra",
+},
+
 
   {
     id: 2,
