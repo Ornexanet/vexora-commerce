@@ -51,68 +51,92 @@ const BlogDetails = async ({
 
           <article className="max-w-[784px] mx-auto">
             <p className="text-lg text-light-dark leading-[160%]">
-              {blog.description}
+              {blog.intro || blog.description}
             </p>
 
-            <Title asChild size="36" className="mb-4 mt-20">
-              <h2>Varför välja {blog.title.split("–")[0].trim()}?</h2>
-            </Title>
+            {blog.secondImage && (
+              <Image
+                width={785}
+                height={471}
+                sizes="100vw"
+                src={blog.secondImage}
+                alt={blog.title}
+                className="rounded-[15px] w-full mt-12 mb-12 object-cover"
+              />
+            )}
 
-            <p className="text-lg text-light-dark leading-[160%]">
-              Den här guiden hjälper dig att förstå produktens viktigaste
-              fördelar, vem den passar för och vad du bör tänka på innan köp.
-            </p>
-
-            <Title asChild size="36" className="mb-4 mt-20">
-              <h2>Viktiga fördelar</h2>
-            </Title>
-
-            <ul className="list-disc pl-6 space-y-3 text-lg text-light-dark leading-[160%]">
-              <li>Hög prestanda för arbete, foto, video och vardagsanvändning.</li>
-              <li>Modern design med premiumkänsla.</li>
-              <li>Stark användarupplevelse för både privat och professionellt bruk.</li>
-              <li>Bra val för användare som vill ha en långsiktig produkt.</li>
-            </ul>
-
-            <Title asChild size="36" className="mb-4 mt-20">
-              <h2>Vem passar den för?</h2>
-            </Title>
-
-            <p className="text-lg text-light-dark leading-[160%]">
-              Produkten passar dig som vill ha en pålitlig, modern och kraftfull
-              enhet för vardag, arbete, kommunikation och digital produktivitet.
-            </p>
-
-            <Title asChild size="36" className="mb-4 mt-20">
-              <h2>Vanliga frågor</h2>
-            </Title>
-
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-2xl font-bold">Är produkten ett bra val?</h3>
+            {blog.sections?.map((section) => (
+              <div key={section.heading} className="mt-16">
+                <Title asChild size="36" className="mb-4">
+                  <h2>{section.heading}</h2>
+                </Title>
                 <p className="text-lg text-light-dark leading-[160%]">
-                  Ja, den är ett starkt val för användare som vill kombinera
-                  prestanda, design och långsiktig användning.
+                  {section.body}
                 </p>
               </div>
+            ))}
 
-              <div>
-                <h3 className="text-2xl font-bold">Passar den för arbete?</h3>
-                <p className="text-lg text-light-dark leading-[160%]">
-                  Ja, den passar bra för arbete, kommunikation, foto, video och
-                  dagliga digitala uppgifter.
-                </p>
+            {blog.features && (
+              <div className="mt-16">
+                <Title asChild size="36" className="mb-4">
+                  <h2>Viktiga fördelar</h2>
+                </Title>
+
+                <ul className="list-disc pl-6 space-y-3 text-lg text-light-dark leading-[160%]">
+                  {blog.features.map((feature) => (
+                    <li key={feature}>{feature}</li>
+                  ))}
+                </ul>
               </div>
-            </div>
+            )}
+
+            {blog.specs && (
+              <div className="mt-16">
+                <Title asChild size="36" className="mb-4">
+                  <h2>Tekniska specifikationer</h2>
+                </Title>
+
+                <div className="space-y-3">
+                  {blog.specs.map((spec) => (
+                    <div
+                      key={spec.label}
+                      className="flex justify-between gap-6 border-b pb-3 text-lg"
+                    >
+                      <span className="font-semibold">{spec.label}</span>
+                      <span className="text-light-dark text-right">
+                        {spec.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {blog.faq && (
+              <div className="mt-16">
+                <Title asChild size="36" className="mb-4">
+                  <h2>Vanliga frågor</h2>
+                </Title>
+
+                <div className="space-y-6">
+                  {blog.faq.map((item) => (
+                    <div key={item.question}>
+                      <h3 className="text-2xl font-bold">{item.question}</h3>
+                      <p className="text-lg text-light-dark leading-[160%]">
+                        {item.answer}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div className="mt-12">
               <Link
                 href={blog.productHref || "/shop"}
-
                 className="inline-flex items-center justify-center rounded-lg bg-[#00AEEF] px-8 py-4 text-white font-semibold hover:opacity-90 transition"
               >
                 {blog.ctaText || "Köp produkten nu"}
-
               </Link>
             </div>
           </article>
