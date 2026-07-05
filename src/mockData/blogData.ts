@@ -72,7 +72,7 @@ export const blogData: BlogType[] = [
     title:
       "iPhone 17 Pro – komplett guide för kamera, prestanda och premiumkänsla",
     thumbnail: "/images/blogs/iphone17pro-ornexa-blog-bild1.webp",
-    secondImage: "/images/blogs/iphone17pro-ornexa-blog-bild2.webp",
+    secondImage: "/images/blogs/iphone17pro-ornexa-blogbild2.webp",
     description:
       "Upptäck iPhone 17 Pro med avancerad kamera, stark prestanda, elegant design och en premiumupplevelse för arbete, foto, video och vardagsanvändning.",
     intro:
