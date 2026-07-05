@@ -39,22 +39,24 @@ export const blogData: BlogType[] = [
         size: "large"
     },
     {
-        id: 2,
-        slug: "vexora-360-pro-review",
-        title: "Capture Every Angle with the Vexora 360 Pro: A Complete Review",
-        thumbnail: "/images/blogs/blog-2.png",
-        description: "Smart thermostats aren’t just a fancier way to control your home’s temperature. Contemporary smart thermostats allow",
-        author: {
-            name: "Evan Davis",
-            image: "/images/blogs/user-2.png"
-        },
-        date: {
-            day: "25",
-            month: "June",
-            year: 2024
-        },
-        size: "small"
-    },
+  id: 2,
+  slug: "iphone-17-pro-guide",
+  title: "iPhone 17 Pro – komplett guide för kamera, prestanda och premiumkänsla",
+  thumbnail: "/images/blogs/iphone17pro-ornexa-blog-bild1.webp",
+  description:
+    "Upptäck iPhone 17 Pro med avancerad kamera, stark prestanda, elegant design och en premiumupplevelse för arbete, foto, video och vardagsanvändning.",
+  author: {
+    name: "Ornexa team",
+    image: "/images/blogs/ornexa-avatar.webp",
+  },
+  date: {
+    day: "05",
+    month: "Juli",
+    year: 2026,
+  },
+  size: "small",
+},
+
     {
         id: 3,
         slug: "wave-speaker-review",
