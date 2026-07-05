@@ -48,7 +48,7 @@ const BlogDetails = () => {
               width={1054}
               height={549}
               sizes="100vw"
-              src={"/images/blogs/blog-details-img-1.png"}
+              src={"/images/blogs/ornexa-shop-her1.webp"}
               alt="img"
               className="max-h-[549px] w-full rounded-[15px]"
             />
@@ -113,7 +113,7 @@ const BlogDetails = () => {
                     width={785}
                     height={471}
                     sizes="100vw"
-                    src={"/images/blogs/blog-2.png"}
+                    src={"/images/blogs/ornexa-shop-her2.webp"}
                     alt="img"
                     className="rounded-[15px] w-full max-h-[471px]"
                   />
