@@ -22,7 +22,7 @@ const BlogCard = ({ blog }: { blog: BlogType }) => {
           size="28"
           className="hover:text-blue transition-all duration-500 text-[clamp(1.125rem,0.9435rem+0.8065vw,1.75rem)] line-clamp-2"
         >
-          <Link href={"/blog-details"}>{blog.title}</Link>
+        <Link href={`/blog/${blog.slug}`}>{blog.title}</Link>
         </Title>
         <div className="mt-3 flex items-center gap-2.5">
           <div className="flex items-center gap-2.5">

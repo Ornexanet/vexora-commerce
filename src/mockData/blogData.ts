@@ -11,6 +11,7 @@ export interface DateType {
 
 export interface BlogType {
     id: number;
+    slug: string;
     title: string;
     thumbnail: string;
     description: string;
@@ -22,6 +23,7 @@ export interface BlogType {
 export const blogData: BlogType[] = [
     {
         id: 1,
+        slug: "samsung-galaxy-watch-ultra",
         title: "Samsung Galaxy Watch Ultra – Den ultimata smartklockan för träning och vardag",
         thumbnail: "/images/blogs/blogg-shop-ornexa1.webp",
         description: "Upptäck varför Samsung Galaxy Watch Ultra är ett av marknadens mest avancerade smarta klockor med kraftfull batteritid, GPS och avancerade hälsofunktioner.",
@@ -38,6 +40,7 @@ export const blogData: BlogType[] = [
     },
     {
         id: 2,
+        slug: "vexora-360-pro-review",
         title: "Capture Every Angle with the Vexora 360 Pro: A Complete Review",
         thumbnail: "/images/blogs/blog-2.png",
         description: "Smart thermostats aren’t just a fancier way to control your home’s temperature. Contemporary smart thermostats allow",
@@ -54,6 +57,7 @@ export const blogData: BlogType[] = [
     },
     {
         id: 3,
+        slug: "wave-speaker-review",
         title: "Experience Immersive Sound Anywhere with Wave Speaker",
         thumbnail: "/images/blogs/blog-3.png",
         description: "Smart thermostats aren’t just a fancier way to control your home’s temperature. Contemporary smart thermostats allow",
@@ -70,6 +74,7 @@ export const blogData: BlogType[] = [
     },
     {
         id: 4,
+        slug: "vexora-360-review2",
         title: "Capture Every Angle with the Vexora 360 Pro: A Complete Review",
         thumbnail: "/images/blogs/blog-4.png",
         description: "Smart thermostats aren’t just a fancier way to control your home’s temperature. Contemporary smart thermostats allow",
@@ -86,6 +91,7 @@ export const blogData: BlogType[] = [
     },
     {
         id: 5,
+        slug: "vexora-360-review3",
         title: "BeatBlaze Mini: Big Sound, Small Package",
         thumbnail: "/images/blogs/blog-1.png",
         description:
@@ -103,6 +109,7 @@ export const blogData: BlogType[] = [
     },
     {
         id: 6,
+        slug: "vexora-360-review4",
         title: "Swap Your Style: The Best Bands for Your Vexora Watch",
         thumbnail: "/images/blogs/blog-2.png",
         description:
@@ -120,6 +127,7 @@ export const blogData: BlogType[] = [
     },
     {
         id: 7,
+        slug: "vexora-360-review5",
         title: "SkyFly Ultra Review: The Drone That Sees What You Can’t",
         thumbnail: "/images/blogs/blog-7.png",
         description:
@@ -137,6 +145,7 @@ export const blogData: BlogType[] = [
     },
     {
         id: 8,
+        slug: "vexora-360-review6",
         title: "Capture Every Angle with the Vexora 360 Pro: A Complete Review",
         thumbnail: "/images/blogs/blog-4.png",
         description:
@@ -154,6 +163,7 @@ export const blogData: BlogType[] = [
     },
     {
         id: 9,
+        slug: "vexora-360-review7",
         title: "Smartwatch Face-Off: Pulse X1 vs Galaxy Watch 6",
         thumbnail: "/images/blogs/blog-5.png",
         description:
