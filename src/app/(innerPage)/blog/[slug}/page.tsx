@@ -13,6 +13,7 @@ import { blogData } from "@/mockData/blogData";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Samsung Galaxy Watch Ultra Guide | Ornexa",
@@ -24,23 +25,28 @@ export function generateStaticParams() {
     slug: blog.slug,
   }));
 }
+export const dynamicParams = true;
 
+  const BlogDetails = ({ params }: { params: { slug: string } }) => {
+  const blog = blogData.find((item) => item.slug === params.slug);
 
-const BlogDetails = () => {
-  const blog = blogData[0];
+  if (!blog) {
+    notFound();
+  }
+
   return (
     <main>
       <PageHeader
         title="Blog"
         praentPageHref="/blog"
-        currentPageName="Swap Your Style: The Best Bands for Your Vexora Watch"
+        currentPageName={blog.title}
         praentPageName="Blog"
       />
       <section className="container mt-25">
         <div className="max-w-[1054px] mx-auto">
           <div className="max-w-[784px] mx-auto">
             <h1 className="font-extrabold xl:text-[56px] lg:text-5xl text-4xl xl:leading-[120%]">
-              Samsung Galaxy Watch Ultra – Komplett guide för träning och vardag
+              {blog.title}
             </h1>
             <div className="mt-5 mb-10 flex items-center justify-between flex-wrap gap-3">
               <div className="[&_.by]:text-light-dark [&_.date]:text-foreground [&_.author-name]:text-foreground">
