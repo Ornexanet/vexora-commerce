@@ -107,10 +107,12 @@ const BlogDetails = async ({
 
             <div className="mt-12">
               <Link
-                href="/product-details/18"
+                href={blog.productHref || "/shop"}
+
                 className="inline-flex items-center justify-center rounded-lg bg-[#00AEEF] px-8 py-4 text-white font-semibold hover:opacity-90 transition"
               >
-                Köp produkten nu
+                {blog.ctaText || "Köp produkten nu"}
+
               </Link>
             </div>
           </article>
