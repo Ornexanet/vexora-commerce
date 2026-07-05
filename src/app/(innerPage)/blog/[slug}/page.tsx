@@ -27,8 +27,15 @@ export function generateStaticParams() {
 }
 export const dynamicParams = true;
 
-  const BlogDetails = ({ params }: { params: { slug: string } }) => {
-  const blog = blogData.find((item) => item.slug === params.slug);
+  const BlogDetails = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) => {
+  const { slug } = await params;
+
+  const blog = blogData.find((item) => item.slug === slug);
+
 
   if (!blog) {
     notFound();
