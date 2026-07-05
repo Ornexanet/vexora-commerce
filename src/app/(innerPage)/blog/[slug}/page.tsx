@@ -34,7 +34,10 @@ export const dynamicParams = true;
 }) => {
   const { slug } = await params;
 
-  const blog = blogData.find((item) => item.slug === slug);
+  const blog = blogData.find(
+  (item) => item.slug?.trim() === slug.trim()
+);
+
 
 
   if (!blog) {
