@@ -19,6 +19,12 @@ export const metadata: Metadata = {
   description:
     "En komplett guide till Samsung Galaxy Watch Ultra med funktioner, fördelar, träningsanvändning och köpråd från Ornexa.",
 };
+export function generateStaticParams() {
+  return blogData.map((blog) => ({
+    slug: blog.slug,
+  }));
+}
+
 
 const BlogDetails = () => {
   const blog = blogData[0];
