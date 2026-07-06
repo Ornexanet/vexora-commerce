@@ -10,10 +10,10 @@ const BlogGrid = () => {
     <section className="lg:pt-37.5 md:pt-25 pt-20">
       <div className="container">
         <div className="flex justify-between items-center flex-wrap gap-x-5 gap-y-5 ">
-          <Title>Tech Talk</Title>
+          <Title>Teknikblogg</Title>
           <Button asChild>
             <Link href={"/blog"} className="text-lg">
-              View All Blogs
+              Visa alla artiklar
             </Link>
           </Button>
         </div>
@@ -41,7 +41,7 @@ const BlogGrid = () => {
                       alt={blog.author.name}
                     />
                     <span className="text-light-dark leading-8 md:text-lg">
-                      by
+                      Av
                     </span>
                     <Link
                       href={"#"}

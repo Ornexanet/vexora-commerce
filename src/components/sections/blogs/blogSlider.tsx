@@ -28,7 +28,7 @@ const BlogSlider = () => {
     <section className="lg:pt-37.5 md:pt-25 pt-20">
       <div className="container">
         <div ref={containerRef}></div>
-        <Title>Tech Talk</Title>
+        <Title>Teknikblogg</Title>
       </div>
       <div className="mt-[50px] relative">
         <Swiper
