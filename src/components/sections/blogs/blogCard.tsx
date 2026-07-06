@@ -34,7 +34,7 @@ const BlogCard = ({ blog }: { blog: BlogType }) => {
               alt={blog.author.name}
               className="rounded-full size-10"
             />
-            <span className="text-light-dark leading-8 md:text-lg">by</span>
+            <span className="text-light-dark leading-8 md:text-lg">Av</span>
             <Link
               href={"#"}
               className="lg:text-lg lg:leading-normal text-black truncate hover:text-blue transition-all duration-500"
