@@ -258,13 +258,13 @@ const Card = ({
           <p className="md:text-lg md:leading-normal text-light-dark mt-2">
             {product.discount ? (
               <span className="flex gap-[14px]">
-                <span className="text-blue">
-                  ${product.price - product.discount}
-                </span>
-                <del>${product.price}</del>
+               <span className="text-blue">
+  {(product.price - (product.discount ?? 0)).toLocaleString("sv-SE")} kr
+</span>
               </span>
             ) : (
-              <span>${product.price}</span>
+              <span>{product.price.toLocaleString("sv-SE")} kr</span>
+
             )}
           </p>
         </div>

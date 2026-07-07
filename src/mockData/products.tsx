@@ -1013,7 +1013,7 @@ title: "Sony WH-1000XM6",
 thumbnail: "/images/headphones/WH1000XM6-shop-ornexa.webp",
 
       description: "Premium wireless earbuds with adaptive noise cancellation",
-      price: 319,
+      price: 3000,
       tag: "New",
       discount: null,
       categories: ["headphones", "earbuds"],
