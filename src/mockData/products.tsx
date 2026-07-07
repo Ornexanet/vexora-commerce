@@ -37,6 +37,7 @@ export interface Products {
   headphonesData: ProductType[];
 }
 
+
 export const products: Products = {
   hotDealProducts: [
     {
@@ -1230,3 +1231,14 @@ thumbnail: "/images/headphones/WH1000XM6-shop-ornexa.webp",
 
   ],
 };
+
+export const allProducts: ProductType[] = Array.from(
+  new Map(
+    [
+      ...products.hotDealProducts,
+      ...products.newStockProducts,
+      ...products.bestProductsData,
+      ...products.headphonesData,
+    ].map((product) => [product.id, product])
+  ).values()
+);
