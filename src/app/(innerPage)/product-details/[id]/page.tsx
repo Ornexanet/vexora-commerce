@@ -109,6 +109,13 @@ const ProductDetails = async ({ params }: Props) => {
 
   return (
     <main>
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(productSchema),
+  }}
+/>
+
       <section className="lg:pt-25 md:pt-18 pt-12">
         <div className="container">
           <div className="grid xl:grid-cols-[921fr_649fr] lg:grid-cols-[800fr_770fr] gap-7.5">
