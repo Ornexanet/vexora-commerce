@@ -2,15 +2,62 @@ import BlogCardAuthorInfo from "@/components/sections/blogs/blogCardAuthorInfo";
 import PageHeader from "@/components/sections/pageHeader";
 import Title from "@/components/ui/title";
 import { blogData } from "@/mockData/blogData";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-const BlogDetails = async ({
-  params,
-}: {
+type BlogDetailsProps = {
   params: Promise<{ slug: string }>;
-}) => {
+};
+
+export async function generateMetadata({
+  params,
+}: BlogDetailsProps): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = blogData.find((item) => item.slug === slug);
+
+  if (!blog) {
+    return {
+      title: "Bloggartikel hittades inte | Ornexa Shop",
+      description: "Den efterfrågade bloggartikeln kunde inte hittas.",
+    };
+  }
+
+  const url = `https://shop.ornexa.net/blog/${blog.slug}`;
+  const imageUrl = `https://shop.ornexa.net${blog.thumbnail}`;
+
+  return {
+    title: `${blog.title} | Ornexa Shop`,
+    description: blog.description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: `${blog.title} | Ornexa Shop`,
+      description: blog.description,
+      url,
+      siteName: "Ornexa Shop",
+      type: "article",
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: blog.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${blog.title} | Ornexa Shop`,
+      description: blog.description,
+      images: [imageUrl],
+    },
+  };
+}
+
+const BlogDetails = async ({ params }: BlogDetailsProps) => {
   const { slug } = await params;
   const blog = blogData.find((item) => item.slug === slug);
 
@@ -18,8 +65,81 @@ const BlogDetails = async ({
     notFound();
   }
 
+  const articleUrl = `https://shop.ornexa.net/blog/${blog.slug}`;
+  const imageUrl = `https://shop.ornexa.net${blog.thumbnail}`;
+
+  const blogPostingJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": `${articleUrl}#blogposting`,
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `${articleUrl}#webpage`,
+        },
+        headline: blog.title,
+        description: blog.description,
+        image: {
+          "@type": "ImageObject",
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+        },
+        author: {
+          "@type": "Organization",
+          name: "Ornexa team",
+          url: "https://shop.ornexa.net",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Ornexa Shop",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://shop.ornexa.net/images/ornexa-logo121.png",
+          },
+        },
+        datePublished: blog.date,
+        dateModified: blog.date,
+        articleSection: "Teknik",
+        inLanguage: "sv-SE",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${articleUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Hem",
+            item: "https://shop.ornexa.net",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Blogg",
+            item: "https://shop.ornexa.net/blog",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: blog.title,
+            item: articleUrl,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(blogPostingJsonLd),
+        }}
+      />
+
       <PageHeader
         title="Blog"
         praentPageHref="/blog"
@@ -81,7 +201,6 @@ const BlogDetails = async ({
                 <Title asChild size="36" className="mb-4">
                   <h2>Viktiga fördelar</h2>
                 </Title>
-
                 <ul className="list-disc pl-6 space-y-3 text-lg text-light-dark leading-[160%]">
                   {blog.features.map((feature) => (
                     <li key={feature}>{feature}</li>
@@ -95,7 +214,6 @@ const BlogDetails = async ({
                 <Title asChild size="36" className="mb-4">
                   <h2>Tekniska specifikationer</h2>
                 </Title>
-
                 <div className="space-y-3">
                   {blog.specs.map((spec) => (
                     <div
@@ -117,7 +235,6 @@ const BlogDetails = async ({
                 <Title asChild size="36" className="mb-4">
                   <h2>Vanliga frågor</h2>
                 </Title>
-
                 <div className="space-y-6">
                   {blog.faq.map((item) => (
                     <div key={item.question}>
@@ -147,3 +264,4 @@ const BlogDetails = async ({
 };
 
 export default BlogDetails;
+
