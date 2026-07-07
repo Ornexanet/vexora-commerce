@@ -77,6 +77,36 @@ const ProductDetails = async ({ params }: Props) => {
     )
     .slice(0, 4);
 
+    const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: product.title,
+  image: [`https://shop.ornexa.net${product.thumbnail}`],
+  description: product.description,
+  sku: String(product.id),
+  brand: {
+    "@type": "Brand",
+    name: product.brand || "Ornexa",
+  },
+  category: product.categories?.join(", "),
+  offers: {
+    "@type": "Offer",
+    url: `https://shop.ornexa.net/product-details/${product.id}`,
+    priceCurrency: "SEK",
+    price: product.price,
+    availability:
+      product.availability === "Finns i lager"
+        ? "https://schema.org/InStock"
+        : "https://schema.org/OutOfStock",
+    itemCondition: "https://schema.org/NewCondition",
+    seller: {
+      "@type": "Organization",
+      name: "Ornexa Shop",
+    },
+  },
+};
+
+
   return (
     <main>
       <section className="lg:pt-25 md:pt-18 pt-12">
