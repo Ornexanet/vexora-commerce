@@ -125,9 +125,27 @@ mentions: blog.relatedProduct
 isAccessibleForFree: true,
 inLanguage: "sv-SE",
 
-
-
       },
+
+...(blog.faq
+  ? [
+      {
+        "@type": "FAQPage",
+        "@id": `${articleUrl}#faq`,
+        mainEntity: blog.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      },
+    ]
+  : []),
+
+
+
       {
         "@type": "BreadcrumbList",
         "@id": `${articleUrl}#breadcrumb`,
