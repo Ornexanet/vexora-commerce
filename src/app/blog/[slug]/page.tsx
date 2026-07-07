@@ -34,6 +34,7 @@ export async function generateMetadata({
   return {
     title: `${blog.title} | Ornexa Shop`,
     description: blog.description,
+    keywords: blog.keywords,
     alternates: {
       canonical: url,
     },
@@ -105,9 +106,27 @@ const BlogDetails = async ({ params }: BlogDetailsProps) => {
         },
         datePublished: blog.publishedAt,
         dateModified: blog.modifiedAt || blog.publishedAt,
+        
         articleSection: blog.category,
+keywords: blog.keywords,
+about: blog.entities.map((entity) => ({
+  "@type": "Thing",
+  name: entity,
+})),
+mentions: blog.relatedProduct
+  ? [
+      {
+        "@type": "Product",
+        name: blog.relatedProduct.name,
+        url: blog.relatedProduct.url,
+      },
+    ]
+  : undefined,
+isAccessibleForFree: true,
+inLanguage: "sv-SE",
 
-        inLanguage: "sv-SE",
+
+
       },
       {
         "@type": "BreadcrumbList",

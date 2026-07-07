@@ -24,6 +24,11 @@ export interface BlogSpecType {
   value: string;
 }
 
+export interface RelatedProductType {
+  name: string;
+  url: string;
+}
+
 export interface BlogType {
   id: number;
   slug: string;
@@ -43,6 +48,9 @@ export interface BlogType {
   modifiedAt: string;
   readingTime: string;
   category: string;
+  keywords: string[];
+  entities: string[];
+  relatedProduct?: RelatedProductType;
 
   size: "large" | "medium" | "small";
   productHref?: string;
@@ -63,6 +71,27 @@ export const blogData: BlogType[] = [
     modifiedAt: "2026-07-04",
     readingTime: "5 min läs",
     category: "Smarta klockor",
+    keywords: [
+      "Samsung Galaxy Watch Ultra",
+      "smartklocka",
+      "träning",
+      "hälsospårning",
+      "GPS-klocka",
+      "Wear OS",
+    ],
+    entities: [
+      "Samsung",
+      "Galaxy Watch",
+      "Wear OS",
+      "GPS",
+      "Smartwatch",
+      "Hälsa",
+      "Träning",
+    ],
+    relatedProduct: {
+      name: "Samsung Galaxy Watch Ultra",
+      url: "https://shop.ornexa.net/product-details/18",
+    },
     intro:
       "Samsung Galaxy Watch Ultra är utvecklad för användare som vill ha en smartklocka med hög prestanda, exakt aktivitetsmätning och premiumkvalitet. Guiden går igenom funktioner, fördelar, specifikationer och vem produkten passar bäst för.",
     sections: [
@@ -95,7 +124,10 @@ export const blogData: BlogType[] = [
       { label: "Kategori", value: "Premium Smartwatch" },
       { label: "Operativsystem", value: "Wear OS" },
       { label: "Passar för", value: "Träning, hälsa, arbete och vardag" },
-      { label: "Styrkor", value: "GPS, batteri, hälsospårning och premiumdesign" },
+      {
+        label: "Styrkor",
+        value: "GPS, batteri, hälsospårning och premiumdesign",
+      },
     ],
     faq: [
       {
@@ -140,6 +172,27 @@ export const blogData: BlogType[] = [
     modifiedAt: "2026-07-05",
     readingTime: "5 min läs",
     category: "Mobiler",
+    keywords: [
+      "iPhone 17 Pro",
+      "premium smartphone",
+      "mobilkamera",
+      "Apple",
+      "smartphone för foto och video",
+      "iOS",
+    ],
+    entities: [
+      "Apple",
+      "iPhone",
+      "iOS",
+      "Mobilkamera",
+      "Smartphone",
+      "Foto",
+      "Video",
+    ],
+    relatedProduct: {
+      name: "iPhone 17 Pro",
+      url: "https://shop.ornexa.net/product-details/2",
+    },
     intro:
       "iPhone 17 Pro är ett premiumval för dig som vill ha en kraftfull mobil med hög prestanda, avancerad kamera och en smidig Apple-upplevelse i vardagen.",
     sections: [
@@ -204,3 +257,4 @@ export const blogData: BlogType[] = [
     ctaText: "Köp iPhone 17 Pro nu",
   },
 ];
+
