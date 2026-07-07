@@ -10,6 +10,7 @@ export interface DateType {
 }
 
 export interface BlogSectionType {
+  id: string;
   heading: string;
   body: string;
 }
@@ -81,10 +82,11 @@ export const blogData: BlogType[] = [
     ],
     entities: [
       "Samsung",
-      "Galaxy Watch",
+      "Galaxy Watch Ultra",
       "Wear OS",
       "GPS",
       "Smartwatch",
+      "Health Tracking",
       "Hälsa",
       "Träning",
     ],
@@ -96,16 +98,19 @@ export const blogData: BlogType[] = [
       "Samsung Galaxy Watch Ultra är utvecklad för användare som vill ha en smartklocka med hög prestanda, exakt aktivitetsmätning och premiumkvalitet. Guiden går igenom funktioner, fördelar, specifikationer och vem produkten passar bäst för.",
     sections: [
       {
+        id: "varfor-valja-samsung-galaxy-watch-ultra",
         heading: "Varför välja Samsung Galaxy Watch Ultra?",
         body:
           "Galaxy Watch Ultra kombinerar avancerad hårdvara, elegant design och smarta funktioner för hälsa, träning och produktivitet. Den passar både aktiva användare och personer som vill ha en komplett smartklocka i vardagen.",
       },
       {
+        id: "halsa-och-traning",
         heading: "Hälsa och träning",
         body:
           "Klockan erbjuder pulsmätning, sömnanalys, träningsspårning, GPS och flera smarta funktioner som hjälper dig att följa din utveckling och skapa bättre träningsrutiner.",
       },
       {
+        id: "design-och-batteritid",
         heading: "Design och batteritid",
         body:
           "Samsung Galaxy Watch Ultra är byggd med premiumkänsla och robust konstruktion. Batteriet räcker länge och gör klockan till ett bra val för både arbete, resor och intensiv träning.",
@@ -182,7 +187,7 @@ export const blogData: BlogType[] = [
     ],
     entities: [
       "Apple",
-      "iPhone",
+      "iPhone 17 Pro",
       "iOS",
       "Mobilkamera",
       "Smartphone",
@@ -197,16 +202,19 @@ export const blogData: BlogType[] = [
       "iPhone 17 Pro är ett premiumval för dig som vill ha en kraftfull mobil med hög prestanda, avancerad kamera och en smidig Apple-upplevelse i vardagen.",
     sections: [
       {
+        id: "varfor-valja-iphone-17-pro",
         heading: "Varför välja iPhone 17 Pro?",
         body:
           "iPhone 17 Pro passar användare som vill kombinera snabb prestanda, hög byggkvalitet och en kamera som fungerar bra för både foto, video och sociala medier.",
       },
       {
+        id: "kamera-och-video",
         heading: "Kamera och video",
         body:
           "Kamerasystemet är en av de största anledningarna att välja iPhone 17 Pro. Den passar särskilt bra för porträtt, produktbilder, video, resor och innehållsskapande.",
       },
       {
+        id: "prestanda-i-vardagen",
         heading: "Prestanda i vardagen",
         body:
           "Med stark processor, snabb respons och effektiv mjukvara är iPhone 17 Pro byggd för multitasking, appar, foto, video och långsiktig användning.",
@@ -257,4 +265,3 @@ export const blogData: BlogType[] = [
     ctaText: "Köp iPhone 17 Pro nu",
   },
 ];
-

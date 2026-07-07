@@ -215,6 +215,27 @@ inLanguage: "sv-SE",
             <p className="text-lg text-light-dark leading-[160%]">
               {blog.intro || blog.description}
             </p>
+            {blog.sections && blog.sections.length > 0 && (
+  <nav className="bg-gray-50 rounded-xl p-6 my-10 border">
+    <h2 className="text-2xl font-semibold mb-4">
+      Table of Contents
+    </h2>
+
+    <ul className="space-y-2">
+      {blog.sections.map((section) => (
+        <li key={section.id}>
+          <a
+            href={`#${section.id}`}
+            className="text-blue-600 hover:underline"
+          >
+            {section.heading}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}
+
 
             {blog.secondImage && (
               <Image
@@ -228,7 +249,7 @@ inLanguage: "sv-SE",
             )}
 
             {blog.sections?.map((section) => (
-              <div key={section.heading} className="mt-16">
+              <div id={section.id} key={section.id} className="mt-16 scroll-mt-28">
                 <Title asChild size="36" className="mb-4">
                   <h2>{section.heading}</h2>
                 </Title>
