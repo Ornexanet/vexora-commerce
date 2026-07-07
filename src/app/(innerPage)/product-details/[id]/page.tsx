@@ -6,10 +6,51 @@ import { allProducts } from "@/mockData/products";
 import Card from "@/components/ui/card";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Product Details | Ornexa Shop",
-  description: "Produktinformation, specifikationer och relaterade produkter.",
-};
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+
+  const product = allProducts.find((item) => item.id === Number(id));
+
+  if (!product) {
+    return {
+      title: "Product not found | Ornexa Shop",
+      description: "Produkten kunde inte hittas i Ornexa Shop.",
+    };
+  }
+
+  const productUrl = `https://shop.ornexa.net/product-details/${product.id}`;
+  const productImage = `https://shop.ornexa.net${product.thumbnail}`;
+
+  return {
+    title: `${product.title} | Ornexa Shop`,
+    description: product.description,
+    alternates: {
+      canonical: productUrl,
+    },
+    openGraph: {
+      title: `${product.title} | Ornexa Shop`,
+      description: product.description,
+      url: productUrl,
+      siteName: "Ornexa Shop",
+      images: [
+        {
+          url: productImage,
+          width: 1200,
+          height: 630,
+          alt: product.title,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.title} | Ornexa Shop`,
+      description: product.description,
+      images: [productImage],
+    },
+  };
+}
+
 
 type Props = {
   params: Promise<{
