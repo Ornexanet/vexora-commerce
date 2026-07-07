@@ -105,6 +105,33 @@ const ProductDetails = async ({ params }: Props) => {
     },
   },
 };
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Hem",
+      item: "https://shop.ornexa.net",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: product.categories?.[0] || "Produkter",
+      item: `https://shop.ornexa.net/${product.categories?.[0] || "shop"}`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: product.title,
+      item: `https://shop.ornexa.net/product-details/${product.id}`,
+    },
+  ],
+};
+
+
+
 
 
   return (
@@ -115,6 +142,13 @@ const ProductDetails = async ({ params }: Props) => {
     __html: JSON.stringify(productSchema),
   }}
 />
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(breadcrumbSchema),
+  }}
+/>
+
 
       <section className="lg:pt-25 md:pt-18 pt-12">
         <div className="container">
