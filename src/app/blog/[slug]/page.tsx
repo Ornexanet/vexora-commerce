@@ -10,7 +10,11 @@ import { notFound } from "next/navigation";
 type BlogDetailsProps = {
   params: Promise<{ slug: string }>;
 };
-
+export function generateStaticParams() {
+  return blogData.map((blog) => ({
+    slug: blog.slug,
+  }));
+}
 export async function generateMetadata({
   params,
 }: BlogDetailsProps): Promise<Metadata> {
