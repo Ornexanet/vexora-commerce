@@ -99,9 +99,10 @@ const BlogDetails = async ({ params }: BlogDetailsProps) => {
             url: "https://shop.ornexa.net/images/ornexa-logo121.png",
           },
         },
-        datePublished: "2026-07-04",
-        dateModified: "2026-07-04",
-        articleSection: "Teknik",
+        datePublished: blog.publishedAt,
+        dateModified: blog.modifiedAt || blog.publishedAt,
+        articleSection: blog.category,
+
         inLanguage: "sv-SE",
       },
       {
@@ -156,7 +157,7 @@ const BlogDetails = async ({ params }: BlogDetailsProps) => {
 
             <div className="mt-5 mb-10 flex items-center justify-between flex-wrap gap-3">
               <BlogCardAuthorInfo blog={blog} />
-              <p className="text-lg">5 min läs</p>
+              <p className="text-lg">{blog.readingTime}</p>
             </div>
           </div>
 
