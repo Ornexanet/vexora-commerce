@@ -86,7 +86,7 @@ const ProductOverview = ({ product }: { product: ProductType }) => {
               <span className="text-lg text-light-dark">5.0</span>
             </div>
             <span className="bg-[#B0B5BB] w-px h-[21px]"></span>
-            <span className="text-lg text-light-dark">250 Reviews</span>
+            <span className="text-lg text-light-dark">250 Recensioner</span>
           </div>
         </div>
        <p className="text-lg text-light-dark">
@@ -135,14 +135,14 @@ const ProductOverview = ({ product }: { product: ProductType }) => {
             onClick={handleAddToCart}
           >
             <ShopingBag />
-            Add to Cart
+            Lägg i varukorgen
           </Button>
         </div>
         <Button
           variant={"outline"}
           className="border-light-dark text-light-dark w-full"
         >
-          Buy it now
+          Köp nu
         </Button>
         <div className="flex items-center gap-3.5 mt-8.5">
           <Image
@@ -152,15 +152,15 @@ const ProductOverview = ({ product }: { product: ProductType }) => {
             alt="img"
           />
           <p className="font-medium text-light-dark max-w-[327px]">
-            Enter your zip code{" "}
+            Ange ditt postnummer{" "}
             <Link href={"#"} className="text-blue underline">
-              here
+              här
             </Link>{" "}
-            to find out when this item arrives
+            för att se när produken kan levereras
           </p>
         </div>
       </div>
-      <CompatibleAccessories />
+      <CompatibleAccessories product={product} />
     </div>
     </div>
   );
