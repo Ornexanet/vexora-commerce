@@ -10,11 +10,13 @@ import QuickViewProduct from "../sections/productDetails/quickViewProduct";
 import { useState } from "react";
 
 const Pointer = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentPropsWithoutRef<"div">
+  HTMLButtonElement,
+  React.ComponentPropsWithoutRef<"button">
 >(({ className, ...props }, ref) => {
   return (
-    <div
+    <button
+      type="button"
+      aria-label="Visa produkt"
       ref={ref}
       className={cn(
         "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[61px] h-[61px] rounded-full border border-[rgba(255,255,255,0.33)] flex justify-center items-center cursor-pointer after:absolute after:inset-0 after:w-full after:h-full after:border after:border-[rgba(255,255,255,0.33)] after:animate-ping after:rounded-full",
@@ -22,10 +24,10 @@ const Pointer = React.forwardRef<
       )}
       {...props}
     >
-      <div className="w-[45px] h-[45px] rounded-full  bg-[rgba(255,255,255,0.30)] flex justify-center items-center">
+      <div className="w-[45px] h-[45px] rounded-full bg-[rgba(255,255,255,0.30)] flex justify-center items-center">
         <div className="w-[25px] h-[25px] rounded-full bg-[rgba(255,255,255,0.70)]"></div>
       </div>
-    </div>
+    </button>
   );
 });
 Pointer.displayName = "Pointer";
