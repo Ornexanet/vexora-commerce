@@ -71,7 +71,7 @@ const ProductCard = () => {
           <div>
             <p className="text-sm font-medium line-clamp-1">{product.title}</p>
             <p className="text-sm font-medium text-blue mt-1.5">
-              ${product.price}
+              {product.price} kr
             </p>
           </div>
           <div className="flex items-center gap-2.5">
