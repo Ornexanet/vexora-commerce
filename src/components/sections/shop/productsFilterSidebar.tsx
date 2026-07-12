@@ -201,11 +201,14 @@ const ProductsFilterSidebar = () => {
                 </div>
                 {subcategories.length ? (
                   <button
-                    onClick={() => handleExpendCategories(id)}
-                    className="w-6 h-6 flex justify-center items-center"
-                  >
-                    <Plus />
-                  </button>
+  type="button"
+  onClick={() => handleExpendCategories(id)}
+  className="w-6 h-6 flex justify-center items-center"
+  aria-label={`Visa underkategorier för ${name}`}
+>
+  <Plus aria-hidden="true" />
+</button>
+
                 ) : null}
               </div>
               <AnimatePresence initial={false}>
