@@ -22,7 +22,7 @@ description: "Kraftfull prestanda, avancerad kamera och premiumdesign.",
 image: "/images/hero/iphone-17-pro-shop-ornexa-herslider.webp",
 videoUrl: "https://youtube.com/embed/vcq5nMeg2SA?autoplay=1",
 
-backgroundImage: "/images/hero/bg-1.png",
+backgroundImage: "/images/hero/bg-1.webp",
 
     features: [
       {
@@ -49,7 +49,7 @@ backgroundImage: "/images/hero/bg-1.png",
     description: "Upplev kraftfullt ljud med aktiv brusreducering, bekväm passform och upp till 40 timmars batteritid – perfekta för både arbete och fritid.",
     image: "/images/hero/galagxy-ultras26-shop-ornexa-heroslider.webp",
     videoUrl: "https://youtube.com/embed/2gYqEi8-am4?autoplay=1",
-    backgroundImage: "/images/hero/bg-1.png",
+    backgroundImage: "/images/hero/bg-1.webp",
     features: [
   {
     id: 1,
@@ -76,7 +76,7 @@ backgroundImage: "/images/hero/bg-1.png",
     description: "Flaggskeppsprestanda med blixtsnabb laddning, avancerad AI-kamera och en imponerande AMOLED-skärm för en förstklassig mobilupplevelse.",
     image: "/images/hero/xiaomi17t-pro-shop-ornexa-heroslider.webp",
     videoUrl: "https://youtube.com/embed/tVYv9Yxe2mk?autoplay=1",
-    backgroundImage: "/images/hero/bg-1.png",
+    backgroundImage: "/images/hero/bg-1.webp",
     features: [
   {
     id: 1,
