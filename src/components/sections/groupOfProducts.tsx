@@ -76,11 +76,14 @@ const ProductCard = () => {
           </div>
           <div className="flex items-center gap-2.5">
             <button
-              onClick={handleAddToCart}
-              className="text-black w-[35px] h-[35px] rounded-full flex justify-center items-center bg-[rgba(255,255,255,0.10)] shadow-[0_12px_25px_0_rgba(47,53,61,0.15)]"
-            >
-              <ShopingCart className="size-4" />
-            </button>
+          type="button"
+         onClick={handleAddToCart}
+         aria-label={`Lägg ${product.title} i varukorgen`}
+         className="text-black w-[35px] h-[35px] rounded-full flex justify-center items-center bg-[rgba(255,255,255,0.10)] shadow-[0_12px_25px_0_rgba(47,59,61,0.15)]"
+         >
+        <ShopingCart className="size-4" aria-hidden="true" />
+       </button>
+
             <button
               onClick={handleQuickView}
               className="text-black w-[35px] h-[35px] rounded-full flex justify-center items-center bg-[rgba(255,255,255,0.10)] shadow-[0_12px_25px_0_rgba(47,53,61,0.15)]"
