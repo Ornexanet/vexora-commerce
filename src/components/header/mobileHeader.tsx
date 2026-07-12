@@ -17,14 +17,17 @@ const MobileHeader = () => {
 
           </li>
           <li className="cursor-pointer">
-            <Link href={"/shop"}>
-              <ShoppingBag size={24} />
-            </Link>
+            <Link href="/shop" aria-label="Öppna butik">
+           <ShoppingBag size={24} aria-hidden="true" />
+           </Link>
+
           </li>
           <li className="cursor-pointer">
-            <Link href={"/dashboard/orders"}>
-              <User size={24} />
+            <Link href="/dashboard/orders" aria-label="Mitt konto">
+            <User size={24} aria-hidden="true" />
             </Link>
+
+
           </li>
         </ul>
       </div>
