@@ -32,9 +32,10 @@ const MobileNavSidebar = () => {
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetTrigger>
-        <Menu />
+      <SheetTrigger aria-label="Öppna meny">
+      <Menu />
       </SheetTrigger>
+
       <SheetContent side="left" className="justify-between">
         <SheetHeader className="hidden">
           <SheetTitle></SheetTitle>
