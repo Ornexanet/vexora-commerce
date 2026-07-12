@@ -90,21 +90,28 @@ const FeaturesProductThree = () => {
             <hr className="mt-10 w-full" />
             <div className="mt-10 flex sm:gap-6 gap-4">
               <div className="rounded-lg border-2 border-[#B0B5BB] px-5 py-2.5 h-[54px] inline-flex items-center gap-[15px] max-w-[139px] w-full">
-                <button
-                  onClick={handleDecrement}
-                  className="w-6 h-6 flex justify-center items-center text-[#B0B5BB] hover:text-foreground transition-all duration-500"
-                >
-                  <Minus />
-                </button>
+              <button
+              type="button"
+              onClick={handleDecrement}
+              aria-label="Minska antal"
+              className="w-6 h-6 flex justify-center items-center text-[#B0B5BB] hover:text-foreground transition-all duration-500"
+               >
+              <Minus aria-hidden="true" />
+              </button>
+
+
                 <span className="md:text-lg md:leading-normal font-bold">
                   {quantity.toString().padStart(2, "0")}
                 </span>
                 <button
-                  onClick={handleIncrement}
-                  className="w-6 h-6 flex justify-center items-center text-[#B0B5BB] hover:text-foreground transition-all duration-500"
+               type="button"
+               onClick={handleIncrement}
+               aria-label="Öka antal"
+               className="w-6 h-6 flex justify-center items-center text-[#B0B5BB] hover:text-foreground transition-all duration-500"
                 >
-                  <Plus />
-                </button>
+              <Plus aria-hidden="true" />
+             </button>
+
               </div>
               <Button
                 onClick={handleAddToCart}
