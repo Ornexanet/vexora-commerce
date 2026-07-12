@@ -11,9 +11,10 @@ const MobileHeader = () => {
             <MobileNavSidebar />
           </li>
           <li className="cursor-pointer">
-            <Link href={"/wishlist"}>
-              <HeartIcon size={24} />
-            </Link>
+            <Link href="/wishlist" aria-label="Öppna önskelistan">
+           <HeartIcon size={24} aria-hidden="true" />
+           </Link>
+
           </li>
           <li className="cursor-pointer">
             <Link href={"/shop"}>
