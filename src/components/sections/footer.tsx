@@ -195,36 +195,45 @@ const Footer = () => {
             <div>
               <ul className="flex items-center gap-9">
                 <li>
-                  <Link
-                    href={"/about"}
-                    className="w-[30px] h-[30px] flex items-center justify-center hover:text-blue transition-all duration-500"
-                  >
-                    <Whatsapp />
-                  </Link>
+                 <Link
+             href="/about"
+            aria-label="Kontakta oss via WhatsApp"
+            className="w-[30px] h-[30px] flex items-center justify-center hover:text-blue transition-all duration-500"
+            >
+           <Whatsapp aria-hidden="true" />
+            </Link>
+
+
                 </li>
                 <li>
                   <Link
-                    href={"#"}
-                    className="w-[30px] h-[30px] flex items-center justify-center hover:text-blue transition-all duration-500"
-                  >
-                    <Twitter />
-                  </Link>
+              href="#"
+              aria-label="Besök vår Twitter-sida"
+             className="w-[30px] h-[30px] flex items-center justify-center hover:text-blue transition-all duration-500"
+             >
+             <Twitter aria-hidden="true" />
+             </Link>
+
                 </li>
                 <li>
                   <Link
-                    href={"#"}
-                    className="w-[30px] h-[30px] flex items-center justify-center hover:text-blue transition-all duration-500"
-                  >
-                    <Instagram />
-                  </Link>
+                href="#"
+                aria-label="Besök vår Instagram-sida"
+               className="w-[30px] h-[30px] flex items-center justify-center hover:text-blue transition-all duration-500"
+               >
+              <Instagram aria-hidden="true" />
+              </Link>
+
                 </li>
                 <li>
                   <Link
-                    href={"#"}
-                    className="w-[30px] h-[30px] flex items-center justify-center hover:text-blue transition-all duration-500"
-                  >
-                    <Youtube />
-                  </Link>
+                 href="#"
+                 aria-label="Besök vår YouTube-kanal"
+                 className="w-[30px] h-[30px] flex items-center justify-center hover:text-blue transition-all duration-500"
+                 >
+                <Youtube aria-hidden="true" />
+                </Link>
+
                 </li>
               </ul>
             </div>
