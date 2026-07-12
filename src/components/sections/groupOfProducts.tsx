@@ -117,7 +117,13 @@ const GroupOfProducts = () => {
               <PopoverTrigger asChild>
                 <Pointer />
               </PopoverTrigger>
-              <PopoverContent align="end" sideOffset={5} className="p-0">
+              <PopoverContent
+              align="end"
+              sideOffset={5}
+              className="p-0"
+              aria-label="Produktinformation"
+              >
+
                 <ProductCard />
               </PopoverContent>
             </Popover>
