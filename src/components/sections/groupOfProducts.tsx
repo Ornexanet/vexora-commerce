@@ -84,12 +84,15 @@ const ProductCard = () => {
         <ShopingCart className="size-4" aria-hidden="true" />
        </button>
 
-            <button
-              onClick={handleQuickView}
-              className="text-black w-[35px] h-[35px] rounded-full flex justify-center items-center bg-[rgba(255,255,255,0.10)] shadow-[0_12px_25px_0_rgba(47,53,61,0.15)]"
-            >
-              <Eye />
-            </button>
+           <button
+         type="button"
+         onClick={handleQuickView}
+         aria-label={`Visa ${product.title}`}
+         className="text-black w-[35px] h-[35px] rounded-full flex justify-center items-center ..."
+         >
+         <Eye aria-hidden="true" />
+        </button>
+
           </div>
         </div>
       </div>
