@@ -22,6 +22,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+  <link
+    rel="preload"
+    as="image"
+    href="/images/hero/bg-1.webp"
+    fetchPriority="high"
+    type="image/webp"
+  />
+</head>
       <body className={`${plusJakartaSans.variable} antialiased`}>
         <Providers>
           {children}
