@@ -10,8 +10,9 @@ import Title from "@/components/ui/title";
 import { useCart } from "@/contextApi/cartContext";
 import { Minus, Plus, ShopingBag } from "@/lib/icons";
 import { ProductType } from "@/mockData/products";
-
 import CompatibleAccessories from "./compatibleAccessories";
+import SimilarProducts from "./similarProducts";
+
 
 type ProductOverviewProps = {
   product: ProductType;
@@ -241,6 +242,7 @@ const ProductOverview = ({ product }: ProductOverviewProps) => {
       </div>
 
       <CompatibleAccessories product={product} />
+      <SimilarProducts product={product} />
     </div>
   );
 };
