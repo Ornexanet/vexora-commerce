@@ -1340,3 +1340,13 @@ export const products: Products = {
     samsungGalaxyBuds3,
   ],
 };
+export const allProducts: ProductType[] = Array.from(
+  new Map(
+    [
+      ...products.hotDealProducts,
+      ...products.newStockProducts,
+      ...products.bestProductsData,
+      ...products.headphonesData,
+    ].map((product) => [product.id, product])
+  ).values()
+);
