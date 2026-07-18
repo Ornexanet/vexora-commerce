@@ -363,6 +363,8 @@ const appleWatchUltra3: ProductType = {
 
   categories: ["smartWatch"],
   filter: "smartWatch",
+  productType: "smartwatch",
+
 
   brand: "Apple",
   model: "Watch Ultra 3",
@@ -457,6 +459,8 @@ const samsungGalaxyS25: ProductType = {
 
   categories: ["mobiler"],
   filter: "mobiler",
+  productType: "phone",
+
 
   brand: "Samsung",
   model: "Galaxy S25",
@@ -549,6 +553,7 @@ const samsungGalaxyWatchUltra: ProductType = {
 
   categories: ["smartWatch"],
   filter: "smartWatch",
+  productType: "smartwatch",
 
   brand: "Samsung",
   model: "Galaxy Watch Ultra",
@@ -1229,6 +1234,8 @@ const appleWatchSeries11: ProductType = {
 
   categories: ["smartWatch"],
   filter: "smartWatch",
+  productType: "smartwatch",
+
 
   brand: "Apple",
   model: "Watch Series 11",
