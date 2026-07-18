@@ -3,7 +3,10 @@
 import { useState } from "react";
 
 import Title from "@/components/ui/title";
-import { ProductType } from "@/mockData/products";
+import {
+  ProductType,
+  getProductContentTemplate,
+} from "@/mockData/products";
 
 type ProductTabsProps = {
   product: ProductType;
@@ -38,6 +41,8 @@ const tabs: {
 ];
 
 const ProductTabs = ({ product }: ProductTabsProps) => {
+  const template = getProductContentTemplate(product.productType);
+
   const [activeTab, setActiveTab] =
     useState<TabId>("description");
 
@@ -116,11 +121,7 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
     product.perfectFor &&
     product.perfectFor.length > 0
       ? product.perfectFor
-      : [
-          "Daglig användning",
-          "Arbete och studier",
-          "Underhållning",
-        ];
+      : template.perfectFor;
 
   const inTheBox =
     product.inTheBox &&
@@ -128,8 +129,7 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
       ? product.inTheBox
       : [
           product.title,
-          "Dokumentation",
-          "Garantiinformation",
+          ...template.defaultBoxItems.slice(1),
         ];
 
   return (

@@ -49,8 +49,100 @@ whyChoose?: string[];
 perfectFor?: string[];
 
 inTheBox?: string[];
+productType?: "phone" | "headphones" | "smartwatch" | "accessory" | "camera";
 
 }
+type ProductContentTemplate = {
+  perfectFor: string[];
+  defaultBoxItems: string[];
+};
+
+const productContentTemplates: Record<
+  NonNullable<ProductType["productType"]>,
+  ProductContentTemplate
+> = {
+  phone: {
+    perfectFor: [
+      "Arbete och studier",
+      "Fotografering och video",
+      "Appar och multitasking",
+      "Underhållning och gaming",
+    ],
+    defaultBoxItems: [
+      "Mobiltelefon",
+      "USB-C-kabel",
+      "Dokumentation",
+      "Garantiinformation",
+    ],
+  },
+
+  headphones: {
+    perfectFor: [
+      "Musik och poddar",
+      "Arbete och samtal",
+      "Resor och pendling",
+      "Träning och vardagsanvändning",
+    ],
+    defaultBoxItems: [
+      "Hörlurar",
+      "Laddningskabel",
+      "Dokumentation",
+      "Garantiinformation",
+    ],
+  },
+
+  smartwatch: {
+    perfectFor: [
+      "Träning och aktivitet",
+      "Hälsa och återhämtning",
+      "Notiser och kommunikation",
+      "Daglig användning",
+    ],
+    defaultBoxItems: [
+      "Smartklocka",
+      "Laddningskabel",
+      "Dokumentation",
+      "Garantiinformation",
+    ],
+  },
+
+  accessory: {
+    perfectFor: [
+      "Daglig användning",
+      "Arbete och studier",
+      "Kompatibla enheter",
+      "Resor och fritid",
+    ],
+    defaultBoxItems: [
+      "Produkt",
+      "Tillhörande tillbehör",
+      "Dokumentation",
+      "Garantiinformation",
+    ],
+  },
+
+  camera: {
+    perfectFor: [
+      "Foto och video",
+      "Resor och aktiviteter",
+      "Kreativt innehåll",
+      "Daglig dokumentation",
+    ],
+    defaultBoxItems: [
+      "Kamera",
+      "Laddningskabel",
+      "Dokumentation",
+      "Garantiinformation",
+    ],
+  },
+};
+
+export const getProductContentTemplate = (
+  productType?: ProductType["productType"]
+): ProductContentTemplate => {
+  return productContentTemplates[productType ?? "accessory"];
+};
+
 
 export interface Products {
   hotDealProducts: ProductType[];
@@ -548,6 +640,7 @@ const iphone16Plus: ProductType = {
 
   categories: ["mobiler"],
   filter: "mobiler",
+  productType: "phone",
 
   brand: "Apple",
   model: "iPhone 16 Plus",
@@ -645,6 +738,8 @@ const iphone17Pro: ProductType = {
 
   categories: ["mobiler"],
   filter: "mobiler",
+  productType: "phone",
+
 
   brand: "Apple",
   model: "iPhone 17 Pro",
@@ -762,6 +857,8 @@ const xiaomi17TPro: ProductType = {
 
   categories: ["mobiler"],
   filter: "mobiler",
+  productType: "phone",
+
 
   brand: "Xiaomi",
   model: "17T Pro",
