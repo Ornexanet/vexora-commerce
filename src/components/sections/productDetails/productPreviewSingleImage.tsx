@@ -1,60 +1,83 @@
 "use client";
+
 import Image from "next/image";
-import React, { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+
 import { cn } from "@/lib/utils";
 
-const productImage = [
-  {
-    src: "/images/product-details/product-single-1.png",
-  },
-  {
-    src: "/images/product-details/product-single-2.png",
-  },
-  {
-    src: "/images/product-details/product-single-3.png",
-  },
-  {
-    src: "/images/product-details/product-single-4.png",
-  },
-];
+type ProductPreviewSingleImageProps = {
+  product: {
+    title?: string;
+    thumbnail: string;
+    gallery?: string[];
+  };
+};
+
 const ProductPreviewSingleImage = ({
   product,
-}: {
-  product: { thumbnail: string };
-}) => {
+}: ProductPreviewSingleImageProps) => {
+  const productImages = useMemo(() => {
+    const images =
+      product.gallery && product.gallery.length > 0
+        ? product.gallery
+        : [product.thumbnail];
 
-const [currentImage, setCurrentImage] = useState(product.thumbnail);
+    return Array.from(
+      new Set([product.thumbnail, ...images])
+    );
+  }, [product.gallery, product.thumbnail]);
+
+  const [currentImage, setCurrentImage] = useState(
+    productImages[0]
+  );
+
+  useEffect(() => {
+    setCurrentImage(productImages[0]);
+  }, [productImages]);
+
   return (
-    <div className="grid xl:grid-cols-[190fr_701fr] gap-7.5">
-      <div className="space-y-7.5 max-xl:flex max-xl:gap-5 overflow-x-auto order-2 xl:order-1">
-        {[{ src: product.thumbnail }].map((image, index) => (
+    <div className="grid gap-7.5 xl:grid-cols-[190fr_701fr]">
+      <div className="order-2 flex gap-5 overflow-x-auto xl:order-1 xl:block xl:space-y-7.5">
+        {productImages.map((image, index) => {
+          const isActive = currentImage === image;
 
-          <div
-            key={index}
-            onClick={() => setCurrentImage(image.src)}
-            className={cn(
-              "bg-[#FFF9F5] h-[216px] rounded-[15px] flex items-center justify-center cursor-pointer min-w-fit",
-              currentImage === image.src ? "opacity-100" : " opacity-40"
-            )}
-          >
-            <Image
-              width={190}
-              height={216}
-              src={image.src}
-              alt="img"
-              className="rounded-[15px] bg-[#FFF9F5] max-h-[216px] object-cover"
-            />
-          </div>
-        ))}
+          return (
+            <button
+              key={`${image}-${index}`}
+              type="button"
+              onClick={() => setCurrentImage(image)}
+              aria-label={`Visa produktbild ${index + 1}`}
+              aria-pressed={isActive}
+              className={cn(
+                "flex h-[216px] min-w-[190px] items-center justify-center rounded-[15px] border bg-[#FFF9F5] transition",
+                isActive
+                  ? "border-blue opacity-100"
+                  : "border-transparent opacity-50 hover:opacity-80"
+              )}
+            >
+              <Image
+                width={190}
+                height={216}
+                src={image}
+                alt={`${product.title ?? "Produkt"} – bild ${
+                  index + 1
+                }`}
+                className="max-h-[216px] w-full rounded-[15px] object-contain"
+              />
+            </button>
+          );
+        })}
       </div>
-      <div className="bg-[#FFF9F5] rounded-[15px] flex items-center justify-center order-1 xl:order-2">
+
+      <div className="order-1 flex min-h-[520px] items-center justify-center rounded-[15px] bg-[#FFF9F5] p-6 xl:order-2">
         <Image
           width={701}
-          height={995}
-          sizes="100vw"
+          height={701}
+          sizes="(max-width: 1280px) 100vw, 701px"
           src={currentImage}
-          alt="product-img"
-          className="rounded-[15px] bg-[#FFF9F5]"
+          alt={`${product.title ?? "Produkt"} – vald bild`}
+          priority
+          className="max-h-[701px] w-full rounded-[15px] object-contain"
         />
       </div>
     </div>
