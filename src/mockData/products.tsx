@@ -1463,18 +1463,25 @@ export const products: Products = {
   ],
 
   bestProductsData: [
-    iphone16Plus,
-    iphone17Pro,
-    samsungGalaxyS25,
-    xiaomi17TPro,
-    airPods4,
-    airPodsPro3,
-    samsungGalaxyBuds4Pro,
-    samsungGalaxyBuds3,
-    appleWatchSeries11,
-    insta360AcePro,
-    xboxWirelessController,
-  ],
+  iphone16Plus,
+  iphone17Pro,
+  samsungGalaxyS25,
+  xiaomi17TPro,
+
+  airPods4,
+  airPodsPro3,
+  samsungGalaxyBuds4Pro,
+  samsungGalaxyBuds3,
+
+  appleWatchUltra3,
+  samsungGalaxyWatchUltra,
+  appleWatchSeries11,
+
+  insta360AcePro,
+  xboxWirelessController,
+],
+
+
 
   headphonesData: [
     sonyWH1000XM6,
