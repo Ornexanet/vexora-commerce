@@ -1618,8 +1618,10 @@ export const products: Products = {
   bestProductsData: [
   iphone16Plus,
   iphone17Pro,
+  samsungGalaxyS26Ultra,
   samsungGalaxyS25,
   xiaomi17TPro,
+
 
   airPods4,
   airPodsPro3,
