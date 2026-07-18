@@ -444,11 +444,11 @@ const samsungGalaxyS26Ultra: ProductType = {
   id: 4,
   title: "Samsung Galaxy S26 Ultra",
   thumbnail:
-    "/images/mobiles/samsung-galaxy-s26-ultra-shop-ornexa.webp",
+    "/images/mobiles/samsung-galaxy-s26-ultra-1.png",
 
   gallery: [
     "/images/mobiles/samsung-galaxy-s26-ultra-1.png",
-    "/images/mobiles/samsung-galaxy-s26-ultra-1.png",
+    "/images/mobiles/samsung-galaxy-s26-ultra-2.png",
   ],
 
   description:
