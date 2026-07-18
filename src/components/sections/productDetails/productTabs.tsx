@@ -38,7 +38,8 @@ const tabs: {
 ];
 
 const ProductTabs = ({ product }: ProductTabsProps) => {
-  const [activeTab, setActiveTab] = useState<TabId>("description");
+  const [activeTab, setActiveTab] =
+    useState<TabId>("description");
 
   const legacySpecifications = [
     {
@@ -95,9 +96,41 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
   );
 
   const technicalSpecifications =
-    product.specifications && product.specifications.length > 0
+    product.specifications &&
+    product.specifications.length > 0
       ? product.specifications
       : legacySpecifications;
+
+  const overview =
+    product.overview || product.description;
+
+  const whyChoose =
+    product.whyChoose &&
+    product.whyChoose.length > 0
+      ? product.whyChoose
+      : product.features?.map(
+          (feature) => feature.title
+        ) ?? [];
+
+  const perfectFor =
+    product.perfectFor &&
+    product.perfectFor.length > 0
+      ? product.perfectFor
+      : [
+          "Daglig användning",
+          "Arbete och studier",
+          "Underhållning",
+        ];
+
+  const inTheBox =
+    product.inTheBox &&
+    product.inTheBox.length > 0
+      ? product.inTheBox
+      : [
+          product.title,
+          "Dokumentation",
+          "Garantiinformation",
+        ];
 
   return (
     <section className="mt-16 border-t border-light-gray pt-12 md:mt-20 md:pt-16">
@@ -109,7 +142,8 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
             aria-label="Produktinformation"
           >
             {tabs.map((tab) => {
-              const isActive = activeTab === tab.id;
+              const isActive =
+                activeTab === tab.id;
 
               return (
                 <button
@@ -117,7 +151,9 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
                   type="button"
                   role="tab"
                   aria-selected={isActive}
-                  onClick={() => setActiveTab(tab.id)}
+                  onClick={() =>
+                    setActiveTab(tab.id)
+                  }
                   className={`relative pb-4 text-lg font-semibold transition ${
                     isActive
                       ? "text-blue"
@@ -137,63 +173,164 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
 
         <div className="py-10 md:py-14">
           {activeTab === "description" && (
-            <div className="max-w-4xl">
-              <Title size="36" className="font-extrabold">
-                Produktbeskrivning
-              </Title>
+            <div>
+              <div className="max-w-4xl">
+                <Title
+                  size="36"
+                  className="font-extrabold"
+                >
+                  Om produkten
+                </Title>
 
-              <p className="mt-5 text-lg leading-8 text-light-dark">
-                {product.description}
-              </p>
+                <p className="mt-5 text-lg leading-8 text-light-dark">
+                  {overview}
+                </p>
+              </div>
 
-              {product.features && product.features.length > 0 && (
-                <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
-                  {product.features.map((feature) => (
-                    <div
-                      key={`${feature.title}-${feature.text}`}
-                      className="rounded-2xl border border-light-gray bg-white p-5"
-                    >
-                      <h3 className="text-lg font-bold text-foreground">
-                        {feature.title}
-                      </h3>
+              {product.features &&
+                product.features.length > 0 && (
+                  <div className="mt-10">
+                    <h3 className="text-2xl font-extrabold text-foreground">
+                      Produktens höjdpunkter
+                    </h3>
 
-                      <p className="mt-2 leading-7 text-light-dark">
-                        {feature.text}
-                      </p>
+                    <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+                      {product.features.map(
+                        (feature) => (
+                          <article
+                            key={`${feature.title}-${feature.text}`}
+                            className="rounded-2xl border border-light-gray bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-md"
+                          >
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EAF4FF] text-lg font-bold text-blue">
+                              ✓
+                            </div>
+
+                            <h4 className="mt-4 text-lg font-bold text-foreground">
+                              {feature.title}
+                            </h4>
+
+                            <p className="mt-2 leading-7 text-light-dark">
+                              {feature.text}
+                            </p>
+                          </article>
+                        )
+                      )}
                     </div>
-                  ))}
-                </div>
-              )}
+                  </div>
+                )}
+
+              <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
+                <article className="rounded-2xl border border-light-gray bg-white p-6">
+                  <h3 className="text-xl font-extrabold text-foreground">
+                    Varför välja denna produkt?
+                  </h3>
+
+                  <ul className="mt-5 space-y-3">
+                    {whyChoose.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 text-light-dark"
+                      >
+                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#EAF4FF] text-sm font-bold text-blue">
+                          ✓
+                        </span>
+
+                        <span className="leading-7">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+
+                <article className="rounded-2xl border border-light-gray bg-white p-6">
+                  <h3 className="text-xl font-extrabold text-foreground">
+                    Perfekt för
+                  </h3>
+
+                  <ul className="mt-5 space-y-3">
+                    {perfectFor.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 text-light-dark"
+                      >
+                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#EAF4FF] text-sm font-bold text-blue">
+                          ✓
+                        </span>
+
+                        <span className="leading-7">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+
+                <article className="rounded-2xl border border-light-gray bg-white p-6">
+                  <h3 className="text-xl font-extrabold text-foreground">
+                    Detta ingår i förpackningen
+                  </h3>
+
+                  <ul className="mt-5 space-y-3">
+                    {inTheBox.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 text-light-dark"
+                      >
+                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#EAF4FF] text-sm font-bold text-blue">
+                          ✓
+                        </span>
+
+                        <span className="leading-7">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              </div>
             </div>
           )}
 
-          {activeTab === "specifications" && (
+          {activeTab ===
+            "specifications" && (
             <div>
-              <Title size="36" className="font-extrabold">
+              <Title
+                size="36"
+                className="font-extrabold"
+              >
                 Tekniska specifikationer
               </Title>
 
-              {technicalSpecifications.length > 0 ? (
+              {technicalSpecifications.length >
+              0 ? (
                 <dl className="mt-7 grid grid-cols-1 gap-x-10 md:grid-cols-2">
-                  {technicalSpecifications.map((specification) => (
-                    <div
-                      key={`${specification.label}-${specification.value}`}
-                      className="grid grid-cols-[minmax(120px,180px)_1fr] gap-5 border-b border-light-gray py-4"
-                    >
-                      <dt className="font-bold text-foreground">
-                        {specification.label}
-                      </dt>
+                  {technicalSpecifications.map(
+                    (specification) => (
+                      <div
+                        key={`${specification.label}-${specification.value}`}
+                        className="grid grid-cols-[minmax(120px,180px)_1fr] gap-5 border-b border-light-gray py-4"
+                      >
+                        <dt className="font-bold text-foreground">
+                          {
+                            specification.label
+                          }
+                        </dt>
 
-                      <dd className="text-light-dark">
-                        {specification.value}
-                      </dd>
-                    </div>
-                  ))}
+                        <dd className="text-light-dark">
+                          {
+                            specification.value
+                          }
+                        </dd>
+                      </div>
+                    )
+                  )}
                 </dl>
               ) : (
                 <p className="mt-5 text-light-dark">
-                  Tekniska specifikationer är inte tillgängliga för
-                  denna produkt.
+                  Tekniska specifikationer är
+                  inte tillgängliga för denna
+                  produkt.
                 </p>
               )}
             </div>
@@ -201,28 +338,30 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
 
           {activeTab === "delivery" && (
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-              <div className="rounded-2xl border border-light-gray bg-white p-6">
+              <article className="rounded-2xl border border-light-gray bg-white p-6">
                 <h3 className="text-xl font-bold text-foreground">
                   Leverans
                 </h3>
 
                 <p className="mt-3 leading-7 text-light-dark">
-                  Normal leveranstid är 1–3 arbetsdagar för produkter
-                  som finns i lager.
+                  Normal leveranstid är 1–3
+                  arbetsdagar för produkter som
+                  finns i lager.
                 </p>
-              </div>
+              </article>
 
-              <div className="rounded-2xl border border-light-gray bg-white p-6">
+              <article className="rounded-2xl border border-light-gray bg-white p-6">
                 <h3 className="text-xl font-bold text-foreground">
                   Lagerstatus
                 </h3>
 
                 <p className="mt-3 leading-7 text-light-dark">
-                  {product.availability || "Kontakta oss för lagerstatus."}
+                  {product.availability ||
+                    "Kontakta oss för lagerstatus."}
                 </p>
-              </div>
+              </article>
 
-              <div className="rounded-2xl border border-light-gray bg-white p-6">
+              <article className="rounded-2xl border border-light-gray bg-white p-6">
                 <h3 className="text-xl font-bold text-foreground">
                   Garanti
                 </h3>
@@ -231,25 +370,31 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
                   {product.warranty ||
                     "Garantivillkor kan variera beroende på produkt."}
                 </p>
-              </div>
+              </article>
 
-              <div className="rounded-2xl border border-light-gray bg-white p-6 lg:col-span-3">
+              <article className="rounded-2xl border border-light-gray bg-white p-6 lg:col-span-3">
                 <h3 className="text-xl font-bold text-foreground">
                   Retur och öppet köp
                 </h3>
 
                 <p className="mt-3 max-w-4xl leading-7 text-light-dark">
-                  Du har rätt att returnera produkten enligt Ornexa Shops
-                  returvillkor. Produkten ska returneras i ursprungligt
-                  skick med tillhörande förpackning och tillbehör.
+                  Du har rätt att returnera
+                  produkten enligt Ornexa Shops
+                  returvillkor. Produkten ska
+                  returneras i ursprungligt skick
+                  med tillhörande förpackning och
+                  tillbehör.
                 </p>
-              </div>
+              </article>
             </div>
           )}
 
           {activeTab === "reviews" && (
             <div>
-              <Title size="36" className="font-extrabold">
+              <Title
+                size="36"
+                className="font-extrabold"
+              >
                 Kundrecensioner
               </Title>
 
@@ -271,7 +416,7 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-light-gray bg-white p-7">
+                <article className="rounded-2xl border border-light-gray bg-white p-7">
                   <h3 className="text-xl font-bold text-foreground">
                     Mycket bra produkt
                   </h3>
@@ -284,15 +429,17 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
                   </div>
 
                   <p className="mt-4 leading-7 text-light-dark">
-                    Produkten motsvarade förväntningarna och fungerade
-                    bra för daglig användning. Leveransen var snabb och
+                    Produkten motsvarade
+                    förväntningarna och fungerade
+                    bra för daglig användning.
+                    Leveransen var snabb och
                     produkten var väl förpackad.
                   </p>
 
                   <p className="mt-4 text-sm font-medium text-light-dark">
                     Verifierad kund
                   </p>
-                </div>
+                </article>
               </div>
             </div>
           )}
@@ -303,5 +450,3 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
 };
 
 export default ProductTabs;
-
-
