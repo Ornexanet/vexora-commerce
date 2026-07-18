@@ -45,7 +45,6 @@ export async function generateMetadata({
       description: product.description,
       url: productUrl,
       siteName: "Ornexa Shop",
-
       images: [
         {
           url: productImage,
@@ -54,7 +53,6 @@ export async function generateMetadata({
           alt: product.title,
         },
       ],
-
       type: "website",
     },
 
@@ -103,16 +101,13 @@ const ProductDetails = async ({ params }: Props) => {
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-
     name: product.title,
-
     image: [
       `https://shop.ornexa.net${product.thumbnail}`,
       ...(product.gallery ?? []).map(
         (image) => `https://shop.ornexa.net${image}`
       ),
     ],
-
     description: product.description,
     sku: String(product.id),
 
@@ -125,9 +120,7 @@ const ProductDetails = async ({ params }: Props) => {
 
     offers: {
       "@type": "Offer",
-
       url: `https://shop.ornexa.net/product-details/${product.id}`,
-
       priceCurrency: "SEK",
       price: product.price,
 
