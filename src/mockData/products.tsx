@@ -268,6 +268,8 @@ const samsungGalaxyBuds4Pro: ProductType = {
 
   categories: ["headphones", "accessories"],
   filter: "headphones",
+  productType: "headphones",
+
 
   brand: "Samsung",
   model: "Galaxy Buds4 Pro",
@@ -859,7 +861,6 @@ const xiaomi17TPro: ProductType = {
   filter: "mobiler",
   productType: "phone",
 
-
   brand: "Xiaomi",
   model: "17T Pro",
   storage: "256 GB",
@@ -951,6 +952,8 @@ const airPods4: ProductType = {
 
   categories: ["headphones", "accessories"],
   filter: "headphones",
+  productType: "headphones",
+
 
   brand: "Apple",
   model: "AirPods 4",
@@ -1040,6 +1043,8 @@ const airPodsPro3: ProductType = {
 
   categories: ["headphones", "accessories"],
   filter: "headphones",
+  productType: "headphones",
+
 
   brand: "Apple",
   model: "AirPods Pro 3",
@@ -1133,6 +1138,8 @@ const samsungGalaxyBuds3: ProductType = {
 
   categories: ["headphones", "accessories"],
   filter: "headphones",
+  productType: "headphones",
+
 
   brand: "Samsung",
   model: "Galaxy Buds3",
