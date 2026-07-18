@@ -447,8 +447,8 @@ const samsungGalaxyS26Ultra: ProductType = {
     "/images/mobiles/samsung-galaxy-s26-ultra-shop-ornexa.webp",
 
   gallery: [
-    "/images/mobiles/samsung-galaxy-s26-ultra-shop-ornexa.webp",
-    "/images/mobiles/samsung-galaxy-s26-ultra-shop-ornexa-2.webp",
+    "/images/mobiles/samsung-galaxy-s26-ultra-1.png",
+    "/images/mobiles/samsung-galaxy-s26-ultra-1.png",
   ],
 
   description:
