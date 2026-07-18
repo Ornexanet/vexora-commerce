@@ -41,6 +41,15 @@ export interface ProductType {
   camera?: string;
   battery?: string;
   os?: string;
+
+overview?: string;
+
+whyChoose?: string[];
+
+perfectFor?: string[];
+
+inTheBox?: string[];
+
 }
 
 export interface Products {
@@ -688,6 +697,30 @@ const iphone17Pro: ProductType = {
       value: "2 års garanti",
     },
   ],
+  overview:
+  "iPhone 17 Pro är utvecklad för användare som vill kombinera hög prestanda, avancerad fotografering och en premiumupplevelse i vardagen. Den passar både professionellt arbete, kreativt innehåll och krävande appar.",
+
+whyChoose: [
+  "Apple A19 Pro för snabb och stabil prestanda",
+  "48 MP Pro-kamerasystem för foto och video",
+  "6.3-tums ProMotion OLED-skärm",
+  "Lång batteritid för arbete och underhållning",
+],
+
+perfectFor: [
+  "Professionellt arbete",
+  "Fotografering och video",
+  "Gaming och krävande appar",
+  "Daglig användning och underhållning",
+],
+
+inTheBox: [
+  "iPhone 17 Pro",
+  "USB-C-kabel",
+  "Dokumentation",
+  "Garantiinformation",
+],
+
 
   backgroundColor: "#ECF2F9",
 
