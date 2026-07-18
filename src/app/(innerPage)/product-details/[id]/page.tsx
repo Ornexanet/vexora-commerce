@@ -6,6 +6,7 @@ import HighlightedFeatures from "@/components/sections/productDetails/highlighte
 import Title from "@/components/ui/title";
 import Card from "@/components/ui/card";
 import { allProducts } from "@/mockData/products";
+import ProductTabs from "@/components/sections/productDetails/productTabs";
 
 type Props = {
   params: Promise<{
@@ -193,6 +194,9 @@ const ProductDetails = async ({ params }: Props) => {
           </div>
         </div>
       </section>
+      <ProductTabs product={product} />
+
+
 
       {relatedProducts.length > 0 && (
         <section className="mt-20 border-t border-light-gray bg-[#F8FAFC] py-16 md:mt-25 md:py-20 lg:mt-37.5">
@@ -222,6 +226,7 @@ const ProductDetails = async ({ params }: Props) => {
                 <Card
                   key={relatedProduct.id}
                   product={relatedProduct}
+                  
                 />
               ))}
             </div>
