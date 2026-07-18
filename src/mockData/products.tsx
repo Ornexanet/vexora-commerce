@@ -440,6 +440,158 @@ const appleWatchUltra3: ProductType = {
   ],
 };
 
+const samsungGalaxyS26Ultra: ProductType = {
+  id: 4,
+  title: "Samsung Galaxy S26 Ultra",
+  thumbnail:
+    "/images/mobiles/samsung-galaxy-s26-ultra-shop-ornexa.webp",
+
+  gallery: [
+    "/images/mobiles/samsung-galaxy-s26-ultra-shop-ornexa.webp",
+    "/images/mobiles/samsung-galaxy-s26-ultra-shop-ornexa-2.webp",
+  ],
+
+  description:
+    "Samsung Galaxy S26 Ultra är en avancerad premiumtelefon med stor AMOLED-skärm, kraftfull prestanda, S Pen och ett professionellt kamerasystem för foto, video, arbete och underhållning.",
+
+  price: 16990,
+  tag: "Ny",
+  discount: null,
+
+  categories: ["mobiler"],
+  filter: "mobiler",
+  productType: "phone",
+
+  brand: "Samsung",
+  model: "Galaxy S26 Ultra",
+  storage: "256 GB",
+  color: "Cobalt Violet",
+  display:
+    "6.9-tums QHD+ Dynamic AMOLED 2X, adaptiv 120 Hz",
+  processor:
+    "Snapdragon premiumprocessor för Galaxy",
+  camera:
+    "200 MP huvudkamera, 50 MP ultravidvinkel och telekamera",
+  battery:
+    "5000 mAh, upp till 31 timmars videouppspelning",
+  os: "Android",
+
+  warranty: "2 års garanti",
+  availability: "Finns i lager",
+
+  specifications: [
+    {
+      label: "Lagring",
+      value: "256 GB",
+    },
+    {
+      label: "Minne",
+      value: "12 GB RAM",
+    },
+    {
+      label: "Färg",
+      value: "Cobalt Violet",
+    },
+    {
+      label: "Skärm",
+      value:
+        "6.9-tums QHD+ Dynamic AMOLED 2X, adaptiv 120 Hz",
+    },
+    {
+      label: "Processor",
+      value:
+        "Snapdragon premiumprocessor för Galaxy",
+    },
+    {
+      label: "Huvudkamera",
+      value: "200 MP",
+    },
+    {
+      label: "Ultravidvinkel",
+      value: "50 MP",
+    },
+    {
+      label: "Telekamera",
+      value: "50 MP",
+    },
+    {
+      label: "Batteri",
+      value:
+        "5000 mAh, upp till 31 timmars videouppspelning",
+    },
+    {
+      label: "Funktioner",
+      value: "Galaxy AI och integrerad S Pen",
+    },
+    {
+      label: "Operativsystem",
+      value: "Android",
+    },
+    {
+      label: "Lagerstatus",
+      value: "Finns i lager",
+    },
+    {
+      label: "Garanti",
+      value: "2 års garanti",
+    },
+  ],
+
+  overview:
+    "Samsung Galaxy S26 Ultra är utvecklad för användare som vill ha en stor premiumskärm, hög prestanda, avancerad fotografering och produktiva funktioner i samma enhet. Den passar både professionellt arbete, kreativt innehåll, gaming och daglig användning.",
+
+  whyChoose: [
+    "200 MP kamera för högupplösta bilder och video",
+    "6.9-tums QHD+ AMOLED-skärm med 120 Hz",
+    "Integrerad S Pen för arbete och kreativitet",
+    "Kraftfull prestanda för appar och gaming",
+  ],
+
+  perfectFor: [
+    "Professionellt arbete",
+    "Fotografering och video",
+    "Gaming och multitasking",
+    "Kreativt arbete med S Pen",
+  ],
+
+  inTheBox: [
+    "Samsung Galaxy S26 Ultra",
+    "USB-C-kabel",
+    "Dokumentation",
+    "Garantiinformation",
+  ],
+
+  backgroundColor: "#F0EDF8",
+
+  features: [
+    {
+      icon: "camera",
+      title: "200 MP kamerasystem",
+      text:
+        "Avancerad huvudkamera för detaljrika bilder, video och kreativ fotografering.",
+    },
+    {
+      icon: "display",
+      title: "6.9-tums AMOLED-skärm",
+      text:
+        "Stor QHD+ Dynamic AMOLED 2X-skärm med adaptiv uppdateringsfrekvens på 120 Hz.",
+    },
+    {
+      icon: "performance",
+      title: "Kraftfull prestanda",
+      text:
+        "Utvecklad för multitasking, avancerade appar, AI-funktioner och gaming.",
+    },
+    {
+      icon: "check",
+      title: "Integrerad S Pen",
+      text:
+        "Gör det enklare att skriva, anteckna, navigera och arbeta kreativt.",
+    },
+  ],
+};
+
+
 const samsungGalaxyS25: ProductType = {
   id: 3,
   title: "Samsung Galaxy S25",
@@ -1458,6 +1610,7 @@ export const products: Products = {
   newStockProducts: [
     sonyWH1000XM6,
     appleWatchUltra3,
+    samsungGalaxyS26Ultra,
     samsungGalaxyS25,
     samsungGalaxyWatchUltra,
   ],
