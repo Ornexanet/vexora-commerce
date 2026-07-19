@@ -1,4 +1,5 @@
 "use client";
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { products } from "@/mockData/products";
 import Link from "next/link";
@@ -6,43 +7,68 @@ import { useState } from "react";
 import { Button } from "../ui/button";
 import Card from "../ui/card";
 import Title from "../ui/title";
+
 const BestProducts = () => {
   const [selectValue, setSelectValue] = useState("mobiler");
 
   const filterList = [
-  {
-    label: "Mobiler",
-    value: "mobiler",
-  },
-  {
-    label: "Hörlurar",
-    value: "headphones",
-  },
-  {
-    label: "Smarta klockor",
-    value: "smartWatch",
-  },
-  {
-    label: "Tillbehör",
-    value: "accessories",
-  },
-];
-
+    {
+      label: "Mobiler",
+      value: "mobiler",
+    },
+    {
+      label: "Hörlurar",
+      value: "headphones",
+    },
+    {
+      label: "Smarta klockor",
+      value: "smartWatch",
+    },
+    {
+      label: "Tillbehör",
+      value: "accessories",
+    },
+  ];
 
   const handleTabClick = (value: string) => {
     setSelectValue(value);
   };
 
+  const getCategoryLink = (value: string) => {
+    if (value === "accessories") {
+      return "/tillbehor";
+    }
+
+    if (value === "mobiler") {
+      return "/mobiler";
+    }
+
+    if (value === "headphones") {
+      return "/horlurar";
+    }
+
+    if (value === "smartWatch") {
+      return "/smarta-klockor";
+    }
+
+    return "/shop-with-sidebar";
+  };
+
   return (
     <section className="lg:mt-37.5 md:mt-25 mt-20">
       <div className="container">
-        <Tabs value={selectValue} defaultValue="mobiler">
+        <Tabs
+          value={selectValue}
+          defaultValue="mobiler"
+          onValueChange={setSelectValue}
+        >
           <div className="flex justify-between items-center flex-wrap gap-x-5 gap-y-5">
             <div>
               <div className="flex lg:flex-row flex-col lg:items-center gap-2">
                 <Title size="36" className="font-medium">
                   Populärt inom
                 </Title>
+
                 <TabsList className="bg-transparent p-0 gap-x-5 gap-y-1 justify-start flex-wrap h-auto">
                   {filterList.map(({ label, value }) => (
                     <TabsTrigger
@@ -56,24 +82,47 @@ const BestProducts = () => {
                   ))}
                 </TabsList>
               </div>
+
               <p className="text-lg leading-normal mt-2">
-                Uppräck vårt noggrant utvalda sortiment av premiumprodukter.
+                Upptäck vårt noggrant utvalda sortiment av premiumprodukter.
               </p>
             </div>
+
             <Button asChild className="rounded-lg capitalize">
-              <Link href={"/shop-with-sidebar"}>Köp {selectValue}</Link>
+              <Link href={getCategoryLink(selectValue)}>
+                Köp{" "}
+                {
+                  filterList.find(
+                    ({ value }) => value === selectValue
+                  )?.label
+                }
+              </Link>
             </Button>
           </div>
+
           {filterList.map(({ value }) => {
-            const filteredData = products.bestProductsData.filter(
-              ({ filter }) => filter === value,
+            const sourceProducts =
+              value === "accessories"
+                ? products.accessoriesData
+                : products.bestProductsData;
+
+            const filteredData = sourceProducts.filter(
+              ({ filter }) => filter === value
             );
+
             return (
-              <TabsContent key={value} value={value} className="mt-[50px]">
-                {filteredData.length ? (
+              <TabsContent
+                key={value}
+                value={value}
+                className="mt-[50px]"
+              >
+                {filteredData.length > 0 ? (
                   <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 sm:gap-7.5 gap-5">
                     {filteredData.map((product) => (
-                      <Card key={product.id} product={product} />
+                      <Card
+                        key={product.id}
+                        product={product}
+                      />
                     ))}
                   </div>
                 ) : (
