@@ -1715,6 +1715,107 @@ const appleAirTag: ProductType = {
     },
   ],
 };
+const appleMagSafeCharger: ProductType = {
+  id: 21,
+  title: "Apple MagSafe Charger",
+  thumbnail: "/images/accessories/apple-magsafe-charger1.webp",
+  gallery: [
+    "/images/accessories/apple-magsafe-charger1.webp",
+    "/images/accessories/apple-magsafe-charger2.webp",
+    "/images/accessories/apple-magsafe-charger3.webp",
+  ],
+  description:
+    "Apple MagSafe Charger ger snabb och smidig trådlös laddning för kompatibla iPhone-modeller och andra Qi-kompatibla enheter.",
+  price: 595,
+  tag: "Populär",
+  discount: null,
+  categories: ["accessories"],
+  filter: "accessories",
+  productType: "accessory",
+  brand: "Apple",
+  model: "MagSafe Charger",
+  color: "Vit och silver",
+  battery: "Ingen inbyggd batterikapacitet",
+  os: "Kompatibel med iOS-enheter",
+  warranty: "1 års garanti",
+  availability: "Finns i lager",
+  specifications: [
+    {
+      label: "Produkttyp",
+      value: "Trådlös laddare",
+    },
+    {
+      label: "Laddningsteknik",
+      value: "MagSafe och Qi",
+    },
+    {
+      label: "Maximal effekt",
+      value: "Upp till 15 W",
+    },
+    {
+      label: "Anslutning",
+      value: "USB-C",
+    },
+    {
+      label: "Kompatibilitet",
+      value: "iPhone 12 och senare samt Qi-kompatibla enheter",
+    },
+    {
+      label: "Kabellängd",
+      value: "1 meter",
+    },
+    {
+      label: "Färg",
+      value: "Vit och silver",
+    },
+    {
+      label: "Garanti",
+      value: "1 års garanti",
+    },
+  ],
+  overview:
+    "Apple MagSafe Charger är en kompakt trådlös laddare som fäster magnetiskt på kompatibla iPhone-modeller. Den ger stabil placering och effektiv laddning utan att du behöver ansluta en laddningskabel direkt till telefonen.",
+  whyChoose: [
+    "Magnetisk och exakt placering",
+    "Snabb trådlös laddning",
+    "Kompakt och lätt design",
+    "Kompatibel med MagSafe och Qi",
+  ],
+  perfectFor: [
+    "iPhone 12 och senare",
+    "Trådlös laddning hemma",
+    "Kontor och arbetsplats",
+    "Resor och daglig användning",
+  ],
+  inTheBox: [
+    "Apple MagSafe Charger",
+    "Integrerad USB-C-kabel",
+    "Dokumentation",
+    "Garantiinformation",
+  ],
+  backgroundColor: "#F5F5F7",
+  features: [
+    {
+      icon: "check",
+      title: "Magnetisk anslutning",
+      text:
+        "Laddaren fäster automatiskt på kompatibla iPhone-modeller för stabil och exakt placering.",
+    },
+    {
+      icon: "battery",
+      title: "Snabb trådlös laddning",
+      text:
+        "Ger upp till 15 W trådlös laddning med kompatibel nätadapter och iPhone-modell.",
+    },
+    {
+      icon: "check",
+      title: "Qi-kompatibel",
+      text:
+        "Kan även användas med andra Qi-kompatibla smartphones och tillbehör.",
+    },
+  ],
+};
+
 
 /* =========================================================
    PRODUCT COLLECTIONS
@@ -1765,6 +1866,7 @@ export const products: Products = {
 
   accessoriesData: [
     appleAirTag,
+    appleMagSafeCharger,
   ],
 };
 
