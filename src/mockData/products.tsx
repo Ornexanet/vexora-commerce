@@ -149,7 +149,9 @@ export interface Products {
   newStockProducts: ProductType[];
   bestProductsData: ProductType[];
   headphonesData: ProductType[];
+  accessoriesData: ProductType[];
 }
+
 
 /* =========================================================
    PRODUCT DATA
@@ -1596,6 +1598,124 @@ const xboxWirelessController: ProductType = {
   ],
 };
 
+const appleAirTag: ProductType = {
+  id: 20,
+  title: "Apple AirTag",
+
+  thumbnail: "/images/accessories/apple-airtag-1.webp",
+
+  gallery: [
+    "/images/accessories/apple-airtag-1.webp",
+    "/images/accessories/apple-airtag-2.webp",
+    "/images/accessories/apple-airtag-3.webp",
+  ],
+
+  description:
+    "Apple AirTag hjälper dig att hålla reda på nycklar, väskor och andra viktiga föremål direkt i appen Hitta på din iPhone.",
+
+  price: 395,
+  tag: "Ny",
+  discount: null,
+
+  categories: ["accessories"],
+  filter: "accessories",
+  productType: "accessory",
+
+  brand: "Apple",
+  model: "AirTag",
+  color: "Vit och silver",
+
+  battery:
+    "Utbytbart CR2032-batteri med upp till cirka ett års batteritid",
+
+  os: "Apple Hitta-nätverket",
+
+  warranty: "1 års garanti",
+  availability: "Finns i lager",
+
+  specifications: [
+    {
+      label: "Produkttyp",
+      value: "Bluetooth-spårare",
+    },
+    {
+      label: "Anslutning",
+      value: "Bluetooth och Ultra Wideband",
+    },
+    {
+      label: "Kompatibilitet",
+      value: "iPhone och Apple Hitta",
+    },
+    {
+      label: "Batteri",
+      value: "Utbytbart CR2032-batteri",
+    },
+    {
+      label: "Vattentålighet",
+      value: "IP67",
+    },
+    {
+      label: "Högtalare",
+      value: "Inbyggd högtalare",
+    },
+    {
+      label: "Färg",
+      value: "Vit och silver",
+    },
+    {
+      label: "Garanti",
+      value: "1 års garanti",
+    },
+  ],
+
+  overview:
+    "Apple AirTag är ett kompakt och lätt tillbehör som hjälper dig att hitta personliga föremål som nycklar, väskor och bagage. Produkten fungerar tillsammans med Apples Hitta-app och Hitta-nätverk.",
+
+  whyChoose: [
+    "Smidig integration med appen Hitta",
+    "Kompakt och lätt design",
+    "Precisionssökning med kompatibla iPhone-modeller",
+    "Utbytbart batteri med lång batteritid",
+  ],
+
+  perfectFor: [
+    "Nycklar",
+    "Väskor och ryggsäckar",
+    "Bagage och resor",
+    "Apple-användare",
+  ],
+
+  inTheBox: [
+    "Apple AirTag",
+    "Installerat CR2032-batteri",
+    "Dokumentation",
+    "Garantiinformation",
+  ],
+
+  backgroundColor: "#F5F5F7",
+
+  features: [
+    {
+      icon: "check",
+      title: "Hitta dina saker",
+      text:
+        "Håll reda på nycklar, väskor och andra föremål direkt i Apples Hitta-app.",
+    },
+    {
+      icon: "check",
+      title: "Precisionssökning",
+      text:
+        "Kompatibla iPhone-modeller kan visa riktning och avstånd till din AirTag.",
+    },
+    {
+      icon: "battery",
+      title: "Utbytbart batteri",
+      text:
+        "AirTag använder ett vanligt CR2032-batteri som enkelt kan bytas.",
+    },
+  ],
+};
+
 /* =========================================================
    PRODUCT COLLECTIONS
 ========================================================= */
@@ -1616,27 +1736,24 @@ export const products: Products = {
   ],
 
   bestProductsData: [
-  iphone16Plus,
-  iphone17Pro,
-  samsungGalaxyS26Ultra,
-  samsungGalaxyS25,
-  xiaomi17TPro,
+    iphone16Plus,
+    iphone17Pro,
+    samsungGalaxyS26Ultra,
+    samsungGalaxyS25,
+    xiaomi17TPro,
 
+    airPods4,
+    airPodsPro3,
+    samsungGalaxyBuds4Pro,
+    samsungGalaxyBuds3,
 
-  airPods4,
-  airPodsPro3,
-  samsungGalaxyBuds4Pro,
-  samsungGalaxyBuds3,
+    appleWatchUltra3,
+    samsungGalaxyWatchUltra,
+    appleWatchSeries11,
 
-  appleWatchUltra3,
-  samsungGalaxyWatchUltra,
-  appleWatchSeries11,
-
-  insta360AcePro,
-  xboxWirelessController,
-],
-
-
+    insta360AcePro,
+    xboxWirelessController,
+  ],
 
   headphonesData: [
     sonyWH1000XM6,
@@ -1645,7 +1762,12 @@ export const products: Products = {
     samsungGalaxyBuds4Pro,
     samsungGalaxyBuds3,
   ],
+
+  accessoriesData: [
+    appleAirTag,
+  ],
 };
+
 export const allProducts: ProductType[] = Array.from(
   new Map(
     [
@@ -1653,6 +1775,7 @@ export const allProducts: ProductType[] = Array.from(
       ...products.newStockProducts,
       ...products.bestProductsData,
       ...products.headphonesData,
+      ...products.accessoriesData,
     ].map((product) => [product.id, product])
   ).values()
 );
