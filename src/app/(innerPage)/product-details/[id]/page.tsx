@@ -9,6 +9,7 @@ import { allProducts } from "@/mockData/products";
 import ProductTabs from "@/components/sections/productDetails/productTabs";
 import { generateProductMetadata } from "@/seo/metadata/productMetadata";
 import { generateProductSchema } from "@/seo/schemas/productSchema";
+import { generateBreadcrumbSchema } from "@/seo/schemas/breadcrumbSchema";
 
 type Props = {
   params: Promise<{
@@ -63,31 +64,8 @@ const ProductDetails = async ({ params }: Props) => {
     .slice(0, 4);
 
  const productSchema = generateProductSchema(product);
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
+ const breadcrumbSchema = generateBreadcrumbSchema(product);
 
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Hem",
-        item: "https://shop.ornexa.net",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: product.categories[0] || "Produkter",
-        item: "https://shop.ornexa.net/shop-with-sidebar",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: product.title,
-        item: `https://shop.ornexa.net/product-details/${product.id}`,
-      },
-    ],
-  };
 
   return (
     <main>
