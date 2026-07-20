@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { generateArticleSchema } from "@/seo/schemas/articleSchema";
 
 type BlogDetailsProps = {
   params: Promise<{ slug: string }>;
@@ -73,106 +74,7 @@ const BlogDetails = async ({ params }: BlogDetailsProps) => {
   const articleUrl = `https://shop.ornexa.net/blog/${blog.slug}`;
   const imageUrl = `https://shop.ornexa.net${blog.thumbnail}`;
 
-  const blogPostingJsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BlogPosting",
-        "@id": `${articleUrl}#blogposting`,
-        mainEntityOfPage: {
-          "@type": "WebPage",
-          "@id": `${articleUrl}#webpage`,
-        },
-        headline: blog.title,
-        description: blog.description,
-        image: {
-          "@type": "ImageObject",
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-        },
-        author: {
-          "@type": "Organization",
-          name: "Ornexa team",
-          url: "https://shop.ornexa.net",
-        },
-        publisher: {
-          "@type": "Organization",
-          name: "Ornexa Shop",
-          logo: {
-            "@type": "ImageObject",
-            url: "https://shop.ornexa.net/images/ornexa-logo121.png",
-          },
-        },
-        datePublished: blog.publishedAt,
-        dateModified: blog.modifiedAt || blog.publishedAt,
-        
-        articleSection: blog.category,
-keywords: blog.keywords,
-about: blog.entities.map((entity) => ({
-  "@type": "Thing",
-  name: entity,
-})),
-mentions: blog.relatedProduct
-  ? [
-      {
-        "@type": "Product",
-        name: blog.relatedProduct.name,
-        url: blog.relatedProduct.url,
-      },
-    ]
-  : undefined,
-isAccessibleForFree: true,
-inLanguage: "sv-SE",
-
-      },
-
-...(blog.faq
-  ? [
-      {
-        "@type": "FAQPage",
-        "@id": `${articleUrl}#faq`,
-        mainEntity: blog.faq.map((item) => ({
-          "@type": "Question",
-          name: item.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: item.answer,
-          },
-        })),
-      },
-    ]
-  : []),
-
-
-
-      {
-        "@type": "BreadcrumbList",
-        "@id": `${articleUrl}#breadcrumb`,
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Hem",
-            item: "https://shop.ornexa.net",
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Blogg",
-            item: "https://shop.ornexa.net/blog",
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: blog.title,
-            item: articleUrl,
-          },
-        ],
-      },
-    ],
-  };
-
+  const blogPostingJsonLd = generateArticleSchema(blog);
   return (
     <main>
       <script
