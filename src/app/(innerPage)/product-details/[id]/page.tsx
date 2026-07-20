@@ -8,6 +8,7 @@ import Card from "@/components/ui/card";
 import { allProducts } from "@/mockData/products";
 import ProductTabs from "@/components/sections/productDetails/productTabs";
 import { generateProductMetadata } from "@/seo/metadata/productMetadata";
+import { generateProductSchema } from "@/seo/schemas/productSchema";
 
 type Props = {
   params: Promise<{
@@ -61,46 +62,7 @@ const ProductDetails = async ({ params }: Props) => {
     })
     .slice(0, 4);
 
-  const productSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: product.title,
-    image: [
-      `https://shop.ornexa.net${product.thumbnail}`,
-      ...(product.gallery ?? []).map(
-        (image) => `https://shop.ornexa.net${image}`
-      ),
-    ],
-    description: product.description,
-    sku: String(product.id),
-
-    brand: {
-      "@type": "Brand",
-      name: product.brand || "Ornexa",
-    },
-
-    category: product.categories.join(", "),
-
-    offers: {
-      "@type": "Offer",
-      url: `https://shop.ornexa.net/product-details/${product.id}`,
-      priceCurrency: "SEK",
-      price: product.price,
-
-      availability:
-        product.availability === "Finns i lager"
-          ? "https://schema.org/InStock"
-          : "https://schema.org/OutOfStock",
-
-      itemCondition: "https://schema.org/NewCondition",
-
-      seller: {
-        "@type": "Organization",
-        name: "Ornexa Shop",
-      },
-    },
-  };
-
+ const productSchema = generateProductSchema(product);
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
