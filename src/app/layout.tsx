@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+
 import { Providers } from "@/contextApi/providers";
 import { Toaster } from "@/components/ui/sonner";
+import { generateOrganizationSchema } from "@/seo/schemas/organizationSchema";
+import { siteConfig } from "@/seo/config/siteConfig";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
@@ -10,9 +13,13 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Vexora",
-  description:
-    "Vexora - Single Product eCommerce Next.js Template for Tech and Gadget Stores",
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  metadataBase: new URL(siteConfig.url),
 };
 
 export default function RootLayout({
@@ -20,22 +27,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = generateOrganizationSchema();
+
   return (
-    <html lang="en">
+    <html lang="sv">
       <head>
-  <link
-    rel="preload"
-    as="image"
-    href="/images/hero/bg-1.webp"
-    fetchPriority="high"
-    type="image/webp"
-  />
-</head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero/bg-1.webp"
+          fetchPriority="high"
+          type="image/webp"
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+      </head>
+
       <body className={`${plusJakartaSans.variable} antialiased`}>
         <Providers>
           {children}
           <Toaster richColors position="bottom-right" />
-         {/* <WellcomeModal /> */}
+          {/* <WellcomeModal /> */}
         </Providers>
       </body>
     </html>
