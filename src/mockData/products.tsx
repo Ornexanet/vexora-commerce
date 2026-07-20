@@ -1817,6 +1817,112 @@ const appleMagSafeCharger: ProductType = {
 };
 
 
+
+
+
+const samsung45WSuperFastCharger: ProductType = {
+  id: 22,
+  title: "Samsung 45W Super Fast Charger",
+  thumbnail:
+    "/images/accessories/samsung45w-super-fast-charger1.webp",
+  gallery: [
+    "/images/accessories/samsung45w-super-fast-charger1.webp",
+    "/images/accessories/samsung45w-super-fast-charger2.webp",
+    "/images/accessories/samsung45w-super-fast-charger3.webp",
+  ],
+  description:
+    "Samsung 45W Super Fast Charger ger snabb och effektiv laddning för kompatibla Samsung Galaxy-enheter och andra USB-C-enheter.",
+  price: 499,
+  tag: "Snabbladdning",
+  discount: null,
+  categories: ["accessories"],
+  filter: "accessories",
+  productType: "accessory",
+  brand: "Samsung",
+  model: "45W Super Fast Charger",
+  color: "Svart",
+  battery: "Ingen inbyggd batterikapacitet",
+  os: "Kompatibel med USB-C-enheter",
+  warranty: "1 års garanti",
+  availability: "Finns i lager",
+  specifications: [
+    {
+      label: "Produkttyp",
+      value: "USB-C-laddare",
+    },
+    {
+      label: "Maximal effekt",
+      value: "45 W",
+    },
+    {
+      label: "Laddningsteknik",
+      value: "Super Fast Charging 2.0",
+    },
+    {
+      label: "Anslutning",
+      value: "USB-C",
+    },
+    {
+      label: "Kompatibilitet",
+      value: "Samsung Galaxy och andra USB-C-enheter",
+    },
+    {
+      label: "Strömstandard",
+      value: "USB Power Delivery",
+    },
+    {
+      label: "Färg",
+      value: "Svart",
+    },
+    {
+      label: "Garanti",
+      value: "1 års garanti",
+    },
+  ],
+  overview:
+    "Samsung 45W Super Fast Charger är en kompakt nätadapter för snabb laddning av kompatibla Samsung Galaxy-enheter. Den stöder USB Power Delivery och kan även användas med andra USB-C-enheter.",
+  whyChoose: [
+    "Upp till 45 W snabbladdning",
+    "Stöd för Super Fast Charging 2.0",
+    "Kompakt och praktisk design",
+    "Kompatibel med flera USB-C-enheter",
+  ],
+  perfectFor: [
+    "Samsung Galaxy-smartphones",
+    "Samsung Galaxy-surfplattor",
+    "USB-C-enheter",
+    "Hemmet, kontoret och resor",
+  ],
+  inTheBox: [
+    "Samsung 45W Super Fast Charger",
+    "USB-C till USB-C-kabel",
+    "Dokumentation",
+    "Garantiinformation",
+  ],
+  backgroundColor: "#F5F5F7",
+  features: [
+    {
+      icon: "battery",
+      title: "45 W snabbladdning",
+      text:
+        "Laddar kompatibla Samsung-enheter snabbt med upp till 45 W effekt.",
+    },
+    {
+      icon: "check",
+      title: "USB Power Delivery",
+      text:
+        "Stöder modern USB-C-laddning för smartphones, surfplattor och andra kompatibla enheter.",
+    },
+    {
+      icon: "check",
+      title: "Kompakt design",
+      text:
+        "En praktisk laddare som är enkel att ta med till arbetet eller på resan.",
+    },
+  ],
+};
+
+
 /* =========================================================
    PRODUCT COLLECTIONS
 ========================================================= */
@@ -1867,6 +1973,7 @@ export const products: Products = {
   accessoriesData: [
     appleAirTag,
     appleMagSafeCharger,
+    samsung45WSuperFastCharger,
   ],
 };
 
