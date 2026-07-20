@@ -7,6 +7,7 @@ import Title from "@/components/ui/title";
 import Card from "@/components/ui/card";
 import { allProducts } from "@/mockData/products";
 import ProductTabs from "@/components/sections/productDetails/productTabs";
+import { generateProductMetadata } from "@/seo/metadata/productMetadata";
 
 type Props = {
   params: Promise<{
@@ -23,89 +24,9 @@ export async function generateMetadata({
     (item) => item.id === Number(id)
   );
 
-  if (!product) {
-    return {
-      title: "Produkten hittades inte | Ornexa Shop",
-      description:
-        "Produkten du söker finns inte eller har tagits bort från Ornexa Shop.",
-      robots: {
-        index: false,
-        follow: false,
-      },
-    };
-  }
-
-  const baseUrl = "https://shop.ornexa.net";
-
-  const productUrl =
-    `${baseUrl}/product-details/${product.id}`;
-
-  const productImage =
-    `${baseUrl}${product.thumbnail}`;
-
-  const seoTitle =
-    `${product.title} – Köp online | Ornexa Shop`;
-
-  const seoDescription =
-    `${product.description} Pris ${product.price} kr. Se specifikationer, funktioner och tillgänglighet hos Ornexa Shop.`;
-
-  return {
-    title: seoTitle,
-    description: seoDescription,
-
-    applicationName: "Ornexa Shop",
-
-    alternates: {
-      canonical: productUrl,
-    },
-
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-        "max-video-preview": -1,
-      },
-    },
-
-    openGraph: {
-      title: seoTitle,
-      description: seoDescription,
-      url: productUrl,
-      siteName: "Ornexa Shop",
-      locale: "sv_SE",
-      type: "website",
-      images: [
-        {
-          url: productImage,
-          width: 1200,
-          height: 630,
-          alt: `${product.title} hos Ornexa Shop`,
-        },
-      ],
-    },
-
-    twitter: {
-      card: "summary_large_image",
-      title: seoTitle,
-      description: seoDescription,
-      images: [productImage],
-    },
-
-    other: {
-      "product:price:amount": String(product.price),
-      "product:price:currency": "SEK",
-      "product:availability":
-        product.availability === "Finns i lager"
-          ? "in stock"
-          : "out of stock",
-      "product:brand": product.brand || "Ornexa",
-    },
-  };
+  return generateProductMetadata(product);
 }
+
 
 const ProductDetails = async ({ params }: Props) => {
   const { id } = await params;
