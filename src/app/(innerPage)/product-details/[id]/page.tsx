@@ -10,6 +10,8 @@ import ProductTabs from "@/components/sections/productDetails/productTabs";
 import { generateProductMetadata } from "@/seo/metadata/productMetadata";
 import { generateProductSchema } from "@/seo/schemas/productSchema";
 import { generateBreadcrumbSchema } from "@/seo/schemas/breadcrumbSchema";
+import { getRelatedProducts } from "@/seo/internalLinks/productLinks";
+
 
 type Props = {
   params: Promise<{
@@ -51,18 +53,7 @@ const ProductDetails = async ({ params }: Props) => {
     );
   }
 
-  const relatedProducts = allProducts
-    .filter((item) => {
-      const isDifferentProduct = item.id !== product.id;
-
-      const hasMatchingCategory = item.categories.some(
-        (category) => product.categories.includes(category)
-      );
-
-      return isDifferentProduct && hasMatchingCategory;
-    })
-    .slice(0, 4);
-
+const relatedProducts = getRelatedProducts(product);
  const productSchema = generateProductSchema(product);
  const breadcrumbSchema = generateBreadcrumbSchema(product);
 
