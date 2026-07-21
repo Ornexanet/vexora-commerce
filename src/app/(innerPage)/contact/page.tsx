@@ -35,6 +35,9 @@ export const metadata = generatePageMetadata({
     "Hörlurar",
     "Tillbehör",
   ],
+  image: "/images/ornexa-contact-tech-products.webp",
+  imageAlt:
+    "Ornexa elektronikbutik för mobiler, smartklockor och tillbehör",
 });
 
 
