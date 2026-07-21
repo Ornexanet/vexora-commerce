@@ -6,6 +6,9 @@ type PageMetadataProps = {
   description: string;
   path: string;
   keywords?: string[];
+  image?: string;
+  imageAlt?: string;
+  noindex?: boolean;
 };
 
 export function generatePageMetadata({
@@ -13,8 +16,17 @@ export function generatePageMetadata({
   description,
   path,
   keywords = [],
+  image,
+  imageAlt,
+  noindex = false,
 }: PageMetadataProps): Metadata {
   const url = `${siteConfig.url}${path}`;
+
+  const imageUrl = image
+    ? image.startsWith("http")
+      ? image
+      : `${siteConfig.url}${image}`
+    : undefined;
 
   return {
     title,
@@ -25,6 +37,11 @@ export function generatePageMetadata({
       canonical: url,
     },
 
+    robots: {
+      index: !noindex,
+      follow: !noindex,
+    },
+
     openGraph: {
       title,
       description,
@@ -32,17 +49,26 @@ export function generatePageMetadata({
       siteName: siteConfig.name,
       locale: siteConfig.locale,
       type: "website",
+      ...(imageUrl && {
+        images: [
+          {
+            url: imageUrl,
+            width: 1200,
+            height: 630,
+            alt: imageAlt || title,
+          },
+        ],
+      }),
     },
 
     twitter: {
-      card: "summary_large_image",
+      card: imageUrl ? "summary_large_image" : "summary",
       title,
       description,
-    },
-
-    robots: {
-      index: true,
-      follow: true,
+      ...(imageUrl && {
+        images: [imageUrl],
+      }),
     },
   };
 }
+
