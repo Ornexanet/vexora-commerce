@@ -1,20 +1,15 @@
 import React from "react";
 import CompareTable from "./compareTable";
 import PageHeader from "@/components/sections/pageHeader";
-import { Metadata } from "next";
+import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
 
-export const metadata: Metadata = {
-  title: "Jämför produkter | Ornexa",
-  description:   
-"Jämför produkter på Ornexa och se skillnader i pris, tillgänglighet och viktiga produktdetaljer.",
-alternates: {
-  canonical: "https://shop.ornexa.net/compare",
-},
-robots: {
-  index: false,
-  follow: true,
-},
-};
+export const metadata = generatePageMetadata({
+  title: "Jämför produkter | Ornexa Shop",
+  description:
+    "Jämför produkter på Ornexa och se skillnader i pris, tillgänglighet och viktiga produktdetaljer.",
+  path: "/compare",
+  noindex: true,
+});
 
 
 const Compare = () => {
