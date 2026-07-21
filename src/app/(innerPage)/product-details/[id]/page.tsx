@@ -10,7 +10,11 @@ import ProductTabs from "@/components/sections/productDetails/productTabs";
 import { generateProductMetadata } from "@/seo/metadata/productMetadata";
 import { generateProductSchema } from "@/seo/schemas/productSchema";
 import { generateBreadcrumbSchema } from "@/seo/schemas/breadcrumbSchema";
-import { getRelatedProducts } from "@/seo/internalLinks/productLinks";
+import {
+  getRelatedProducts,
+  getProductCategoryLink,
+} from "@/seo/internalLinks/productLinks";
+
 
 
 type Props = {
@@ -54,6 +58,7 @@ const ProductDetails = async ({ params }: Props) => {
   }
 
 const relatedProducts = getRelatedProducts(product);
+const categoryLink = getProductCategoryLink(product);
  const productSchema = generateProductSchema(product);
  const breadcrumbSchema = generateBreadcrumbSchema(product);
 
@@ -83,7 +88,11 @@ const relatedProducts = getRelatedProducts(product);
               <HighlightedFeatures product={product} />
             </div>
 
-            <ProductOverview product={product} />
+            <ProductOverview
+           product={product}
+           categoryLink={categoryLink}
+          />
+
           </div>
         </div>
       </section>

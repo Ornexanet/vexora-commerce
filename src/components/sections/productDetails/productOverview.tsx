@@ -14,7 +14,9 @@ import CompatibleAccessories from "./compatibleAccessories";
 
 type ProductOverviewProps = {
   product: ProductType;
+  categoryLink: string;
 };
+
 
 const categoryNames: Record<string, string> = {
   mobiler: "Mobiler",
@@ -24,7 +26,11 @@ const categoryNames: Record<string, string> = {
   cameras: "Kameror",
 };
 
-const ProductOverview = ({ product }: ProductOverviewProps) => {
+const ProductOverview = ({
+  product,
+  categoryLink,
+}: ProductOverviewProps) => {
+
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
 
@@ -114,7 +120,16 @@ const ProductOverview = ({ product }: ProductOverviewProps) => {
 
   return (
     <div className="overflow-hidden">
-      <strong className="text-lg text-light-dark">{categoryName}</strong>
+      <Link
+  href={categoryLink}
+  className="text-lg text-light-dark transition-colors hover:text-primary"
+>
+  {categoryName}
+</Link>
+
+
+
+
 
       <div className="mb-10 mt-2">
         <div className="flex items-end justify-between gap-5">
