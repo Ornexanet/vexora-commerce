@@ -3,21 +3,24 @@ import FaqsAccordion from "@/components/sections/contact/faqsAccordion";
 import Cta from "@/components/sections/cta";
 import PageHeaderWithImg from "@/components/sections/pageHeaderWithImg";
 import Title from "@/components/ui/title";
-import { Metadata } from "next";
+import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
 import React from "react";
 
-export const metadata: Metadata = {
-  title: "Vanliga frågor | Ornexa",
+export const metadata = generatePageMetadata({
+  title: "Vanliga frågor | Ornexa Shop",
   description:
-    "Svar på vanliga frågor om beställningar, leveranser, returer, garantier och produkter hos Ornexa.",
-  alternates: {
-    canonical: "https://shop.ornexa.net/faqs",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+    "Svar på vanliga frågor om beställningar, leveranser, returer, garantier och produkter hos Ornexa Shop.",
+  path: "/faqs",
+  keywords: [
+    "Ornexa FAQ",
+    "Vanliga frågor",
+    "Leverans",
+    "Returer",
+    "Garanti",
+    "Kundservice",
+    "Ornexa Shop",
+  ],
+});
 
 const Faqs = () => {
 const faqSchema = {
