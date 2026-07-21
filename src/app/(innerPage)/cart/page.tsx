@@ -3,20 +3,16 @@ import React from "react";
 import CartTable from "./cartTable";
 import PriceSummary from "./priceSummary";
 import CompanyFeaturesSlider from "@/components/sections/companyFeaturesSlider";
-import { Metadata } from "next";
+import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
 
-export const metadata: Metadata = {
-  title: "Varukorg | Ornexa",
+export const metadata = generatePageMetadata({
+  title: "Varukorg | Ornexa Shop",
   description:
     "Se dina valda produkter i varukorgen innan du går vidare till kassan hos Ornexa.",
-    robots: {
-      index: false,
-      follow: true,
-    },
-    alternates: {
-      canonical: "https://shop.ornexa.net/cart",
-    },
-};
+  path: "/cart",
+  noindex: true,
+});
+
 
 const Cart = () => {
   const webPageSchema = {
