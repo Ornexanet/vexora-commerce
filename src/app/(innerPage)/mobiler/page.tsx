@@ -5,13 +5,24 @@ import ProductsFilterSidebarOffacnvise from "@/components/sections/shop/products
 import ProductsSortHeader from "@/components/sections/shop/productsSortHeader";
 import ShopGridViewProvider from "@/contextApi/shopGridViewProvider";
 import ProductsContainer from "./productsContainer";
-import { Metadata } from "next";
+import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
 
-export const metadata: Metadata = {
-  title: "Vexora - Shop With Sidebar",
+
+export const metadata = generatePageMetadata({
+  title: "Mobiler | Ornexa Shop",
   description:
-    "Vexora - Single Product eCommerce Next.js Template for Tech and Gadget Stores",
-};
+    "Utforska vårt sortiment av smartphones från Apple, Samsung, Xiaomi och fler ledande varumärken hos Ornexa Shop.",
+  path: "/mobiler",
+  keywords: [
+    "Mobiler",
+    "Smartphones",
+    "Apple",
+    "Samsung",
+    "Xiaomi",
+    "Ornexa Shop",
+  ],
+});
+
 
 const ShopWithSidebar = () => {
   return (
