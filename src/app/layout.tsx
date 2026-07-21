@@ -6,6 +6,8 @@ import { Providers } from "@/contextApi/providers";
 import { Toaster } from "@/components/ui/sonner";
 import { generateOrganizationSchema } from "@/seo/schemas/organizationSchema";
 import { siteConfig } from "@/seo/config/siteConfig";
+import { generateWebsiteSchema } from "@/seo/schemas/websiteSchema";
+
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
@@ -28,6 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const organizationSchema = generateOrganizationSchema();
+  const websiteSchema = generateWebsiteSchema();
 
   return (
     <html lang="sv">
@@ -46,6 +49,12 @@ export default function RootLayout({
             __html: JSON.stringify(organizationSchema),
           }}
         />
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(websiteSchema),
+  }}
+/>
       </head>
 
       <body className={`${plusJakartaSans.variable} antialiased`}>
