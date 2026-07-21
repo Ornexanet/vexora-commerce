@@ -1,12 +1,16 @@
 import React from "react";
 import RegisterForm from "./registerForm";
-import { Metadata } from "next";
+import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
 
-export const metadata: Metadata = {
-  title: "Vexora - Register",
+
+export const metadata = generatePageMetadata({
+  title: "Skapa konto | Ornexa Shop",
   description:
-    "Vexora - Single Product eCommerce Next.js Template for Tech and Gadget Stores",
-};
+    "Skapa ett Ornexa Shop-konto för att hantera beställningar, spara favoriter och få en snabbare köpupplevelse.",
+  path: "/register",
+  noindex: true,
+});
+
 const Register = () => {
   return (
     <main>
