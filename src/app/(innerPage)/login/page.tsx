@@ -1,19 +1,15 @@
 import React from "react";
 import LoginForm from "./loginForm";
-import { Metadata } from "next";
+import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
 
-export const metadata: Metadata = {
+export const metadata = generatePageMetadata({
   title: "Logga in | Ornexa Shop",
   description:
     "Logga in på ditt Ornexa Shop-konto för att hantera beställningar, sparade produkter och dina kontouppgifter.",
-  robots: {
-    index: false,
-    follow: true,
-  },
-  alternates: {
-    canonical: "https://shop.ornexa.net/login",
-  },
-};
+  path: "/login",
+  noindex: true,
+});
+
 
 
 const Login = () => {
