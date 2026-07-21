@@ -5,13 +5,26 @@ import ProductsFilterSidebarOffacnvise from "@/components/sections/shop/products
 import ProductsSortHeader from "@/components/sections/shop/productsSortHeader";
 import ShopGridViewProvider from "@/contextApi/shopGridViewProvider";
 import ProductsContainer from "./productsContainer";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Vexora - Shop With Sidebar",
+import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
+
+
+export const metadata = generatePageMetadata({
+  title: "Hörlurar | Ornexa Shop",
   description:
-    "Vexora - Single Product eCommerce Next.js Template for Tech and Gadget Stores",
-};
+    "Upptäck trådlösa hörlurar, over-ear och in-ear modeller från ledande varumärken hos Ornexa Shop.",
+  path: "/horlurar",
+  keywords: [
+    "Hörlurar",
+    "Trådlösa hörlurar",
+    "Bluetooth hörlurar",
+    "Sony",
+    "Apple AirPods",
+    "Samsung Galaxy Buds",
+    "Ornexa Shop",
+  ],
+});
+
 
 const ShopWithSidebar = () => {
   return (
