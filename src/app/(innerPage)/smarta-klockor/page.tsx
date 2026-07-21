@@ -5,13 +5,24 @@ import ProductsFilterSidebarOffacnvise from "@/components/sections/shop/products
 import ProductsSortHeader from "@/components/sections/shop/productsSortHeader";
 import ShopGridViewProvider from "@/contextApi/shopGridViewProvider";
 import ProductsContainer from "./productsContainer";
-import { Metadata } from "next";
+import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
 
-export const metadata: Metadata = {
-  title: "Vexora - Shop With Sidebar",
+
+export const metadata = generatePageMetadata({
+  title: "Smarta klockor | Ornexa Shop",
   description:
-    "Vexora - Single Product eCommerce Next.js Template for Tech and Gadget Stores",
-};
+    "Utforska smarta klockor från Apple, Samsung och andra ledande varumärken med avancerade funktioner för hälsa, träning och vardag.",
+  path: "/smarta-klockor",
+  keywords: [
+    "Smarta klockor",
+    "Smartwatch",
+    "Apple Watch",
+    "Samsung Galaxy Watch",
+    "Wear OS",
+    "Ornexa Shop",
+  ],
+});
+
 
 const ShopWithSidebar = () => {
   return (
