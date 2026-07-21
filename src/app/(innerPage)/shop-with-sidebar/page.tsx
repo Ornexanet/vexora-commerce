@@ -5,13 +5,27 @@ import ProductsFilterSidebarOffacnvise from "@/components/sections/shop/products
 import ProductsSortHeader from "@/components/sections/shop/productsSortHeader";
 import ShopGridViewProvider from "@/contextApi/shopGridViewProvider";
 import ProductsContainer from "./productsContainer";
-import { Metadata } from "next";
+import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
 
-export const metadata: Metadata = {
-  title: "Vexora - Shop With Sidebar",
+
+
+export const metadata = generatePageMetadata({
+  title: "Produkter med filter | Ornexa Shop",
   description:
-    "Vexora - Single Product eCommerce Next.js Template for Tech and Gadget Stores",
-};
+    "Utforska Ornexa Shops sortiment av mobiler, smartklockor, hörlurar och tillbehör med praktiska filter och sortering.",
+  path: "/shop-with-sidebar",
+  keywords: [
+    "Ornexa Shop",
+    "Produkter",
+    "Elektronik",
+    "Mobiler",
+    "Smartklockor",
+    "Hörlurar",
+    "Tillbehör",
+    "Produktfilter",
+  ],
+});
+
 
 const ShopWithSidebar = () => {
   return (
