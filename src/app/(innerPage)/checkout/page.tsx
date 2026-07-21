@@ -1,20 +1,17 @@
 import PageHeader from "@/components/sections/pageHeader";
 import React from "react";
 import CheckoutPageWrapper from "./checkoutPageWrapper";
-import { Metadata } from "next";
+import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
 
-export const metadata: Metadata = {
+
+export const metadata = generatePageMetadata({
   title: "Kassa | Ornexa Shop",
   description:
     "Slutför ditt köp tryggt och enkelt hos Ornexa. Ange dina uppgifter, granska din order och välj betalningsmetod.",
-    alternates: {
-      canonical: "https://shop.ornexa.net/checkout",
-    },
-    robots: {
-      index: false,
-      follow: true,
-    },
-};
+  path: "/checkout",
+  noindex: true,
+});
+
 const Checkout = () => {
  const checkoutSchema = [
   {
