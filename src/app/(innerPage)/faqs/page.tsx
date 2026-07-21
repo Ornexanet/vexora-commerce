@@ -5,22 +5,35 @@ import PageHeaderWithImg from "@/components/sections/pageHeaderWithImg";
 import Title from "@/components/ui/title";
 import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
 import React from "react";
+import { generateFAQSchema } from "@/seo/schemas/faqSchema";
 
-export const metadata = generatePageMetadata({
-  title: "Vanliga frågor | Ornexa Shop",
-  description:
-    "Svar på vanliga frågor om beställningar, leveranser, returer, garantier och produkter hos Ornexa Shop.",
-  path: "/faqs",
-  keywords: [
-    "Ornexa FAQ",
-    "Vanliga frågor",
-    "Leverans",
-    "Returer",
-    "Garanti",
-    "Kundservice",
-    "Ornexa Shop",
-  ],
-});
+const faqSchema = generateFAQSchema([
+  {
+    question: "Vilken garanti gäller för era produkter?",
+    answer:
+      "Alla produkter omfattas av den lagstadgade reklamationsrätten enligt svensk konsumentlagstiftning. Garantitiden kan variera beroende på tillverkare och produktkategori. Information om eventuell tillverkargaranti finns på respektive produktsida.",
+  },
+  {
+    question: "Hur lång är leveranstiden?",
+    answer:
+      "Beställningar skickas normalt inom 1–2 arbetsdagar. Leveranstiden inom Sverige är vanligtvis 2–5 arbetsdagar beroende på produktens tillgänglighet och vald leveransmetod.",
+  },
+  {
+    question: "Kan jag returnera eller byta en vara?",
+    answer:
+      "Ja. Du har 14 dagars ångerrätt enligt distansavtalslagen. Produkten ska returneras i gott skick tillsammans med samtliga tillbehör och originalförpackning.",
+  },
+  {
+    question: "Levererar ni till hela Sverige?",
+    answer:
+      "Ja, vi levererar till kunder i hela Sverige. Leveransalternativ och fraktkostnader visas i kassan innan du slutför ditt köp.",
+  },
+  {
+    question: "Hur kan jag spåra min beställning?",
+    answer:
+      "När din beställning har skickats får du en leveransbekräftelse via e-post med spårningsinformation så att du kan följa paketets status.",
+  },
+]);
 
 const Faqs = () => {
 const faqSchema = {
