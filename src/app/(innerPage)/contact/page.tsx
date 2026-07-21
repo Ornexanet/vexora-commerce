@@ -3,6 +3,8 @@ import PageHeaderWithImg from "@/components/sections/pageHeaderWithImg";
 import Title from "@/components/ui/title";
 import React from "react";
 import dynamic from "next/dynamic";
+import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
+
 const ContactForm = dynamic(() => import("@/components/sections/contact/contactForm"), {
   loading: () => null,
 });
@@ -19,33 +21,21 @@ const MapClient = dynamic(() => import("@/components/sections/contact/MapClient"
   loading: () => null,
 });
 
-export const metadata = {
+export const metadata = generatePageMetadata({
   title: "Kontakta Ornexa | Elektronik, mobiler och tillbehör",
   description:
     "Kontakta Ornexa för frågor om mobiler, smartklockor, hörlurar, tillbehör, beställningar och kundservice.",
-  alternates: {
-    canonical: "https://shop.ornexa.net/contact",
-  },
-  openGraph: {
-    title: "Kontakta Ornexa | Elektronik, mobiler och tillbehör",
-    description:
-      "Har du frågor om produkter, beställningar eller support? Kontakta Ornexa kundservice.",
-    url: "https://shop.ornexa.net/contact",
-    siteName: "Ornexa",
-    images: [
-  {
-    url: "https://shop.ornexa.net/images/ornexa-contact-tech-products.webp",
-    width: 1200,
-    height: 630,
-    alt: "Ornexa elektronikbutik för mobiler, smartklockor och tillbehör",
-  },
-],
-
-    locale: "sv_SE",
-    type: "website",
-  },
-};
-
+  path: "/contact",
+  keywords: [
+    "Kontakta Ornexa",
+    "Ornexa kundservice",
+    "Elektronikbutik",
+    "Mobiler",
+    "Smartklockor",
+    "Hörlurar",
+    "Tillbehör",
+  ],
+});
 
 
 
