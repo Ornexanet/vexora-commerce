@@ -1,21 +1,18 @@
 import PageHeader from "@/components/sections/pageHeader";
 import React from "react";
 import WishlistProducts from "./wishlistProducts";
-import { Metadata } from "next";
+import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
 
-export const metadata: Metadata = {
-  title: "Önskelista | Ornexa",
+
+
+export const metadata = generatePageMetadata({
+  title: "Önskelista | Ornexa Shop",
   description:
-    "Se och hantera dina sparade produkter i önskelistan hos Ornexa.",
-robots: {
-  index: false,
-  follow: true,
-},
+    "Se och hantera dina sparade produkter i önskelistan hos Ornexa Shop.",
+  path: "/wishlist",
+  noindex: true,
+});
 
-alternates: {
-  canonical: "https://shop.ornexa.net/wishlist"
-},
-};
 
 const Wishlist = () => {
   const webPageSchema = {
