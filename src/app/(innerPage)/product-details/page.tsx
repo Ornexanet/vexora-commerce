@@ -11,6 +11,8 @@ import Title from "@/components/ui/title";
 import { products } from "@/mockData/products";
 import Card from "@/components/ui/card";
 import { Metadata } from "next";
+import { getProductCategoryLink } from "@/seo/internalLinks/productLinks";
+
 
 export const metadata: Metadata = {
   title: "Vexora - Product Details",
@@ -18,6 +20,10 @@ export const metadata: Metadata = {
     "Vexora - Single Product eCommerce Next.js Template for Tech and Gadget Stores",
 };
 const ProductDetails = () => {
+  const product = products.bestProductsData[0];
+const categoryLink = getProductCategoryLink(product);
+
+
   return (
     <main>
       <section className="lg:pt-25 md:pt-18 pt-12">
@@ -28,7 +34,12 @@ const ProductDetails = () => {
               <HighlightedFeatures product={products.bestProductsData[0]} />
 
             </div>
-            <ProductOverview product={products.bestProductsData[0]} />
+            <ProductOverview
+  product={product}
+  categoryLink={categoryLink}
+/>
+
+
           </div>
         </div>
       </section>
