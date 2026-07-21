@@ -4,34 +4,23 @@ import CompanyFeaturesSlider from "@/components/sections/companyFeaturesSlider";
 import OurDifferences from "@/components/sections/OurDifferences";
 import OurStory from "@/components/sections/ourStory";
 import PageHeaderWithImg from "@/components/sections/pageHeaderWithImg";
-import { Metadata } from "next";
+import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
+
 import React from "react";
 
-export const metadata: Metadata = {
+export const metadata = generatePageMetadata({
   title: "Om Ornexa | Elektronikbutik för mobiler och tillbehör",
   description:
-    "Lär känna Ornexa, en modern elektronikbutik för mobiler, smartklockor, hörlurar och tillbehör med fokus på tydliga produktval och smidig shopping.",
-  alternates: {
-    canonical: "https://shop.ornexa.net/about",
-  },
-  openGraph: {
-    title: "Om Ornexa | Elektronikbutik för mobiler och tillbehör",
-    description:
-      "Ornexa erbjuder utvalda teknikprodukter, mobiler, smartklockor, hörlurar och tillbehör för en smartare vardag.",
-    url: "https://shop.ornexa.net/about",
-    siteName: "Ornexa",
-    images: [
-      {
-        url: "https://shop.ornexa.net/images/ornexa-about-hero.webp",
-        width: 1200,
-        height: 630,
-        alt: "Modern elektronik hos Ornexa",
-      },
-    ],
-    locale: "sv_SE",
-    type: "website",
-  },
-};
+    "Lär känna Ornexa, en modern elektronikbutik för mobiler, smartklockor, hörlurar och tillbehör.",
+  path: "/about",
+  keywords: [
+    "Ornexa",
+    "Elektronikbutik",
+    "Mobiler",
+    "Smartklockor",
+    "Hörlurar",
+  ],
+});
 
 
 const About = () => {
