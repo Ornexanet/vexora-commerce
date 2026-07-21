@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { generateArticleSchema } from "@/seo/schemas/articleSchema";
+import { generateBlogMetadata } from "@/seo/metadata/blogMetadata";
 
 type BlogDetailsProps = {
   params: Promise<{ slug: string }>;
@@ -20,47 +21,12 @@ export async function generateMetadata({
   params,
 }: BlogDetailsProps): Promise<Metadata> {
   const { slug } = await params;
-  const blog = blogData.find((item) => item.slug === slug);
 
-  if (!blog) {
-    return {
-      title: "Bloggartikel hittades inte | Ornexa Shop",
-      description: "Den efterfrågade bloggartikeln kunde inte hittas.",
-    };
-  }
+  const blog = blogData.find(
+    (item) => item.slug === slug
+  );
 
-  const url = `https://shop.ornexa.net/blog/${blog.slug}`;
-  const imageUrl = `https://shop.ornexa.net${blog.thumbnail}`;
-
-  return {
-    title: `${blog.title} | Ornexa Shop`,
-    description: blog.description,
-    keywords: blog.keywords,
-    alternates: {
-      canonical: url,
-    },
-    openGraph: {
-      title: `${blog.title} | Ornexa Shop`,
-      description: blog.description,
-      url,
-      siteName: "Ornexa Shop",
-      type: "article",
-      images: [
-        {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: blog.title,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${blog.title} | Ornexa Shop`,
-      description: blog.description,
-      images: [imageUrl],
-    },
-  };
+  return generateBlogMetadata(blog);
 }
 
 const BlogDetails = async ({ params }: BlogDetailsProps) => {
