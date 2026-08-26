@@ -23,7 +23,12 @@ export function generateBlogMetadata(
     ? blog.thumbnail
     : `${siteConfig.url}${blog.thumbnail}`;
 
-  const title = blog.title;
+  const title =
+  blog.slug === "iphone-17-pro-guide"
+    ? "iPhone 17 Pro – kamera, prestanda och guide"
+    : blog.title;
+
+
 
   return {
     title,
