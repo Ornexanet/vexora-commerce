@@ -4,6 +4,17 @@ import React from "react";
 import OrdersTable from "./orders/ordersTable";
 import { ordersData } from "./orders/data";
 
+import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
+
+
+export const metadata = generatePageMetadata({
+  title: "Mitt konto",
+  description: "Hantera ditt konto, dina beställningar och kontoinställningar hos Ornexa Shop.",
+  path: "/dashboard",
+  noindex: true,
+});
+
+
 const page = () => {
   return (
     <div className="w-full">
