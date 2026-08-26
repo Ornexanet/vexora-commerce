@@ -35,6 +35,14 @@ const faqSchema = generateFAQSchema([
   },
 ]);
 
+export const metadata = generatePageMetadata({
+  title: "Vanliga frågor",
+  description:
+    "Vanliga frågor och svar om beställningar, leverans, garanti, returer och produkter hos Ornexa Shop.",
+  path: "/faqs",
+});
+
+
 const Faqs = () => {
 const faqSchema = {
   "@context": "https://schema.org",
