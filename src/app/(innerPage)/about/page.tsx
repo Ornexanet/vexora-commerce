@@ -9,7 +9,9 @@ import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
 import React from "react";
 
 export const metadata = generatePageMetadata({
-  title: "Om Ornexa | Elektronikbutik för mobiler och tillbehör",
+  
+title: "Om Ornexa – Elektronik & tillbehör",
+
   description:
     "Lär känna Ornexa, en modern elektronikbutik för mobiler, smartklockor, hörlurar och tillbehör.",
   path: "/about",
