@@ -1,3 +1,13 @@
+import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
+
+export const metadata = generatePageMetadata({
+  title: "Integritetspolicy",
+  description:
+    "Läs Ornexa Shops integritetspolicy och hur vi hanterar, använder och skyddar personuppgifter när du använder vår webbplats och våra tjänster.",
+  path: "/privacy-policy",
+});
+
+
 export default function PrivacyPolicyPage() {
   return (
     <main className="bg-white">
