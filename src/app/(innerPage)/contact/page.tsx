@@ -22,7 +22,8 @@ const MapClient = dynamic(() => import("@/components/sections/contact/MapClient"
 });
 
 export const metadata = generatePageMetadata({
-  title: "Kontakta Ornexa | Elektronik, mobiler och tillbehör",
+  title: "Kontakta oss – Kundservice & support",
+
   description:
     "Kontakta Ornexa för frågor om mobiler, smartklockor, hörlurar, tillbehör, beställningar och kundservice.",
   path: "/contact",

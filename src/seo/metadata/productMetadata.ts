@@ -24,7 +24,9 @@ export function generateProductMetadata(
     `${siteConfig.url}${product.thumbnail}`;
 
   const seoTitle =
-    `${product.title} – Köp online | ${siteConfig.name}`;
+  `${product.title} – Köp online`;
+
+
 
   const seoDescription =
     `${product.description} Pris ${product.price} kr. Se specifikationer, funktioner och tillgänglighet hos ${siteConfig.name}.`;

@@ -23,7 +23,7 @@ export function generateBlogMetadata(
     ? blog.thumbnail
     : `${siteConfig.url}${blog.thumbnail}`;
 
-  const title = `${blog.title} | ${siteConfig.name}`;
+  const title = blog.title;
 
   return {
     title,
