@@ -26,7 +26,10 @@ export function generateBlogMetadata(
   const title =
   blog.slug === "iphone-17-pro-guide"
     ? "iPhone 17 Pro – kamera, prestanda och guide"
-    : blog.title;
+    : blog.slug === "samsung-galaxy-watch-ultra"
+      ? "Samsung Galaxy Watch Ultra – träning & hälsa"
+      : blog.title;
+
 
 
 
