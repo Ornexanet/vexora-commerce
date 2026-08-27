@@ -1126,8 +1126,10 @@ const airPods4: ProductType = {
 
   description:
     "AirPods 4 ger en lätt och bekväm lyssningsupplevelse med klart ljud, stabil anslutning och smidig användning tillsammans med Apple-enheter.",
-metaDescription:
-  "Samsung Galaxy S26 Ultra med kraftfull prestanda, avancerad kamera och premiumdesign. Se pris, specifikationer och funktioner hos Ornexa Shop.",
+
+     metaDescription:
+  "AirPods 4 med klart ljud, stabil anslutning och bekväm design för vardagen. Se pris, funktioner och specifikationer hos Ornexa Shop.",
+
 
   price: 1790,
   tag: "Ny",
