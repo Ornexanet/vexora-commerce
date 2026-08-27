@@ -29,6 +29,9 @@ const Shop = () => {
       <ShopGridViewProvider>
         <section className="pt-[100px]">
           <div className="container">
+            <h1 className="text-4xl font-bold mb-8">
+  Butik
+</h1>
             <div className="flex md:flex-row flex-col md:items-center justify-between gap-x-[50px] gap-y-4">
               <ProductsFilterSidebarOffacnvise />
               <ProductsSortHeader />

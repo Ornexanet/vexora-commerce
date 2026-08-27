@@ -11,7 +11,6 @@ import React from "react";
 export const metadata = generatePageMetadata({
   
 title: "Om Ornexa – Elektronik & tillbehör",
-
   description:
     "Lär känna Ornexa, en modern elektronikbutik för mobiler, smartklockor, hörlurar och tillbehör.",
   path: "/about",
@@ -83,9 +82,12 @@ const About = () => {
   }}
 />
 
-      <PageHeaderWithImg 
-      title="Om Ornexa"
-      bgImage="/images/ornexa-about-hero.webp"/>
+      <PageHeaderWithImg
+  title="Om Ornexa"
+  bgImage="/images/ornexa-about-hero.webp"
+  as="h1"
+/>
+
       <OurStory />
       <AboutCountdown />
       <OurDifferences />

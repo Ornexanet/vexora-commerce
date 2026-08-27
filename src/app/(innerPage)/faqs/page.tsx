@@ -128,9 +128,11 @@ const breadcrumbSchema = {
   }}
 />
 
-      <PageHeaderWithImg title="
-Vanliga frågor
-" />
+      <PageHeaderWithImg
+  title="Vanliga frågor"
+  as="h1"
+/>
+
       <section className="lg:mt-37.5 md:mt-25 mt-20">
         <div className="container grid lg:grid-cols-[680fr_882fr] gap-7.5">
           <div>
