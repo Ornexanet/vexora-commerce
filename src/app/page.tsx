@@ -45,6 +45,11 @@ const Home = () => {
       <Header />
       <MobileHeader />
       <main>
+        
+<h1 className="sr-only">
+  Elektronik, mobiler och smartklockor – Ornexa Shop
+</h1>
+
        <HeroSlider />
        <HotDeal /> 
        <NewStock /> 
