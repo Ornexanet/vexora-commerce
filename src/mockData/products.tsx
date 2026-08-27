@@ -171,6 +171,9 @@ const sonyWH1000XM6: ProductType = {
 
   description:
     "Sony WH-1000XM6 är premiumhörlurar med avancerad brusreducering, kraftfullt ljud och lång batteritid. Perfekta för arbete, resor, musik och fokuserad användning i vardagen.",
+metaDescription:
+  "Sony WH-1000XM6 med avancerad brusreducering, kraftfullt ljud och lång batteritid. Se pris, specifikationer och funktioner hos Ornexa Shop.",
+
 
   price: 4490,
   tag: "Ny",
@@ -607,6 +610,10 @@ const samsungGalaxyS25: ProductType = {
 
   description:
     "Samsung Galaxy S25 med modern design, skarp AMOLED-skärm och kraftfull prestanda för arbete, foto, appar och vardagsanvändning.",
+metaDescription:
+  "Samsung Galaxy S25 med AMOLED-skärm, kraftfull prestanda och modern design. Se pris, specifikationer och funktioner hos Ornexa Shop.",
+
+
 
   price: 10990,
   tag: null,
@@ -701,6 +708,8 @@ const samsungGalaxyWatchUltra: ProductType = {
 
   description:
     "Samsung Galaxy Watch Ultra är en kraftfull smartklocka med tålig design, tydlig skärm och avancerade funktioner för träning och vardag.",
+metaDescription:
+  "Samsung Galaxy Watch Ultra med tålig design, tydlig skärm och avancerade smartfunktioner. Se pris och specifikationer hos Ornexa Shop.",
 
   price: 5990,
   tag: "Ny",
@@ -893,6 +902,10 @@ const iphone17Pro: ProductType = {
 
   description:
     "iPhone 17 Pro med premiumdesign, kraftfull prestanda och avancerat kamerasystem för professionell fotografering, video, arbete och spel.",
+metaDescription:
+  "iPhone 17 Pro med premiumdesign, kraftfull prestanda och avancerat kamerasystem. Se pris, specifikationer och funktioner hos Ornexa Shop.",
+
+
 
   price: 14990,
   tag: "Ny",
@@ -1107,6 +1120,8 @@ const airPods4: ProductType = {
 
   description:
     "AirPods 4 ger en lätt och bekväm lyssningsupplevelse med klart ljud, stabil anslutning och smidig användning tillsammans med Apple-enheter.",
+metaDescription:
+  "Samsung Galaxy S26 Ultra med kraftfull prestanda, avancerad kamera och premiumdesign. Se pris, specifikationer och funktioner hos Ornexa Shop.",
 
   price: 1790,
   tag: "Ny",
