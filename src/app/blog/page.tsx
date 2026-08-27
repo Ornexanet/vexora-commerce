@@ -95,7 +95,7 @@ const BlogArchive = () => {
           __html: JSON.stringify(blogJsonLd),
         }}
       />
-      <PageHeaderWithImg title="Vexora Voice" />
+      <PageHeaderWithImg title="Ornexa – Nyheter & guider" as="h1" />
       <FeaturesBlogs />
       <div className="mt-25">
         <div className="container">

@@ -32,6 +32,11 @@ const ShopWithSidebar = () => {
       <ShopGridViewProvider>
         <section className="pt-[100px]">
           <div className="container">
+            <h1 className="text-4xl font-bold mb-8">
+  Hörlurar
+</h1>
+
+
             <div className="flex xl:flex-row flex-col justify-between gap-x-[30px]">
               <div className="xl:block hidden shrink-0">
                 <ProductsFilterSidebar />
