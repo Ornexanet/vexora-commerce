@@ -1,6 +1,15 @@
 import React from "react";
 import OrdersTable from "./ordersTable";
 import { ordersData } from "./data";
+import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
+
+export const metadata = generatePageMetadata({
+  title: "Mina beställningar | Ornexa Shop",
+  description: "Se och hantera dina beställningar hos Ornexa Shop.",
+  path: "/dashboard/orders",
+  noindex: true,
+});
+
 
 const Orders = () => {
   return (
