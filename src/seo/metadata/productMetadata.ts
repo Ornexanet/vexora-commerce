@@ -29,7 +29,7 @@ export function generateProductMetadata(
 
 
   const seoDescription =
-    `${product.description} Pris ${product.price} kr. Se specifikationer, funktioner och tillgänglighet hos ${siteConfig.name}.`;
+  `${product.description} Pris ${product.price} kr hos ${siteConfig.name}.`;
 
   return {
     title: seoTitle,
