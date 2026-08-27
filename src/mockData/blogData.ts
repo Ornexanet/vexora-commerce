@@ -63,7 +63,8 @@ export const blogData: BlogType[] = [
     id: 1,
     slug: "samsung-galaxy-watch-ultra",
     title:
-      "Samsung Galaxy Watch Ultra – komplett guide för träning, hälsa och smart teknik",
+  "Samsung Galaxy Watch Ultra – guide för träning och hälsa",
+
     thumbnail: "/images/blogs/ornexa-shop-her1.webp",
     secondImage: "/images/blogs/ornexa-shop-her2.webp",
     description:
