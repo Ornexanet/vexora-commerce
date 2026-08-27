@@ -164,23 +164,44 @@ const HeroSlider = () => {
                       xl:max-w-[760px]
                     "
                   >
-                    <h1
-                      className="
-                        mb-3
-                        text-[42px]
-                        font-extrabold
-                        leading-[0.95]
-                        tracking-[-0.04em]
-                        sm:text-[50px]
-                        md:text-[54px]
-                        lg:mb-5
-                        lg:text-[72px]
-                        xl:text-[96px]
-                        2xl:text-[120px]
-                      "
-                    >
-                      {title}
-                    </h1>
+                    {id === heroData[0]?.id ? (
+  <h1
+    className="
+      mb-3
+      text-[42px]
+      font-extrabold
+      leading-[0.95]
+      tracking-[-0.04em]
+      sm:text-[50px]
+      md:text-[54px]
+      lg:mb-5
+      lg:text-[72px]
+      xl:text-[96px]
+      2xl:text-[120px]
+    "
+  >
+    {title}
+  </h1>
+) : (
+  <h2
+    className="
+      mb-3
+      text-[42px]
+      font-extrabold
+      leading-[0.95]
+      tracking-[-0.04em]
+      sm:text-[50px]
+      md:text-[54px]
+      lg:mb-5
+      lg:text-[72px]
+      xl:text-[96px]
+      2xl:text-[120px]
+    "
+  >
+    {title}
+  </h2>
+)}
+
 
                     <Title
                       asChild
