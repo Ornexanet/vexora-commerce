@@ -50,6 +50,7 @@ perfectFor?: string[];
 
 inTheBox?: string[];
 productType?: "phone" | "headphones" | "smartwatch" | "accessory" | "camera";
+metaDescription?: string;
 
 }
 type ProductContentTemplate = {
@@ -1011,6 +1012,8 @@ const xiaomi17TPro: ProductType = {
 
   description:
     "Xiaomi 17T Pro med snabb prestanda, stilren design och kraftfull kamera till ett konkurrenskraftigt pris för vardag, foto och spel.",
+metaDescription:
+  "Xiaomi 17T Pro med snabb prestanda, stilren design och kraftfull kamera. Se pris, specifikationer och funktioner hos Ornexa Shop.",
 
   price: 8990,
   tag: null,

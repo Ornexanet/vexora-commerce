@@ -28,8 +28,11 @@ export function generateProductMetadata(
 
 
 
-  const seoDescription =
+  
+const seoDescription =
+  product.metaDescription ??
   `${product.description} Pris ${product.price} kr hos ${siteConfig.name}.`;
+
 
   return {
     title: seoTitle,
