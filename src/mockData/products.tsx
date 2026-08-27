@@ -362,6 +362,8 @@ const appleWatchUltra3: ProductType = {
 
   description:
     "Apple Watch Ultra 3 är en robust och avancerad smartklocka för träning, äventyr och vardag med stark prestanda och tydlig skärm.",
+metaDescription:
+  "Apple Watch Ultra 3 med robust design, avancerade träningsfunktioner och stark prestanda. Se pris, specifikationer och funktioner hos Ornexa Shop.",
 
   price: 9990,
   tag: "Ny",
@@ -459,6 +461,10 @@ const samsungGalaxyS26Ultra: ProductType = {
 
   description:
     "Samsung Galaxy S26 Ultra är en avancerad premiumtelefon med stor AMOLED-skärm, kraftfull prestanda, S Pen och ett professionellt kamerasystem för foto, video, arbete och underhållning.",
+metaDescription:
+  "Samsung Galaxy S26 Ultra med kraftfull prestanda, avancerad kamera och premiumdesign. Se pris, specifikationer och funktioner hos Ornexa Shop.",
+
+
 
   price: 16990,
   tag: "Ny",

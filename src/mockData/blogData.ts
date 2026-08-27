@@ -67,7 +67,9 @@ export const blogData: BlogType[] = [
     thumbnail: "/images/blogs/ornexa-shop-her1.webp",
     secondImage: "/images/blogs/ornexa-shop-her2.webp",
     description:
-      "Samsung Galaxy Watch Ultra kombinerar avancerad hälsospårning, kraftfull GPS, lång batteritid och premiumdesign. Den här guiden hjälper dig att förstå varför modellen är ett av de bästa valen för både träning och vardagsanvändning.",
+  "Samsung Galaxy Watch Ultra med avancerad hälsospårning, kraftfull GPS och lång batteritid. Läs om funktioner och användning hos Ornexa Shop.",
+
+
     publishedAt: "2026-07-04",
     modifiedAt: "2026-07-04",
     readingTime: "5 min läs",
