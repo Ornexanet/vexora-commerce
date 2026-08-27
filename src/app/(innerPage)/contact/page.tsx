@@ -114,6 +114,7 @@ const Contact = () => {
       title="Kontakta oss" 
       titleClass=""
       bgImage="/images/ornexa-contact-tech-products.webp"
+      as="h1"
        />
       <MapClient />
       <section className="lg:mt-37.5 md:mt-25 mt-20">

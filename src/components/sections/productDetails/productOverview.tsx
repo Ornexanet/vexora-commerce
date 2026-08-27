@@ -133,7 +133,10 @@ const ProductOverview = ({
 
       <div className="mb-10 mt-2">
         <div className="flex items-end justify-between gap-5">
-          <Title size="52">{product.title}</Title>
+          <h1 className="text-[clamp(2.25rem,1.3145rem+1.9355vw,3.25rem)] font-extrabold leading-normal">
+  {product.title}
+</h1>
+
 
           <p className="shrink-0 text-[28px] font-medium text-foreground">
             {product.price.toLocaleString("sv-SE")} kr
