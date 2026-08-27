@@ -1857,7 +1857,11 @@ const samsung45WSuperFastCharger: ProductType = {
     "/images/accessories/samsung45w-super-fast-charger3.webp",
   ],
   description:
-    "Samsung 45W Super Fast Charger ger snabb och effektiv laddning för kompatibla Samsung Galaxy-enheter och andra USB-C-enheter.",
+   
+  "Samsung 45W Super Fast Charger ger snabb och effektiv laddning för kompatibla Samsung Galaxy-enheter och andra USB-C-enheter.",
+  metaDescription:
+  "Samsung 45W Super Fast Charger för snabb och effektiv laddning av kompatibla enheter. Se pris, specifikationer och tillgänglighet hos Ornexa Shop.",
+
   price: 499,
   tag: "Snabbladdning",
   discount: null,
