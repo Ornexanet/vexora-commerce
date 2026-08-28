@@ -18,9 +18,10 @@ const PageHeader = ({
   return (
     <div className="bg-[#F3F5F8] py-7.5">
       <div className="container flex items-center lg:gap-12.5 gap-5">
-        <Title asChild size="36" className="font-bold">
-          <h3>{title}</h3>
-        </Title>
+        <p className="text-4xl font-bold">
+  {title}
+</p>
+
         <div className="flex items-center flex-wrap gap-[5px]">
           <Link
             href={"/"}
