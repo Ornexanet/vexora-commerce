@@ -12,10 +12,13 @@ import Title from "../ui/title";
 const CompanyFeaturesSlider = ({
   className,
   cardClassName,
+  heading = "Varför välja Ornexa?",
 }: {
   className?: string;
   cardClassName?: string;
+  heading?: string;
 }) => {
+
   const containerRef = useRef<HTMLDivElement>(null);
   const [slidesOffset, setSlidesOffset] = useState(0);
 
@@ -40,12 +43,10 @@ const CompanyFeaturesSlider = ({
     >
       <div className="container">
         <div ref={containerRef}></div>
-        <Title>
-          Varför Ornexa är det bästa
-{" "}
-          <span className="block">stället att köpa dina teknikprodukter?
-</span>{" "}
-        </Title>
+  <Title>
+  {heading}
+</Title>
+
       </div>
       <div className="pt-[50px] relative">
         <Swiper
