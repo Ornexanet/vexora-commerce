@@ -92,7 +92,7 @@ const CompanyFeaturesSlider = ({
                   size="28"
                   className="font-extralight text-light-dark mt-5"
                 >
-                  <h6>{title}</h6>
+                  <h3>{title}</h3>
                 </Title>
                 <p className="md:leading-7 md:text-lg text-light-dark mt-5">
                   {description}
