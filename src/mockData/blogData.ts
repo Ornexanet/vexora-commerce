@@ -171,7 +171,7 @@ export const blogData: BlogType[] = [
     id: 2,
     slug: "iphone-17-pro-guide",
     title:
-      "iPhone 17 Pro – komplett guide för kamera, prestanda och premiumkänsla",
+      "Innehåll - iphone 17 pro",
     thumbnail: "/images/blogs/iphone17pro-ornexa-blog-bild1.webp",
     secondImage: "/images/blogs/iphone17pro-ornexa-blogbild2.webp",
     description:
