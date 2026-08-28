@@ -41,6 +41,9 @@ const Shop = () => {
           </div>
         </section>
         <CompanyFeaturesSlider
+        
+heading="Varför välja Ornexa för shopping och teknikprodukter?"
+
           className="bg-transparent mt-0"
           cardClassName="bg-[#F5F5F7]"
         />

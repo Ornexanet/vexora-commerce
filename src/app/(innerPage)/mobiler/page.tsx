@@ -51,6 +51,8 @@ const ShopWithSidebar = () => {
           </div>
         </section>
         <CompanyFeaturesSlider
+        heading="Varför välja Ornexa för mobiltelefoner?"
+
           className="bg-transparent mt-0"
           cardClassName="bg-[#F5F5F7]"
         />
