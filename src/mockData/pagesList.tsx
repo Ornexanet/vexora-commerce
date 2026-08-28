@@ -41,7 +41,7 @@ export const pagesSubmenuList: PagesSubmenuListType[] = [
       },
       {
         id: 4,
-        href: "/Privacy-policy",
+        href: "/privacy-policy",
         label: "Integritetspolicy",
       },
       {
