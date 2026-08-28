@@ -167,7 +167,7 @@ const ProductOverview = ({
       {technicalSpecifications.length > 0 && (
         <section className="mt-7">
           <Title asChild size="28" className="mb-5 font-extrabold">
-            <h2>Tekniska specifikationer</h2>
+           <h2>Tekniska specifikationer för {product.title}</h2>
           </Title>
 
           <dl className="grid grid-cols-1 gap-x-10 gap-y-4 sm:grid-cols-2">
