@@ -86,7 +86,8 @@ const BlogDetails = async ({ params }: BlogDetailsProps) => {
             {blog.sections && blog.sections.length > 0 && (
   <nav className="bg-gray-50 rounded-xl p-6 my-10 border">
     <h2 className="text-2xl font-semibold mb-4">
-      Table of Contents
+      Innehåll – {blog.title}
+
     </h2>
 
     <ul className="space-y-2">
