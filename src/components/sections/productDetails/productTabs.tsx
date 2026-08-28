@@ -179,7 +179,7 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
                   size="36"
                   className="font-extrabold"
                 >
-                  Om produkten
+                  Om {product.title}
                 </Title>
 
                 <p className="mt-5 text-lg leading-8 text-light-dark">
