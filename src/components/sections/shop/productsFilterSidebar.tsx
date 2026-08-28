@@ -168,7 +168,12 @@ const ratings = [
   },
 ];
 
-const ProductsFilterSidebar = () => {
+const ProductsFilterSidebar = ({
+  heading = "Filtrera produkter",
+}: {
+  heading?: string;
+}) => {
+
   const [value, setValue] = useState([200, 800]);
   const [expendCategories, setExpendCategories] = useState<number[]>([]);
   const handleExpendCategories = (id: number) => {
@@ -182,7 +187,7 @@ const ProductsFilterSidebar = () => {
   //   console.log(expendCategories);
   return (
     <aside className="2xl:max-w-[378px] max-w-[310px] space-y-[50px] mt-3">
-      <h2 className="sr-only">Filtrera produkter</h2>
+      <h2 className="sr-only">{heading}</h2>
       <button className="md:text-xl text-lg font-medium flex items-center gap-2.5">
         <Filter />
         Rensa filter

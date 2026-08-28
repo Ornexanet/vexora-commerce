@@ -42,7 +42,8 @@ const ShopWithSidebar = () => {
 
             <div className="flex xl:flex-row flex-col justify-between gap-x-[30px]">
               <div className="xl:block hidden shrink-0">
-                <ProductsFilterSidebar />
+               <ProductsFilterSidebar heading="Filtrera hela sortimentet" />
+
               </div>
               <div className="shrink-1">
                 <div className="mb-4 xl:hidden">
