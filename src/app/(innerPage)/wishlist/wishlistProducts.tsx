@@ -99,7 +99,7 @@ const WishlistProducts = () => {
                           />
                         </div>
                         <Link
-                          href="/product-details"
+                          href={`/product-details/${item.id}`}
                           className="text-lg text-light-dark hover:text-blue transition-all duration-300"
                         >
                           {item.title}
