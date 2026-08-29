@@ -115,7 +115,7 @@ const GroupOfProducts = () => {
               width={785}
               height={500}
               sizes="100vw"
-              src={"/images/groupOfProducts/product-1.png"}
+              src={"/images-optimized/groupOfProducts/product-1.webp"}
               alt="img"
               className="rounded-lg w-full h-full"
             />
@@ -140,7 +140,7 @@ const GroupOfProducts = () => {
                 width={378}
                 height={500}
                 sizes="100vw"
-                src={"/images/groupOfProducts/product-2.png"}
+                src={"/images-optimized/groupOfProducts/product-2.webp"}
                 alt="img"
                 className="rounded-lg w-full h-full"
               />
@@ -150,7 +150,7 @@ const GroupOfProducts = () => {
                 width={378}
                 height={232}
                 sizes="100vw"
-                src={"/images/groupOfProducts/product-3.png"}
+                src={"/images-optimized/groupOfProducts/product-3.webp"}
                 alt="img"
                 className="rounded-lg w-full h-full"
               />
@@ -158,7 +158,7 @@ const GroupOfProducts = () => {
                 width={378}
                 height={232}
                 sizes="100vw"
-                src={"/images/groupOfProducts/product-4.png"}
+                src={"/images-optimized/groupOfProducts/product-4.webp"}
                 alt="img"
                 className="rounded-lg w-full h-full"
               />

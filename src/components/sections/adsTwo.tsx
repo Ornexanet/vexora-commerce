@@ -13,7 +13,7 @@ const AdsTwo = () => {
             <Image
               width={785}
               height={550}
-              src={"/images/home-2/ads/img-1.png"}
+              src={"/images-optimized/home-2/ads/img-1.webp"}
               alt="ads"
               className="w-full h-auto rounded-[30px]"
             />
@@ -45,7 +45,7 @@ const AdsTwo = () => {
             <Image
               width={785}
               height={550}
-              src={"/images/home-2/ads/img-2.png"}
+              src={"/images-optimized/home-2/ads/img-2.webp"}
               alt="ads"
               className="w-full h-auto rounded-[30px]"
             />

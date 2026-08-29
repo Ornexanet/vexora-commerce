@@ -36,7 +36,7 @@ const Ads = () => {
               width={1117}
               height={658}
               sizes="100vw"
-              src={"/images/ads/bg.png"}
+              src={"/images-optimized/ads/bg.webp"}
               alt="img"
               className="rounded-tr-[30px] rounded-br-[30px] max-lg:rounded-[30px] lg:h-[clamp(27.5rem,32.813vw+6.5rem,39.313rem)]"
             />

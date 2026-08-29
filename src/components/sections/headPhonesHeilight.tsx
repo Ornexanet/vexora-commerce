@@ -13,7 +13,7 @@ const HeadPhonesHeilight = () => {
               width={755}
               height={1016}
               sizes="100vw"
-              src={"/images/headphones/bg.png"}
+              src={"/images-optimized/headphones/bg.webp"}
               alt="img"
             />
           </div>

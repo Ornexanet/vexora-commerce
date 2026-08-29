@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 const PageHeaderWithImg = ({
-  bgImage = "/images/page-header.png",
+  bgImage = "/images-optimized/page-header.webp",
   title,
   titleClass,
   as = "h2",

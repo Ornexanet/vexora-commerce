@@ -452,11 +452,11 @@ const samsungGalaxyS26Ultra: ProductType = {
   id: 4,
   title: "Samsung Galaxy S26 Ultra",
   thumbnail:
-    "/images/mobiles/samsung-galaxy-s26-ultra-1.png",
+    "/images-optimized/mobiles/samsung-galaxy-s26-ultra-1.webp",
 
   gallery: [
-    "/images/mobiles/samsung-galaxy-s26-ultra-1.png",
-    "/images/mobiles/samsung-galaxy-s26-ultra-2.png",
+    "/images-optimized/mobiles/samsung-galaxy-s26-ultra-1.webp",
+    "/images-optimized/mobiles/samsung-galaxy-s26-ultra-2.webp",
   ],
 
   description:
@@ -610,8 +610,8 @@ const samsungGalaxyS25: ProductType = {
   thumbnail: "/images-optimized/mobiles/samsung-galaxy-s25-1.webp",
 
   gallery: [
-    "/images/mobiles/samsung-galaxy-s25-1.png",
-    "/images/mobiles/samsung-galaxy-s25-2.png",
+    "/images-optimized/mobiles/samsung-galaxy-s25-1.webp",
+    "/images-optimized/mobiles/samsung-galaxy-s25-2.webp",
   ],
 
   description:

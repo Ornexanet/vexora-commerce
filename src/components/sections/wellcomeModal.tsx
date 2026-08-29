@@ -48,7 +48,7 @@ const WellcomeModal = () => {
             width={501}
             height={515}
             sizes="100vw"
-            src="/images/wellcome-img.png"
+            src="/images-optimized/wellcome-img.webp"
             alt="img"
             className="w-full h-full rounded-xl md:rounded-l-xl"
           />

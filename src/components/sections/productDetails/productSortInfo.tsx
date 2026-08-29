@@ -27,7 +27,7 @@ const ProductSortInfo = () => {
     <div className="container mt-25">
       <div
         style={{
-          backgroundImage: `url("/images/product-details/sort-info-bg.png")`,
+          backgroundImage: `url("/images-optimized/product-details/sort-info-bg.webp")`,
         }}
         className="relative bg-cover bg-center rounded-[15px] overflow-hidden pb-15 xl:pt-[584px] lg:pt-100 pt-80 lg:px-12.5 px-5 z-10"
       >

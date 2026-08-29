@@ -41,7 +41,7 @@ const mockProduct: ProductType = {
   price: 799,
   description:
     "Celebrating the long-standing, award-winning partnership between Bowers & Wilkins and McLaren Automotive and the McLaren supercars and hypercars in which Bowers & Wilkins has been integrated.",
-  thumbnail: "/images/product-details/product-single-1.png",
+  thumbnail: "/images-optimized/product-details/product-single-1.webp",
   categories: ["Headphones"],
   tag: null,
   discount: null,

@@ -57,7 +57,7 @@ const CompanyFeatures = () => {
               width={714}
               height={860}
               sizes="100vw"
-              src={"/images/companyFeatures.png"}
+              src={"/images-optimized/companyFeatures.webp"}
               alt="img"
               className="rounded-lg"
             />

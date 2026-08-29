@@ -67,7 +67,7 @@ const FeaturesProductFour = () => {
               width={784}
               height={912}
               sizes="100vw"
-              src={"/images/home-2/features-product.png"}
+              src={"/images-optimized/home-2/features-product.webp"}
               alt="img"
             />
           </div>

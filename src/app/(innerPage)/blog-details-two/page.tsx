@@ -29,7 +29,7 @@ const BlogDetails = () => {
               width={1054}
               height={549}
               sizes="100vw"
-              src={"/images/blogs/blog-details-img-1.png"}
+              src={"/images-optimized/blogs/blog-details-img-1.webp"}
               alt="img"
               className="max-h-[549px] w-full rounded-[15px]"
             />

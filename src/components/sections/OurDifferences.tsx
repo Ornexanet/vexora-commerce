@@ -14,28 +14,28 @@ const differentcesData = [
     title: "Noggrant utvalda produkter",
     description:
       "Vi fokuserar på elektronik och tillbehör som är relevanta, praktiska och enkla att jämföra.",
-    img: "/images/differences/img-1.png",
+    img: "/images-optimized/differences/img-1.webp",
   },
   {
     icon: <CupIcon />,
     title: "Tydlig köpupplevelse",
     description:
       "Vår butik är byggd för enkel navigering, tydliga kategorier och snabb väg till rätt produkt.",
-    img: "/images/differences/img-2.png",
+    img: "/images-optimized/differences/img-2.webp",
   },
   {
     icon: <ShieldCheckIcon />,
     title: "Fokus på kunden",
     description:
       "Vi vill göra det enkelt att hitta rätt mobil, smartklocka, hörlurar eller tillbehör efter behov.",
-    img: "/images/differences/img-3.png",
+    img: "/images-optimized/differences/img-3.webp",
   },
   {
     icon: <LeafIcon />,
     title: "Modern elektronik",
     description:
       "Ornexa samlar produkter för vardag, arbete, träning och en mer uppkopplad livsstil.",
-    img: "/images/differences/img-4.png",
+    img: "/images-optimized/differences/img-4.webp",
   },
 ];
 

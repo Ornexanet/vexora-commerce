@@ -22,7 +22,7 @@ const Register = () => {
         </div>
         <div className="rounded-xl overflow-hidden lg:block hidden">
           <div
-            style={{ backgroundImage: "url('/images/login-bg.png')" }}
+            style={{ backgroundImage: "url('/images-optimized/login-bg.webp')" }}
             className="bg-cover bg-center h-[948px] w-full rounded-xl"
           ></div>
         </div>

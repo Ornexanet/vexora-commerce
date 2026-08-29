@@ -23,13 +23,13 @@ interface Props {
 
 const productImage = [
   {
-    src: "/images/product-details/product-single-2.png",
+    src: "/images-optimized/product-details/product-single-2.webp",
   },
   {
-    src: "/images/product-details/product-single-3.png",
+    src: "/images-optimized/product-details/product-single-3.webp",
   },
   {
-    src: "/images/product-details/product-single-4.png",
+    src: "/images-optimized/product-details/product-single-4.webp",
   },
 ];
 

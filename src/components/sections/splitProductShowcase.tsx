@@ -52,13 +52,13 @@ export default function SplitProductShowcase() {
         itemOne={
           <>
             <ReactCompareSliderImage
-              src="/images/home-2/split-products/dark-headphone-bg.jpg"
+              src="/images-optimized/home-2/split-products/dark-headphone-bg.webp"
               alt="Image one"
               className="max-h-[718px] aspect-[1/1]"
             />
             <div className="absolute left-0 bottom-0">
               <ProductCard
-                imageSrc="/images/home-2/split-products/dark-headphone.png"
+                imageSrc="/images-optimized/home-2/split-products/dark-headphone.webp"
                 title="Sonic Pro 800 (Dark Grey)"
                 price="$159.90"
               />
@@ -74,7 +74,7 @@ export default function SplitProductShowcase() {
             />
             <div className="absolute right-0 bottom-0">
               <ProductCard
-                imageSrc="/images/home-2/split-products/white-headphone.png"
+                imageSrc="/images-optimized/home-2/split-products/white-headphone.webp"
                 price="$159.90"
                 title="Sonic Pro 800 (White)"
               />

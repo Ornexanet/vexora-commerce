@@ -5,14 +5,14 @@ import React from "react";
 const galleryImages = [
   {
     id: 0,
-    src: "/images/product-details-two/gallery-img-1.png",
+    src: "/images-optimized/product-details-two/gallery-img-1.webp",
     title: "",
     description: "",
     size: "large",
   },
   {
     id: 1,
-    src: "/images/product-details-two/gallery-img-2.png",
+    src: "/images-optimized/product-details-two/gallery-img-2.webp",
     title: "Your Health Journey",
     description:
       "Move to better health Active score, a key tool that quantifies your physical activity based on heart rate data from the last 7 days. ",
@@ -20,7 +20,7 @@ const galleryImages = [
   },
   {
     id: 2,
-    src: "/images/product-details-two/gallery-img-3.png",
+    src: "/images-optimized/product-details-two/gallery-img-3.webp",
     title: "Smart  Sleep Algorithm",
     description:
       "Receive precise sleep data thanks to the upgraded smart sleep technology. Track sleep stages as well as daytime napping",
@@ -28,7 +28,7 @@ const galleryImages = [
   },
   {
     id: 3,
-    src: "/images/product-details-two/gallery-img-4.png",
+    src: "/images-optimized/product-details-two/gallery-img-4.webp",
     title: "Menstrual Cycle Tracking",
     description:
       "Manage your menstrual cycle with smart prompts and predictions gaining key insights into your health.",
@@ -36,7 +36,7 @@ const galleryImages = [
   },
   {
     id: 4,
-    src: "/images/product-details-two/gallery-img-5.png",
+    src: "/images-optimized/product-details-two/gallery-img-5.webp",
     title: "Wellness Companion",
     description:
       "Prioritise what matters. Keep an eye on your stress and health with 24/7 heart rate and blood oxygen saturation level monitoring.",

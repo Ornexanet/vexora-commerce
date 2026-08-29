@@ -22,7 +22,7 @@ const WatchModes = () => {
           width={1900}
           height={485}
           sizes="100vw"
-          src="/images/product-details-two/modes-bg-img.png"
+          src="/images-optimized/product-details-two/modes-bg-img.webp"
           alt="product-modes"
           className="w-full"
         />

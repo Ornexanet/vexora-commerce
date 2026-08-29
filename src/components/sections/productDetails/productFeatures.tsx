@@ -14,7 +14,7 @@ const ProductFeatures = () => {
                 <Image
                   width={351}
                   height={552}
-                  src="/images/product-details/feature-product-1.png"
+                  src="/images-optimized/product-details/feature-product-1.webp"
                   alt="Product Feature 1"
                   className="rounded-[15px]"
                 />
@@ -23,7 +23,7 @@ const ProductFeatures = () => {
                 <Image
                   width={351}
                   height={552}
-                  src="/images/product-details/feature-product-2.png"
+                  src="/images-optimized/product-details/feature-product-2.webp"
                   alt="Product Feature 2"
                   className="rounded-[15px]"
                 />
@@ -76,7 +76,7 @@ const ProductFeatures = () => {
             <Image
               width={788}
               height={570}
-              src="/images/product-details/feature-product-3.png"
+              src="/images-optimized/product-details/feature-product-3.webp"
               alt="Product Feature 3"
               className="rounded-[15px] w-full"
             />
@@ -90,7 +90,7 @@ const ProductFeatures = () => {
             <Image
               width={788}
               height={570}
-              src="/images/product-details/feature-product-4.png"
+              src="/images-optimized/product-details/feature-product-4.webp"
               alt="Product Feature 3"
               className="rounded-[15px] w-full"
             />
