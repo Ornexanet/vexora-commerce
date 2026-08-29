@@ -607,7 +607,7 @@ metaDescription:
 const samsungGalaxyS25: ProductType = {
   id: 3,
   title: "Samsung Galaxy S25",
-  thumbnail: "/images/mobiles/samsung-galaxy-s25-1.png",
+  thumbnail: "/images-optimized/mobiles/samsung-galaxy-s25-1.webp",
 
   gallery: [
     "/images/mobiles/samsung-galaxy-s25-1.png",
