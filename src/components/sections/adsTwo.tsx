@@ -33,7 +33,7 @@ const AdsTwo = () => {
                   asChild
                   className="rounded-full bg-background text-foreground lg:mt-7.5 mt-5 gap-[15px] hover:text-primary-foreground "
                 >
-                  <Link href={"/product-details"}>
+                  <Link href={"/shop"}>
                     Shop now
                     <ArrowRight />
                   </Link>
@@ -66,7 +66,7 @@ const AdsTwo = () => {
                   variant={"outline"}
                   className="rounded-full lg:mt-7.5 mt-5 gap-[15px] border-background hover:border-background hover:bg-background hover:text-foreground"
                 >
-                  <Link href={"/product-details"}>
+                  <Link href={"/shop"}>
                     Shop now
                     <ArrowRight />
                   </Link>
