@@ -57,6 +57,11 @@ aeoIntro?: {
   answer: string;
 };
 
+aeoQuestions?: {
+  question: string;
+  answer: string;
+}[];
+
 
 }
 type ProductContentTemplate = {
@@ -475,6 +480,15 @@ aeoIntro: {
   answer:
     "Samsung Galaxy S26 Ultra är en premiumsmartphone från Samsung för användare som vill kombinera avancerad fotografering, hög prestanda och produktivitet. Telefonen har en 6,9-tums QHD+ Dynamic AMOLED 2X-skärm med 120 Hz, ett 200 MP huvudkamerasystem, 12 GB RAM, 5000 mAh-batteri och integrerad S Pen.",
 },
+
+aeoQuestions: [
+  {
+    question: "Vem passar Samsung Galaxy S26 Ultra för?",
+    answer:
+      "Samsung Galaxy S26 Ultra passar användare som vill ha en kraftfull premiumtelefon för fotografering, video, arbete och produktivitet. Den passar särskilt bra för användare som vill ha en stor högupplöst skärm, avancerat kamerasystem, lång batteritid och stöd för S Pen.",
+  },
+],
+
 
 
   price: 16990,
