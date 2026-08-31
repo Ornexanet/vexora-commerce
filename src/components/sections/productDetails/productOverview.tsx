@@ -163,6 +163,19 @@ const ProductOverview = ({
       <p className="text-lg leading-relaxed text-light-dark">
         {product.description}
       </p>
+      
+{product.aeoIntro && (
+  <section className="mt-7">
+    <h2 className="mb-3 text-2xl font-extrabold">
+      {product.aeoIntro.question}
+    </h2>
+
+    <p className="text-lg leading-relaxed text-light-dark">
+      {product.aeoIntro.answer}
+    </p>
+  </section>
+)}
+
 
       {technicalSpecifications.length > 0 && (
         <section className="mt-7">

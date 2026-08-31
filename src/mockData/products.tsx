@@ -52,6 +52,12 @@ inTheBox?: string[];
 productType?: "phone" | "headphones" | "smartwatch" | "accessory" | "camera";
 metaDescription?: string;
 
+aeoIntro?: {
+  question: string;
+  answer: string;
+};
+
+
 }
 type ProductContentTemplate = {
   perfectFor: string[];
@@ -464,6 +470,11 @@ const samsungGalaxyS26Ultra: ProductType = {
 metaDescription:
   "Samsung Galaxy S26 Ultra med kraftfull prestanda, avancerad kamera och premiumdesign. Se pris, specifikationer och funktioner hos Ornexa Shop.",
 
+aeoIntro: {
+  question: "Vad är Samsung Galaxy S26 Ultra?",
+  answer:
+    "Samsung Galaxy S26 Ultra är en premiumsmartphone från Samsung för användare som vill kombinera avancerad fotografering, hög prestanda och produktivitet. Telefonen har en 6,9-tums QHD+ Dynamic AMOLED 2X-skärm med 120 Hz, ett 200 MP huvudkamerasystem, 12 GB RAM, 5000 mAh-batteri och integrerad S Pen.",
+},
 
 
   price: 16990,
