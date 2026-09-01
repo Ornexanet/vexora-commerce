@@ -1848,11 +1848,11 @@ const googlePixel10Pro: ProductType = {
   id: 23,
   title: "Google Pixel 10 Pro",
 
-  thumbnail: "/images/mobiles/google-pixel-10-pro-1.png",
+  thumbnail: "/images/mobiles/google-pixel-10-pro-1.webp",
 
   gallery: [
-    "/images/mobiles/google-pixel-10-pro-2.png",
-    "/images/mobiles/google-pixel-10-pro-3.png",
+    "/images/mobiles/google-pixel-10-pro-2.webp",
+    "/images/mobiles/google-pixel-10-pro-3.webp",
   ],
 
   description:
