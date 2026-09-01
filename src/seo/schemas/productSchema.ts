@@ -16,7 +16,16 @@ export function generateProductSchema(product: ProductType) {
     ],
 
     description: product.description,
+
     sku: String(product.id),
+
+    ...(product.model && {
+      model: product.model,
+    }),
+
+    ...(product.color && {
+      color: product.color,
+    }),
 
     brand: {
       "@type": "Brand",
@@ -27,11 +36,23 @@ export function generateProductSchema(product: ProductType) {
 
     category: product.categories.join(", "),
 
+    ...(product.specifications?.length && {
+      additionalProperty: product.specifications.map(
+        (specification) => ({
+          "@type": "PropertyValue",
+          name: specification.label,
+          value: specification.value,
+        })
+      ),
+    }),
+
     offers: {
       "@type": "Offer",
-      url:
-        `${siteConfig.url}/product-details/${product.id}`,
+
+      url: `${siteConfig.url}/product-details/${product.id}`,
+
       priceCurrency: siteConfig.currency,
+
       price: product.price,
 
       availability:
@@ -49,3 +70,6 @@ export function generateProductSchema(product: ProductType) {
     },
   };
 }
+
+
+
