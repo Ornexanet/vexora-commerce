@@ -52,15 +52,6 @@ inTheBox?: string[];
 productType?: "phone" | "headphones" | "smartwatch" | "accessory" | "camera";
 metaDescription?: string;
 
-aeoIntro?: {
-  question: string;
-  answer: string;
-};
-
-aeoQuestions?: {
-  question: string;
-  answer: string;
-}[];
 
 
 }
@@ -474,20 +465,6 @@ const samsungGalaxyS26Ultra: ProductType = {
     "Samsung Galaxy S26 Ultra är en avancerad premiumtelefon med stor AMOLED-skärm, kraftfull prestanda, S Pen och ett professionellt kamerasystem för foto, video, arbete och underhållning.",
 metaDescription:
   "Samsung Galaxy S26 Ultra med kraftfull prestanda, avancerad kamera och premiumdesign. Se pris, specifikationer och funktioner hos Ornexa Shop.",
-
-aeoIntro: {
-  question: "Vad är Samsung Galaxy S26 Ultra?",
-  answer:
-    "Samsung Galaxy S26 Ultra är en premiumsmartphone från Samsung för användare som vill kombinera avancerad fotografering, hög prestanda och produktivitet. Telefonen har en 6,9-tums QHD+ Dynamic AMOLED 2X-skärm med 120 Hz, ett 200 MP huvudkamerasystem, 12 GB RAM, 5000 mAh-batteri och integrerad S Pen.",
-},
-
-aeoQuestions: [
-  {
-    question: "Vem passar Samsung Galaxy S26 Ultra för?",
-    answer:
-      "Samsung Galaxy S26 Ultra passar användare som vill ha en kraftfull premiumtelefon för fotografering, video, arbete och produktivitet. Den passar särskilt bra för användare som vill ha en stor högupplöst skärm, avancerat kamerasystem, lång batteritid och stöd för S Pen.",
-  },
-],
 
 
 
@@ -1867,6 +1844,161 @@ const appleMagSafeCharger: ProductType = {
   ],
 };
 
+const googlePixel10Pro: ProductType = {
+  id: 23,
+  title: "Google Pixel 10 Pro",
+
+  thumbnail: "/images/mobiles/google-pixel-10-pro-1.png",
+
+  gallery: [
+    "/images/mobiles/google-pixel-10-pro-1.png",
+    "/images/mobiles/google-pixel-10-pro-2.png",
+  ],
+
+  description:
+    "Google Pixel 10 Pro är en avancerad premiumtelefon med en ljusstark 6,3-tums Super Actua-skärm, Google Tensor G5, ett kraftfullt trippelkamerasystem och smarta AI-funktioner för foto, arbete och vardag.",
+
+  metaDescription:
+    "Google Pixel 10 Pro med 6,3-tums Super Actua-skärm, Tensor G5, 16 GB RAM och avancerat trippelkamerasystem. Se pris och specifikationer hos Ornexa Shop.",
+
+  price: 11990,
+  tag: "Ny",
+  discount: null,
+
+  categories: ["mobiler"],
+  filter: "mobiler",
+  productType: "phone",
+
+  brand: "Google",
+  model: "Pixel 10 Pro",
+  color: "Obsidian",
+
+  storage: "128 GB",
+
+  display:
+    "6,3-tums Super Actua LTPO OLED, 1280 × 2856, 1–120 Hz, upp till 3300 nits",
+
+  processor:
+    "Google Tensor G5 med Titan M2-säkerhetsprocessor",
+
+  camera:
+    "50 MP vidvinkel + 48 MP ultravidvinkel med makrofokus + 48 MP telefoto med 5x optisk zoom",
+
+  battery:
+    "4870 mAh, mer än 24 timmars batteritid",
+
+  os: "Android",
+
+  availability: "Finns i lager",
+  warranty: "2 års garanti",
+
+  specifications: [
+    {
+      label: "Lagring",
+      value: "128 GB",
+    },
+    {
+      label: "RAM",
+      value: "16 GB",
+    },
+    {
+      label: "Färg",
+      value: "Obsidian",
+    },
+    {
+      label: "Skärm",
+      value:
+        "6,3-tums Super Actua LTPO OLED, 1280 × 2856, 1–120 Hz, upp till 3300 nits",
+    },
+    {
+      label: "Processor",
+      value: "Google Tensor G5",
+    },
+    {
+      label: "Säkerhetsprocessor",
+      value: "Titan M2",
+    },
+    {
+      label: "Kamera",
+      value:
+        "50 MP vidvinkel + 48 MP ultravidvinkel + 48 MP telefoto med 5x optisk zoom",
+    },
+    {
+      label: "Zoom",
+      value: "Pro Zoom upp till 100x",
+    },
+    {
+      label: "Batteri",
+      value: "4870 mAh, mer än 24 timmars batteritid",
+    },
+    {
+      label: "Trådlös laddning",
+      value: "Pixelsnap Qi2 upp till 15 W",
+    },
+    {
+      label: "Operativsystem",
+      value: "Android",
+    },
+    {
+      label: "Lagerstatus",
+      value: "Finns i lager",
+    },
+    {
+      label: "Garanti",
+      value: "2 års garanti",
+    },
+  ],
+
+  overview:
+    "Google Pixel 10 Pro kombinerar avancerad AI, hög prestanda och ett professionellt kamerasystem i ett kompakt premiumformat. Super Actua-skärmen ger hög ljusstyrka och mjuka rörelser, medan Tensor G5 är utvecklad för Googles senaste AI-funktioner.",
+
+  whyChoose: [
+    "Avancerat trippelkamerasystem med Pro Zoom upp till 100x",
+    "Google Tensor G5 med kraftfull AI-prestanda",
+    "6,3-tums Super Actua LTPO OLED-skärm med 120 Hz",
+    "16 GB RAM för snabb multitasking",
+    "Mer än 24 timmars batteritid",
+  ],
+
+  perfectFor: [
+    "Mobilfotografering och video",
+    "AI-baserade funktioner och produktivitet",
+    "Arbete och multitasking",
+    "Streaming och sociala medier",
+  ],
+
+  inTheBox: [
+    "Google Pixel 10 Pro",
+    "USB-C-kabel",
+    "SIM-verktyg",
+    "Dokumentation",
+  ],
+
+  features: [
+    {
+      icon: "camera",
+      title: "Pro-kamerasystem",
+      text:
+        "50 MP huvudkamera, 48 MP ultravidvinkel och 48 MP telefoto med 5x optisk zoom.",
+    },
+    {
+      icon: "performance",
+      title: "Google Tensor G5",
+      text:
+        "Google Tensor G5 ger snabb prestanda och stöd för avancerade AI-funktioner.",
+    },
+    {
+      icon: "display",
+      title: "Super Actua-skärm",
+      text:
+        "6,3-tums LTPO OLED-skärm med adaptiv uppdateringsfrekvens från 1 till 120 Hz.",
+    },
+  ],
+
+  backgroundColor: "#F3F5F7",
+};
+
+
 
 
 
@@ -2000,6 +2132,7 @@ export const products: Products = {
   bestProductsData: [
     iphone16Plus,
     iphone17Pro,
+    googlePixel10Pro,
     samsungGalaxyS26Ultra,
     samsungGalaxyS25,
     xiaomi17TPro,

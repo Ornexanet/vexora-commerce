@@ -12,7 +12,9 @@ const WEBP_QUALITY = 80;
 const supportedExtensions = [".png", ".jpg", ".jpeg"];
 
 async function getFiles(directory) {
-  const entries = await fs.readdir(directory, { withFileTypes: true });
+  const entries = await fs.readdir(directory, {
+    withFileTypes: true,
+  });
 
   const files = await Promise.all(
     entries.map(async (entry) => {
@@ -29,18 +31,27 @@ async function getFiles(directory) {
   return files.flat();
 }
 
+async function fileExists(filePath) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 async function optimizeImage(filePath) {
   const extension = path.extname(filePath).toLowerCase();
 
   if (!supportedExtensions.includes(extension)) {
-    return;
+    return "unsupported";
   }
 
-  const stats = await fs.stat(filePath);
-  const originalSizeKB = stats.size / 1024;
+  const originalStats = await fs.stat(filePath);
+  const originalSizeKB = originalStats.size / 1024;
 
   if (originalSizeKB <= MIN_SIZE_KB) {
-    return;
+    return "small";
   }
 
   const relativePath = path.relative(INPUT_DIR, filePath);
@@ -50,26 +61,66 @@ async function optimizeImage(filePath) {
     ".webp"
   );
 
-  const outputPath = path.join(OUTPUT_DIR, outputRelativePath);
+  const outputPath = path.join(
+    OUTPUT_DIR,
+    outputRelativePath
+  );
 
-  await fs.mkdir(path.dirname(outputPath), { recursive: true });
+  const optimizedExists = await fileExists(outputPath);
 
-  await sharp(filePath)
-    .resize({
-      width: MAX_WIDTH,
-      withoutEnlargement: true,
-    })
-    .webp({
-      quality: WEBP_QUALITY,
-      effort: 6,
-    })
-    .toFile(outputPath);
+  if (optimizedExists) {
+    const optimizedStats = await fs.stat(outputPath);
+
+    /*
+      If the optimized WebP is newer than or equal to
+      the original image, nothing has changed.
+    */
+    if (
+      optimizedStats.mtimeMs >=
+      originalStats.mtimeMs
+    ) {
+      console.log(
+        `⏭️ SKIP: ${relativePath} already optimized`
+      );
+
+      return "skipped";
+    }
+
+    console.log(
+      `🔄 UPDATED SOURCE: ${relativePath}`
+    );
+  } else {
+    console.log(`🆕 NEW: ${relativePath}`);
+  }
+
+  await fs.mkdir(path.dirname(outputPath), {
+    recursive: true,
+  });
+
+  const optimizedBuffer = await sharp(filePath)
+  .resize({
+    width: MAX_WIDTH,
+    withoutEnlargement: true,
+  })
+  .webp({
+    quality: WEBP_QUALITY,
+    effort: 6,
+  })
+  .toBuffer();
+
+await fs.writeFile(
+  path.toNamespacedPath(outputPath),
+  optimizedBuffer
+);
+
 
   const optimizedStats = await fs.stat(outputPath);
-  const optimizedSizeKB = optimizedStats.size / 1024;
+  const optimizedSizeKB =
+    optimizedStats.size / 1024;
 
   const saving = (
-    ((originalSizeKB - optimizedSizeKB) / originalSizeKB) *
+    ((originalSizeKB - optimizedSizeKB) /
+      originalSizeKB) *
     100
   ).toFixed(1);
 
@@ -77,26 +128,59 @@ async function optimizeImage(filePath) {
     `✅ ${relativePath}
    ${originalSizeKB.toFixed(1)} KB → ${optimizedSizeKB.toFixed(
       1
-    )} KB (${saving}% smaller)`
+    )} KB (${saving}% smaller)\n`
   );
+
+  return optimizedExists
+    ? "updated"
+    : "optimized";
 }
 
 async function run() {
-  console.log("🖼️ Starting image optimization...\n");
+  console.log(
+    "🖼️ Starting incremental image optimization...\n"
+  );
 
   const files = await getFiles(INPUT_DIR);
 
+  let optimized = 0;
+  let updated = 0;
+  let skipped = 0;
+  let small = 0;
+  let failed = 0;
+
   for (const file of files) {
     try {
-      await optimizeImage(file);
+      const result = await optimizeImage(file);
+
+      if (result === "optimized") optimized++;
+      if (result === "updated") updated++;
+      if (result === "skipped") skipped++;
+      if (result === "small") small++;
     } catch (error) {
+      failed++;
+
       console.error(`❌ Failed: ${file}`);
       console.error(error.message);
     }
   }
 
-  console.log("\n✅ Image optimization completed.");
-  console.log("Original images were NOT modified.");
+  console.log("\n📊 Optimization summary");
+  console.log(`🆕 New images optimized: ${optimized}`);
+  console.log(`🔄 Changed images rebuilt: ${updated}`);
+  console.log(`⏭️ Existing images skipped: ${skipped}`);
+  console.log(`👌 Images already under 100 KB: ${small}`);
+  console.log(`❌ Failed: ${failed}`);
+
+  console.log(
+    "\n✅ Image optimization completed."
+  );
+
+  console.log(
+    "Original images were NOT modified."
+  );
 }
 
 run();
+
+
