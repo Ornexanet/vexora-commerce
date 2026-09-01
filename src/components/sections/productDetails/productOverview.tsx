@@ -11,6 +11,8 @@ import { useCart } from "@/contextApi/cartContext";
 import { Minus, Plus, ShopingBag } from "@/lib/icons";
 import { ProductType } from "@/mockData/products";
 import CompatibleAccessories from "./compatibleAccessories";
+import { generateProductAEO } from "@/seo/aeo/productAEO";
+
 
 type ProductOverviewProps = {
   product: ProductType;
@@ -30,6 +32,8 @@ const ProductOverview = ({
   product,
   categoryLink,
 }: ProductOverviewProps) => {
+  const aeoContent = generateProductAEO(product);
+
 
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
@@ -164,19 +168,7 @@ const ProductOverview = ({
         {product.description}
       </p>
       
-{product.aeoIntro && (
-  <section className="mt-7">
-    <h2 className="mb-3 text-2xl font-extrabold">
-      {product.aeoIntro.question}
-    </h2>
-
-    <p className="text-lg leading-relaxed text-light-dark">
-      {product.aeoIntro.answer}
-    </p>
-  </section>
-)}
-
-{product.aeoQuestions?.map((item) => (
+{aeoContent.map((item) => (
   <section key={item.question} className="mt-7">
     <h2 className="mb-3 text-2xl font-extrabold">
       {item.question}
