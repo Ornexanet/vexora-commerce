@@ -13,12 +13,10 @@ import { ProductType } from "@/mockData/products";
 import CompatibleAccessories from "./compatibleAccessories";
 import { generateProductAEO } from "@/seo/aeo/productAEO";
 
-
 type ProductOverviewProps = {
   product: ProductType;
   categoryLink: string;
 };
-
 
 const categoryNames: Record<string, string> = {
   mobiler: "Mobiler",
@@ -34,9 +32,13 @@ const ProductOverview = ({
 }: ProductOverviewProps) => {
   const aeoContent = generateProductAEO(product);
 
-
   const { addToCart } = useCart();
+
   const [quantity, setQuantity] = useState(1);
+
+  const [selectedColor, setSelectedColor] = useState(
+    product.colorOptions?.[0]?.name || ""
+  );
 
   const handleIncrement = () => {
     setQuantity((previousQuantity) => previousQuantity + 1);
@@ -125,22 +127,17 @@ const ProductOverview = ({
   return (
     <div className="overflow-hidden">
       <Link
-  href={categoryLink}
-  className="text-lg text-light-dark transition-colors hover:text-primary"
->
-  {categoryName}
-</Link>
-
-
-
-
+        href={categoryLink}
+        className="text-lg text-light-dark transition-colors hover:text-primary"
+      >
+        {categoryName}
+      </Link>
 
       <div className="mb-10 mt-2">
         <div className="flex items-end justify-between gap-5">
           <h1 className="text-[clamp(2.25rem,1.3145rem+1.9355vw,3.25rem)] font-extrabold leading-normal">
-  {product.title}
-</h1>
-
+            {product.title}
+          </h1>
 
           <p className="shrink-0 text-[28px] font-medium text-foreground">
             {product.price.toLocaleString("sv-SE")} kr
@@ -167,24 +164,49 @@ const ProductOverview = ({
       <p className="text-lg leading-relaxed text-light-dark">
         {product.description}
       </p>
-      
-{aeoContent.map((item) => (
-  <section key={item.question} className="mt-7">
-    <h2 className="mb-3 text-2xl font-extrabold">
-      {item.question}
-    </h2>
 
-    <p className="text-lg leading-relaxed text-light-dark">
-      {item.answer}
-    </p>
-  </section>
-))}
+      {product.colorOptions && product.colorOptions.length > 0 && (
+        <div className="mt-6">
+          <p className="mb-3 text-lg font-bold">
+            Färg: {selectedColor}
+          </p>
 
+          <div className="flex flex-wrap gap-3">
+            {product.colorOptions.map((option) => (
+              <button
+                key={option.name}
+                type="button"
+                onClick={() => setSelectedColor(option.name)}
+                aria-label={`Välj färg ${option.name}`}
+                title={option.name}
+                className={`h-10 w-10 rounded-full border-2 transition ${
+                  selectedColor === option.name
+                    ? "border-foreground"
+                    : "border-light-gray"
+                }`}
+                style={{ backgroundColor: option.hex }}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {aeoContent.map((item) => (
+        <section key={item.question} className="mt-7">
+          <h2 className="mb-3 text-2xl font-extrabold">
+            {item.question}
+          </h2>
+
+          <p className="text-lg leading-relaxed text-light-dark">
+            {item.answer}
+          </p>
+        </section>
+      ))}
 
       {technicalSpecifications.length > 0 && (
         <section className="mt-7">
           <Title asChild size="28" className="mb-5 font-extrabold">
-           <h2>Tekniska specifikationer för {product.title}</h2>
+            <h2>Tekniska specifikationer för {product.title}</h2>
           </Title>
 
           <dl className="grid grid-cols-1 gap-x-10 gap-y-4 sm:grid-cols-2">

@@ -9,6 +9,14 @@ export interface ProductFeature {
   text: string;
 }
 
+export interface ProductColorOption {
+  name: string;
+  hex: string;
+  thumbnail: string;
+  gallery: string[];
+}
+
+
 export interface ProductType {
   id: number;
   title: string;
@@ -27,6 +35,8 @@ export interface ProductType {
   brand?: string;
   model?: string;
   color?: string;
+  colorOptions?: ProductColorOption[];
+
 
   availability?: string;
   warranty?: string;
@@ -2038,6 +2048,41 @@ const googlePixel11Pro: ProductType = {
   model: "Pixel 11 Pro",
 
   color: "Canyon, Obsidian, Olive",
+  colorOptions: [
+  {
+    name: "Canyon",
+    hex: "#D77C67",
+    thumbnail: "/images/mobiles/google-pixel-11-pro-canyon-11.png",
+    gallery: [
+      "/images/mobiles/google-pixel-11-pro-canyon-11.png",
+      "/images/mobiles/google-pixel-11-pro-canyon-22.png",
+      "/images/mobiles/google-pixel-11-pro-canyon-33.png",
+    ],
+  },
+  {
+  name: "Obsidian",
+  hex: "#2F3435",
+  thumbnail: "/images/mobiles/google-pixel-11-pro-obsidian-1.png",
+  gallery: [
+    "/images/mobiles/google-pixel-11-pro-obsidian-1.png",
+    "/images/mobiles/google-pixel-11-pro-obsidian-2.png",
+    "/images/mobiles/google-pixel-11-pro-obsidian-3.png",
+  ],
+},
+
+{
+  name: "Olive",
+  hex: "#89917A",
+  thumbnail: "/images/mobiles/google-pixel-11-pro-olive1.png",
+  gallery: [
+    "/images/mobiles/google-pixel-11-pro-olive1.png",
+    "/images/mobiles/google-pixel-11-pro-olive2.png",
+    "/images/mobiles/google-pixel-11-pro-olive3.png",
+  ],
+},
+
+],
+
 
   storage: "256 GB",
 
