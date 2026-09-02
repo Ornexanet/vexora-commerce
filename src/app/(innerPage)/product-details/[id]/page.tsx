@@ -14,6 +14,7 @@ import {
   getRelatedProducts,
   getProductCategoryLink,
 } from "@/seo/internalLinks/productLinks";
+import ProductColorDetails from "@/components/sections/productDetails/productColorDetails";
 
 
 
@@ -82,16 +83,12 @@ const categoryLink = getProductCategoryLink(product);
       <section className="pt-12 md:pt-18 lg:pt-25">
         <div className="container">
           <div className="grid gap-7.5 lg:grid-cols-[800fr_770fr] xl:grid-cols-[921fr_649fr]">
-            <div className="min-w-0">
-              <ProductPreviewSingleImage product={product} />
 
-              <HighlightedFeatures product={product} />
-            </div>
+          <ProductColorDetails
+  product={product}
+  categoryLink={categoryLink}
+/>
 
-            <ProductOverview
-           product={product}
-           categoryLink={categoryLink}
-          />
 
           </div>
         </div>

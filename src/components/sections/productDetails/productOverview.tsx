@@ -16,7 +16,10 @@ import { generateProductAEO } from "@/seo/aeo/productAEO";
 type ProductOverviewProps = {
   product: ProductType;
   categoryLink: string;
+  selectedColor?: string;
+  onColorChange?: (color: string) => void;
 };
+
 
 const categoryNames: Record<string, string> = {
   mobiler: "Mobiler",
@@ -29,16 +32,24 @@ const categoryNames: Record<string, string> = {
 const ProductOverview = ({
   product,
   categoryLink,
+  selectedColor,
+  onColorChange,
 }: ProductOverviewProps) => {
+
+
+
   const aeoContent = generateProductAEO(product);
 
   const { addToCart } = useCart();
 
   const [quantity, setQuantity] = useState(1);
 
-  const [selectedColor, setSelectedColor] = useState(
-    product.colorOptions?.[0]?.name || ""
-  );
+
+  const selectedColorOption =
+  product.colorOptions?.find(
+    (option) => option.name === selectedColor
+  ) || product.colorOptions?.[0];
+
 
   const handleIncrement = () => {
     setQuantity((previousQuantity) => previousQuantity + 1);
@@ -176,7 +187,7 @@ const ProductOverview = ({
               <button
                 key={option.name}
                 type="button"
-                onClick={() => setSelectedColor(option.name)}
+                onClick={() => onColorChange?.(option.name)}
                 aria-label={`Välj färg ${option.name}`}
                 title={option.name}
                 className={`h-10 w-10 rounded-full border-2 transition ${
