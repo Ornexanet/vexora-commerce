@@ -1999,6 +1999,179 @@ const googlePixel10Pro: ProductType = {
 };
 
 
+const googlePixel11Pro: ProductType = {
+  id: 24,
+  title: "Google Pixel 11 Pro",
+
+  thumbnail:
+    "/images/mobiles/google-pixel-11-pro-canyon-11.png",
+
+  gallery: [
+    "/images/mobiles/google-pixel-11-pro-canyon-22.png",
+    "/images/mobiles/google-pixel-11-pro-canyon-33.png",
+
+    "/images/mobiles/google-pixel-11-pro-obsidian-1.png",
+    "/images/mobiles/google-pixel-11-pro-obsidian-2.png",
+    "/images/mobiles/google-pixel-11-pro-obsidian-3.png",
+
+    "/images/mobiles/google-pixel-11-pro-olive1.png",
+    "/images/mobiles/google-pixel-11-pro-olive2.png",
+    "/images/mobiles/google-pixel-11-pro-olive3.png",
+  ],
+
+  description:
+    "Google Pixel 11 Pro är en avancerad premiumtelefon med en 6,3-tums Super Actua-skärm, Google Tensor G6, ett professionellt trippelkamerasystem och avancerade AI-funktioner.",
+
+  metaDescription:
+    "Google Pixel 11 Pro med 6,3-tums Super Actua-skärm, Tensor G6, 12 GB RAM och professionellt trippelkamerasystem. Se pris och specifikationer hos Ornexa Shop.",
+
+  price: 14490,
+
+  tag: "Ny",
+  discount: null,
+
+  categories: ["mobiler"],
+  filter: "mobiler",
+  productType: "phone",
+
+  brand: "Google",
+  model: "Pixel 11 Pro",
+
+  color: "Canyon, Obsidian, Olive",
+
+  storage: "256 GB",
+
+  display:
+    "6,3-tums Super Actua LTPO OLED, 1280 × 2856, 1–120 Hz, upp till 3600 nits",
+
+  processor:
+    "Google Tensor G6 med Titan M3-säkerhetsprocessor",
+
+  camera:
+    "50 MP vidvinkel + 48 MP ultravidvinkel med makrofokus + 48 MP telefoto med 5x optisk zoom",
+
+  battery:
+    "Mer än 30 timmars batteritid",
+
+  os: "Android",
+
+  availability: "Finns i lager",
+  warranty: "2 års garanti",
+
+  specifications: [
+    { label: "Lagring", value: "256 GB" },
+    { label: "RAM", value: "12 GB" },
+
+    {
+      label: "Färger",
+      value: "Canyon, Obsidian, Olive",
+    },
+
+    {
+      label: "Skärm",
+      value:
+        "6,3-tums Super Actua LTPO OLED, 1280 × 2856, 1–120 Hz, upp till 3600 nits",
+    },
+
+    {
+      label: "Processor",
+      value: "Google Tensor G6",
+    },
+
+    {
+      label: "Säkerhetsprocessor",
+      value: "Titan M3",
+    },
+
+    {
+      label: "Kamera",
+      value:
+        "50 MP vidvinkel + 48 MP ultravidvinkel + 48 MP telefoto med 5x optisk zoom",
+    },
+
+    {
+      label: "Zoom",
+      value: "Professionell zoom upp till 120x",
+    },
+
+    {
+      label: "Batteri",
+      value: "Mer än 30 timmars batteritid",
+    },
+
+    {
+      label: "Trådlös laddning",
+      value: "Pixelsnap Qi2.2 upp till 25 W",
+    },
+
+    {
+      label: "Operativsystem",
+      value: "Android",
+    },
+
+    {
+      label: "Lagerstatus",
+      value: "Finns i lager",
+    },
+
+    {
+      label: "Garanti",
+      value: "2 års garanti",
+    },
+  ],
+
+  overview:
+    "Google Pixel 11 Pro kombinerar Googles senaste Tensor G6-processor med en ljusstark Super Actua-skärm och ett professionellt kamerasystem. Telefonen är utvecklad för avancerad fotografering, AI-funktioner, produktivitet och hög prestanda i ett kompakt premiumformat.",
+
+  whyChoose: [
+    "Google Tensor G6 med avancerad AI-prestanda",
+    "Professionellt trippelkamerasystem",
+    "5x optisk zoom och professionell zoom upp till 120x",
+    "6,3-tums Super Actua LTPO OLED-skärm",
+    "Mer än 30 timmars batteritid",
+  ],
+
+  perfectFor: [
+    "Mobilfotografering och video",
+    "AI-funktioner och produktivitet",
+    "Arbete och multitasking",
+    "Streaming och sociala medier",
+  ],
+
+  inTheBox: [
+    "Google Pixel 11 Pro",
+    "USB-C-kabel",
+    "SIM-verktyg",
+    "Dokumentation",
+  ],
+
+  features: [
+    {
+      icon: "camera",
+      title: "Pro-kamerasystem",
+      text:
+        "50 MP huvudkamera, 48 MP ultravidvinkel och 48 MP telefoto med 5x optisk zoom.",
+    },
+
+    {
+      icon: "performance",
+      title: "Google Tensor G6",
+      text:
+        "Google Tensor G6 ger snabb prestanda och stöd för Googles senaste AI-funktioner.",
+    },
+
+    {
+      icon: "display",
+      title: "Super Actua-skärm",
+      text:
+        "6,3-tums LTPO OLED-skärm med adaptiv uppdateringsfrekvens från 1 till 120 Hz.",
+    },
+  ],
+
+  backgroundColor: "#F5F5F5",
+};
+
+
 
 
 
@@ -2133,6 +2306,7 @@ export const products: Products = {
     iphone16Plus,
     iphone17Pro,
     googlePixel10Pro,
+    googlePixel11Pro,
     samsungGalaxyS26Ultra,
     samsungGalaxyS25,
     xiaomi17TPro,
