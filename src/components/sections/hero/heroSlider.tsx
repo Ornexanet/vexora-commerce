@@ -133,7 +133,7 @@ const HeroSlider = () => {
                     height={650}
                     src={image}
                     sizes="
-                      (max-width: 639px) 82vw,
+                      (max-width: 639px) 245px,
                       (max-width: 767px) 60vw,
                       (max-width: 1023px) 46vw,
                       700px
