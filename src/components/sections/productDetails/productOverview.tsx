@@ -10,7 +10,7 @@ import Title from "@/components/ui/title";
 import { useCart } from "@/contextApi/cartContext";
 import { Minus, Plus, ShopingBag } from "@/lib/icons";
 import { ProductType } from "@/mockData/products";
-import CompatibleAccessories from "./compatibleAccessories";
+//import CompatibleAccessories from "./compatibleAccessories";
 import { generateProductAEO } from "@/seo/aeo/productAEO";
 
 type ProductOverviewProps = {
@@ -307,7 +307,7 @@ const ProductOverview = ({
         </div>
       </div>
 
-      <CompatibleAccessories product={product} />
+     {/*<CompatibleAccessories product={product} /> */}
     </div>
   );
 };
