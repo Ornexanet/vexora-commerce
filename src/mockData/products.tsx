@@ -2216,6 +2216,132 @@ const googlePixel11Pro: ProductType = {
   backgroundColor: "#F5F5F5",
 };
 
+const googlePixelBudsPro2: ProductType = {
+  id: 25,
+  title: "Google Pixel Buds Pro 2",
+
+  thumbnail: "/images/headphones/google-buds-peony-1.png",
+
+  gallery: [
+    "/images/headphones/google-buds-peony-1.png",
+    "/images/headphones/google-buds-peony-2.png",
+  ],
+
+  description:
+    "Google Pixel Buds Pro 2 är premiumhörlurar med Google Tensor A1, aktiv brusreducering med Silent Seal 2.0 och upp till 30 timmars lyssningstid med laddningsfodralet.",
+
+  price: 2990,
+  tag: "Ny",
+  discount: null,
+
+  categories: ["headphones"],
+
+  brand: "Google",
+  model: "Pixel Buds Pro 2",
+  color: "Peony",
+  colorOptions: [
+  {
+    name: "Peony",
+    hex: "#E86B7D",
+    thumbnail: "/images/headphones/google-buds-peony-1.png",
+    gallery: [
+      "/images/headphones/google-buds-peony-1.png",
+      "/images/headphones/google-buds-peony-2.png",
+    ],
+  },
+  {
+    name: "Hazel",
+    hex: "#2F3531",
+    thumbnail: "/images/headphones/google-buds-svart-1.png",
+    gallery: [
+      "/images/headphones/google-buds-svart-1.png",
+      "/images/headphones/google-buds-svart-2.png",
+    ],
+  },
+],
+
+  availability: "Finns i lager",
+  warranty: "2 år",
+
+  productType: "headphones",
+
+  specifications: [
+    {
+      label: "Processor",
+      value: "Google Tensor A1",
+    },
+    {
+      label: "Bluetooth",
+      value: "Bluetooth 5.4",
+    },
+    {
+      label: "Driver",
+      value: "11 mm dynamisk högtalardriver",
+    },
+    {
+      label: "Brusreducering",
+      value: "Aktiv brusreducering med Silent Seal 2.0",
+    },
+    {
+      label: "Batteritid",
+      value: "Upp till 30 timmar med laddningsfodral",
+    },
+    {
+      label: "Vattentålighet",
+      value: "IP54 hörsnäckor, IPX4 laddningsfodral",
+    },
+    {
+      label: "Laddning",
+      value: "USB-C och Qi trådlös laddning",
+    },
+  ],
+
+  features: [
+    {
+      icon: "headphones",
+      title: "Aktiv brusreducering",
+      text: "Silent Seal 2.0 reducerar störande ljud för en mer fokuserad lyssningsupplevelse.",
+    },
+    {
+      icon: "cpu",
+      title: "Google Tensor A1",
+      text: "Tensor A1 hanterar avancerad ljudbehandling och adaptiv brusreducering.",
+    },
+    {
+      icon: "battery",
+      title: "Lång batteritid",
+      text: "Upp till 30 timmars lyssningstid tillsammans med laddningsfodralet.",
+    },
+  ],
+
+  overview:
+    "Pixel Buds Pro 2 kombinerar avancerad ljudteknik, aktiv brusreducering och en kompakt design för både musik, samtal och vardagsanvändning.",
+
+  whyChoose: [
+    "Google Tensor A1",
+    "Aktiv brusreducering med Silent Seal 2.0",
+    "Trådlös Qi-laddning",
+    "Upp till 30 timmars batteritid med laddningsfodral",
+  ],
+
+  perfectFor: [
+    "Google Pixel-användare",
+    "Musik och podcasts",
+    "Pendling och resor",
+    "Träning och vardagsanvändning",
+  ],
+
+  inTheBox: [
+    "Pixel Buds Pro 2",
+    "Trådlöst laddningsfodral",
+    "Öronproppar i fyra storlekar",
+    "Snabbstartsguide",
+  ],
+
+  metaDescription:
+    "Google Pixel Buds Pro 2 med Tensor A1, aktiv brusreducering, Bluetooth 5.4 och upp till 30 timmars batteritid.",
+};
+
 
 
 
@@ -2374,6 +2500,7 @@ export const products: Products = {
     airPods4,
     airPodsPro3,
     samsungGalaxyBuds4Pro,
+    googlePixelBudsPro2,
     samsungGalaxyBuds3,
   ],
 
