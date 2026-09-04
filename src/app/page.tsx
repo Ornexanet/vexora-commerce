@@ -35,9 +35,14 @@ import Testimonial from "@/components/sections/testimonial";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Ornexa Shop – Mobiler, smartklockor och elektronik",
-
+  title: "Ornexa Shop | Mobiler, smartklockor och elektronik",
+  alternates: {
+    canonical: "/",
+  },
 };
+
+
+
 
 const Home = () => {
   return (
