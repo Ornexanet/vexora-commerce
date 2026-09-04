@@ -22,7 +22,7 @@ const FeaturesProductTwo = () => {
           <div className="h-[358px]">
             <div className="flex absolute xl:right-[33%] lg:right-[23%] right-[13%]">
               <div className="max-w-[242px] bg-background rounded-lg pt-7 pb-5 px-5 shadow-[0_8px_40px_0_rgba(1,22,36,0.08)]">
-                <Link href={"/product-details"} className="overflow-hidden">
+                <Link href={"/product-details/16"} className="overflow-hidden">
                   <Image
                     width={196}
                     height={222}
