@@ -1868,8 +1868,8 @@ const googlePixel10Pro: ProductType = {
   description:
     "Google Pixel 10 Pro är en avancerad premiumtelefon med en ljusstark 6,3-tums Super Actua-skärm, Google Tensor G5, ett kraftfullt trippelkamerasystem och smarta AI-funktioner för foto, arbete och vardag.",
 
-  metaDescription:
-    "Google Pixel 10 Pro med 6,3-tums Super Actua-skärm, Tensor G5, 16 GB RAM och avancerat trippelkamerasystem. Se pris och specifikationer hos Ornexa Shop.",
+ metaDescription:
+  "Google Pixel 10 Pro med 6,3-tums Super Actua-skärm, Tensor G5, 16 GB RAM och avancerat trippelkamerasystem. Se specifikationer och pris.",
 
   price: 11990,
   tag: "Ny",
@@ -2032,8 +2032,8 @@ const googlePixel11Pro: ProductType = {
   description:
     "Google Pixel 11 Pro är en avancerad premiumtelefon med en 6,3-tums Super Actua-skärm, Google Tensor G6, ett professionellt trippelkamerasystem och avancerade AI-funktioner.",
 
-  metaDescription:
-    "Google Pixel 11 Pro med 6,3-tums Super Actua-skärm, Tensor G6, 12 GB RAM och professionellt trippelkamerasystem. Se pris och specifikationer hos Ornexa Shop.",
+ metaDescription:
+  "Google Pixel 11 Pro med 6,3-tums Super Actua-skärm, Tensor G6, 12 GB RAM och trippelkamera. Upptäck funktioner, specifikationer och pris.",
 
   price: 14490,
 
