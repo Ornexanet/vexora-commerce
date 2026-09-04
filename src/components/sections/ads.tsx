@@ -11,7 +11,7 @@ const Ads = () => {
         </Title>
         <div className="flex lg:flex-row flex-col mt-[50px]">
           <div className="lg:max-w-[483px] bg-[#F4F6F8] rounded-tl-[30px] rounded-bl-[30px] max-lg:rounded-[30px] px-5 pb-5 overflow-hidden">
-            <Link href={"/product-details"}>
+            <Link href={"/product-details/18"}>
               <Image
                 width={443}
                 height={534}
