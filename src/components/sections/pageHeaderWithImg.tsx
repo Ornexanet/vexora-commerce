@@ -20,13 +20,16 @@ const PageHeaderWithImg = ({
     <section
    className="relative overflow-hidden">
   <Image
-    src={bgImage}
-    alt={title}
-    fill
-    priority
-    sizes="100vw"
-    className="object-cover object-center -z-10"
-  />
+  src={bgImage}
+  alt={title}
+  width={1600}
+  height={854}
+  priority
+  sizes="100vw"
+  className="absolute inset-0 h-full w-full object-cover object-center -z-10"
+/>
+
+
 
       <div className="container xl:pt-[600px] lg:pt-[400px] pt-75">
         <div className="relative">
