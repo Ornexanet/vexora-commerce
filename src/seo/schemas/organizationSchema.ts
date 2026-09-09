@@ -9,6 +9,10 @@ export function generateOrganizationSchema() {
     name: siteConfig.organization.name,
     url: siteConfig.organization.url,
     logo: siteConfig.logo,
+    sameAs: [
+  "https://www.linkedin.com/company/ornexa/",
+],
+
 
     brand: {
       "@type": "Brand",
