@@ -23,6 +23,7 @@ const HeadPhonesHeilight = dynamic(
   () => import("@/components/sections/headPhonesHeilight")
 );
 import HeroSlider from "@/components/sections/hero/heroSlider";
+
 const HotDeal = dynamic(
   () => import("@/components/sections/hotDeal")
 );
@@ -33,6 +34,8 @@ const NewStock = dynamic(
 
 import Testimonial from "@/components/sections/testimonial";
 import { Metadata } from "next";
+import { siteConfig } from "@/seo/config/siteConfig";
+
 
 export const metadata: Metadata = {
   title: "Ornexa Shop | Mobiler, smartklockor och elektronik",
@@ -41,12 +44,31 @@ export const metadata: Metadata = {
   },
 };
 
+const homePageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${siteConfig.organization.url}#webpage`,
+  url: siteConfig.organization.url,
+  name: "Ornexa Shop | Mobiler, smartklockor och elektronik",
+  isPartOf: {
+    "@id": `${siteConfig.organization.url}#website`,
+  },
+  about: {
+    "@id": `${siteConfig.organization.url}#organization`,
+  },
+};
 
 
 
 const Home = () => {
   return (
     <>
+    <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(homePageSchema),
+  }}
+/>
       <Header />
       <MobileHeader />
       <main>

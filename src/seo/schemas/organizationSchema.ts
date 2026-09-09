@@ -4,6 +4,7 @@ export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${siteConfig.organization.url}#organization`,
 
     name: siteConfig.organization.name,
     url: siteConfig.organization.url,
