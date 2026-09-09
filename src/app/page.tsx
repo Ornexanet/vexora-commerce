@@ -47,11 +47,11 @@ export const metadata: Metadata = {
 const homePageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": `${siteConfig.organization.url}#webpage`,
-  url: siteConfig.organization.url,
+  "@id": `${siteConfig.url}/#webpage`,
+  url: siteConfig.url,
   name: "Ornexa Shop | Mobiler, smartklockor och elektronik",
   isPartOf: {
-    "@id": `${siteConfig.organization.url}#website`,
+   "@id": `${siteConfig.url}/#website`,
   },
   about: {
     "@id": `${siteConfig.organization.url}#organization`,
