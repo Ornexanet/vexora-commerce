@@ -19,6 +19,21 @@ export const metadata: Metadata = {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
   },
+  openGraph: {
+  title: siteConfig.name,
+  description: siteConfig.description,
+  url: siteConfig.url,
+  siteName: siteConfig.name,
+  locale: siteConfig.locale,
+  type: "website",
+  images: [
+    {
+      url: siteConfig.logo,
+      alt: siteConfig.name,
+    },
+  ],
+},
+
   description: siteConfig.description,
   applicationName: siteConfig.name,
   metadataBase: new URL(siteConfig.url),
