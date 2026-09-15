@@ -11,14 +11,25 @@ import { Navigation } from "swiper/modules";
 
 const CompatibleAccessories = ({ product }: { product: ProductType }) => {
   const accessories = allProducts
-    .filter(
-      (item) =>
-        item.id !== product.id &&
-        (item.categories.includes("headphones") ||
-          item.categories.includes("accessories") ||
-          item.categories.includes("smartWatch"))
-    )
-    .slice(0, 4);
+  .filter((item) => {
+    if (item.id === product.id) return false;
+
+    const isAccessory =
+      item.productType === "headphones" ||
+      item.productType === "smartwatch" ||
+      item.productType === "accessory";
+
+    if (!isAccessory) return false;
+
+    // Prioritize products from the same ecosystem / brand
+    if (product.brand && item.brand === product.brand) {
+      return true;
+    }
+
+    return false;
+  })
+  .slice(0, 4);
+
 
   if (accessories.length === 0) return null;
 
