@@ -113,11 +113,13 @@ const categoryLink = getProductCategoryLink(product);
               </div>
 
               <a
-                href="/shop-with-sidebar"
-                className="font-semibold text-blue transition hover:underline"
-              >
-                Se alla produkter
-              </a>
+  href={categoryLink}
+  className="font-semibold text-blue transition hover:underline"
+>
+  Se fler i samma kategori
+</a>
+
+
             </div>
 
             <div className="grid grid-cols-1 gap-x-7.5 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
