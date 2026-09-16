@@ -12,7 +12,9 @@ export const siteConfig = {
   logo: "https://shop.ornexa.net/logo.png",
 
   organization: {
-    name: "Ornexa",
-    url: "https://ornexa.net",
-  },
+  name: "Ornexa Shop",
+  url: "https://shop.ornexa.net/",
+},
+
+
 } as const;
