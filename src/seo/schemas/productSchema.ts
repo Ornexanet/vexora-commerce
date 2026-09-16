@@ -63,6 +63,41 @@ export function generateProductSchema(product: ProductType) {
       itemCondition:
         "https://schema.org/NewCondition",
 
+        shippingDetails: {
+  "@type": "OfferShippingDetails",
+  shippingRate: {
+    "@type": "MonetaryAmount",
+    value: 0,
+    currency: siteConfig.currency,
+  },
+  shippingDestination: {
+    "@type": "DefinedRegion",
+    addressCountry: "SE",
+  },
+  deliveryTime: {
+    "@type": "ShippingDeliveryTime",
+    transitTime: {
+      "@type": "QuantitativeValue",
+      minValue: 2,
+      maxValue: 5,
+      unitCode: "DAY",
+    },
+  },
+},
+
+hasMerchantReturnPolicy: {
+  "@type": "MerchantReturnPolicy",
+  applicableCountry: "SE",
+  returnPolicyCategory:
+    "https://schema.org/MerchantReturnFiniteReturnWindow",
+  merchantReturnDays: 30,
+  returnMethod:
+    "https://schema.org/ReturnByMail",
+  returnFees:
+    "https://schema.org/FreeReturn",
+},
+
+
       seller: {
         "@type": "Organization",
         name: siteConfig.name,
