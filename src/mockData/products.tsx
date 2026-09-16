@@ -249,6 +249,35 @@ metaDescription:
 
   backgroundColor: "#FFF9F5",
 
+
+overview:
+  "Sony WH-1000XM6 är trådlösa over-ear-hörlurar utvecklade för användare som vill kombinera aktiv brusreducering, lång batteritid och trådlös anslutning. Modellen passar för musik, samtal, arbete, resor och andra situationer där minskat bakgrundsljud och längre lyssningstid är viktigt.",
+
+whyChoose: [
+  "Avancerad aktiv brusreducering för miljöer med störande bakgrundsljud",
+  "Upp till 30 timmars batteritid för längre lyssning",
+  "Bluetooth 5.3 för trådlös anslutning",
+  "Integrerade mikrofoner för samtal",
+  "USB-C med stöd för snabbladdning",
+],
+
+perfectFor: [
+  "Arbete och fokuserad lyssning",
+  "Resor och pendling",
+  "Musik och podcasts",
+  "Samtal och digitala möten",
+],
+
+inTheBox: [
+  "Sony WH-1000XM6",
+  "USB-C-laddningskabel",
+  "Anslutningskabel",
+  "Förvaringsfodral",
+  "Dokumentation",
+],
+
+
+
   features: [
     {
       icon: "check",
@@ -343,6 +372,35 @@ const samsungGalaxyBuds4Pro: ProductType = {
   ],
 
   backgroundColor: "#F4FCFC",
+
+  overview:
+  "Samsung Galaxy Buds4 Pro är trådlösa in-ear-hörlurar utvecklade för musik, samtal och daglig användning. De kombinerar aktiv brusreducering, integrerade mikrofoner och upp till 30 timmars batteritid med laddningsetuiet, med stöd för Android-enheter.",
+
+
+
+whyChoose: [
+  "Aktiv brusreducering för minskat omgivningsljud",
+  "Upp till 30 timmars batteritid med laddningsetuiet",
+  "Integrerade mikrofoner för samtal",
+  "USB-C och trådlös laddning",
+  "Kompatibilitet med Android-enheter",
+],
+
+perfectFor: [
+  "Musik och podcasts",
+  "Arbete och samtal",
+  "Resor och pendling",
+  "Android-användare",
+],
+
+inTheBox: [
+  "Samsung Galaxy Buds4 Pro",
+  "Laddningsetui",
+  "Öronproppar",
+  "USB-C-laddningskabel",
+  "Dokumentation",
+],
+
 
   features: [
     {
@@ -440,6 +498,36 @@ metaDescription:
   ],
 
   backgroundColor: "#F6F9FF",
+
+  overview:
+  "Apple Watch Ultra 3 är en robust smartklocka utvecklad för träning, aktivitet och daglig användning. Den kombinerar en stor och ljusstark skärm med GPS, pulsmätning och träningsspårning, samtidigt som batteritiden på upp till 36 timmar gör den anpassad för längre användning.",
+
+
+whyChoose: [
+  "Robust konstruktion i titan för aktiv användning",
+  "Stor och ljusstark skärm för tydlig information",
+  "GPS, pulsmätning och träningsspårning",
+  "Upp till 36 timmars batteritid",
+  "Stöd för Bluetooth, Wi-Fi och mobilanslutning",
+],
+
+perfectFor: [
+  "Träning och aktivitet",
+  "Utomhusaktiviteter och äventyr",
+  "GPS- och träningsspårning",
+  "iPhone-användare som vill ha en robust smartklocka",
+],
+
+
+inTheBox: [
+  "Apple Watch Ultra 3",
+  "Armband",
+  "Magnetisk laddningskabel",
+  "Dokumentation",
+],
+
+
+
 
   features: [
     {
@@ -696,6 +784,25 @@ metaDescription:
 
   backgroundColor: "#ECF2F9",
 
+  overview:
+  "Samsung Galaxy S25 är en kompakt premiumtelefon för användare som vill kombinera en skarp AMOLED-skärm, snabb prestanda och ett mångsidigt kamerasystem. Med 256 GB lagring och Android passar modellen för arbete, fotografering, appar och daglig användning.",
+
+whyChoose: [
+  "6.2-tums Dynamic AMOLED-skärm för tydlig bild",
+  "50 MP huvudkamera för foto och video",
+  "256 GB lagring för appar, bilder och filer",
+  "Kraftfull processor för appar och multitasking",
+  "Kompakt format för daglig användning",
+],
+
+perfectFor: [
+  "Arbete och vardagsanvändning",
+  "Fotografering och video",
+  "Appar och multitasking",
+  "Användare som föredrar en kompakt premiumtelefon",
+],
+
+
   features: [
     {
       icon: "display",
@@ -792,6 +899,24 @@ metaDescription:
 
   backgroundColor: "#ECF2F9",
 
+  overview:
+  "Samsung Galaxy Watch Ultra är en tålig smartklocka utvecklad för träning, aktivitet och utomhusanvändning. Den kombinerar en ljusstark AMOLED-skärm med GPS, puls-, sömn- och aktivitetsmätning samt upp till 48 timmars batteritid.",
+
+whyChoose: [
+  "Tålig konstruktion för aktiv användning",
+  "Ljusstark AMOLED-skärm",
+  "GPS för aktivitet och träningsspårning",
+  "Mätning av puls, aktivitet och sömn",
+  "Upp till 48 timmars batteritid",
+],
+
+perfectFor: [
+  "Träning och aktivitet",
+  "Utomhusaktiviteter",
+  "GPS- och träningsspårning",
+  "Android-användare som vill ha en robust smartklocka",
+],
+
   features: [
     {
       icon: "check",
@@ -884,6 +1009,24 @@ const iphone16Plus: ProductType = {
   ],
 
   backgroundColor: "#ECF2F9",
+
+  overview:
+  "iPhone 16 Plus är en smartphone med stor 6.7-tums Super Retina XDR OLED-skärm, Apple A18 och ett 48 MP kamerasystem. Den är utvecklad för användare som prioriterar stor skärm, fotografering, underhållning och smidig vardagsanvändning.",
+
+whyChoose: [
+  "Stor 6.7-tums Super Retina XDR OLED-skärm",
+  "Apple A18 för snabb prestanda",
+  "48 MP huvudkamera med 12 MP ultravidvinkel",
+  "256 GB lagring för appar, bilder och video",
+  "Upp till 27 timmars videouppspelning",
+],
+
+perfectFor: [
+  "Video och underhållning",
+  "Fotografering och sociala medier",
+  "Arbete och vardagsanvändning",
+  "Användare som föredrar en större iPhone-skärm",
+],
 
   features: [
     {
@@ -1108,6 +1251,24 @@ metaDescription:
 
   backgroundColor: "#ECF2F9",
 
+  overview:
+  "Xiaomi 17T Pro är en Android-telefon utvecklad för användare som vill kombinera en stor AMOLED-skärm, snabb prestanda och en 50 MP huvudkamera. Modellen passar för appar, fotografering, spel och daglig multitasking.",
+
+whyChoose: [
+  "6.7-tums AMOLED-skärm för video och innehåll",
+  "50 MP huvudkamera för foto och video",
+  "256 GB lagring",
+  "Snabb prestanda för appar och multitasking",
+  "Snabbladdning för praktisk daglig användning",
+],
+
+perfectFor: [
+  "Fotografering och video",
+  "Gaming och underhållning",
+  "Appar och multitasking",
+  "Daglig Android-användning",
+],
+
   features: [
     {
       icon: "performance",
@@ -1203,6 +1364,24 @@ const airPods4: ProductType = {
 
   backgroundColor: "#F2EEF8",
 
+  overview:
+  "AirPods 4 är trådlösa hörlurar utvecklade för musik, samtal och daglig användning tillsammans med Apple-enheter. De kombinerar en lätt design med Bluetooth-anslutning och upp till 30 timmars batteritid tillsammans med laddningsetuiet.",
+
+whyChoose: [
+  "Trådlös Bluetooth-anslutning",
+  "Upp till 30 timmars batteritid med laddningsetuiet",
+  "Integrerade mikrofoner för samtal",
+  "USB-C-laddning",
+  "Integration med iOS, iPadOS och macOS",
+],
+
+perfectFor: [
+  "Musik och podcasts",
+  "Samtal och vardagsanvändning",
+  "Resor och pendling",
+  "Apple-användare",
+],
+
   features: [
     {
       icon: "check",
@@ -1297,6 +1476,23 @@ const airPodsPro3: ProductType = {
   ],
 
   backgroundColor: "#ECF2F9",
+overview:
+  "AirPods Pro 3 är trådlösa in-ear-hörlurar utvecklade för musik, samtal och användning i miljöer där minskat bakgrundsljud är viktigt. De kombinerar aktiv brusreducering med integrerade mikrofoner och upp till 30 timmars batteritid tillsammans med laddningsetuiet.",
+
+whyChoose: [
+  "Aktiv brusreducering för minskat omgivningsljud",
+  "Upp till 30 timmars batteritid med laddningsetuiet",
+  "Integrerade mikrofoner för samtal",
+  "USB-C och trådlös laddning",
+  "Integration med iOS, iPadOS och macOS",
+],
+
+perfectFor: [
+  "Musik och podcasts",
+  "Arbete och fokuserad lyssning",
+  "Resor och pendling",
+  "Apple-användare som vill ha aktiv brusreducering",
+],
 
   features: [
     {
@@ -1388,6 +1584,24 @@ const samsungGalaxyBuds3: ProductType = {
   ],
 
   backgroundColor: "#ECF2F9",
+
+  overview:
+  "Samsung Galaxy Buds3 är trådlösa in-ear-hörlurar för musik, samtal och daglig användning. De kombinerar Bluetooth-anslutning, integrerade mikrofoner och upp till 24 timmars batteritid tillsammans med laddningsetuiet.",
+
+whyChoose: [
+  "Trådlös Bluetooth-anslutning",
+  "Upp till 24 timmars batteritid med laddningsetuiet",
+  "Integrerade mikrofoner för samtal",
+  "USB-C-laddning",
+  "Kompatibilitet med Android-enheter",
+],
+
+perfectFor: [
+  "Musik och podcasts",
+  "Samtal och vardagsanvändning",
+  "Resor och pendling",
+  "Android-användare",
+],
 
   features: [
     {
@@ -1483,6 +1697,23 @@ const appleWatchSeries11: ProductType = {
   ],
 
   backgroundColor: "#ECF2F9",
+overview:
+  "Apple Watch Series 11 är en smartklocka för aktivitet, träning och daglig användning tillsammans med iPhone. Den kombinerar en ljusstark skärm med puls-, sömn- och aktivitetsmätning samt upp till 18 timmars batteritid.",
+
+whyChoose: [
+  "Mätning av puls, aktivitet och sömn",
+  "Träningsspårning direkt från handleden",
+  "Ljusstark skärm för daglig användning",
+  "Bluetooth och Wi-Fi",
+  "Integration med iPhone och watchOS",
+],
+
+perfectFor: [
+  "Träning och aktivitet",
+  "Daglig aktivitetsmätning",
+  "Notiser och kommunikation",
+  "iPhone-användare",
+],
 
   features: [
     {
@@ -1503,138 +1734,6 @@ const appleWatchSeries11: ProductType = {
   ],
 };
 
-const insta360AcePro: ProductType = {
-  id: 7,
-  title: "Insta360 ACE Pro",
-  thumbnail: "/images/bestProducts/camera-7.png",
-
-  gallery: [
-    "/images/bestProducts/camera-7.png",
-  ],
-
-  description:
-    "Kompakt actionkamera för video, resor, sport och kreativ innehållsproduktion.",
-
-  price: 299,
-  tag: null,
-  discount: null,
-
-  categories: ["cameras"],
-  filter: "cameras",
-
-  brand: "Insta360",
-  model: "ACE Pro",
-  color: "Svart",
-
-  warranty: "2 års garanti",
-  availability: "Finns i lager",
-
-  specifications: [
-    {
-      label: "Typ",
-      value: "Actionkamera",
-    },
-    {
-      label: "Användning",
-      value: "Sport, resor och videoinspelning",
-    },
-    {
-      label: "Montering",
-      value: "Stöd för kompatibla kamerafästen",
-    },
-    {
-      label: "Färg",
-      value: "Svart",
-    },
-    {
-      label: "Lagerstatus",
-      value: "Finns i lager",
-    },
-    {
-      label: "Garanti",
-      value: "2 års garanti",
-    },
-  ],
-
-  backgroundColor: "#EDF8F0",
-
-  features: [
-    {
-      icon: "camera",
-      title: "Kompakt design",
-      text: "Enkel att bära med sig för resor och aktiviteter.",
-    },
-    {
-      icon: "check",
-      title: "Actioninspelning",
-      text: "Utformad för sport, rörelse och kreativa videor.",
-    },
-  ],
-};
-
-const xboxWirelessController: ProductType = {
-  id: 8,
-  title: "Xbox Wireless Controller",
-  thumbnail: "/images/bestProducts/camera-8.png",
-
-  gallery: [
-    "/images/bestProducts/camera-8.png",
-  ],
-
-  description:
-    "Trådlös Xbox-kontroll för spel med ergonomisk design och smidig anslutning.",
-
-  price: 849,
-  tag: null,
-  discount: null,
-
-  categories: ["accessories"],
-  filter: "accessories",
-
-  brand: "Microsoft",
-  model: "Xbox Wireless Controller",
-
-  warranty: "2 års garanti",
-  availability: "Finns i lager",
-
-  specifications: [
-    {
-      label: "Typ",
-      value: "Trådlös spelkontroll",
-    },
-    {
-      label: "Anslutning",
-      value: "Trådlös anslutning och Bluetooth",
-    },
-    {
-      label: "Kompatibilitet",
-      value: "Xbox och Windows",
-    },
-    {
-      label: "Lagerstatus",
-      value: "Finns i lager",
-    },
-    {
-      label: "Garanti",
-      value: "2 års garanti",
-    },
-  ],
-
-  backgroundColor: "#F8ECEC",
-
-  features: [
-    {
-      icon: "check",
-      title: "Ergonomisk design",
-      text: "Bekväm utformning för längre spelsessioner.",
-    },
-    {
-      icon: "check",
-      title: "Trådlös anslutning",
-      text: "Smidig anslutning till kompatibla enheter.",
-    },
-  ],
-};
 
 const appleAirTag: ProductType = {
   id: 20,
@@ -2490,9 +2589,7 @@ export const products: Products = {
     appleWatchUltra3,
     samsungGalaxyWatchUltra,
     appleWatchSeries11,
-
-    insta360AcePro,
-    xboxWirelessController,
+    
   ],
 
   headphonesData: [

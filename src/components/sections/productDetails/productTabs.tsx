@@ -1,7 +1,7 @@
+
 "use client";
 
 import { useState } from "react";
-
 import Title from "@/components/ui/title";
 import {
   ProductType,
@@ -41,7 +41,9 @@ const tabs: {
 ];
 
 const ProductTabs = ({ product }: ProductTabsProps) => {
-  const template = getProductContentTemplate(product.productType);
+  const template = getProductContentTemplate(
+    product.productType
+  );
 
   const [activeTab, setActiveTab] =
     useState<TabId>("description");
@@ -123,14 +125,13 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
       ? product.perfectFor
       : template.perfectFor;
 
+  // Show package contents only when verified
+  // product-specific data exists.
   const inTheBox =
     product.inTheBox &&
     product.inTheBox.length > 0
       ? product.inTheBox
-      : [
-          product.title,
-          ...template.defaultBoxItems.slice(1),
-        ];
+      : [];
 
   return (
     <section className="mt-16 border-t border-light-gray pt-12 md:mt-20 md:pt-16">
@@ -220,74 +221,80 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
                 )}
 
               <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
-                <article className="rounded-2xl border border-light-gray bg-white p-6">
-                  <h3 className="text-xl font-extrabold text-foreground">
-                    Varför välja denna produkt?
-                  </h3>
+                {whyChoose.length > 0 && (
+                  <article className="rounded-2xl border border-light-gray bg-white p-6">
+                    <h3 className="text-xl font-extrabold text-foreground">
+                      Varför välja denna produkt?
+                    </h3>
 
-                  <ul className="mt-5 space-y-3">
-                    {whyChoose.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-3 text-light-dark"
-                      >
-                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#EAF4FF] text-sm font-bold text-blue">
-                          ✓
-                        </span>
+                    <ul className="mt-5 space-y-3">
+                      {whyChoose.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-3 text-light-dark"
+                        >
+                          <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#EAF4FF] text-sm font-bold text-blue">
+                            ✓
+                          </span>
 
-                        <span className="leading-7">
-                          {item}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </article>
+                          <span className="leading-7">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                )}
 
-                <article className="rounded-2xl border border-light-gray bg-white p-6">
-                  <h3 className="text-xl font-extrabold text-foreground">
-                    Perfekt för
-                  </h3>
+                {perfectFor.length > 0 && (
+                  <article className="rounded-2xl border border-light-gray bg-white p-6">
+                    <h3 className="text-xl font-extrabold text-foreground">
+                      Perfekt för
+                    </h3>
 
-                  <ul className="mt-5 space-y-3">
-                    {perfectFor.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-3 text-light-dark"
-                      >
-                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#EAF4FF] text-sm font-bold text-blue">
-                          ✓
-                        </span>
+                    <ul className="mt-5 space-y-3">
+                      {perfectFor.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-3 text-light-dark"
+                        >
+                          <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#EAF4FF] text-sm font-bold text-blue">
+                            ✓
+                          </span>
 
-                        <span className="leading-7">
-                          {item}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </article>
+                          <span className="leading-7">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                )}
 
-                <article className="rounded-2xl border border-light-gray bg-white p-6">
-                  <h3 className="text-xl font-extrabold text-foreground">
-                    Detta ingår i förpackningen
-                  </h3>
+                {inTheBox.length > 0 && (
+                  <article className="rounded-2xl border border-light-gray bg-white p-6">
+                    <h3 className="text-xl font-extrabold text-foreground">
+                      Detta ingår i förpackningen
+                    </h3>
 
-                  <ul className="mt-5 space-y-3">
-                    {inTheBox.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-3 text-light-dark"
-                      >
-                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#EAF4FF] text-sm font-bold text-blue">
-                          ✓
-                        </span>
+                    <ul className="mt-5 space-y-3">
+                      {inTheBox.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-3 text-light-dark"
+                        >
+                          <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#EAF4FF] text-sm font-bold text-blue">
+                            ✓
+                          </span>
 
-                        <span className="leading-7">
-                          {item}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </article>
+                          <span className="leading-7">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                )}
               </div>
             </div>
           )}
