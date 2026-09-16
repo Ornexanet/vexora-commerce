@@ -16,6 +16,8 @@ import {
 } from "@/seo/internalLinks/productLinks";
 import ProductColorDetails from "@/components/sections/productDetails/productColorDetails";
 
+import { siteConfig } from "@/seo/config/siteConfig";
+
 
 
 type Props = {
@@ -63,6 +65,23 @@ const categoryLink = getProductCategoryLink(product);
  const productSchema = generateProductSchema(product);
  const breadcrumbSchema = generateBreadcrumbSchema(product);
 
+const productUrl = `${siteConfig.url}/product-details/${product.id}`;
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${productUrl}#webpage`,
+  url: productUrl,
+  name: product.title,
+  description: product.description,
+  mainEntity: {
+    "@id": `${productUrl}#product`,
+  },
+  isPartOf: {
+  "@id": `${siteConfig.url}/#website`,
+},
+
+};
 
   return (
     <main>
@@ -72,6 +91,12 @@ const categoryLink = getProductCategoryLink(product);
           __html: JSON.stringify(productSchema),
         }}
       />
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(webPageSchema),
+  }}
+/>
 
       <script
         type="application/ld+json"

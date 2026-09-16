@@ -1,10 +1,22 @@
 import type { ProductType } from "@/mockData/products";
 import { siteConfig } from "@/seo/config/siteConfig";
 
+const brandEntityUrls: Record<string, string> = {
+  Google: "https://www.google.com/",
+  Samsung: "https://www.samsung.com/",
+  Sony: "https://www.sony.com/",
+  Apple: "https://www.apple.com/",
+};
+
+
 export function generateProductSchema(product: ProductType) {
   return {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": `${siteConfig.url}/product-details/${product.id}#product`,
+url: `${siteConfig.url}/product-details/${product.id}`,
+
+
 
     name: product.title,
 
@@ -27,12 +39,18 @@ export function generateProductSchema(product: ProductType) {
       color: product.color,
     }),
 
-    brand: {
-      "@type": "Brand",
-      name:
-        product.brand ||
-        siteConfig.organization.name,
-    },
+   brand: {
+  "@type": "Brand",
+  name:
+    product.brand ||
+    siteConfig.organization.name,
+
+  ...(product.brand &&
+    brandEntityUrls[product.brand] && {
+      sameAs: brandEntityUrls[product.brand],
+    }),
+},
+
 
     category: product.categories.join(", "),
 
@@ -99,9 +117,11 @@ hasMerchantReturnPolicy: {
 
 
       seller: {
-        "@type": "Organization",
-        name: siteConfig.name,
-      },
+  "@type": "Organization",
+  "@id": `${siteConfig.organization.url}#organization`,
+  name: siteConfig.organization.name,
+},
+
     },
   };
 }
