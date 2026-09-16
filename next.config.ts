@@ -6,7 +6,7 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 const nextConfig: NextConfig = {
+  htmlLimitedBots: /.*/,
 };
 
 export default withBundleAnalyzer(nextConfig);
-
