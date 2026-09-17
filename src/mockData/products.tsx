@@ -36,6 +36,10 @@ export interface ProductType {
   model?: string;
   color?: string;
   colorOptions?: ProductColorOption[];
+  sourceName?: string;
+  sourceUrl?: string;
+
+
 
 
   availability?: string;
@@ -197,6 +201,10 @@ metaDescription:
   brand: "Sony",
   model: "WH-1000XM6",
   color: "Platinsilver",
+  sourceName: "Sony Sverige",
+sourceUrl:
+  "https://www.sony.se/electronics/support/wireless-headphones-bluetooth-headphones/wh-1000xm6/specifications",
+
 
   battery: "Upp till 30 timmars batteritid",
   os: "Bluetooth",
@@ -321,6 +329,11 @@ const samsungGalaxyBuds4Pro: ProductType = {
   brand: "Samsung",
   model: "Galaxy Buds4 Pro",
   color: "Vit",
+  sourceName: "Samsung Sverige",
+sourceUrl:
+  "https://www.samsung.com/se/audio-sound/galaxy-buds/galaxy-buds4-black-sm-r540nzkaeub/",
+
+
 
   battery: "Upp till 30 timmar med laddningsetuiet",
   os: "Android",
@@ -447,6 +460,11 @@ metaDescription:
   brand: "Apple",
   model: "Watch Ultra 3",
   color: "Titan",
+  
+sourceName: "Apple Sverige",
+sourceUrl:
+  "https://www.apple.com/se/apple-watch-ultra-3/specs/",
+
 
   battery: "Upp till 36 timmars batteritid",
   os: "watchOS",
@@ -578,6 +596,13 @@ metaDescription:
   model: "Galaxy S26 Ultra",
   storage: "256 GB",
   color: "Cobalt Violet",
+  
+  sourceName: "Samsung Sverige",
+  sourceUrl:
+  "https://www.samsung.com/se/smartphones/galaxy-s26-ultra/specs/",
+
+
+
   display:
     "6.9-tums QHD+ Dynamic AMOLED 2X, adaptiv 120 Hz",
   processor:
@@ -734,6 +759,11 @@ metaDescription:
   model: "Galaxy S25",
   storage: "256 GB",
   color: "Svart",
+  
+sourceName: "Samsung Sverige",
+sourceUrl:
+  "https://www.samsung.com/se/smartphones/galaxy-s25/specs/",
+
   display: "6.2-tums Dynamic AMOLED",
   processor: "Snapdragon / Exynos premiumprocessor",
   camera: "50 MP huvudkamera",
@@ -847,6 +877,11 @@ metaDescription:
   brand: "Samsung",
   model: "Galaxy Watch Ultra",
   color: "Orange",
+  
+  sourceName: "Samsung Sverige",
+sourceUrl:
+  "https://www.samsung.com/se/watches/galaxy-watch/galaxy-watch-ultra-titanium-silver-lte-sm-l705fztaeub/",
+
 
   battery: "Upp till 48 timmars batteritid",
   os: "Wear OS",
@@ -960,6 +995,11 @@ const iphone16Plus: ProductType = {
   model: "iPhone 16 Plus",
   storage: "256 GB",
   color: "Ultramarine",
+  
+sourceName: "Apple Sverige",
+sourceUrl:
+  "https://support.apple.com/sv-se/121030",
+
   display: "6.7-tums Super Retina XDR OLED",
   processor: "Apple A18",
   camera: "48 MP huvudkamera + 12 MP ultravidvinkel",
@@ -1081,6 +1121,10 @@ metaDescription:
   model: "iPhone 17 Pro",
   storage: "256 GB",
   color: "Svart / Orange",
+  sourceName: "Apple Sverige",
+sourceUrl:
+  "https://support.apple.com/sv-se/125090",
+
   display: "6.3-tums ProMotion OLED",
   processor: "Apple A19 Pro",
   camera: "Pro-kamerasystem med 48 MP",
@@ -1201,6 +1245,10 @@ metaDescription:
   model: "17T Pro",
   storage: "256 GB",
   color: "Svart",
+  sourceName: "Xiaomi Sverige",
+sourceUrl:
+  "https://www.mi.com/se/product/xiaomi-17t-pro/specs/",
+
   display: "6.7-tums AMOLED",
   processor: "MediaTek Dimensity / Snapdragon Pro",
   camera: "50 MP huvudkamera",
@@ -1316,6 +1364,11 @@ const airPods4: ProductType = {
   brand: "Apple",
   model: "AirPods 4",
   color: "Vit",
+  sourceName: "Apple Sverige",
+sourceUrl:
+  "https://support.apple.com/sv-se/121203",
+
+
 
   battery: "Upp till 30 timmar med laddningsetuiet",
   os: "iOS, iPadOS och macOS",
@@ -1425,6 +1478,10 @@ const airPodsPro3: ProductType = {
   brand: "Apple",
   model: "AirPods Pro 3",
   color: "Vit",
+  sourceName: "Apple Sverige",
+sourceUrl:
+  "https://www.apple.com/se/airpods-pro/specs/",
+
 
   battery: "Upp till 30 timmar med laddningsetuiet",
   os: "iOS, iPadOS och macOS",
@@ -1537,6 +1594,10 @@ const samsungGalaxyBuds3: ProductType = {
   brand: "Samsung",
   model: "Galaxy Buds3",
   color: "Vit",
+  sourceName: "Samsung Sverige",
+sourceUrl:
+  "https://www.samsung.com/se/audio-sound/galaxy-buds/galaxy-buds3-silver-sm-r530nzaaeub/",
+
 
   battery: "Upp till 24 timmar med laddningsetuiet",
   os: "Android",
@@ -1646,6 +1707,10 @@ const appleWatchSeries11: ProductType = {
   brand: "Apple",
   model: "Watch Series 11",
   color: "Silver",
+  sourceName: "Apple Sverige",
+sourceUrl:
+  "https://support.apple.com/sv-se/125093",
+
 
   battery: "Upp till 18 timmars batteritid",
   os: "watchOS",
@@ -1982,6 +2047,10 @@ const googlePixel10Pro: ProductType = {
   model: "Pixel 10 Pro",
   color: "Obsidian",
 
+sourceName: "Google Store",
+sourceUrl:
+  "https://store.google.com/se/product/pixel_10_pro_specs?hl=sv",
+
   storage: "128 GB",
 
   display:
@@ -2147,6 +2216,10 @@ const googlePixel11Pro: ProductType = {
   model: "Pixel 11 Pro",
 
   color: "Canyon, Obsidian, Olive",
+  sourceName: "Google Store Sverige",
+sourceUrl:
+  "https://store.google.com/se/product/pixel_11_pro_specs?hl=sv",
+
   colorOptions: [
   {
     name: "Canyon",
@@ -2338,10 +2411,17 @@ const googlePixelBudsPro2: ProductType = {
   brand: "Google",
   model: "Pixel Buds Pro 2",
   color: "Peony",
+  
+sourceName: "Google Store Sverige",
+sourceUrl:
+  "https://store.google.com/se/product/pixel_buds_pro_2_specs?hl=sv",
+
+
   colorOptions: [
   {
     name: "Peony",
     hex: "#E86B7D",
+    
     thumbnail: "/images/headphones/google-buds-peony-1.png",
     gallery: [
       "/images/headphones/google-buds-peony-1.png",

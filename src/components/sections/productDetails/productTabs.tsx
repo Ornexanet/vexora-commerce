@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -306,8 +305,16 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
                 size="36"
                 className="font-extrabold"
               >
-                Tekniska specifikationer
+                Tekniska specifikationer för{" "}
+                {product.title}
               </Title>
+
+              <p className="mt-4 max-w-3xl leading-7 text-light-dark">
+                Här hittar du produktuppgifter för{" "}
+                {product.title}, inklusive tekniska
+                specifikationer, funktioner och
+                tillgänglig produktinformation.
+              </p>
 
               {technicalSpecifications.length >
               0 ? (
@@ -340,6 +347,21 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
                   produkt.
                 </p>
               )}
+              {product.sourceName && product.sourceUrl && (
+  <p className="mt-5 text-sm text-light-dark">
+    Källa:{" "}
+    <a
+      href={product.sourceUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-semibold underline"
+    >
+      {product.sourceName}
+    </a>{" "}
+    – officiella produktspecifikationer
+  </p>
+)}
+
             </div>
           )}
 
@@ -397,59 +419,25 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
           )}
 
           {activeTab === "reviews" && (
-            <div>
-              <Title
-                size="36"
-                className="font-extrabold"
-              >
-                Kundrecensioner
-              </Title>
+  <div>
+    <Title
+      size="36"
+      className="font-extrabold"
+    >
+      Kundrecensioner
+    </Title>
 
-              <div className="mt-7 grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr]">
-                <div className="rounded-2xl bg-[#F4F6F8] p-7 text-center">
-                  <p className="text-5xl font-extrabold text-foreground">
-                    5.0
-                  </p>
+    <div className="mt-7 rounded-2xl border border-light-gray bg-white p-7">
+      <h3 className="text-xl font-bold text-foreground">
+        Inga kundrecensioner ännu
+      </h3>
 
-                  <div
-                    className="mt-3 text-xl text-[#FFBE0C]"
-                    aria-label="5 av 5 stjärnor"
-                  >
-                    ★★★★★
-                  </div>
-
-                  <p className="mt-3 text-light-dark">
-                    Baserat på 250 recensioner
-                  </p>
-                </div>
-
-                <article className="rounded-2xl border border-light-gray bg-white p-7">
-                  <h3 className="text-xl font-bold text-foreground">
-                    Mycket bra produkt
-                  </h3>
-
-                  <div
-                    className="mt-2 text-[#FFBE0C]"
-                    aria-label="5 av 5 stjärnor"
-                  >
-                    ★★★★★
-                  </div>
-
-                  <p className="mt-4 leading-7 text-light-dark">
-                    Produkten motsvarade
-                    förväntningarna och fungerade
-                    bra för daglig användning.
-                    Leveransen var snabb och
-                    produkten var väl förpackad.
-                  </p>
-
-                  <p className="mt-4 text-sm font-medium text-light-dark">
-                    Verifierad kund
-                  </p>
-                </article>
-              </div>
-            </div>
-          )}
+      <p className="mt-3 text-light-dark">
+        Det finns inga kundrecensioner för denna produkt ännu.
+      </p>
+    </div>
+  </div>
+)}
         </div>
       </div>
     </section>
