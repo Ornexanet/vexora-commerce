@@ -3,9 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
 import { Button } from "@/components/ui/button";
-import Rating from "@/components/ui/rating";
 import Title from "@/components/ui/title";
 import { useCart } from "@/contextApi/cartContext";
 import { Minus, Plus, ShopingBag } from "@/lib/icons";
@@ -19,7 +17,6 @@ type ProductOverviewProps = {
   selectedColor?: string;
   onColorChange?: (color: string) => void;
 };
-
 
 const categoryNames: Record<string, string> = {
   mobiler: "Mobiler",
@@ -35,21 +32,14 @@ const ProductOverview = ({
   selectedColor,
   onColorChange,
 }: ProductOverviewProps) => {
-
-
-
   const aeoContent = generateProductAEO(product);
-
   const { addToCart } = useCart();
-
   const [quantity, setQuantity] = useState(1);
 
-
   const selectedColorOption =
-  product.colorOptions?.find(
-    (option) => option.name === selectedColor
-  ) || product.colorOptions?.[0];
-
+    product.colorOptions?.find(
+      (option) => option.name === selectedColor
+    ) || product.colorOptions?.[0];
 
   const handleIncrement = () => {
     setQuantity((previousQuantity) => previousQuantity + 1);
@@ -154,22 +144,6 @@ const ProductOverview = ({
             {product.price.toLocaleString("sv-SE")} kr
           </p>
         </div>
-
-        <div className="mt-2 flex flex-wrap items-center gap-2.5">
-          <div className="flex items-center">
-            <Rating
-              star={5}
-              iconSize="text-[#FFBE0C] fill-[#FFBE0C]"
-              className="mr-1 gap-1"
-            />
-
-            <span className="text-lg text-light-dark">5.0</span>
-          </div>
-
-          <span className="h-[21px] w-px bg-[#B0B5BB]" />
-
-          <span className="text-lg text-light-dark">250 recensioner</span>
-        </div>
       </div>
 
       <p className="text-lg leading-relaxed text-light-dark">
@@ -216,8 +190,14 @@ const ProductOverview = ({
 
       {technicalSpecifications.length > 0 && (
         <section className="mt-7">
-          <Title asChild size="28" className="mb-5 font-extrabold">
-            <h2>Tekniska specifikationer för {product.title}</h2>
+          <Title
+            asChild
+            size="28"
+            className="mb-5 font-extrabold"
+          >
+            <h2>
+              Tekniska specifikationer för {product.title}
+            </h2>
           </Title>
 
           <dl className="grid grid-cols-1 gap-x-10 gap-y-4 sm:grid-cols-2">
