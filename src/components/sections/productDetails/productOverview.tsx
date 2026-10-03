@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -39,6 +39,13 @@ const ProductOverview = ({
   const aeoContent = generateProductAEO(product);
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
+  useEffect(() => {
+  trackEvent("product_viewed", {
+    productId: product.id,
+    productName: product.title,
+    price: product.price,
+  });
+}, [product.id, product.title, product.price]);
 
   const selectedColorOption =
     product.colorOptions?.find(
