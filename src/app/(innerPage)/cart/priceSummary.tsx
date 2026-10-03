@@ -9,15 +9,24 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 const PriceSummary = () => {
-  const { getCartTotal } = useCart();
+  const { getCartTotal, cartItems } = useCart();
   const [shippingMethod, setShippingMethod] = useState("free");
 
   const subtotal = getCartTotal();
-  const couponDiscount = 50;
+  const totalQuantity = cartItems.reduce(
+  (total, item) => total + item.quantity,
+  0
+);
+const discountRate = totalQuantity >= 2 ? 0.1 : 0;
+const bundleDiscount = subtotal * discountRate;
+
+
+  
   const shippingCost =
     shippingMethod === "local" ? 5 : shippingMethod === "flat" ? 15 : 0;
 
-  const total = subtotal - couponDiscount + shippingCost;
+  const total = subtotal - bundleDiscount + shippingCost;
+
 
   return (
     <div className="sticky top-0">
@@ -33,20 +42,17 @@ const PriceSummary = () => {
           </span>
         </div>
 
-        {/* Coupon */}
-        <div className="flex items-center justify-between pl-5 pr-7.5 py-5 border-b border-light-gray">
-          <span className="font-bold leading-normal text-lg">
-            Rabattkod: get20off
-          </span>
-          <div className="text-right">
-            <span className="font-bold leading-normal text-lg block">
-              {couponDiscount} kr
-            </span>
-            <button className="text-blue underline hover:no-underline">
-              [Ta bort]
-            </button>
-          </div>
-        </div>
+     {totalQuantity >= 2 && (
+  <div className="flex items-center justify-between pl-5 pr-7.5 py-5 border-b border-light-gray">
+    <span className="font-bold text-lg">
+      Paketdeal – 10% rabatt
+    </span>
+
+    <span className="font-bold text-lg">
+      -{bundleDiscount.toFixed(2)} kr
+    </span>
+  </div>
+)}
 
         {/* Shipping */}
         <div className="py-5 pl-5 pr-7.5 border-b border-light-gray">
