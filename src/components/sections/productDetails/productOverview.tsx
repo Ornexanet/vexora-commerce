@@ -10,6 +10,10 @@ import { Minus, Plus, ShopingBag } from "@/lib/icons";
 import { ProductType } from "@/mockData/products";
 import CompatibleAccessories from "./compatibleAccessories";
 import { generateProductAEO } from "@/seo/aeo/productAEO";
+import { trackEvent } from "@/lib/analytics";
+
+
+
 
 type ProductOverviewProps = {
   product: ProductType;
@@ -26,7 +30,7 @@ const categoryNames: Record<string, string> = {
   cameras: "Kameror",
 };
 
-const ProductOverview = ({
+const ProductOverview = ({  
   product,
   categoryLink,
   selectedColor,
