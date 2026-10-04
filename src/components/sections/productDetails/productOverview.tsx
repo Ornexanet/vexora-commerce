@@ -63,8 +63,16 @@ const ProductOverview = ({
   };
 
   const handleAddToCart = () => {
-    addToCart(product, quantity);
-  };
+  addToCart(product, quantity);
+
+  trackEvent("add_to_cart", {
+    productId: product.id,
+    productName: product.title,
+    price: product.price,
+    quantity,
+  });
+};
+
 
   const categoryKey = product.categories?.[0];
 
