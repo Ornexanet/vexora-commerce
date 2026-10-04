@@ -35,6 +35,10 @@ const checkoutStartRate =
     addToCarts > 0
         ? Math.round((checkoutsStarted / addToCarts) * 100)
         : 0;
+const viewToCheckoutRate =
+    productViews > 0
+        ? Math.round((checkoutsStarted / productViews) * 100)
+        : 0;
 
 
     return NextResponse.json({
@@ -45,6 +49,7 @@ const checkoutStartRate =
         checkoutsStarted,
         addToCartRate,
         checkoutStartRate,
+        viewToCheckoutRate,
         events: rawEvents,
     });
 }
