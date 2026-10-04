@@ -9,10 +9,42 @@ export async function GET() {
         0,
         -1
     );
+    const events = rawEvents.map((item) => {
+    if (typeof item === "string") {
+        return JSON.parse(item);
+    }
+
+    return item;
+});
+const productViews = events.filter(
+    (event) => event.event === "product_viewed"
+).length;
+
+const addToCarts = events.filter(
+    (event) => event.event === "add_to_cart"
+).length;
+
+const checkoutsStarted = events.filter(
+    (event) => event.event === "checkout_started"
+).length;
+const addToCartRate =
+    productViews > 0
+        ? Math.round((addToCarts / productViews) * 100)
+        : 0;
+const checkoutStartRate =
+    addToCarts > 0
+        ? Math.round((checkoutsStarted / addToCarts) * 100)
+        : 0;
+
 
     return NextResponse.json({
         success: true,
         totalEvents: rawEvents.length,
+        productViews,
+        addToCarts,
+        checkoutsStarted,
+        addToCartRate,
+        checkoutStartRate,
         events: rawEvents,
     });
 }
