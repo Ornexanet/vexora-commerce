@@ -15,5 +15,19 @@ export const trackEvent = (
     ...data,
     timestamp: new Date().toISOString(),
   });
+  fetch("/api/growth-events", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    event,
+    ...data,
+    timestamp: new Date().toISOString(),
+  }),
+}).catch((error) => {
+  console.error("[Growth Tracking Error]", error);
+});
+
 };
 
