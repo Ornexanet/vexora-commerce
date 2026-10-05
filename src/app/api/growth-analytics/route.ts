@@ -41,12 +41,30 @@ const viewToCheckoutRate =
         : 0;
 const now = Date.now();
 const last24Hours = now - 24 * 60 * 60 * 1000;
+const previous24Hours = now - 48 * 60 * 60 * 1000;
+
 
 const eventsLast24Hours = events.filter((event) => {
     const eventTime = new Date(event.timestamp).getTime();
 
     return eventTime >= last24Hours;
 });
+const eventsPrevious24Hours = events.filter((event) => {
+    const eventTime = new Date(event.timestamp).getTime();
+
+    return eventTime >= previous24Hours && eventTime < last24Hours;
+});
+
+const productViewsPrevious24h = eventsPrevious24Hours.filter(
+    (event) => event.event === "product_viewed"
+).length;
+const addToCartsPrevious24h = eventsPrevious24Hours.filter(
+    (event) => event.event === "add_to_cart"
+).length;
+const checkoutsStartedPrevious24h = eventsPrevious24Hours.filter(
+    (event) => event.event === "checkout_started"
+).length;
+
 const productViews24h = eventsLast24Hours.filter(
     (event) => event.event === "product_viewed"
 ).length;
@@ -56,6 +74,37 @@ const addToCarts24h = eventsLast24Hours.filter(
 const checkoutsStarted24h = eventsLast24Hours.filter(
     (event) => event.event === "checkout_started"
 ).length;
+const productViewsChange =
+    productViewsPrevious24h > 0
+        ? Math.round(
+              ((productViews24h - productViewsPrevious24h) /
+                  productViewsPrevious24h) *
+                  100
+          )
+        : productViews24h > 0
+        ? 100
+        : 0;
+const addToCartsChange =
+    addToCartsPrevious24h > 0
+        ? Math.round(
+              ((addToCarts24h - addToCartsPrevious24h) /
+                  addToCartsPrevious24h) *
+                  100
+          )
+        : addToCarts24h > 0
+        ? 100
+        : 0;
+const checkoutsStartedChange =
+    checkoutsStartedPrevious24h > 0
+        ? Math.round(
+              ((checkoutsStarted24h - checkoutsStartedPrevious24h) /
+                  checkoutsStartedPrevious24h) *
+                  100
+          )
+        : checkoutsStarted24h > 0
+        ? 100
+        : 0;
+
 const addToCartRate24h =
     productViews24h > 0
         ? Math.round((addToCarts24h / productViews24h) * 100)
@@ -86,6 +135,10 @@ const viewToCheckoutRate24h =
     addToCartRate: addToCartRate24h,
     checkoutStartRate: checkoutStartRate24h,
     viewToCheckoutRate: viewToCheckoutRate24h,
+    productViewsChange,
+addToCartsChange,
+checkoutsStartedChange,
+
 },
 
         events: rawEvents,
