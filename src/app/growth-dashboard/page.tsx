@@ -2,8 +2,18 @@
 
 import { useEffect, useState } from "react";
 
+type GrowthData = {
+    productViews: number;
+    addToCarts: number;
+    checkoutsStarted: number;
+    addToCartRate: number;
+    checkoutStartRate: number;
+    viewToCheckoutRate: number;
+};
+
+
 export default function GrowthDashboard() {
-const [data, setData] = useState<any>(null);
+const [data, setData] = useState<GrowthData | null>(null);
 useEffect(() => {
     fetch("/api/growth-analytics")
         .then((response) => response.json())
