@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -78,6 +80,7 @@ export default function RootLayout({
           <Toaster richColors position="bottom-right" />
           {/* <WellcomeModal /> */}
         </Providers>
+        <GoogleAnalytics gaId="G-3VRKJWS6CB" />
       </body>
     </html>
   );
