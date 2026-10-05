@@ -30,6 +30,8 @@ useEffect(() => {
                 <p className="mt-2 text-gray-600">
                     Ornexa Shop performance dashboard
                 </p>
+                <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+                
                 <div className="mt-8 rounded-xl bg-white p-6 shadow-sm">
              <p className="text-sm text-gray-500">Product Views</p>
 
@@ -74,6 +76,7 @@ useEffect(() => {
     </p>
 </div>
 
+            </div>
             </div>
         </main>
     );
