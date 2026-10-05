@@ -26,21 +26,24 @@ const bundleDiscount = subtotal * discountRate;
     shippingMethod === "local" ? 5 : shippingMethod === "flat" ? 15 : 0;
 
   const total = subtotal - bundleDiscount + shippingCost;
+  
   const handleBeginCheckout = () => {
   console.log("BEGIN CHECKOUT CLICKED");
-  sendGAEvent("event", "begin_checkout", {
-    currency: "SEK",
-    value: total,
-    items: cartItems.map((item) => ({
-      item_id: String(item.id),
-      item_name: item.title,
-      price: item.price,
-      quantity: item.quantity,
-    })),
+
+  sendGAEvent({
+    event: "begin_checkout",
+    value: {
+      currency: "SEK",
+      value: total,
+      items: cartItems.map((item) => ({
+        item_id: String(item.id),
+        item_name: item.title,
+        price: item.price,
+        quantity: item.quantity,
+      })),
+    },
   });
 };
-
-
 
   return (
     <div className="sticky top-0">
