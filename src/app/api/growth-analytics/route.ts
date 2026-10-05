@@ -39,6 +39,35 @@ const viewToCheckoutRate =
     productViews > 0
         ? Math.round((checkoutsStarted / productViews) * 100)
         : 0;
+const now = Date.now();
+const last24Hours = now - 24 * 60 * 60 * 1000;
+
+const eventsLast24Hours = events.filter((event) => {
+    const eventTime = new Date(event.timestamp).getTime();
+
+    return eventTime >= last24Hours;
+});
+const productViews24h = eventsLast24Hours.filter(
+    (event) => event.event === "product_viewed"
+).length;
+const addToCarts24h = eventsLast24Hours.filter(
+    (event) => event.event === "add_to_cart"
+).length;
+const checkoutsStarted24h = eventsLast24Hours.filter(
+    (event) => event.event === "checkout_started"
+).length;
+const addToCartRate24h =
+    productViews24h > 0
+        ? Math.round((addToCarts24h / productViews24h) * 100)
+        : 0;
+const checkoutStartRate24h =
+    addToCarts24h > 0
+        ? Math.round((checkoutsStarted24h / addToCarts24h) * 100)
+        : 0;
+const viewToCheckoutRate24h =
+    productViews24h > 0
+        ? Math.round((checkoutsStarted24h / productViews24h) * 100)
+        : 0;
 
 
     return NextResponse.json({
@@ -50,6 +79,15 @@ const viewToCheckoutRate =
         addToCartRate,
         checkoutStartRate,
         viewToCheckoutRate,
+        last24Hours: {
+    productViews: productViews24h,
+    addToCarts: addToCarts24h,
+    checkoutsStarted: checkoutsStarted24h,
+    addToCartRate: addToCartRate24h,
+    checkoutStartRate: checkoutStartRate24h,
+    viewToCheckoutRate: viewToCheckoutRate24h,
+},
+
         events: rawEvents,
     });
 }
