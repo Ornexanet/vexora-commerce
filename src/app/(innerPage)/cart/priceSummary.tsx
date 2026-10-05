@@ -7,6 +7,8 @@ import { useCart } from "@/contextApi/cartContext";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { sendGAEvent } from "@next/third-parties/google";
+
 
 const PriceSummary = () => {
   const { getCartTotal, cartItems } = useCart();
@@ -19,13 +21,24 @@ const PriceSummary = () => {
 );
 const discountRate = totalQuantity >= 2 ? 0.1 : 0;
 const bundleDiscount = subtotal * discountRate;
-
-
   
   const shippingCost =
     shippingMethod === "local" ? 5 : shippingMethod === "flat" ? 15 : 0;
 
   const total = subtotal - bundleDiscount + shippingCost;
+  const handleBeginCheckout = () => {
+  sendGAEvent("event", "begin_checkout", {
+    currency: "SEK",
+    value: total,
+    items: cartItems.map((item) => ({
+      item_id: String(item.id),
+      item_name: item.title,
+      price: item.price,
+      quantity: item.quantity,
+    })),
+  });
+};
+
 
 
   return (
@@ -149,7 +162,10 @@ const bundleDiscount = subtotal * discountRate;
 
         <div className="my-7.5 pr-7.5 pl-5">
           <Button asChild className="w-full">
-            <Link href="/checkout">Gå till kassan</Link>
+            <Link href="/checkout" onClick={handleBeginCheckout}>
+              Gå till kassan
+              </Link>
+
           </Button>
         </div>
 
