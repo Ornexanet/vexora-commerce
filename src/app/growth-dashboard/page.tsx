@@ -77,6 +77,30 @@ useEffect(() => {
 </div>
 
             </div>
+            <h2 className="mt-10 text-xl font-bold text-gray-900">
+    Conversion Funnel
+</h2>
+<div className="mt-6 rounded-xl bg-white p-6 shadow-sm">
+    <div className="flex items-center justify-between">
+        <span className="font-medium text-gray-700">Product Views</span>
+        <span className="text-xl font-bold text-gray-900">
+            {data ? data.productViews : "—"}
+        </span>
+    </div>
+</div>
+<div className="mt-4 flex items-center justify-between">
+    <span className="font-medium text-gray-700">Add to Cart</span>
+    <span className="text-xl font-bold text-gray-900">
+        {data ? data.addToCarts : "—"}
+    </span>
+</div>
+<div className="mt-4 flex items-center justify-between">
+    <span className="font-medium text-gray-700">Checkout Started</span>
+    <span className="text-xl font-bold text-gray-900">
+        {data ? data.checkoutsStarted : "—"}
+    </span>
+</div>
+
             </div>
         </main>
     );
