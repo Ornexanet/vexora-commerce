@@ -27,6 +27,7 @@ const bundleDiscount = subtotal * discountRate;
 
   const total = subtotal - bundleDiscount + shippingCost;
   const handleBeginCheckout = () => {
+  console.log("BEGIN CHECKOUT CLICKED");
   sendGAEvent("event", "begin_checkout", {
     currency: "SEK",
     value: total,
@@ -165,7 +166,6 @@ const bundleDiscount = subtotal * discountRate;
             <Link href="/checkout" onClick={handleBeginCheckout}>
               Gå till kassan
               </Link>
-
           </Button>
         </div>
 
