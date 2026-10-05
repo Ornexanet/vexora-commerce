@@ -166,9 +166,20 @@ const bundleDiscount = subtotal * discountRate;
 
         <div className="my-7.5 pr-7.5 pl-5">
           <Button asChild className="w-full">
-            <Link href="/checkout" onClick={handleBeginCheckout}>
-              Gå till kassan
-              </Link>
+            <Link
+  href="/checkout"
+  onClick={(e) => {
+    e.preventDefault();
+    handleBeginCheckout();
+
+    setTimeout(() => {
+      window.location.href = "/checkout";
+    }, 300);
+  }}
+>
+  Gå till kassan
+</Link>
+
           </Button>
         </div>
 
