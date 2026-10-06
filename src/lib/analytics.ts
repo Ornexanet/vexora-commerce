@@ -6,16 +6,18 @@ export type GrowthEvent =
   | "checkout_started"
   | "purchase_completed";
   
-export const trackEvent = (
+export const trackEvent = async (
   event: GrowthEvent,
   data: Record<string, unknown> = {}
 ) => {
+
   console.log("[Growth Event]", {
     event,
     ...data,
     timestamp: new Date().toISOString(),
   });
-  fetch("/api/growth-events", {
+  return fetch("/api/growth-events", {
+
   method: "POST",
   headers: {
     "Content-Type": "application/json",
