@@ -8,6 +8,8 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { sendGAEvent } from "@next/third-parties/google";
+import { trackEvent } from "@/lib/analytics";
+
 
 
 const PriceSummary = () => {
@@ -29,6 +31,7 @@ const bundleDiscount = subtotal * discountRate;
   
   const handleBeginCheckout = () => {
   console.log("BEGIN CHECKOUT CLICKED");
+  trackEvent("checkout_started");
 
   sendGAEvent({
     event: "begin_checkout",
