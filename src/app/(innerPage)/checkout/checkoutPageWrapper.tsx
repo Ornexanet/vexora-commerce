@@ -8,14 +8,21 @@ import { sendGAEvent } from "@next/third-parties/google";
 
 const CheckoutPageWrapper = () => {
 useEffect(() => {
-  trackEvent("checkout_started");
+  const checkoutTracked = sessionStorage.getItem("checkout_started");
 
-  console.log("GA4 BEGIN CHECKOUT");
+  if (!checkoutTracked) {
+    trackEvent("checkout_started");
 
-  sendGAEvent("event", "begin_checkout", {
-    currency: "SEK",
-  });
+    console.log("GA4 BEGIN CHECKOUT");
+
+    sendGAEvent("event", "begin_checkout", {
+      currency: "SEK",
+    });
+
+    sessionStorage.setItem("checkout_started", "true");
+  }
 }, []);
+
 
 
   const handleCheckout = (formData: FormData) => {
