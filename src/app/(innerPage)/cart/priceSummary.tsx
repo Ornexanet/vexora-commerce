@@ -173,14 +173,14 @@ const bundleDiscount = subtotal * discountRate;
           <Button asChild className="w-full">
             <Link
   href="/checkout"
-  onClick={(e) => {
-    e.preventDefault();
-    handleBeginCheckout();
+  onClick={async (e) => {
+  e.preventDefault();
 
-    setTimeout(() => {
-      window.location.href = "/checkout";
-    }, 300);
-  }}
+  await handleBeginCheckout();
+
+  window.location.href = "/checkout";
+}}
+
 >
   Gå till kassan
 </Link>
