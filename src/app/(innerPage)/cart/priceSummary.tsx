@@ -29,11 +29,13 @@ const bundleDiscount = subtotal * discountRate;
 
   const total = subtotal - bundleDiscount + shippingCost;
   
-  const handleBeginCheckout = () => {
+  const handleBeginCheckout = async () => {
   console.log("BEGIN CHECKOUT CLICKED");
-  trackEvent("checkout_started");
+
+  await trackEvent("checkout_started");
 
   sendGAEvent({
+
     event: "begin_checkout",
     value: {
       currency: "SEK",
