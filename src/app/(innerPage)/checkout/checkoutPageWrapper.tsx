@@ -8,7 +8,6 @@ import { sendGAEvent } from "@next/third-parties/google";
 
 const CheckoutPageWrapper = () => {
 useEffect(() => {
-  trackEvent("checkout_started");
 
   console.log("GA4 BEGIN CHECKOUT");
 
