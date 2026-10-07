@@ -1,6 +1,7 @@
 export type GrowthEvent =
   | "product_viewed"
   | "add_to_cart"
+  | "add_to_wishlist"
   | "bundle_offer_viewed"
   | "bundle_discount_applied"
   | "checkout_started"

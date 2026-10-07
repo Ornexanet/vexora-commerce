@@ -12,6 +12,8 @@ import QuickViewProduct from "../sections/productDetails/quickViewProduct";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ShuffleIcon } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
+
 
 interface PropsType {
   product: ProductType;
@@ -42,10 +44,18 @@ const Card = ({
   };
 
   const handleAddToWishlist = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    addToWishlist(product);
-  };
+  e.preventDefault();
+  e.stopPropagation();
+
+  addToWishlist(product);
+
+  trackEvent("add_to_wishlist", {
+    productId: product.id,
+    productName: product.title,
+    price: product.price,
+  });
+};
+
 
   const handleAddToCompare = (e: React.MouseEvent) => {
     e.preventDefault();
