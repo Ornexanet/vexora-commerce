@@ -1,7 +1,7 @@
 import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
 
 export const metadata = generatePageMetadata({
-  title: "Returpolicy",
+  title: "Returer & återbetalningar – Returpolicy | Ornexa Shop",
   description:
     "Läs Ornexas returpolicy, villkor för returer, återbetalningar och reklamationer.",
   path: "/returer-och-aterbetalningar",
