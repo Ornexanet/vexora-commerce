@@ -254,6 +254,7 @@ export async function GET() {
       addToWishlistsChange,
       checkoutsStartedChange,
     },
+    
 
     events: rawEvents,
   });

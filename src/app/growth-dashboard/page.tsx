@@ -5,20 +5,28 @@ import { useEffect, useState } from "react";
 type GrowthData = {
     productViews: number;
     addToCarts: number;
+    addToWishlists: number;
     checkoutsStarted: number;
+
     addToCartRate: number;
+    wishlistRate: number;
     checkoutStartRate: number;
     viewToCheckoutRate: number;
 
     last24Hours: {
         productViews: number;
         addToCarts: number;
+        addToWishlists: number;
         checkoutsStarted: number;
+
         addToCartRate: number;
+        wishlistRate: number;
         checkoutStartRate: number;
         viewToCheckoutRate: number;
+
         productViewsChange: number;
         addToCartsChange: number;
+        addToWishlistsChange: number;
         checkoutsStartedChange: number;
     };
 };
@@ -85,6 +93,25 @@ export default function GrowthDashboard() {
                         </p>
                     </div>
 
+                    {/* Add to Wishlist */}
+            <div className="rounded-xl bg-white p-6 shadow-sm">
+             <p className="text-sm text-gray-500">
+            Add to Wishlist
+             </p>
+
+           <p className="mt-2 text-3xl font-bold text-gray-900">
+        {data ? data.addToWishlists : "—"}
+        </p>
+
+         <p className="mt-2 text-sm text-gray-500">
+        Last 24h:{" "}
+        {data ? data.last24Hours.addToWishlists : "—"}
+        {" "}
+        {data
+            ? `(${data.last24Hours.addToWishlistsChange > 0 ? "+" : ""}${data.last24Hours.addToWishlistsChange}%)`
+            : ""}
+        </p>
+      </div>
                     {/* Checkout Started */}
                     <div className="rounded-xl bg-white p-6 shadow-sm">
                         <p className="text-sm text-gray-500">
@@ -122,6 +149,24 @@ export default function GrowthDashboard() {
                                 : "—"}
                         </p>
                     </div>
+                     {/* Wishlist Rate */}
+        <div className="rounded-xl bg-white p-6 shadow-sm">
+      <p className="text-sm text-gray-500">
+        Wishlist Rate
+       </p>
+
+        <p className="mt-2 text-3xl font-bold text-gray-900">
+        {data ? `${data.wishlistRate}%` : "—"}
+        </p>
+
+         <p className="mt-2 text-sm text-gray-500">
+           Last 24h:{" "}
+           {data
+            ? `${data.last24Hours.wishlistRate}%`
+            : "—"}
+         </p>
+           </div>
+
 
                     {/* Checkout Start Rate */}
                     <div className="rounded-xl bg-white p-6 shadow-sm">
@@ -176,6 +221,15 @@ export default function GrowthDashboard() {
                             {data ? data.productViews : "—"}
                         </span>
                     </div>
+                   <div className="mt-6 flex items-center justify-between">
+    <span className="font-medium text-gray-700">
+        Add to Wishlist
+    </span>
+
+    <span className="text-xl font-bold text-gray-900">
+        {data ? data.addToWishlists : "—"}
+    </span>
+</div>
 
                     <div className="mt-6 flex items-center justify-between">
                         <span className="font-medium text-gray-700">
