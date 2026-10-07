@@ -1,10 +1,12 @@
-import type { Metadata } from "next";
+import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
 
-export const metadata: Metadata = {
-  title: "Returpolicy | Ornexa",
+export const metadata = generatePageMetadata({
+  title: "Returpolicy",
   description:
     "Läs Ornexas returpolicy, villkor för returer, återbetalningar och reklamationer.",
-};
+  path: "/returer-och-aterbetalningar",
+});
+
 
 export default function ReturnsRefundPolicyPage() {
   return (
