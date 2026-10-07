@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 import bundleAnalyzer from "@next/bundle-analyzer";
 
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
+
 const nextConfig: NextConfig = {
   htmlLimitedBots: /.*/,
 
@@ -21,8 +25,15 @@ const nextConfig: NextConfig = {
             key: "Referrer-Policy",
             value: "strict-origin-when-cross-origin",
           },
+          {
+            key: "Content-Security-Policy",
+            value:
+              "frame-ancestors 'self'; object-src 'none'; base-uri 'self';",
+          },
         ],
       },
     ];
   },
 };
+
+export default withBundleAnalyzer(nextConfig);
