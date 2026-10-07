@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, {useState} from "react";
 import { ProductType } from "@/mockData/products";
 import { useCart } from "@/contextApi/cartContext";
 import { useWishlist } from "@/contextApi/wishlistContext";
@@ -10,11 +10,14 @@ import { Button } from "@/components/ui/button";
 import { XIcon } from "lucide-react";
 
 const WishlistCard = ({ product }: { product: ProductType }) => {
+const [isAdded, SetIsAdded] = useState(false);
   const { addToCart } = useCart();
+
   const { removeFromWishlist } = useWishlist();
 
   const handleAddToCart = () => {
     addToCart(product);
+    SetIsAdded(true);
     removeFromWishlist(product.id);
   };
 
@@ -64,8 +67,9 @@ const WishlistCard = ({ product }: { product: ProductType }) => {
           )}
         </p>
         <Button onClick={handleAddToCart} className="w-full mt-4">
-          Add to Cart
-        </Button>
+         {isAdded ? "Tillagd ✓" : "Lägg i varukorgen"}
+       </Button>
+
       </div>
     </div>
   );
