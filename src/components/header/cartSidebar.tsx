@@ -32,15 +32,22 @@ const CartSidebar = ({ cartIconTwo }: { cartIconTwo?: boolean }) => {
         {cartIconTwo ? (
           <ShopingCart className="size-6 [&>path]:stroke-3" />
         ) : (
-          <span className="flex items-center gap-2.5">
-            <ShopingCart className="max-lg:size-5" />
-            <span>
-              <span className="text-xs font-bold bg-blue text-white px-2 py-px block rounded-[49px]">
-                {getCartCount()}
-              </span>
-              <span className="text-sm font-bold">Varukorg</span>
-            </span>
-          </span>
+         <span className="flex items-center gap-2">
+  <span className="relative">
+    <ShopingCart className="size-7" />
+
+    {getCartCount() > 0 && (
+      <span className="absolute -top-2 -right-2 min-w-5 h-5 px-1 rounded-full bg-blue text-white text-xs font-bold flex items-center justify-center">
+        {getCartCount()}
+      </span>
+    )}
+  </span>
+
+  <span className="text-sm font-bold">
+    Varukorg
+  </span>
+</span>
+
         )}
       </SheetTrigger>
       <SheetContent
