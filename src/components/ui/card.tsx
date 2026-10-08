@@ -32,8 +32,9 @@ const Card = ({
   ImgHeight = 333,
  
 }: PropsType) => {
-   const [experimentVariant, setExperimentVariant] =
-  useState<"A" | "B">("B");
+  const [experimentVariant, setExperimentVariant] =
+  useState<"A" | "B">("A");
+
 
   const [open, setOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
