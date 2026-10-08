@@ -30,7 +30,11 @@ const Card = ({
   imgWrapper,
   ImgWidth = 333,
   ImgHeight = 333,
+ 
 }: PropsType) => {
+   const [experimentVariant, setExperimentVariant] =
+  useState<"A" | "B">("B");
+
   const [open, setOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const { addToCart } = useCart();
@@ -140,6 +144,7 @@ const Card = ({
             }}
           >
             {/* add to wishlist button */}
+            
             <motion.div
               variants={{
                 hidden: { opacity: 0, x: 50, width: isMobile ? 32 : 45 },
@@ -202,6 +207,7 @@ const Card = ({
             </motion.div>
 
             {/* add to cart button */}
+            {experimentVariant === "A" ? (
             <motion.div
               variants={{
                 hidden: { opacity: 0, x: 50, width: isMobile ? 32 : 45 },
@@ -227,6 +233,17 @@ const Card = ({
                 <ShopingCartSm />
               </div>
             </motion.div>
+            ) : (
+  <button
+    type="button"
+    onClick={handleAddToCart}
+    className="flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-sm font-medium text-white hover:bg-blue-700"
+    aria-label="Lägg i varukorg"
+  >
+    <ShopingCartSm />
+    <span>Lägg i varukorg</span>
+  </button>
+)}
 
             <motion.div
               variants={{
@@ -258,6 +275,7 @@ const Card = ({
             </motion.div>
           </motion.div>
         </div>
+        
         <div className="mt-5">
           <Link
             href={`/product-details/${product.id}`}
