@@ -13,6 +13,11 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ShuffleIcon } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import {
+  getExperimentVariant,
+  type ExperimentVariant,
+} from "@/lib/experiments";
+
 
 
 interface PropsType {
@@ -32,8 +37,13 @@ const Card = ({
   ImgHeight = 333,
  
 }: PropsType) => {
-  const [experimentVariant, setExperimentVariant] =
-  useState<"A" | "B">("A");
+
+const [experimentVariant, setExperimentVariant] =
+  useState<ExperimentVariant>("A");
+  useEffect(() => {
+  const variant = getExperimentVariant();
+  setExperimentVariant(variant);
+}, []);
 
 
   const [open, setOpen] = useState(false);
@@ -41,12 +51,22 @@ const Card = ({
   const { addToCart } = useCart();
   const { addToWishlist, isInWishlist } = useWishlist();
   const { addToCompare, isInCompare, removeFromCompare } = useCompare();
+const handleAddToCart = (e: React.MouseEvent) => {
+  e.preventDefault();
+  e.stopPropagation();
 
-  const handleAddToCart = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    addToCart(product);
-  };
+  addToCart(product);
+
+  trackEvent("add_to_cart", {
+    productId: product.id,
+    productName: product.title,
+    price: product.price,
+    experimentId: "add_to_cart_visibility_v1",
+    experimentVariant: experimentVariant,
+  });
+};
+
+
 
   const handleAddToWishlist = (e: React.MouseEvent) => {
   e.preventDefault();
