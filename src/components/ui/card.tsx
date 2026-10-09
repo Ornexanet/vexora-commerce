@@ -15,8 +15,11 @@ import { ShuffleIcon } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 import {
   getExperimentVariant,
+  getWishlistExperimentVariant,
+  WISHLIST_EXPERIMENT,
   type ExperimentVariant,
 } from "@/lib/experiments";
+
 
 
 
@@ -40,9 +43,14 @@ const Card = ({
 
 const [experimentVariant, setExperimentVariant] =
   useState<ExperimentVariant>("A");
+  const [wishlistVariant, setWishlistVariant] =
+  useState<ExperimentVariant>("A");
   useEffect(() => {
   const variant = getExperimentVariant();
   setExperimentVariant(variant);
+  const wishlistAssigned =
+  getWishlistExperimentVariant();
+  setWishlistVariant(wishlistAssigned);
 }, []);
 
 
@@ -74,11 +82,14 @@ const handleAddToCart = (e: React.MouseEvent) => {
 
   addToWishlist(product);
 
-  trackEvent("add_to_wishlist", {
-    productId: product.id,
-    productName: product.title,
-    price: product.price,
-  });
+ trackEvent("add_to_wishlist", {
+  productId: product.id,
+  productName: product.title,
+  price: product.price,
+  experimentId: WISHLIST_EXPERIMENT,
+  experimentVariant: wishlistVariant,
+});
+
 };
 
 
@@ -179,7 +190,12 @@ const handleAddToCart = (e: React.MouseEvent) => {
                   },
                 },
               }}
-              whileHover={isMobile ? {} : { width: 172 }}
+              whileHover={
+  wishlistVariant === "B" || isMobile
+    ? {}
+    : { width: 172 }
+}
+
               transition={{ duration: 0.3, ease: "easeInOut" }}
               onClick={handleAddToWishlist}
               className={cn(
@@ -187,11 +203,20 @@ const handleAddToCart = (e: React.MouseEvent) => {
               )}
             >
               <span
-                className={cn(
-                  "absolute left-[14px] font-medium leading-none whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block",
-                )}
-              >
-                {inWishlist ? "In Wishlist" : "Add to wishlist"}
+  className={cn(
+    "absolute left-[14px] font-medium leading-none whitespace-nowrap transition-opacity duration-300 hidden md:block",
+    wishlistVariant === "B"
+      ? "opacity-100"
+      : "opacity-0 group-hover:opacity-100"
+  )}
+>
+
+               {wishlistVariant === "B"
+                          ? "Spara i önskelistan"
+                          : inWishlist
+                          ? "In Wishlist"
+                          : "Add to wishlist"}
+
               </span>
               <div className="md:size-[45px] size-8 rounded-full flex justify-center items-center flex-shrink-0 bg-card relative z-10">
                 <Heart

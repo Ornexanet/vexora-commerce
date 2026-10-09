@@ -27,6 +27,23 @@ export function getExperimentVariant(): ExperimentVariant {
   return newVariant;
 }
   //wishlist A/B Experiment
-  export const WISHLIST_EXPERiMENT =
+  export const WISHLIST_EXPERIMENT =
   "wiahlist_button_clarity_v1";
+ export function getWishlistExperimentVariant(): ExperimentVariant {
+ if (typeof window === "undefined") {
+  return "A";
+ }
+ const storageKey = `experiment:$
+ {WISHLIST_EXPERIMENT}`;
+ const savedVariant =
+ window.localStorage.getItem(storageKey);
+ if (savedVariant === "A" || savedVariant === "B") {
+  return savedVariant;
+ }
+ 
+  const newVariant = 
+  assignExperimentVariant();
+  window.localStorage.setItem(storageKey,newVariant);
+  return newVariant;
+}
 
