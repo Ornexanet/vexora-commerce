@@ -26,3 +26,7 @@ export function getExperimentVariant(): ExperimentVariant {
 
   return newVariant;
 }
+  //wishlist A/B Experiment
+  export const WISHLIST_EXPERiMENT =
+  "wiahlist_button_clarity_v1";
+
