@@ -33,8 +33,8 @@ export function getExperimentVariant(): ExperimentVariant {
  if (typeof window === "undefined") {
   return "A";
  }
- const storageKey = `experiment:$
- {WISHLIST_EXPERIMENT}`;
+const storageKey = `experiment:${WISHLIST_EXPERIMENT}`;
+
  const savedVariant =
  window.localStorage.getItem(storageKey);
  if (savedVariant === "A" || savedVariant === "B") {
