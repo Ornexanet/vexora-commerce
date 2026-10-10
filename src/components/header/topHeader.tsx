@@ -24,18 +24,72 @@ import HeaderExtraInfo from "./headerExtraInfo";
 import CartSidebar from "./cartSidebar";
 import { allProducts } from "@/mockData/products";
 
+const levenshteinDistance = (a: string, b: string): number => {
+  const previous = Array.from(
+    { length: b.length + 1 },
+    (_, index) => index
+  );
+
+  for (let i = 1; i <= a.length; i++) {
+    const current = [i];
+
+    for (let j = 1; j <= b.length; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+
+      current[j] = Math.min(
+        current[j - 1] + 1,
+        previous[j] + 1,
+        previous[j - 1] + cost
+      );
+    }
+
+    previous.splice(0, previous.length, ...current);
+  }
+
+  return previous[b.length];
+};
+
 const TopHeader = () => {
   const [isShowSearch, setIsShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const searchResults = searchQuery.trim()
-  ? allProducts
-      .filter((product) =>
-        product.title
-          .toLowerCase()
-          .includes(searchQuery.trim().toLowerCase())
-      )
-      .slice(0, 5)
-  : [];
+ const searchResults = (() => {
+  const query = searchQuery.trim().toLowerCase();
+
+  if (!query) return [];
+
+  const exactMatches = allProducts.filter((product) =>
+    product.title.toLowerCase().includes(query)
+  );
+
+  if (exactMatches.length > 0) {
+    return exactMatches.slice(0, 5);
+  }
+
+  if (query.length < 3) return [];
+
+  const suggestions = allProducts
+    .map((product) => {
+      const words = [
+        ...product.title.toLowerCase().split(/\s+/),
+        ...(product.brand ? [product.brand.toLowerCase()] : []),
+      ];
+
+      const distance = Math.min(
+        ...words.map((word) => levenshteinDistance(query, word))
+      );
+
+      return { product, distance };
+    })
+    .filter(({ distance }) => {
+      const maxDistance = query.length >= 6 ? 2 : 1;
+      return distance <= maxDistance;
+    })
+    .sort((a, b) => a.distance - b.distance)
+    .slice(0, 5);
+
+  return suggestions.map(({ product }) => product);
+})();
+
 
 
   return (
