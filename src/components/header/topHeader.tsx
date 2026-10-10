@@ -22,9 +22,21 @@ import Link from "next/link";
 import { useState } from "react";
 import HeaderExtraInfo from "./headerExtraInfo";
 import CartSidebar from "./cartSidebar";
+import { allProducts } from "@/mockData/products";
 
 const TopHeader = () => {
   const [isShowSearch, setIsShowSearch] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const searchResults = searchQuery.trim()
+  ? allProducts
+      .filter((product) =>
+        product.title
+          .toLowerCase()
+          .includes(searchQuery.trim().toLowerCase())
+      )
+      .slice(0, 5)
+  : [];
+
 
   return (
     <div className="grid grid-cols-[auto_1fr_auto] items-center gap-[30px] relative w-full">
@@ -39,11 +51,11 @@ const TopHeader = () => {
       </Link>
 
       <div
-        className={cn(
-          "min-w-0 max-lg:absolute max-lg:left-0 max-lg:top-full max-lg:z-50 max-lg:bg-background max-lg:w-full",
-          isShowSearch ? "block lg:block" : "lg:block hidden"
-        )}
-      >
+  className={cn(
+    "relative min-w-0 max-lg:absolute max-lg:left-0 max-lg:top-full max-lg:z-50 max-lg:bg-background max-lg:w-full",
+    isShowSearch ? "block lg:block" : "lg:block hidden"
+  )}
+>
         <div className="border border-light-gray rounded-[47px] flex items-center lg:pl-[25px] max-h-[50px] overflow-hidden">
           <div className="border-r border-r-light-gray py-1.5 h-full shrink-0">
             <Select defaultValue="All Categories">
@@ -66,10 +78,13 @@ const TopHeader = () => {
           </div>
 
           <InputGroup className="h-auto border-none rounded-[47px] [&_svg]:size-5 lg:[&_svg]:size-6 lg:pl-[25px] has-[[data-slot=input-group-control]:focus-visible]:ring-0">
-            <InputGroupInput
-              placeholder="Sök efter produkter..."
-              className="py-[15px] h-auto rounded-[47px] placeholder:text-[#B0B5BB] text-[#B0B5BB] font-medium"
-            />
+           <InputGroupInput
+  placeholder="Sök efter produkter..."
+  value={searchQuery}
+  onChange={(e) => setSearchQuery(e.target.value)}
+  className="py-[15px] h-auto rounded-[47px] placeholder:text-[#B0B5BB] text-[#B0B5BB] font-medium"
+/>
+
 
             <InputGroupAddon align={"inline-end"} className="text-foreground">
               <InputGroupButton className="lg:mr-3 max-lg:px-0!">
@@ -89,6 +104,44 @@ const TopHeader = () => {
               </InputGroupButton>
             </InputGroupAddon>
           </InputGroup>
+          {searchQuery.trim() && (
+  <div className="absolute top-full left-0 right-0 z-[100] mt-2 max-h-80 overflow-y-auto rounded-xl border bg-background p-3 shadow-xl">
+    {searchResults.length > 0 ? (
+      searchResults.map((product) => (
+        <Link
+          key={product.id}
+          href={`/product-details/${product.id}`}
+          onClick={() => {
+            setSearchQuery("");
+            setIsShowSearch(false);
+          }}
+          className="flex items-center gap-3 rounded-lg p-2 hover:bg-muted"
+        >
+          <Image
+            src={product.thumbnail}
+            alt={product.title}
+            width={50}
+            height={50}
+            className="h-12 w-12 object-contain"
+          />
+          <div className="min-w-0">
+            <p className="text-sm font-medium text-foreground">
+              {product.title}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {product.price.toLocaleString("sv-SE")} kr
+            </p>
+          </div>
+        </Link>
+      ))
+    ) : (
+      <p className="p-3 text-sm text-muted-foreground">
+        Inga produkter hittades.
+      </p>
+    )}
+  </div>
+)}
+
         </div>
       </div>
 
