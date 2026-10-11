@@ -1,6 +1,7 @@
+
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -10,12 +11,6 @@ import { Minus, Plus, ShopingBag } from "@/lib/icons";
 import { ProductType } from "@/mockData/products";
 import CompatibleAccessories from "./compatibleAccessories";
 import { generateProductAEO } from "@/seo/aeo/productAEO";
-import { trackEvent } from "@/lib/analytics";
-import { sendGAEvent } from "@next/third-parties/google";
-
-
-
-
 
 type ProductOverviewProps = {
   product: ProductType;
@@ -32,7 +27,7 @@ const categoryNames: Record<string, string> = {
   cameras: "Kameror",
 };
 
-const ProductOverview = ({  
+const ProductOverview = ({
   product,
   categoryLink,
   selectedColor,
@@ -41,28 +36,6 @@ const ProductOverview = ({
   const aeoContent = generateProductAEO(product);
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
-  useEffect(() => {
-  // Ornexa Growth Analytics
-  trackEvent("product_viewed", {
-    productId: product.id,
-    productName: product.title,
-    price: product.price,
-  });
-
-  // Google Analytics 4 Ecommerce
-  sendGAEvent("event", "view_item", {
-    currency: "SEK",
-    value: product.price,
-    items: [
-      {
-        item_id: String(product.id),
-        item_name: product.title,
-        price: product.price,
-        quantity: 1,
-      },
-    ],
-  });
-}, [product.id, product.title, product.price]);
 
   const selectedColorOption =
     product.colorOptions?.find(
@@ -80,29 +53,8 @@ const ProductOverview = ({
   };
 
   const handleAddToCart = () => {
-  addToCart(product, quantity);
-
-  trackEvent("add_to_cart", {
-    productId: product.id,
-    productName: product.title,
-    price: product.price,
-    quantity,
-  });
-  sendGAEvent("event", "add_to_cart", {
-  currency: "SEK",
-  value: product.price * quantity,
-  items: [
-    {
-      item_id: String(product.id),
-      item_name: product.title,
-      price: product.price,
-      quantity: quantity,
-    },
-  ],
-});
-
-};
-
+    addToCart(product, quantity);
+  };
 
   const categoryKey = product.categories?.[0];
 
@@ -342,3 +294,4 @@ const ProductOverview = ({
 };
 
 export default ProductOverview;
+
