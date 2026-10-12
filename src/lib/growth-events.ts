@@ -1,3 +1,4 @@
+import { error } from "console";
 
 export type GrowthEvent =
   | "product_viewed"
@@ -30,6 +31,15 @@ export function trackEvent(
   };
 
   console.log("[Ornexa Growth V2]", payload);
+fetch("/api/growth-events", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(payload),
+}).catch((error) => {
+  console.error("[Ornexa Growth V2] Failed to send event:", error);
+});
 
   return payload;
 }
