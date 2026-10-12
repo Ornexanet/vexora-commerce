@@ -38,7 +38,9 @@ export async function POST(request: Request)
     success: true,
     massage: "Event received successfully",
    });
-} catch {
+} catch (error) {
+  console.error("Growth API Error:", error);
+
     return NextResponse.json(
 {
     success: false,
