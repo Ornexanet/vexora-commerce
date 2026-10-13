@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -11,6 +11,8 @@ import { Minus, Plus, ShopingBag } from "@/lib/icons";
 import { ProductType } from "@/mockData/products";
 import CompatibleAccessories from "./compatibleAccessories";
 import { generateProductAEO } from "@/seo/aeo/productAEO";
+import { trackEvent } from "@/lib/growth-events";
+
 
 type ProductOverviewProps = {
   product: ProductType;
@@ -36,6 +38,23 @@ const ProductOverview = ({
   const aeoContent = generateProductAEO(product);
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
+  const trackedProductId =
+  useRef<ProductType["id"] | null>(null);
+  useEffect(() => {
+  if (trackedProductId.current === product.id) {
+    return;
+  }
+
+  trackedProductId.current = product.id;
+
+  trackEvent("product_viewed", {
+    productId: product.id,
+    productName: product.title,
+    price: product.price,
+    quantity: 1,
+  });
+}, [product.id, product.title, product.price]);
+
 
   const selectedColorOption =
     product.colorOptions?.find(

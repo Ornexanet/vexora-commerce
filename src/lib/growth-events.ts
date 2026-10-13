@@ -1,4 +1,4 @@
-import { error } from "console";
+
 
 export type GrowthEvent =
   | "product_viewed"
@@ -37,7 +37,12 @@ fetch("/api/growth-events", {
     "Content-Type": "application/json",
   },
   body: JSON.stringify(payload),
+}).then((response) => {
+  if (!response.ok) {
+    throw new Error(`Growth API returned HTTP ${response.status}`);
+  }
 }).catch((error) => {
+
   console.error("[Ornexa Growth V2] Failed to send event:", error);
 });
 
