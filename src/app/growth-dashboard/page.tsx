@@ -164,6 +164,70 @@ export default function GrowthDashboard() {
           </div>
         </section>
 
+        {/* Conversion Analytics */}
+<section className="mt-10">
+  <div className="mb-5">
+    <h2 className="text-xl font-bold text-slate-900">
+      Conversion Analytics
+    </h2>
+    <p className="mt-2 text-sm text-slate-500">
+      Event ratios based on tracked product views
+    </p>
+  </div>
+
+  <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+    {[
+      {
+        label: "Add to Cart Rate",
+        count: data?.addToCarts ?? 0,
+        color: "text-emerald-600",
+      },
+      {
+        label: "Wishlist Rate",
+        count: data?.addToWishlists ?? 0,
+        color: "text-rose-600",
+      },
+      {
+        label: "View to Checkout Rate",
+        count: data?.checkoutsStarted ?? 0,
+        color: "text-indigo-600",
+      },
+    ].map((metric) => {
+      const rate =
+        data && data.productViews > 0
+          ? (metric.count / data.productViews) * 100
+          : 0;
+
+      return (
+        <div
+          key={metric.label}
+          className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+        >
+          <p className="text-sm font-medium text-slate-500">
+            {metric.label}
+          </p>
+
+          <p className={`mt-4 text-4xl font-bold ${metric.color}`}>
+            {data ? `${rate.toFixed(1)}%` : "—"}
+          </p>
+
+          <p className="mt-3 text-xs text-slate-400">
+            {data
+              ? `${metric.count} events / ${data.productViews} views`
+              : "Waiting for data"}
+          </p>
+        </div>
+      );
+    })}
+  </div>
+
+  <p className="mt-4 text-xs text-slate-500">
+    Note: These are event-count ratios, not unique-user
+    conversion rates or a verified session funnel.
+  </p>
+</section>
+
+
         {/* Footer */}
         <p className="mt-8 text-center text-xs text-slate-400">
           Ornexa Growth Analytics V2 · Event-based analytics
