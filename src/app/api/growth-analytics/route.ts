@@ -16,9 +16,14 @@ export async function GET() {
     );
 
     const count = (eventName: string) =>
-      events.filter(
-        (item: any) => item.event === eventName
-      ).length;
+  events.filter(
+    (item) =>
+      typeof item === "object" &&
+      item !== null &&
+      "event" in item &&
+      item.event === eventName
+  ).length;
+
 
     return NextResponse.json({
       success: true,
