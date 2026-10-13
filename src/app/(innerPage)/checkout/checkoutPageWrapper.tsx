@@ -1,9 +1,21 @@
 "use client";
+import { useEffect, useRef } from "react";
+import { trackEvent } from "@/lib/growth-events";
 
 import CheckoutForm from "./checkoutForm";
 import CheckoutPayment from "./checkoutPayment";
 
 const CheckoutPageWrapper = () => {
+  const hasTracked = useRef(false);
+
+useEffect(() => {
+  if (hasTracked.current) return;
+
+  hasTracked.current = true;
+
+  trackEvent("checkout_started");
+}, []);
+
   const handleCheckout = (formData: FormData) => {
     const data = Object.fromEntries(formData.entries());
 
