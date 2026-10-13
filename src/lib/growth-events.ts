@@ -18,17 +18,32 @@ export type GrowthEventPayload = {
   event: GrowthEvent;
   data: GrowthEventData;
   timestamp: string;
+  sessionId?: string
 };
+
+function getSessionId(): string {
+  let sessionId = sessionStorage.getItem("ornexa_session_id");
+
+  if (!sessionId) {
+    sessionId = crypto.randomUUID();
+    sessionStorage.setItem("ornexa_session_id", sessionId);
+  }
+
+  return sessionId;
+}
+
 
 export function trackEvent(
   event: GrowthEvent,
   data: GrowthEventData = {}
 ): GrowthEventPayload {
   const payload: GrowthEventPayload = {
-    event,
-    data,
-    timestamp: new Date().toISOString(),
-  };
+  event,
+  data,
+  timestamp: new Date().toISOString(),
+  sessionId: getSessionId(),
+};
+
 
   console.log("[Ornexa Growth V2]", payload);
 fetch("/api/growth-events", {
