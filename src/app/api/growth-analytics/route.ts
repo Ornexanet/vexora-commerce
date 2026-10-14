@@ -1,10 +1,29 @@
 import { NextResponse } from "next/server";
 import { Redis } from "@upstash/redis";
+import { cookies } from "next/headers";
+import {
+  growthSessionCookie,
+  verifyGrowthSession,
+} from "@/lib/growth-auth";
+
 
 const redis = Redis.fromEnv();
 
 export async function GET() {
   try {
+    const cookieStore = await cookies();
+const session = cookieStore.get(growthSessionCookie)?.value;
+
+if (!verifyGrowthSession(session)) {
+  return NextResponse.json(
+    {
+      success: false,
+      message: "Unauthorized",
+    },
+    { status: 401 }
+  );
+}
+
     const rawEvents = await redis.lrange(
       "growth:v2:events",
       0,
