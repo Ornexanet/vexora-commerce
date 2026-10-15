@@ -1,4 +1,4 @@
-
+import { sendGAEvent } from "@next/third-parties/google";
 
 export type GrowthEvent =
   | "product_viewed"
@@ -60,6 +60,28 @@ fetch("/api/growth-events", {
 
   console.error("[Ornexa Growth V2] Failed to send event:", error);
 });
+
+const ga4EventNames: Record<GrowthEvent, string> = {
+  product_viewed: "view_item",
+  add_to_cart: "add_to_cart",
+  add_to_wishlist: "add_to_wishlist",
+  checkout_started: "begin_checkout",
+  purchase_completed: "purchase",
+};
+
+sendGAEvent("event", ga4EventNames[event], {
+  currency: "SEK",
+  value: data.price ?? 0,
+  items: data.productId
+    ? [{
+        item_id: String(data.productId),
+        item_name: data.productName ?? "",
+        price: data.price ?? 0,
+        quantity: data.quantity ?? 1,
+      }]
+    : [],
+});
+
 
   return payload;
 }
