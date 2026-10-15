@@ -58,8 +58,6 @@ const Card = ({
   e.stopPropagation();
 
   if (!isInWishlist(product.id)) {
-  console.log("Wishlist tracking triggered:", product.id);
-
     trackEvent("add_to_wishlist", {
       productId: product.id,
       productName: product.title,
