@@ -16,7 +16,7 @@ import {
 import { MicroPhone } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 import { categoriesList } from "@/mockData/categoriesList";
-import { Search, X } from "lucide-react";
+import { Search, X, Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -89,7 +89,7 @@ const TopHeader = () => {
 
   return suggestions.map(({ product }) => product);
 })();
-
+              
 
 
   return (
@@ -213,6 +213,17 @@ const TopHeader = () => {
         <div className="xl:flex gap-[25px] hidden">
           <HeaderExtraInfo />
         </div>
+        <Link
+  href="/wishlist"
+  className="hidden lg:flex items-center gap-2 hover:text-red-500 transition-colors"
+  aria-label="Visa mina favoriter"
+>
+  <Heart size={22} />
+  <span className="text-sm font-medium">
+    Mina favoriter
+  </span>
+</Link>
+
 
         <CartSidebar />
       </div>
