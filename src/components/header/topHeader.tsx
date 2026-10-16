@@ -93,8 +93,9 @@ const TopHeader = () => {
   })();
 
   return (
-    <div className="grid grid-cols-[auto_1fr_auto] items-center gap-3 lg:gap-[30px] relative w-full">
-      <Link href="/" className="shrink-0 w-[120px] block">
+    <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 lg:gap-5 xl:gap-6 relative w-full">
+
+      <Link href="/" className="shrink-0 w-[90px] lg:w-[105px] xl:w-[120px] block">
         <Image
           width={120}
           height={40}
@@ -113,9 +114,10 @@ const TopHeader = () => {
         <div className="border border-light-gray rounded-[47px] flex items-center lg:pl-[25px] max-h-[50px] overflow-hidden">
           <div className="border-r border-r-light-gray py-1.5 h-full shrink-0">
             <Select defaultValue="All Categories">
-              <SelectTrigger className="lg:w-[190px] border-none font-bold lg:text-base text-sm lg:pr-[37px] focus-visible:ring-0 h-auto max-lg:[&>svg]:size-5">
-                <SelectValue />
-              </SelectTrigger>
+              <SelectTrigger className="w-[120px] lg:w-[140px] xl:w-[190px] border-none font-bold lg:text-base text-sm lg:pr-4 xl:pr-[37px] focus-visible:ring-0 h-auto max-lg:[&>svg]:size-5">
+             <SelectValue />
+             </SelectTrigger>
+
 
               <SelectContent className="min-w-[220px]">
                 <SelectItem value="All Categories">
@@ -203,7 +205,7 @@ const TopHeader = () => {
         )}
       </div>
 
-      <div className="flex items-center justify-end gap-2 lg:gap-[25px] shrink-0">
+      <div className="flex items-center justify-end gap-2 lg:gap-3 xl:gap-5 shrink-0">
         <button
           type="button"
           onClick={() => setIsShowSearch(true)}
