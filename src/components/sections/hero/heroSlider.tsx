@@ -3,22 +3,19 @@
 import { JSX, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
-
+import "swiper/css/pagination";
 import { Button } from "@/components/ui/button";
 import Title from "@/components/ui/title";
-
 import {
   BatteryCharging,
   Bluetooth,
   Map,
   SoundDecibel,
   VideoRecorder,
-} from "@/lib/icons";
+} from "@/lib/icons"; 
 
 import { heroData, heroDataType } from "@/mockData/heroData";
 
@@ -28,6 +25,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+
 
 function IconsFinder(iconName: string): JSX.Element | null {
   const icons: Record<string, JSX.Element> = {
@@ -53,8 +51,13 @@ const HeroSlider = () => {
   return (
     <section className="w-full overflow-hidden">
       <Swiper
-        modules={[Autoplay]}
-        speed={900}
+  modules={[Autoplay, Pagination]}
+  speed={900}
+  pagination={{
+    clickable: true,
+  }}
+
+
         loop
         autoplay={{
           delay: 7000,
