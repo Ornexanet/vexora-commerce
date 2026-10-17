@@ -57,7 +57,7 @@ const HeroSlider = () => {
         speed={900}
         loop
         autoplay={{
-          delay: 4000,
+          delay: 7000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
@@ -164,24 +164,23 @@ const HeroSlider = () => {
                       xl:max-w-[760px]
                     "
                   >
-      <h2
+  <h2
   className="
-    mb-3
-    text-[42px]
-    font-extrabold
-    leading-[0.95]
-    tracking-[-0.04em]
-    sm:text-[50px]
-    md:text-[54px]
-    lg:mb-5
-    lg:text-[72px]
-    xl:text-[96px]
-    2xl:text-[120px]
+    mb-5
+    max-w-[650px]
+    text-[40px]
+    font-bold
+    leading-[1.05]
+    tracking-[-0.045em]
+    text-slate-950
+    sm:text-[48px]
+    md:text-[52px]
+    lg:text-[64px]
+    xl:text-[76px]
   "
 >
   {title}
 </h2>
-
 
                     <Title
                       asChild
