@@ -98,8 +98,10 @@ const HeroSlider = () => {
                   xl:pt-[150px]
                 "
                 style={{
-                  backgroundImage: `url("${backgroundImage}")`,
-                }}
+              background:
+             "radial-gradient(ellipse at 75% 45%, #E3EEFF 0%, #F4F7FC 48%, #FFFFFF 100%)",
+              }}
+
               >
                 {/* Product image */}
                 <div
@@ -124,7 +126,7 @@ const HeroSlider = () => {
                     md:max-w-[46%]
                     md:-translate-y-1/2
                     lg:right-0
-                    lg:max-w-[50%]
+                    lg:max-w-[44%]
                     xl:max-w-[700px]
                   "
                 >

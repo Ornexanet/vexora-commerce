@@ -46,27 +46,30 @@ backgroundImage: "/images/hero/bg-1.webp",
     id: 2,
     productId: 4,
     title: "Galaxy Ultra S26",
-    description: "Upplev kraftfullt ljud med aktiv brusreducering, bekväm passform och upp till 40 timmars batteritid – perfekta för både arbete och fritid.",
+    description: "Kraftfull prestanda, avancerad mobilfotografering och en elegant premiumdesign.",
     image: "/images/hero/galagxy-ultras26-shop-ornexa-heroslider.webp",
     videoUrl: "https://youtube.com/embed/2gYqEi8-am4?autoplay=1",
     backgroundImage: "/images/hero/bg-1.webp",
-    features: [
+    
+   features: [
   {
     id: 1,
-    icon: "SoundDecibel",
-    name: "Aktiv brusreducering",
+    icon: "VideoRecorder",
+    name: "Avancerad kamera",
   },
   {
     id: 2,
     icon: "BatteryCharging",
-    name: "Upp till 40 timmars batteritid",
+    name: "Kraftfull prestanda",
   },
   {
     id: 3,
-    icon: "Bluetooth",
-    name: "Bluetooth 5.3",
+    icon: "Map",
+    name: "Premiumdesign",
   },
 ],
+
+
 
   },
   {
