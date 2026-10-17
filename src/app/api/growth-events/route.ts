@@ -10,6 +10,8 @@ const allowedEvent = [
     "add_to_wishlist",
     "checkout_started",
     "purchase_completed",
+    "hero_pagination_clicked",
+
 ];
 export async function POST(request: Request)
 {

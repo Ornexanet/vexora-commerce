@@ -25,6 +25,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { trackEvent } from "@/lib/growth-events";
+
 
 
 function IconsFinder(iconName: string): JSX.Element | null {
@@ -49,7 +51,20 @@ const HeroSlider = () => {
   };
 
   return (
-    <section className="w-full overflow-hidden">
+    <section
+  className="w-full overflow-hidden"
+  onClickCapture={(event) => {
+    const target = event.target;
+
+    if (
+      target instanceof Element &&
+      target.closest(".swiper-pagination-bullet")
+    ) {
+      trackEvent("hero_pagination_clicked");
+    }
+  }}
+>
+  
       <Swiper
   modules={[Autoplay, Pagination]}
   speed={900}
@@ -57,8 +72,6 @@ const HeroSlider = () => {
   clickable: true,
   bulletClass: "swiper-pagination-bullet !w-3 !h-3 !mx-2",
 }}
-
-
 
         loop
         autoplay={{
