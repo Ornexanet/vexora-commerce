@@ -54,8 +54,10 @@ const HeroSlider = () => {
   modules={[Autoplay, Pagination]}
   speed={900}
   pagination={{
-    clickable: true,
-  }}
+  clickable: true,
+  bulletClass: "swiper-pagination-bullet !w-3 !h-3 !mx-2",
+}}
+
 
 
         loop
