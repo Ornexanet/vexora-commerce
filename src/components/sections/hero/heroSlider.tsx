@@ -205,7 +205,8 @@ const HeroSlider = () => {
                     <div
                       className="
                         mt-5
-                        flex
+                        hidden
+                        sm:flex
                         flex-col
                         gap-3
                         sm:mt-6
