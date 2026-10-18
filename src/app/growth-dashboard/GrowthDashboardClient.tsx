@@ -10,6 +10,8 @@ type GrowthData = {
   addToCarts: number;
   addToWishlists: number;
   checkoutsStarted: number;
+  heroPaginationClicks: number;
+
 };
 
 const metrics = [
@@ -17,6 +19,14 @@ const metrics = [
   { key: "addToCarts", label: "Add to Cart", symbol: "+", color: "text-emerald-600", bg: "bg-emerald-50" },
   { key: "addToWishlists", label: "Add to Wishlist", symbol: "♡", color: "text-rose-600", bg: "bg-rose-50" },
   { key: "checkoutsStarted", label: "Checkout Started", symbol: "→", color: "text-violet-600", bg: "bg-violet-50" },
+  {
+  key: "heroPaginationClicks",
+  label: "Hero Slider Clicks",
+  symbol: "↔",
+  color: "text-amber-600",
+  bg: "bg-amber-50",
+},
+
 ] as const;
 
 export default function GrowthDashboard() {

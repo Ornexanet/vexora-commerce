@@ -51,6 +51,7 @@ if (!verifyGrowthSession(session)) {
       addToCarts: count("add_to_cart"),
       addToWishlists: count("add_to_wishlist"),
       checkoutsStarted: count("checkout_started"),
+      heroPaginationClicks: count("hero_pagination_clicked"),
     });
   } catch (error) {
     console.error("Growth Analytics V2 Error:", error);
