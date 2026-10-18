@@ -2,8 +2,7 @@ import dynamic from "next/dynamic";
 import Footer from "@/components/sections/footer";
 import Header from "@/components/header";
 import MobileHeader from "@/components/header/mobileHeader";
-import PromoPopup from "@/components/promotional/PromoPopup";
-import { promoProduct } from "@/types/promo";
+
 
 const Ads = dynamic(
   () => import("@/components/sections/ads")
@@ -81,7 +80,6 @@ const Home = () => {
 </h1>
 
        <HeroSlider />
-       <PromoPopup product={promoProduct} />
        <HotDeal /> 
        <NewStock /> 
         <FeaturesProduct />
