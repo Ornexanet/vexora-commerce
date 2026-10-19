@@ -14,8 +14,10 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ShuffleIcon } from "lucide-react";
 import { trackEvent } from "@/lib/growth-events";
-
-
+import {
+  getExperimentVariant,
+  type ExperimentVariant,
+} from "@/lib/experiments";
 
 interface PropsType {
   product: ProductType;
@@ -37,38 +39,40 @@ const Card = ({
   const [open, setOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [variant, setVariant] = useState<ExperimentVariant>("A");
 
   const { addToCart } = useCart();
   const { addToWishlist, isInWishlist } = useWishlist();
-  const { addToCompare, isInCompare, removeFromCompare } = useCompare();
+  const {
+    addToCompare,
+    isInCompare,
+    removeFromCompare,
+  } = useCompare();
 
   const inWishlist = isInWishlist(product.id);
   const inCompare = isInCompare(product.id);
 
   const handleAddToCart = (e: React.MouseEvent) => {
-  e.preventDefault();
-  e.stopPropagation();
+    e.preventDefault();
+    e.stopPropagation();
 
-  addToCart(product);
-};
-
+    addToCart(product);
+  };
 
   const handleAddToWishlist = (e: React.MouseEvent) => {
-  e.preventDefault();
-  e.stopPropagation();
+    e.preventDefault();
+    e.stopPropagation();
 
-  if (!isInWishlist(product.id)) {
-    trackEvent("add_to_wishlist", {
-      productId: product.id,
-      productName: product.title,
-      price: product.price,
-    });
-  }
+    if (!isInWishlist(product.id)) {
+      trackEvent("add_to_wishlist", {
+        productId: product.id,
+        productName: product.title,
+        price: product.price,
+      });
+    }
 
-  addToWishlist(product);
-};
-
-
+    addToWishlist(product);
+  };
 
   const handleAddToCompare = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -80,6 +84,10 @@ const Card = ({
       addToCompare(product);
     }
   };
+
+  useEffect(() => {
+    setVariant(getExperimentVariant());
+  }, []);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -94,6 +102,8 @@ const Card = ({
       window.removeEventListener("resize", checkMobile);
     };
   }, []);
+
+  const showCart = variant === "B" || isHovered || isMobile;
 
   return (
     <>
@@ -148,23 +158,13 @@ const Card = ({
             </div>
           )}
 
-          <motion.div
-            className="absolute md:bottom-5 bottom-2 right-[15px] flex flex-col items-end md:gap-[15px] gap-1.5 z-20"
-            initial="hidden"
-            animate={isHovered || isMobile ? "visible" : "hidden"}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: {
-                  when: "beforeChildren",
-                  staggerChildren: 0.1,
-                },
-              },
-            }}
-          >
-            {/* Add to Wishlist */}
+          {/* Action buttons container */}
+          <div className="absolute md:bottom-5 bottom-2 right-[15px] flex flex-col items-end md:gap-[15px] gap-1.5 z-20">
+
+            {/* Wishlist */}
             <motion.div
+              initial="hidden"
+              animate={isHovered || isMobile ? "visible" : "hidden"}
               variants={{
                 hidden: {
                   opacity: 0,
@@ -188,6 +188,10 @@ const Card = ({
               }}
               onClick={handleAddToWishlist}
               className="group relative cursor-pointer flex items-center justify-end md:size-[45px] size-8 bg-card shadow rounded-[29px] overflow-hidden"
+              style={{
+                pointerEvents:
+                  isHovered || isMobile ? "auto" : "none",
+              }}
             >
               <span className="absolute left-[14px] font-medium leading-none whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">
                 {inWishlist ? "In Wishlist" : "Add to wishlist"}
@@ -204,6 +208,8 @@ const Card = ({
 
             {/* Quick View */}
             <motion.div
+              initial="hidden"
+              animate={isHovered || isMobile ? "visible" : "hidden"}
               variants={{
                 hidden: {
                   opacity: 0,
@@ -227,6 +233,10 @@ const Card = ({
               }}
               onClick={() => setOpen(true)}
               className="group relative cursor-pointer flex items-center justify-end md:size-[45px] size-8 bg-card shadow rounded-[29px] overflow-hidden"
+              style={{
+                pointerEvents:
+                  isHovered || isMobile ? "auto" : "none",
+              }}
             >
               <span className="absolute left-[14px] font-medium leading-none whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">
                 Quick View
@@ -237,8 +247,10 @@ const Card = ({
               </div>
             </motion.div>
 
-            {/* Add to Cart */}
+            {/* Add to Cart — A/B Experiment */}
             <motion.div
+              initial="hidden"
+              animate={showCart ? "visible" : "hidden"}
               variants={{
                 hidden: {
                   opacity: 0,
@@ -262,6 +274,9 @@ const Card = ({
               }}
               onClick={handleAddToCart}
               className="group relative cursor-pointer flex items-center justify-end md:size-[45px] size-8 bg-card shadow rounded-[29px] overflow-hidden"
+              style={{
+                pointerEvents: showCart ? "auto" : "none",
+              }}
             >
               <span className="absolute left-[14px] font-medium leading-none whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">
                 Add to cart
@@ -274,6 +289,8 @@ const Card = ({
 
             {/* Compare */}
             <motion.div
+              initial="hidden"
+              animate={isHovered || isMobile ? "visible" : "hidden"}
               variants={{
                 hidden: {
                   opacity: 0,
@@ -297,6 +314,10 @@ const Card = ({
               }}
               onClick={handleAddToCompare}
               className="group relative cursor-pointer flex items-center justify-end md:size-[45px] size-8 bg-card shadow rounded-[29px] overflow-hidden"
+              style={{
+                pointerEvents:
+                  isHovered || isMobile ? "auto" : "none",
+              }}
             >
               <span className="absolute left-[14px] font-medium leading-none whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">
                 {inCompare ? "In Compare" : "Compare"}
@@ -309,9 +330,10 @@ const Card = ({
                 />
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
 
+        {/* Product information */}
         <div className="mt-5">
           <Link
             href={`/product-details/${product.id}`}
