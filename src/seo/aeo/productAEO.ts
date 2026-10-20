@@ -31,8 +31,10 @@ export function generateProductAEO(
   answers.push({
     question: `Vad är ${product.title}?`,
     answer:
-      product.overview ??
-      product.description,
+  product.overview?.trim() ||
+  product.description?.trim() ||
+  "",
+
   });
 
   /* =====================================================
@@ -48,7 +50,7 @@ export function generateProductAEO(
     answers.push({
       question: `Vem passar ${product.title} för?`,
       answer: `${product.title} passar särskilt bra för ${perfectFor
-        .map((item) => item.toLowerCase())
+        .map((item) => item.trim())
         .join(", ")}.`,
     });
   }
@@ -65,7 +67,8 @@ export function generateProductAEO(
 
     answers.push({
       question: `Vilka är de viktigaste funktionerna i ${product.title}?`,
-      answer: `Några av de viktigaste funktionerna i ${product.title} är ${features}.`,
+      answer: `Viktiga funktioner: ${features}.`,
+
     });
   }
 
@@ -86,7 +89,8 @@ export function generateProductAEO(
   ) {
     answers.push({
       question: `Hur är batteritiden på ${product.title}?`,
-      answer: `${product.title} har ${battery.toLowerCase()}.`,
+      answer: `Batteritid: ${battery}.`,
+
     });
   }
 
@@ -101,7 +105,8 @@ export function generateProductAEO(
   if (compatibility) {
     answers.push({
       question: `Vad är ${product.title} kompatibel med?`,
-      answer: `${product.title} är kompatibel med ${compatibility}.`,
+      answer: `Kompatibel med ${compatibility}.`,
+
     });
   }
 
@@ -119,7 +124,8 @@ export function generateProductAEO(
   if (camera) {
     answers.push({
       question: `Vilken kamera har ${product.title}?`,
-      answer: `${product.title} har ${camera}.`,
+     answer: `Kamera: ${camera}.`,
+
     });
   }
 
@@ -134,7 +140,8 @@ export function generateProductAEO(
   if (display) {
     answers.push({
       question: `Vilken skärm har ${product.title}?`,
-      answer: `${product.title} har ${display}.`,
+      answer: `Skärm: ${display}.`,
+
     });
   }
 
@@ -149,7 +156,7 @@ export function generateProductAEO(
   if (storage) {
     answers.push({
       question: `Hur mycket lagring har ${product.title}?`,
-      answer: `${product.title} har ${storage} lagringsutrymme.`,
+      answer: `Lagringskapacitet: ${storage}.`,
     });
   }
 
@@ -160,7 +167,7 @@ export function generateProductAEO(
   if (product.warranty) {
     answers.push({
       question: `Vilken garanti har ${product.title}?`,
-      answer: `${product.title} säljs med ${product.warranty}.`,
+      answer: `Garanti: ${product.warranty}.`,
     });
   }
 
@@ -171,7 +178,7 @@ export function generateProductAEO(
   if (product.availability) {
     answers.push({
       question: `Finns ${product.title} i lager?`,
-      answer: `${product.title}: ${product.availability}.`,
+      answer: `${product.availability}.`,
     });
   }
 
