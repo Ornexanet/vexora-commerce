@@ -259,15 +259,16 @@ sourceUrl:
 
 
 overview:
-  "Sony WH-1000XM6 är trådlösa over-ear-hörlurar med aktiv brusreducering, Bluetooth-anslutning och upp till 30 timmars batteritid.",
+  "Sony WH-1000XM6 är trådlösa over-ear-hörlurar utvecklade för användare som vill kombinera aktiv brusreducering, lång batteritid och trådlös anslutning. Modellen passar för musik, samtal, arbete, resor och andra situationer där minskat bakgrundsljud och längre lyssningstid är viktigt.",
 
 whyChoose: [
-  "Avancerad aktiv brusreducering för miljöer med störande bakgrundsljud",
-  "Upp till 30 timmars batteritid för längre lyssning",
-  "Bluetooth 5.3 för trådlös anslutning",
-  "Integrerade mikrofoner för samtal",
-  "USB-C med stöd för snabbladdning",
+  "Aktiv brusreducering kan minska störande bakgrundsljud vid pendling och arbete.",
+  "Upp till 30 timmars batteritid passar längre lyssningspass och resor.",
+  "Bluetooth-anslutning gör det möjligt att använda hörlurarna trådlöst med kompatibla enheter.",
+  "Integrerade mikrofoner gör det möjligt att använda hörlurarna för samtal och digitala möten.",
+  "USB-C och stöd för snabbladdning ger fler laddningsmöjligheter.",
 ],
+
 
 perfectFor: [
   "Arbete och fokuserad lyssning",
@@ -388,7 +389,6 @@ sourceUrl:
 
   overview:
   "Samsung Galaxy Buds4 Pro är trådlösa in-ear-hörlurar utvecklade för musik, samtal och daglig användning. De kombinerar aktiv brusreducering, integrerade mikrofoner och upp till 30 timmars batteritid med laddningsetuiet, med stöd för Android-enheter.",
-
 
 
 whyChoose: [

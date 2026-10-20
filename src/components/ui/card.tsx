@@ -220,7 +220,7 @@ useEffect(() => {
               }}
             >
               <span className="absolute left-[14px] font-medium leading-none whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">
-                {inWishlist ? "In Wishlist" : "Add to wishlist"}
+                {inWishlist ? "I favoriter" : "Lägg till i favoriter"}
               </span>
 
               <div className="md:size-[45px] size-8 rounded-full flex justify-center items-center flex-shrink-0 bg-card relative z-10">
@@ -265,7 +265,7 @@ useEffect(() => {
               }}
             >
               <span className="absolute left-[14px] font-medium leading-none whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">
-                Quick View
+                Snabbvy
               </span>
 
               <div className="md:size-[45px] size-8 rounded-full flex justify-center items-center flex-shrink-0 bg-card relative z-10">
@@ -305,7 +305,7 @@ useEffect(() => {
               }}
             >
               <span className="absolute left-[14px] font-medium leading-none whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">
-                Add to cart
+                Lägg i varukorgen
               </span>
 
               <div className="md:size-[45px] size-8 rounded-full flex justify-center items-center flex-shrink-0 bg-card relative z-10">
@@ -346,7 +346,7 @@ useEffect(() => {
               }}
             >
               <span className="absolute left-[14px] font-medium leading-none whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">
-                {inCompare ? "In Compare" : "Compare"}
+                {inCompare ? "I jämförelsen" : "Jämför"}
               </span>
 
               <div className="md:size-[45px] size-8 rounded-full flex justify-center items-center flex-shrink-0 bg-card relative z-10">
