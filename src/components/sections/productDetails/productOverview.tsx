@@ -244,6 +244,20 @@ const ProductOverview = ({
               </div>
             ))}
           </dl>
+          {product.sourceName && product.sourceUrl && (
+  <p className="mt-4 text-sm text-gray-500">
+    Källa för tekniska specifikationer:{" "}
+    <a
+      href={product.sourceUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="underline hover:text-blue-600"
+    >
+      {product.sourceName}
+    </a>
+  </p>
+)}
+
         </section>
       )}
 
