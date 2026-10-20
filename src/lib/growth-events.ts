@@ -6,7 +6,9 @@ export type GrowthEvent =
   | "add_to_wishlist"
   | "checkout_started"
   | "purchase_completed"
-  | "hero_pagination_clicked";
+  | "hero_pagination_clicked"
+  | "experiment_exposure";
+
 
 
 export type GrowthEventData = {
@@ -14,7 +16,10 @@ export type GrowthEventData = {
   productName?: string;
   price?: number;
   quantity?: number;
+  experiment?: string;
+  variant?: "A" | "B";
 };
+
 
 export type GrowthEventPayload = {
   event: GrowthEvent;
@@ -70,7 +75,7 @@ const ga4EventNames: Record<GrowthEvent, string> = {
   checkout_started: "begin_checkout",
   purchase_completed: "purchase",
   hero_pagination_clicked: "hero_pagination_clicked",
-
+  experiment_exposure: "experiment_exposure",
 };
 
 sendGAEvent("event", ga4EventNames[event], {

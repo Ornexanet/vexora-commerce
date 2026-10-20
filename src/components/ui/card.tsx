@@ -52,12 +52,23 @@ const Card = ({
   const inWishlist = isInWishlist(product.id);
   const inCompare = isInCompare(product.id);
 
-  const handleAddToCart = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
+  
+const handleAddToCart = (e: React.MouseEvent) => {
+  e.preventDefault();
+  e.stopPropagation();
 
-    addToCart(product);
-  };
+  addToCart(product);
+
+  trackEvent("add_to_cart", {
+    productId: product.id,
+    productName: product.title,
+    price: product.price,
+    experiment: "ornexa_add_to_cart_v1",
+    variant: variant,
+  });
+};
+
+
 
   const handleAddToWishlist = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -85,9 +96,24 @@ const Card = ({
     }
   };
 
-  useEffect(() => {
-    setVariant(getExperimentVariant());
-  }, []);
+  
+useEffect(() => {
+  const assignedVariant = getExperimentVariant();
+  setVariant(assignedVariant);
+
+  const exposureKey = "ornexa_add_to_cart_v1_exposure";
+
+  if (sessionStorage.getItem(exposureKey) !== assignedVariant) {
+    sessionStorage.setItem(exposureKey, assignedVariant);
+
+    trackEvent("experiment_exposure", {
+      experiment: "ornexa_add_to_cart_v1",
+      variant: assignedVariant,
+    });
+  }
+}, []);
+
+
 
   useEffect(() => {
     const checkMobile = () => {
