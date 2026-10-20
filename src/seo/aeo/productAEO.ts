@@ -50,7 +50,11 @@ export function generateProductAEO(
     answers.push({
       question: `Vem passar ${product.title} för?`,
       answer: `${product.title} passar särskilt bra för ${perfectFor
-        .map((item) => item.trim())
+        .map((item) => {
+  const text = item.trim();
+  return text.charAt(0).toLocaleLowerCase("sv-SE") + text.slice(1);
+})
+
         .join(", ")}.`,
     });
   }
@@ -89,7 +93,7 @@ export function generateProductAEO(
   ) {
     answers.push({
       question: `Hur är batteritiden på ${product.title}?`,
-      answer: `Batteritid: ${battery}.`,
+     answer: `${battery.trim()}.`,
 
     });
   }
@@ -167,7 +171,7 @@ export function generateProductAEO(
   if (product.warranty) {
     answers.push({
       question: `Vilken garanti har ${product.title}?`,
-      answer: `Garanti: ${product.warranty}.`,
+      answer: `${product.warranty.trim()}.`,
     });
   }
 

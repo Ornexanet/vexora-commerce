@@ -259,7 +259,7 @@ sourceUrl:
 
 
 overview:
-  "Sony WH-1000XM6 är trådlösa over-ear-hörlurar utvecklade för användare som vill kombinera aktiv brusreducering, lång batteritid och trådlös anslutning. Modellen passar för musik, samtal, arbete, resor och andra situationer där minskat bakgrundsljud och längre lyssningstid är viktigt.",
+  "Sony WH-1000XM6 är trådlösa over-ear-hörlurar med aktiv brusreducering, Bluetooth-anslutning och upp till 30 timmars batteritid.",
 
 whyChoose: [
   "Avancerad aktiv brusreducering för miljöer med störande bakgrundsljud",
