@@ -11,6 +11,7 @@ import { Minus, Plus, ShopingBag } from "@/lib/icons";
 import { ProductType } from "@/mockData/products";
 import CompatibleAccessories from "./compatibleAccessories";
 import { generateProductAEO } from "@/seo/aeo/productAEO";
+import { generateGEODescription } from "@/seo/geo/productGEO";
 import { trackEvent } from "@/lib/growth-events";
 
 
@@ -36,6 +37,7 @@ const ProductOverview = ({
   onColorChange,
 }: ProductOverviewProps) => {
   const aeoContent = generateProductAEO(product);
+  const geoDescription = generateGEODescription(product);
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const trackedProductId =
@@ -175,7 +177,7 @@ const ProductOverview = ({
       </div>
 
       <p className="text-lg leading-relaxed text-light-dark">
-        {product.description}
+        {geoDescription}
       </p>
 
       {product.colorOptions && product.colorOptions.length > 0 && (
