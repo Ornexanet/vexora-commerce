@@ -1,6 +1,8 @@
 
 import Link from "next/link";
 import type { Metadata } from "next";
+import Image from "next/image";
+
 
 export const metadata: Metadata = {
   title: "Sony WH-1000XM6 | Premiumhörlurar | Ornexa",
@@ -81,19 +83,17 @@ export default function SonyLandingPage() {
           </div>
 
           {/* HERO IMAGE PLACEHOLDER */}
-          <div className="flex min-h-[320px] items-center justify-center rounded-3xl border border-dashed border-slate-500 bg-slate-800/60 p-8 md:min-h-[480px]">
-            <div className="text-center">
-              <div className="mb-4 text-5xl" aria-hidden="true">
-                ◇
-              </div>
-              <p className="font-semibold text-white">
-                Sony WH-1000XM6
-              </p>
-              <p className="mt-2 text-sm text-slate-400">
-                Produktbild läggs till här
-              </p>
-            </div>
-          </div>
+          <div className="relative min-h-[320px] overflow-hidden rounded-3xl md:min-h-[480px]">
+  <Image
+    src="/images/sony-landing/sony-hero.png"
+    alt="Sony WH-1000XM6 hörlurar"
+    fill
+    priority
+    sizes="(max-width: 768px) 100vw, 50vw"
+    className="object-cover"
+  />
+</div>
+
 
         </div>
       </section>
