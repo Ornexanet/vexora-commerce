@@ -141,16 +141,16 @@ export default function SonyLandingPage() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2">
 
           {/* LIFESTYLE IMAGE PLACEHOLDER */}
-          <div className="flex min-h-[320px] items-center justify-center rounded-3xl border-2 border-dashed border-slate-300 bg-slate-200/60 p-8 md:min-h-[430px]">
-            <div className="text-center">
-              <p className="text-lg font-semibold text-slate-600">
-                Lifestyle-bild
-              </p>
-              <p className="mt-2 text-sm text-slate-500">
-                Bild på hörlurarna i användning
-              </p>
-            </div>
-          </div>
+         <div className="relative min-h-[320px] overflow-hidden rounded-3xl md:min-h-[430px]">
+  <Image
+    src="/images/sony-landing/sony-lifestyle.png"
+    alt="Kvinna med Sony WH-1000XM6 hörlurar i Stockholm"
+    fill
+    sizes="(max-width: 768px) 100vw, 50vw"
+    className="object-cover object-center"
+  />
+</div>
+
 
           <div>
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-blue-700">
