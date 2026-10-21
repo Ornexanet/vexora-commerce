@@ -2,6 +2,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { allProducts } from "@/mockData/products";
+import { siteConfig } from "@/seo/config/siteConfig";
+
 
 
 export const metadata: Metadata = {
@@ -14,7 +17,35 @@ export const metadata: Metadata = {
   },
 };
 
-const productUrl = "/product-details/101";
+const product = allProducts.find(
+  (item) => item.id === 101
+);
+
+const productUrl = product
+  ? `/product-details/${product.id}`
+  : "/shop";
+const baseUrl = siteConfig.url.replace(/\/+$/, "");
+
+const landingUrl = `${baseUrl}/sony-headphone`;
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${landingUrl}#webpage`,
+  url: landingUrl,
+  name: "Sony WH-1000XM6 – Premium ljudupplevelse",
+  isPartOf: {
+    "@id": `${baseUrl}/#website`,
+  },
+  ...(product
+    ? {
+        about: {
+          "@id": `${baseUrl}/product-details/${product.id}#product`,
+        },
+      }
+    : {}),
+};
+
 
 const features = [
   {
@@ -40,6 +71,12 @@ const features = [
 export default function SonyLandingPage() {
   return (
     <main className="bg-white text-slate-900">
+    <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(webPageSchema).replace(/</g, "\\u003c"),
+  }}
+/>
 
       {/* HERO SECTION */}
       <section className="bg-[#101b2c] text-white">
