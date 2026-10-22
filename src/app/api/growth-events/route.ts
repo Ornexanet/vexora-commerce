@@ -12,6 +12,7 @@ const allowedEvent = [
     "purchase_completed",
     "hero_pagination_clicked",
     "experiment_exposure",
+    "landig_cta_cliced",
 
 ];
 export async function POST(request: Request)

@@ -17,6 +17,7 @@ type GrowthData = {
   addToWishlists: number;
   checkoutsStarted: number;
   heroPaginationClicks: number;
+  landingCtaClicks: number;
   abTest: {
     A: ABVariantData;
     B: ABVariantData;
@@ -58,6 +59,13 @@ const metrics = [
     symbol: "↔",
     color: "text-amber-600",
     bg: "bg-amber-50",
+  },
+  {
+    key: "landingCtaClicks",
+    label: "Sony Landing CTA Clicks",
+    symbol: "↗",
+    color: "text-cyan-600",
+    bg: "bg-cyan-50",
   },
 ] as const;
 
@@ -110,7 +118,6 @@ export default function GrowthDashboard() {
   return (
     <main className="min-h-screen bg-slate-50 px-4 py-10 text-slate-900 sm:px-8">
       <div className="mx-auto max-w-7xl">
-
         {/* Header */}
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
           <div>
@@ -148,10 +155,12 @@ export default function GrowthDashboard() {
           </div>
         )}
 
-        {/* Overview */}
+        {/* Event Overview */}
         <section className="mt-10">
           <div className="mb-5 flex items-center justify-between">
-            <h2 className="text-xl font-bold">Event Overview</h2>
+            <h2 className="text-xl font-bold">
+              Event Overview
+            </h2>
 
             <span className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-500">
               All-time events
@@ -360,6 +369,7 @@ export default function GrowthDashboard() {
                       <p className="text-xs text-slate-500">
                         Exposed Sessions
                       </p>
+
                       <p className="mt-2 text-2xl font-bold">
                         {result
                           ? result.exposures.toLocaleString("en-US")
@@ -371,6 +381,7 @@ export default function GrowthDashboard() {
                       <p className="text-xs text-slate-500">
                         Cart Sessions
                       </p>
+
                       <p className="mt-2 text-2xl font-bold">
                         {result
                           ? result.cartSessions.toLocaleString("en-US")

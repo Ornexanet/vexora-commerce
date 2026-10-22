@@ -7,7 +7,8 @@ export type GrowthEvent =
   | "checkout_started"
   | "purchase_completed"
   | "hero_pagination_clicked"
-  | "experiment_exposure";
+  | "experiment_exposure"
+  | "landing_cta_clicked";
 
 
 
@@ -59,6 +60,7 @@ fetch("/api/growth-events", {
     "Content-Type": "application/json",
   },
   body: JSON.stringify(payload),
+  keepalive: true,
 }).then((response) => {
   if (!response.ok) {
     throw new Error(`Growth API returned HTTP ${response.status}`);
@@ -76,6 +78,7 @@ const ga4EventNames: Record<GrowthEvent, string> = {
   purchase_completed: "purchase",
   hero_pagination_clicked: "hero_pagination_clicked",
   experiment_exposure: "experiment_exposure",
+  landing_cta_clicked: "landing_cta_clicked",
 };
 
 sendGAEvent("event", ga4EventNames[event], {

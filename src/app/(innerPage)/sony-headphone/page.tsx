@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { allProducts } from "@/mockData/products";
 import { siteConfig } from "@/seo/config/siteConfig";
+import TrackedCTA from "./TrackedCTA";
 
 
 
@@ -104,15 +105,15 @@ export default function SonyLandingPage() {
               och upp till 30 timmars batteritid.
             </p>
 
-            <Link
-              href={productUrl}
+            <TrackedCTA
+            href={productUrl}
               className="inline-flex min-h-12 items-center justify-center rounded-xl bg-white px-8 py-4 font-semibold text-slate-900 transition-colors hover:bg-blue-100"
             >
               Utforska hörlurarna
               <span aria-hidden="true" className="ml-3">
                 →
               </span>
-            </Link>
+            </TrackedCTA>
 
             <p className="mt-5 text-sm text-slate-400">
               Upptäck funktioner och produktspecifikationer.
