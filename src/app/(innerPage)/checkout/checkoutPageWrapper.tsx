@@ -20,7 +20,7 @@ useEffect(() => {
     const data = Object.fromEntries(formData.entries());
 
     alert(
-      `Order Placed!\n\n${JSON.stringify(data, null, 2)}`
+      `Beställningen har lagts!\n\n${JSON.stringify(data, null, 2)}`
     );
   };
 

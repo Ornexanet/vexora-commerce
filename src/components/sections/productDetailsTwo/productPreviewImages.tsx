@@ -10,7 +10,7 @@ const ProductPreviewImages = () => {
           height={600}
           sizes="100vw"
           src="/images-optimized/product-details-two/preview-img-1.webp"
-          alt="Product Image 1"
+          alt="Produktbild 1"
         />
       </div>
       <div>
@@ -19,7 +19,7 @@ const ProductPreviewImages = () => {
           height={600}
           sizes="100vw"
           src="/images-optimized/product-details-two/preview-img-2.webp"
-          alt="Product Image 1"
+          alt="Produktbild 1"
         />
       </div>
       <div>
@@ -28,7 +28,7 @@ const ProductPreviewImages = () => {
           height={600}
           sizes="100vw"
           src="/images-optimized/product-details-two/preview-img-3.webp"
-          alt="Product Image 1"
+          alt="Produktbild 1"
         />
       </div>
       <div>
@@ -37,7 +37,7 @@ const ProductPreviewImages = () => {
           height={600}
           sizes="100vw"
           src="/images-optimized/product-details-two/preview-img-4.webp"
-          alt="Product Image 1"
+          alt="Produktbild 1"
         />
       </div>
     </div>

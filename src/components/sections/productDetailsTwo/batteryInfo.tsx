@@ -5,23 +5,23 @@ import React from "react";
 const batteryFeatures = [
   {
     id: 1,
-    title: "24 hours with always-on display.",
+    title: "24 timmar med skärmen alltid på.",
     description:
-      "Keep your screen on all day without worrying about battery life.",
+      "Ha skärmen på hela dagen utan att oroa dig för batteritiden.",
     icon: <BatteryPlus />,
   },
   {
     id: 2,
-    title: "Up to 36 hours with Battery Saver.",
+    title: "Upp till 36 timmar med batterisparläge.",
     description:
-      "Extend your battery without compromising health, fitness, and safety features.",
+      "Förläng batteritiden utan att kompromissa med funktionerna för hälsa, träning och säkerhet.",
     icon: <ClockPlus />,
   },
   {
     id: 3,
-    title: "35% bigger battery.",
+    title: "35 % större batteri.",
     description:
-      "The 45mm Pixel Watch 3 has a larger battery so you can outlast the day.",
+      "Pixel Watch 3 på 45mm har ett större batteri som räcker hela dagen och lite till.",
     icon: <ChargingSing />,
   },
 ];
@@ -29,7 +29,7 @@ const BatteryInfo = () => {
   return (
     <section className="mt-25">
       <div className="container">
-        <Title className="text-center">Big-time battery.</Title>
+        <Title className="text-center">Batteritid som imponerar.</Title>
         <div className="mt-12.5 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-7.5 gap-x-17.5">
           {batteryFeatures.map((item) => (
             <div

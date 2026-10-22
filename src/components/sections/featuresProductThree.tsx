@@ -16,10 +16,10 @@ const FeaturesProductThree = () => {
   // Product data for Buds Pro 2
   const product: ProductType = {
     id: 102,
-    title: "1000X SERIES",
+    title: "1000X-SERIEN",
     thumbnail: "/images/features/1000x-serie-shop-ornexa2.webp",
     description:
-      "Spatial Audio Effect is based on the Head-Related Transfer Function (HRTF) for spatial sound supported by unlimited Bluetooth devices and audio sources.",
+      "Effekten för rumsligt ljud bygger på HRTF (Head-Related Transfer Function) och stöder ett obegränsat antal Bluetooth-enheter och ljudkällor.",
     price: 295.0,
     tag: null,
     discount: 54,
@@ -54,7 +54,7 @@ const FeaturesProductThree = () => {
                 height={477}
                 sizes="100vw"
                 src={"/images/features/1000x-serie-shop-ornexa1 .webp"}
-                alt="img"
+                alt="Bild"
               />
             </div>
             <div>
@@ -63,15 +63,15 @@ const FeaturesProductThree = () => {
                 height={477}
                 sizes="100vw"
                 src={"/images/features/1000x-serie-shop-ornexa2.webp"}
-                alt="img"
+                alt="Bild"
               />
             </div>
           </div>
           <div className="lg:w-[46.7%]">
             <strong className="md:text-lg md:leading-normal text-light-dark">
-              Headphones
+              Hörlurar
             </strong>
-            <Title>1000X SERIES</Title>
+            <Title>1000X-SERIEN</Title>
             <div className="flex items-center gap-[30px] mt-2">
            <Title size="28" className="font-normal">
            2999 kr

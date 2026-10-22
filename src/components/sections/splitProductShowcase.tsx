@@ -21,7 +21,7 @@ const ProductCard = ({ imageSrc, title, price }: ProductCardProps) => {
           height={100}
           sizes="100vw"
           src={imageSrc}
-          alt="img"
+          alt="Bild"
         />
       </div>
       <div className="flex flex-col justify-between">
@@ -37,7 +37,7 @@ const ProductCard = ({ imageSrc, title, price }: ProductCardProps) => {
           href={"/product-details"}
           className="underline underline-offset-2 text-sm font-medium hover:text-blue transition-all duration-500"
         >
-          View Product
+          Visa produkten
         </Link>
       </div>
     </div>
@@ -53,13 +53,13 @@ export default function SplitProductShowcase() {
           <>
             <ReactCompareSliderImage
               src="/images-optimized/home-2/split-products/dark-headphone-bg.webp"
-              alt="Image one"
+              alt="Bild ett"
               className="max-h-[718px] aspect-[1/1]"
             />
             <div className="absolute left-0 bottom-0">
               <ProductCard
                 imageSrc="/images-optimized/home-2/split-products/dark-headphone.webp"
-                title="Sonic Pro 800 (Dark Grey)"
+                title="Sonic Pro 800 (mörkgrå)"
                 price="$159.90"
               />
             </div>
@@ -69,14 +69,14 @@ export default function SplitProductShowcase() {
           <>
             <ReactCompareSliderImage
               src="/images/home-2/split-products/white-headphone-bg.jpg"
-              alt="Image two"
+              alt="Bild två"
               className="max-h-[718px] aspect-[1/1]"
             />
             <div className="absolute right-0 bottom-0">
               <ProductCard
                 imageSrc="/images-optimized/home-2/split-products/white-headphone.webp"
                 price="$159.90"
-                title="Sonic Pro 800 (White)"
+                title="Sonic Pro 800 (vit)"
               />
             </div>
           </>

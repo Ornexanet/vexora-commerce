@@ -49,7 +49,7 @@ const WellcomeModal = () => {
             height={515}
             sizes="100vw"
             src="/images-optimized/wellcome-img.webp"
-            alt="img"
+            alt="Bild"
             className="w-full h-full rounded-xl md:rounded-l-xl"
           />
         </div>
@@ -58,14 +58,12 @@ const WellcomeModal = () => {
             <DialogTitle>
               <Title asChild size="28" className="font-light">
                 <p>
-                  Join Vexora & Get <b className="font-bold">10% Off</b> Your
-                  First Order!
+                  Gå med hos Vexora och få <b className="font-bold">10 % rabatt</b> på din första beställning!
                 </p>
               </Title>
             </DialogTitle>
             <DialogDescription className="text-light-dark font-light mt-2.5">
-              Subscribe to our newsletter and know about exclusive deals, new
-              tech drops, and member-only offers.
+              Prenumerera på vårt nyhetsbrev och få information om exklusiva erbjudanden, tekniknyheter och medlemsförmåner.
             </DialogDescription>
           </DialogHeader>
           <div className="mt-7.5">
@@ -79,18 +77,17 @@ const WellcomeModal = () => {
                 htmlFor="terms"
                 className="font-medium text-[15px] leading-4 text-light-dark"
               >
-                I agree to the{" "}
+                Jag godkänner{" "}
                 <Link href={"#"} className="underline underline-offset-4">
-                  Privacy Policy.
+                  integritetspolicyn.
                 </Link>
               </label>
             </div>
           </div>
           <div className="mt-7.5">
-            <Button className="w-full">Subscribe & Unlock 10% Off</Button>
+            <Button className="w-full">Prenumerera och få 10 % rabatt</Button>
             <p className="mt-2.5 text-sm text-light-dark flex items-start leading-normal gap-1.5">
-              <InfoIcon size={16} className="mt-1 shrink-0" /> We respect your
-              privacy. No spam ever. Unsubscribe anytime.
+              <InfoIcon size={16} className="mt-1 shrink-0" /> Vi värnar om din integritet. Ingen skräppost. Avsluta prenumerationen när du vill.
             </p>
           </div>
         </div>

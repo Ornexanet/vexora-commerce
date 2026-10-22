@@ -25,10 +25,10 @@ const BlogDetails = () => {
   return (
     <main>
       <PageHeader
-        title="Blog"
+        title="Blogg"
         praentPageHref="/blog"
-        currentPageName="Swap Your Style: The Best Bands for Your Vexora Watch"
-        praentPageName="Blog"
+        currentPageName="Byt stil: de bästa armbanden till din Vexora-klocka"
+        praentPageName="Blogg"
       />
       <section className="container mt-25">
         <div className="max-w-[1054px] mx-auto">
@@ -40,7 +40,7 @@ const BlogDetails = () => {
               <div className="[&_.by]:text-light-dark [&_.date]:text-foreground [&_.author-name]:text-foreground">
                 <BlogCardAuthorInfo blog={blog} />
               </div>
-              <p className="text-lg">5 min read</p>
+              <p className="text-lg">5 minuters läsning</p>
             </div>
           </div>
           <div className="w-full mb-6">
@@ -49,7 +49,7 @@ const BlogDetails = () => {
               height={549}
               sizes="100vw"
               src={"/images/blogs/ornexa-shop-her1.webp"}
-              alt="img"
+              alt="Bild"
               className="max-h-[549px] w-full rounded-[15px]"
             />
           </div>
@@ -114,7 +114,7 @@ const BlogDetails = () => {
                     height={471}
                     sizes="100vw"
                     src={"/images/blogs/ornexa-shop-her2.webp"}
-                    alt="img"
+                    alt="Bild"
                     className="rounded-[15px] w-full max-h-[471px]"
                   />
                 </div>

@@ -86,7 +86,7 @@ const CompanyFeaturesSlider = ({
                   cardClassName,
                 )}
               >
-                <Image width={56} height={56} src={icon} alt="img" />
+                <Image width={56} height={56} src={icon} alt="Bild" />
                 <Title
                   asChild
                   size="28"

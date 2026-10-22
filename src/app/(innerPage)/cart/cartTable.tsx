@@ -25,7 +25,7 @@ const CartTable = () => {
     return (
       <div className="">
         <div className="bg-[#F5F5F7] rounded-lg p-12 text-center">
-          <p className="text-xl text-light-dark">Your cart is empty</p>
+          <p className="text-xl text-light-dark">Din varukorg är tom</p>
         </div>
       </div>
     );
@@ -34,11 +34,11 @@ const CartTable = () => {
   return (
     <div className="w-full min-w-0">
       <Title asChild size="28" className="font-bold leading-normal">
-        <h6>Cart Summary</h6>
+        <h6>Ordersammanfattning</h6>
       </Title>
       <div className="border border-dashed border-[#B0B5BB] rounded-lg px-7.5 py-4 bg-[#F5F5F7] mt-2.5">
         <p className="text-lg font-medium">
-          Congratulations! Your order is eligible for FREE Delivery.
+          Grattis! Din beställning kvalificerar sig för fri frakt.
         </p>
         <div className="mt-4 w-full h-1.5 bg-[#16A34A] rounded-lg"></div>
       </div>
@@ -50,16 +50,16 @@ const CartTable = () => {
             <TableHeader>
               <TableRow>
                 <TableHead className="leading-normal px-0 pb-2.5 mt-0">
-                  Product
+                  Produkt
                 </TableHead>
                 <TableHead className="leading-normal px-0 pb-2.5 mt-0">
-                  Price
+                  Pris
                 </TableHead>
                 <TableHead className="leading-normal px-0 pb-2.5 mt-0">
-                  Quantity
+                  Antal
                 </TableHead>
                 <TableHead className="leading-normal px-0 pb-2.5 mt-0">
-                  Subtotal
+                  Delsumma
                 </TableHead>
                 <TableHead className="w-6 px-0 py-2.5 mt-0"></TableHead>
               </TableRow>
@@ -150,14 +150,14 @@ const CartTable = () => {
         <div className="pt-8 border-t border-light-gray flex items-center justify-between flex-wrap gap-5">
           <div className="h-12 max-w-[379px] w-full rounded-md relative overflow-hidden">
             <Input
-              placeholder="Coupon code"
+              placeholder="Rabattkod"
               className="text-lg h-full rounded-md pr-40"
             />
             <button className="bg-[#B0B5BB] hover:bg-[#B0B5BB]/80 transition-all duration-300 text-white px-4 h-12 block absolute right-0 top-0">
-              Apply coupon
+              Använd rabattkod
             </button>
           </div>
-          <Button>Update Cart</Button>
+          <Button>Uppdatera varukorgen</Button>
         </div>
       </div>
     </div>

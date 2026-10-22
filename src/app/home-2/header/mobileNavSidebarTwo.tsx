@@ -135,7 +135,7 @@ const MobileNavSidebarTwo = () => {
           <span className="border-r border-r-[#B0B5BB] h-6"></span>
           <button className="flex items-center gap-1">
             <User className="lg:size-6 size-5 [&>path]:stroke-3" />
-            <p>Account</p>
+            <p>Mitt konto</p>
           </button>
         </div>
       </SheetContent>

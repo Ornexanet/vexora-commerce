@@ -33,7 +33,7 @@ const BrandsSlider = () => {
             height={src.height}
             sizes="100vw"
             src={src}
-            alt="brand"
+            alt="Varumärke"
             className="xl:mx-24 lg:mx-16 mx-10"
           />
         ))}

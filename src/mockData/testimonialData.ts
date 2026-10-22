@@ -11,49 +11,49 @@ export const testimonialData: testimonialType[] = [
     {
         id: 1,
         name: "John W.",
-        position: "Tech Blogger",
+        position: "Teknikbloggare",
         image: "/images/testimonial/user-1.png",
-        review: "As a tech reviewer, I test a lot of audio devices, and Vexora's earbuds deliver fantastic sound quality for their price range. The noise-canceling feature is particularly impressive, making them perfect for daily commutes and office work.",
+        review: "Som teknikrecensent testar jag många ljudprodukter, och Vexoras hörsnäckor ger fantastisk ljudkvalitet i sin prisklass. Brusreduceringen imponerar särskilt och gör dem perfekta för pendling och kontorsarbete.",
         rating: 5.00
     },
     {
         id: 2,
         name: "Sarah K.",
-        position: "Fitness Trainer",
+        position: "Personlig tränare",
         image: "/images/testimonial/user-2.png",
-        review: "The Vexora Smartwatch has become my go-to fitness companion. It tracks my steps, heart rate, and workouts flawlessly. The customizable interface is an added bonus, making it both practical and stylish.",
+        review: "Vexoras smartklocka har blivit min självklara träningspartner. Den registrerar steg, puls och träningspass utan problem. Det anpassningsbara gränssnittet är en extra fördel som gör den både praktisk och snygg.",
         rating: 5.00
     },
     {
         id: 3,
         name: "David M.",
-        position: "Photographer",
+        position: "Fotograf",
         image: "/images/testimonial/user-3.png",
-        review: "I use drones for aerial photography, and the Vexora Drone exceeded my expectations. Its 4K camera and stability in flight offer professional-grade footage, making it a must-have for photographers like me.",
+        review: "Jag använder drönare för flygfotografering, och Vexoras drönare överträffade mina förväntningar. Kameran med 4K-upplösning och den stabila flygningen ger material av professionell kvalitet, vilket gör den oumbärlig för fotografer som jag.",
         rating: 5.00
     },
     {
         id: 4,
         name: "Emily R.",
-        position: "Travel Vlogger",
+        position: "Resevloggare",
         image: "/images/testimonial/user-4.png",
-        review: "I've tested a lot of action cameras on my adventures, but the Vexora Action Camera really stands out. The video quality is crystal clear, and it's durable enough to handle extreme conditions. Vexora has nailed it!",
+        review: "Jag har testat många actionkameror på mina äventyr, men Vexoras actionkamera sticker verkligen ut. Bildkvaliteten är kristallklar och kameran är tålig nog för extrema förhållanden. Vexora har verkligen lyckats!",
         rating: 4.00
     },
     {
         id: 5,
         name: "Michael T.",
-        position: "Audio Engineer",
+        position: "Ljudtekniker",
         image: "/images/testimonial/user-5.png",
-        review: "For an audio engineer, sound clarity is everything, and Vexora's smart speakers deliver just that. The bass is deep, the highs are crisp, and the voice assistant integration is seamless. I highly recommend it for music lovers.",
+        review: "För en ljudtekniker är klart ljud avgörande, och det levererar Vexoras smarta högtalare. Basen är djup, diskanten tydlig och röstassistenten fungerar smidigt. Jag rekommenderar dem varmt till musikälskare.",
         rating: 5.00
     },
     {
         id: 6,
         name: "Jessica L.",
-        position: "Product Manager",
+        position: "Produktchef",
         image: "/images/testimonial/user-6.png",
-        review: "I've been using Vexora earbuds for conference calls and listening to music on the go. They fit comfortably and stay secure during workouts. The battery life is impressive, lasting me through a busy workday.",
+        review: "Jag använder Vexoras hörsnäckor till konferenssamtal och musik på språng. De sitter bekvämt och håller sig på plats under träning. Batteritiden imponerar och räcker hela min intensiva arbetsdag.",
         rating: 4.5
     },
     {
@@ -61,23 +61,23 @@ export const testimonialData: testimonialType[] = [
         name: "Tom B.",
         position: "",
         image: "/images/testimonial/user-7.png",
-        review: "Vexora's drone provides professional-grade aerial photography with smooth navigation and precise control. I've used it for several short films, and it performs just as well as some of the more expensive models out there.",
+        review: "Vexoras drönare ger flygbilder av professionell kvalitet med smidig navigering och exakt styrning. Jag har använt den till flera kortfilmer, och den presterar lika bra som vissa betydligt dyrare modeller.",
         rating: 5.00
     },
     {
         id: 8,
         name: "Anna P.",
-        position: "Yoga Instructor",
+        position: "Yogainstruktör",
         image: "/images/testimonial/user-8.png",
-        review: "The Vexora Smartwatch keeps me on track with my fitness goals. From tracking my yoga sessions to monitoring my sleep, it's sleek and stylish, so I wear it all day, even during classes.",
+        review: "Vexoras smartklocka hjälper mig att följa mina träningsmål, registrera yogapass och hålla koll på sömnen. Den är smidig och snygg, så jag bär den hela dagen, även under mina klasser.",
         rating: 5.00
     },
     {
         id: 9,
         name: "James D.",
-        position: "Adventure Sports Enthusiast",
+        position: "Äventyrssportare",
         image: "/images/testimonial/user-9.png",
-        review: "Whether I'm surfing or snowboarding, the Vexora Action Camera captures every moment in stunning detail. It's lightweight, easy to mount, and has fantastic image stabilization. Perfect for adrenaline junkies like me!",
+        review: "Oavsett om jag surfar eller åker snowboard fångar Vexoras actionkamera varje ögonblick med imponerande detaljrikedom. Den är lätt, enkel att montera och har fantastisk bildstabilisering. Perfekt för adrenalinsökare som jag!",
         rating: 5.00
     }
 ]

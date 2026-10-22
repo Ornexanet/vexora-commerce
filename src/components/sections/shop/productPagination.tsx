@@ -13,7 +13,7 @@ const ProductPagination = () => {
     <div className="px-5 pt-[14px] pb-[14px] mt-[98px] flex justify-between items-center flex-wrap gap-5">
       <div className="flex items-center">
         <Label htmlFor="perpage-2" className="text-lg text-light-dark">
-          Show
+          Visa
         </Label>
         <Select defaultValue="10">
           <SelectTrigger
@@ -28,11 +28,11 @@ const ProductPagination = () => {
             <SelectItem value="30">30</SelectItem>
           </SelectContent>
         </Select>
-        <span className="text-lg text-light-dark">per page</span>
+        <span className="text-lg text-light-dark">per sida</span>
       </div>
       <div className="flex items-center gap-4">
         <p className="text-light-dark tracking-[-0.18px] font-medium text-lg leading-[14px] sm:block hidden">
-          1-10 of 52
+          1-10 av 52
         </p>
         <div className="flex items-center gap-0.5">
           <button className="w-[30px] h-[30px] flex items-center justify-center text-light-dark hover:text-foreground hover:bg-[#F1F1F4] transition-all duration-500">

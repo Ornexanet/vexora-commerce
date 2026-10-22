@@ -12,12 +12,10 @@ const FeaturesProductFour = () => {
           <div className="xl:max-w-[649px] lg:max-w-[500px]">
             <div className="xl:mb-[192px] mb-14">
               <Title className="font-bold leading-[120%]">
-                A singular home theatre experience
+                En unik hemmabioupplevelse
               </Title>
               <p className="text-[22px] leading-[160%] text-light-dark mt-7.5">
-                Instantly swap TV audio from Sonos Arc Ultra, Arc, Beam, or Ray
-                to Sonos Ace when you don’t want to disturb others, and feel
-                enveloped in exhilarating surround sound and spatial audio.
+                Flytta direkt över tv-ljudet från Sonos Arc Ultra, Arc, Beam eller Ray till Sonos Ace när du inte vill störa andra, och omslut dig med medryckande surroundljud och rumsligt ljud.
               </p>
             </div>
             <div className="grid xl:grid-cols-2 gap-6">
@@ -26,7 +24,7 @@ const FeaturesProductFour = () => {
                   <CheckCircle />
                 </span>
                 <p className="font-medium text-lg">
-                  Listen for 26 hours, thanks to a massive 8800 mAh battery.
+                  Lyssna i 26 timmar tack vare ett kraftfullt batteri på 8800 mAh.
                 </p>
               </div>
               <div className="flex gap-2">
@@ -34,7 +32,7 @@ const FeaturesProductFour = () => {
                   <CheckCircle />
                 </span>
                 <p className="font-medium text-lg">
-                  With IP67-rated water and dust resistance, feel secure.
+                  Känn dig trygg med vatten- och dammtålighet enligt IP67.
                 </p>
               </div>
             </div>
@@ -43,7 +41,7 @@ const FeaturesProductFour = () => {
               className="mt-12.5 rounded-full gap-[15px] bg-light-gray text-foreground hover:text-primary-foreground"
             >
               <Link href={"/product-details"}>
-                Shop now
+                Handla nu
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width={24}
@@ -68,7 +66,7 @@ const FeaturesProductFour = () => {
               height={912}
               sizes="100vw"
               src={"/images-optimized/home-2/features-product.webp"}
-              alt="img"
+              alt="Bild"
             />
           </div>
         </div>

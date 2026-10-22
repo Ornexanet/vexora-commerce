@@ -51,13 +51,13 @@ const Countdown = () => {
     <div className="rounded-2xl lg:px-7.5 px-3 py-4 bg-[#FFEAEA] text-[#ED1B1B] flex items-center h-13.5">
       <Timer />
       <div className="lg:pl-3.5 pl-2 flex items-center gap-2.5">
-        <b className="lg:text-lg sm:text-base text-sm">{days} days</b>
+        <b className="lg:text-lg sm:text-base text-sm">{days} dagar</b>
         <b>:</b>
-        <b className="lg:text-lg sm:text-base text-sm">{pad(hours)} hrs</b>
+        <b className="lg:text-lg sm:text-base text-sm">{pad(hours)} tim</b>
         <b>:</b>
-        <b className="lg:text-lg sm:text-base text-sm">{pad(minutes)} mins</b>
+        <b className="lg:text-lg sm:text-base text-sm">{pad(minutes)} min</b>
         <b>:</b>
-        <b className="lg:text-lg sm:text-base text-sm">{pad(seconds)} secs</b>
+        <b className="lg:text-lg sm:text-base text-sm">{pad(seconds)} sek</b>
       </div>
     </div>
   );

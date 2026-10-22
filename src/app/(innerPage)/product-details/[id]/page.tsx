@@ -70,7 +70,7 @@ const categoryLink = getProductCategoryLink(product);
 
  const breadcrumbSchema = generateBreadcrumbSchema([
   { name: "Hem", path: "/" },
-  { name: "Shop", path: "/shop" },
+  { name: "Butik", path: "/shop" },
   {
     name: product.title,
     path: `/product-details/${product.id}`,

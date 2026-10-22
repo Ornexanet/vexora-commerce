@@ -179,7 +179,7 @@ useEffect(() => {
           {product.discount && (
             <div className="absolute top-[19px] left-0 rounded-tl-none rounded-bl-none rounded-sm py-1.5 pl-2.5 pr-2.5 bg-blue max-h-[30px] text-white flex items-center gap-1">
               <p className="text-sm">
-                Save ${product.discount}
+                Spara ${product.discount}
               </p>
             </div>
           )}

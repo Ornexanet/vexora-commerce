@@ -88,8 +88,8 @@ export const blogData: BlogType[] = [
       "Galaxy Watch Ultra",
       "Wear OS",
       "GPS",
-      "Smartwatch",
-      "Health Tracking",
+      "Smartklocka",
+      "Hälsospårning",
       "Hälsa",
       "Träning",
     ],
@@ -129,7 +129,7 @@ export const blogData: BlogType[] = [
     ],
     specs: [
       { label: "Produkt", value: "Samsung Galaxy Watch Ultra" },
-      { label: "Kategori", value: "Premium Smartwatch" },
+      { label: "Kategori", value: "Smartklocka i premiumklassen" },
       { label: "Operativsystem", value: "Wear OS" },
       { label: "Passar för", value: "Träning, hälsa, arbete och vardag" },
       {
@@ -182,7 +182,7 @@ export const blogData: BlogType[] = [
     category: "Mobiler",
     keywords: [
       "iPhone 17 Pro",
-      "premium smartphone",
+      "smarttelefon i premiumklassen",
       "mobilkamera",
       "Apple",
       "smartphone för foto och video",
@@ -193,7 +193,7 @@ export const blogData: BlogType[] = [
       "iPhone 17 Pro",
       "iOS",
       "Mobilkamera",
-      "Smartphone",
+      "Smarttelefon",
       "Foto",
       "Video",
     ],
@@ -232,7 +232,7 @@ export const blogData: BlogType[] = [
     ],
     specs: [
       { label: "Produkt", value: "iPhone 17 Pro" },
-      { label: "Kategori", value: "Premium smartphone" },
+      { label: "Kategori", value: "Smarttelefon i premiumklassen" },
       { label: "Passar för", value: "Foto, video, arbete och vardag" },
       { label: "Design", value: "Premiumkänsla och modern finish" },
       { label: "Användning", value: "Privat, professionellt och kreativt bruk" },

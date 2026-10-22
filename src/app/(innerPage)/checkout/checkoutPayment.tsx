@@ -30,7 +30,7 @@ const CheckoutPayment = () => {
                     width={70}
                     height={70}
                     src={"/images/bestProducts/camera-1.png"}
-                    alt="img"
+                    alt="Bild"
                     className="bg-white max-h-[70px] object-contain"
                   />
                   <div>
@@ -70,7 +70,7 @@ const CheckoutPayment = () => {
                   <RadioGroupItem
                     value="0"
                     id="free-shipping"
-                    aria-label="radio"
+                    aria-label="Fri frakt"
                     className="border-light-dark text-transparent "
                   />
                   <Label
@@ -84,7 +84,7 @@ const CheckoutPayment = () => {
                   <RadioGroupItem
                     value="10"
                     id="fat-rate"
-                    aria-label="radio"
+                    aria-label="Fast frakt"
                     className="border-light-dark text-transparent"
                   />
                   <Label
@@ -120,7 +120,7 @@ const CheckoutPayment = () => {
               <RadioGroupItem
                 value="bank-transfer"
                 id="bank-transfer"
-                aria-label="radio"
+                aria-label="Direkt banköverföring"
                 className="border-light-dark text-transparent"
               />
               <Label
@@ -139,7 +139,7 @@ const CheckoutPayment = () => {
             <RadioGroupItem
               value="check payments"
               id="check-payment"
-              aria-label="radio"
+              aria-label="Checkbetalning"
               className="border-light-dark text-transparent"
             />
             <Label
@@ -153,7 +153,7 @@ const CheckoutPayment = () => {
             <RadioGroupItem
               value="cash-on-delivery"
               id="cash-on-delivery"
-              aria-label="radio"
+              aria-label="Betalning vid leverans"
               className="border-light-dark text-transparent"
             />
             <Label
@@ -167,7 +167,7 @@ const CheckoutPayment = () => {
             <RadioGroupItem
               value="paypal"
               id="paypal"
-              aria-label="radio"
+              aria-label="PayPal"
               className="border-light-dark text-transparent"
             />
             <Label
@@ -190,7 +190,7 @@ const CheckoutPayment = () => {
             htmlFor="terms"
             className="lg:text-lg text-base font-normal text-secondary-foreground"
           >
-            Jag har läst ochgodkänner webbplatsens{" "}
+            Jag har läst och godkänner webbplatsens{" "}
             <Link href={"/returer-och-aterbetalningar"} className="underline">
               Villkor
             </Link>

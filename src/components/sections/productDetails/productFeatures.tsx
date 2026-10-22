@@ -15,7 +15,7 @@ const ProductFeatures = () => {
                   width={351}
                   height={552}
                   src="/images-optimized/product-details/feature-product-1.webp"
-                  alt="Product Feature 1"
+                  alt="Produktfunktion 1"
                   className="rounded-[15px]"
                 />
               </div>
@@ -24,44 +24,39 @@ const ProductFeatures = () => {
                   width={351}
                   height={552}
                   src="/images-optimized/product-details/feature-product-2.webp"
-                  alt="Product Feature 2"
+                  alt="Produktfunktion 2"
                   className="rounded-[15px]"
                 />
               </div>
             </div>
             <div>
               <Title size="52" asChild className="tracking-[2%]">
-                <h2>McLaren inspired</h2>
+                <h2>Inspirerad av McLaren</h2>
               </Title>
               <p className="mt-3 text-light-dark leading-[170%]">
-                Celebrating a relationship which has been in place since 2015,
-                the Px8 McLaren Edition is finished in elegant grey leather with
-                Papaya orange details inspired by McLaren’s supercars and
-                hypercars.
+                Px8 McLaren Edition hyllar ett samarbete som inleddes 2015, med elegant grått läder och papayaorange detaljer inspirerade av McLarens superbilar och hyperbilar.
               </p>
               <div className="mt-10 grid sm:grid-cols-2 gap-6">
                 <div>
                   <div>
                     <CheckCircle2 className="text-light-dark inline" />
                     <span className="ml-3 font-medium text-lg">
-                      Designed highlights
+                      Genomtänkta designdetaljer
                     </span>
                   </div>
                   <p className="leading-[170%] mt-4 text-light-dark">
-                    Integration of McLaren Automotive cues is subtle but
-                    stylish, with a Galvanic grey finish.
+                    McLaren Automotives formspråk märks i diskreta, stilfulla detaljer med galvaniskt grå finish.
                   </p>
                 </div>
                 <div>
                   <div>
                     <Headphones className=" text-light-dark inline" />
                     <span className="ml-3 font-medium text-lg">
-                      Audio partners
+                      Partners inom ljud
                     </span>
                   </div>
                   <p className="leading-[170%] mt-4 text-light-dark">
-                    The partnership is built on firm technical foundations,
-                    something that has already been recognised.
+                    Samarbetet bygger på en gedigen teknisk grund som redan har uppmärksammats.
                   </p>
                 </div>
               </div>
@@ -77,12 +72,12 @@ const ProductFeatures = () => {
               width={788}
               height={570}
               src="/images-optimized/product-details/feature-product-3.webp"
-              alt="Product Feature 3"
+              alt="Produktfunktion 3"
               className="rounded-[15px] w-full"
             />
             <div className="sm:px-7.5 px-5 py-7 absolute inset-0 flex flex-col justify-end h-full w-full">
               <Title size="52" asChild className="text-white max-w-[625px]">
-                <h2>High-resolution sound with advanced DSP</h2>
+                <h2>Högupplöst ljud med avancerad DSP</h2>
               </Title>
             </div>
           </div>
@@ -91,13 +86,12 @@ const ProductFeatures = () => {
               width={788}
               height={570}
               src="/images-optimized/product-details/feature-product-4.webp"
-              alt="Product Feature 3"
+              alt="Produktfunktion 3"
               className="rounded-[15px] w-full"
             />
             <div className="sm:px-7.5 px-5 py-7 absolute inset-0 flex flex-col justify-end h-full w-full">
               <p className="text-white max-w-[518px] text-xl lg:text-[22px] lg:leading-[140%] font-medium">
-                Manufactured under license from McLaren Automotive Limited. The
-                McLaren name and logo are registered trademarks of McLaren.
+                Tillverkad på licens från McLaren Automotive Limited. McLarens namn och logotyp är registrerade varumärken som tillhör McLaren.
               </p>
             </div>
           </div>

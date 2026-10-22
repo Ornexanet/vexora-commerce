@@ -245,7 +245,6 @@ const Footer = () => {
         <div className="container flex sm:flex-row flex-col justify-between sm:items-center gap-y-5">
           <p className="md:text-lg font-medium md:leading-normal text-light-dark">
             © {new Date().getFullYear()} Ornexa. Alla rättigheter förbehållna.
-            Reserved
           </p>
           <div className="flex items-center gap-2.5">
             <Glob />

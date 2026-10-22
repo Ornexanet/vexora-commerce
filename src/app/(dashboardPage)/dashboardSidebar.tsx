@@ -15,37 +15,37 @@ import React from "react";
 
 const menuItems = [
   {
-    title: "Dashboard",
+    title: "Översikt",
     href: "/dashboard",
     icon: <MoreGridIcon />,
   },
   {
-    title: "Orders",
+    title: "Beställningar",
     href: "/dashboard/orders",
     icon: <ShopingCart className="size-6 stroke-[2.2]" />,
   },
   {
-    title: "Downloads",
+    title: "Nedladdningar",
     href: "#",
     icon: <Downloadicon />,
   },
   {
-    title: "Addresses",
+    title: "Adresser",
     href: "#",
     icon: <FileIcon />,
   },
   {
-    title: "Payment Methods",
+    title: "Betalningsmetoder",
     href: "#",
     icon: <PaymentCardIcon />,
   },
   {
-    title: "Account Details",
+    title: "Kontouppgifter",
     href: "#",
     icon: <UserSquearIcon />,
   },
   {
-    title: "Logout",
+    title: "Logga ut",
     href: "#",
     icon: <LogOutIcon />,
   },

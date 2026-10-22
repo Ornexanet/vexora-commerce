@@ -27,7 +27,7 @@ const PageHeader = ({
             href={"/"}
             className="text-lg text-light-dark leading-normal hover:text-blue transition-all duration-500"
           >
-            Home
+            Hem
           </Link>
           {praentPageName && (
             <>

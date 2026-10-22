@@ -2454,7 +2454,7 @@ sourceUrl:
       value: "Bluetooth 5.4",
     },
     {
-      label: "Driver",
+      label: "Högtalarelement",
       value: "11 mm dynamisk högtalardriver",
     },
     {

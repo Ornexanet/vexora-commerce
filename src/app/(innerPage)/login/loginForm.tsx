@@ -23,10 +23,10 @@ function LoginForm() {
       </div>
       <div className="flex items-center gap-2.5">
         <button className="border border-[#DBDFE9] rounded-md flex items-center justify-center gap-1 h-11 w-full text-light-dark font-medium hover:border-blue hover:text-blue transition-all duration-300">
-          <GoogleOriginalIcon /> <span>Förtsätt med Google</span>
+          <GoogleOriginalIcon /> <span>Fortsätt med Google</span>
         </button>
         <button className="border border-[#DBDFE9] rounded-md flex items-center justify-center gap-1 h-11 w-full text-light-dark font-medium hover:border-blue hover:text-blue transition-all duration-300">
-          <AppleOriginalIcon /> <span>Förtsätt med Apple</span>
+          <AppleOriginalIcon /> <span>Fortsätt med Apple</span>
         </button>
       </div>
       <div className="flex items-center justify-center gap-2">
@@ -65,7 +65,7 @@ function LoginForm() {
             className="bg-[#FCFCFC] placeholder:text-light-dark"
           />
           <button
-            aria-label="eye"
+            aria-label="Visa lösenord"
             className="absolute right-2 top-1/2 -translate-y-1/2 text-light-dark"
           >
             <EyeIcon size={20} strokeWidth={1} />

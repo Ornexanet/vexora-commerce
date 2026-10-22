@@ -8,12 +8,10 @@ const WatchModes = () => {
       <div className="container">
         <div className="flex lg:flex-row flex-col lg:items-center lg:justify-center gap-y-7 gap-x-31">
           <Title>
-            160+ sports <br /> modes
+            Över 160 <br /> träningsformer
           </Title>
           <p className="text-lg tracking-[2%] lg:max-w-[512px]">
-            Supports more than 160 sports modes with an optimized professional
-            algorithm model that provides you with more accurate workout data,
-            so your workouts can be more scientific and productive.
+            Stöd för över 160 träningsformer med en optimerad professionell algoritm som ger mer precisa träningsdata, så att dina träningspass kan bli mer vetenskapligt grundade och effektiva.
           </p>
         </div>
       </div>
@@ -23,7 +21,7 @@ const WatchModes = () => {
           height={485}
           sizes="100vw"
           src="/images-optimized/product-details-two/modes-bg-img.webp"
-          alt="product-modes"
+          alt="Träningsformer"
           className="w-full"
         />
       </div>

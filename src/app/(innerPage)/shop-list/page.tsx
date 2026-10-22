@@ -8,9 +8,9 @@ import ProductsContainer from "./productsContainer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Vexora - Shop List",
+  title: "Vexora – Produktlista",
   description:
-    "Vexora - Single Product eCommerce Next.js Template for Tech and Gadget Stores",
+    "Vexora – Next.js-mall för e-handel med en produkt för elektronik- och teknikbutiker",
 };
 
 const ShopList = () => {

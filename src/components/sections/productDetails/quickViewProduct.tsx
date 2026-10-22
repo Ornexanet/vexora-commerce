@@ -95,7 +95,7 @@ const QuickViewProduct = ({
                       width={150}
                       height={160}
                       src={image.src}
-                      alt={`${product.title} - image ${index + 1}`}
+                      alt={`${product.title} - bild ${index + 1}`}
                       className="rounded-[15px] bg-[#FFF9F5] max-h-[160px] object-contain"
                     />
                   </div>
@@ -111,7 +111,15 @@ const QuickViewProduct = ({
 
             <div className="overflow-hidden">
               <strong className="text-lg text-light-dark">
-                {product.categories?.[0] ?? "Produkt"}
+                {({
+                  mobiler: "Mobiler",
+                  headphones: "Hörlurar",
+                  smartWatch: "Smarta klockor",
+                  accessories: "Tillbehör",
+                  cameras: "Kameror",
+                  Headphones: "Hörlurar",
+                } as Record<string, string>)[product.categories?.[0] ?? ""] ??
+                  product.categories?.[0] ?? "Produkt"}
               </strong>
 
               <div>
@@ -156,7 +164,7 @@ const QuickViewProduct = ({
                     <span className="bg-[#B0B5BB] w-px h-[21px]" />
 
                     <span className="text-lg text-light-dark">
-                      250 Reviews
+                      250 recensioner
                     </span>
                   </div>
                 </div>

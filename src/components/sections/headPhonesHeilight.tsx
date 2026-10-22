@@ -14,7 +14,7 @@ const HeadPhonesHeilight = () => {
               height={1016}
               sizes="100vw"
               src={"/images-optimized/headphones/bg.webp"}
-              alt="img"
+              alt="Bild"
             />
           </div>
           <div className="w-full grow">

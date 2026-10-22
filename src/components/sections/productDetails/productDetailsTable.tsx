@@ -7,25 +7,25 @@ interface TableType {
 }
 const technicalDetails = [
   {
-    label: "Wearing style",
-    value: "Bluetooth Wireless Over-Ear Headphones",
+    label: "Utförande",
+    value: "Trådlösa over-ear-hörlurar med Bluetooth",
   },
   {
-    label: "Technical features",
+    label: "Tekniska funktioner",
     value: [
-      "Hybrid Noise Cancellation",
-      "Ambient Pass-Through",
-      "Wear-Detection Sensor",
-      "Bluetooth® audio – Bluetooth 5.2 with aptX™ Adaptive",
-      "USB-C charging & audio interface",
+      "Hybridbrusreducering",
+      "Medhörningsläge",
+      "Sensor som känner av när hörlurarna används",
+      "Bluetooth®-ljud – Bluetooth 5.2 med aptX™ Adaptive",
+      "Laddning och ljudanslutning via USB-C",
     ],
   },
   {
-    label: "Bluetooth codecs",
+    label: "Bluetooth-kodekar",
     value: ["aptX™ Adaptive", "aptX™ HD", "aptX™", "AAC", "SBC"],
   },
   {
-    label: "Bluetooth profiles",
+    label: "Bluetooth-profiler",
     value: [
       "A2DP",
       "AVRCP",
@@ -35,31 +35,31 @@ const technicalDetails = [
     ],
   },
   {
-    label: "Drive units",
-    value: "2 × 40mm dynamic full-range carbon driver",
+    label: "Högtalarelement",
+    value: "2 × 40mm dynamiska fullregisterelement i kolfiber",
   },
   {
-    label: "Microphones",
-    value: ["4× mics for ANC", "2× mics for telephony"],
+    label: "Mikrofoner",
+    value: ["4× mikrofoner för ANC", "2× mikrofoner för samtal"],
   },
   {
-    label: "Battery type",
-    value: "Rechargeable Lithium-Ion",
+    label: "Batterityp",
+    value: "Uppladdningsbart litiumjonbatteri",
   },
   {
-    label: "Battery life & charging",
-    value: ["30 hours playback", "15-minute charge for 7 hours playback"],
+    label: "Batteritid och laddning",
+    value: ["30 timmars uppspelning", "15 minuters laddning ger 7 timmars uppspelning"],
   },
 ];
 
 const sizeAndWeight = [
   {
-    label: "Net weight",
-    value: "320g (without carry case)",
+    label: "Nettovikt",
+    value: "320g utan förvaringsfodral",
   },
   {
-    label: "Dimensions (Carry Case)",
-    value: "189mm (w) × 63mm (d) × 233mm (h)",
+    label: "Mått på förvaringsfodralet",
+    value: "189mm (b) × 63mm (d) × 233mm (h)",
   },
 ];
 
@@ -71,14 +71,14 @@ const ProductDetailsTable = () => {
           <div className="lg:sticky top-0">
             <Title asChild size="52">
               <h4 className="">
-                Details & <br /> Specifications
+                Detaljer och <br /> specifikationer
               </h4>
             </Title>
           </div>
           <div className="min-w-0">
-            <SpecsTable title="Technical Details" data={technicalDetails} />
+            <SpecsTable title="Tekniska detaljer" data={technicalDetails} />
             <div className="mt-12.5">
-              <SpecsTable title="Size & weight" data={sizeAndWeight} />
+              <SpecsTable title="Mått och vikt" data={sizeAndWeight} />
             </div>
           </div>
         </div>

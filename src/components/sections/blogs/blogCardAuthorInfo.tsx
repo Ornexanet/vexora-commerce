@@ -15,7 +15,7 @@ const BlogCardAuthorInfo = ({ blog }:{ blog: BlogType }) => {
           src={blog.author.image}
           alt={blog.author.name}
         />
-        <span className={cn("text-[#B0B5BB] leading-8 md:text-lg by")}>by</span>
+        <span className={cn("text-[#B0B5BB] leading-8 md:text-lg by")}>av</span>
         <Link
           href={"#"}
           className="text-white md:text-lg md:leading-normal hover:text-blue transition-all duration-500 author-name"

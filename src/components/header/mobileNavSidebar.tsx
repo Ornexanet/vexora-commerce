@@ -46,13 +46,13 @@ const MobileNavSidebar = () => {
               value="pages"
               className="data-[state=active]:shadow-none py-2 text-base rounded-none"
             >
-              Pages
+              Sidor
             </TabsTrigger>
             <TabsTrigger
               value="categories"
               className="data-[state=active]:shadow-none py-2 text-base rounded-none"
             >
-              Categories
+              Kategorier
             </TabsTrigger>
           </TabsList>
           {/* pages links */}
@@ -66,7 +66,7 @@ const MobileNavSidebar = () => {
                   href="/"
                   className="text-base font-medium py-2 hover:text-blue transition-all duration-500 flex items-center justify-between gap-2.5"
                 >
-                  Home-1
+                  Startsida 1
                 </Link>
               </li>
               <li>
@@ -74,7 +74,7 @@ const MobileNavSidebar = () => {
                   href="/home-2"
                   className="text-base font-medium py-2 hover:text-blue transition-all duration-500 flex items-center justify-between gap-2.5"
                 >
-                  Home-2
+                  Startsida 2
                 </Link>
               </li>
               {pagesList.map(({ href, id, label, subMenu, dropdownMenu }) => (

@@ -40,7 +40,7 @@ const ProductCard = () => {
     id: 100,
     title: "Insta360 x4",
     thumbnail: "/images/groupOfProducts/product-single-1.png",
-    description: "360-degree action camera",
+    description: "Actionkamera med 360-gradersfilmning",
     price: 159.9,
     tag: null,
     discount: null,
@@ -64,7 +64,7 @@ const ProductCard = () => {
             height={132}
             sizes="100vw"
             src={product.thumbnail}
-            alt="img"
+            alt="Bild"
           />
         </div>
         <div className="flex flex-col justify-between pt-[19px] pb-[13px]">
@@ -116,7 +116,7 @@ const GroupOfProducts = () => {
               height={500}
               sizes="100vw"
               src={"/images-optimized/groupOfProducts/product-1.webp"}
-              alt="img"
+              alt="Bild"
               className="rounded-lg w-full h-full"
             />
             <Popover defaultOpen={true}>
@@ -141,7 +141,7 @@ const GroupOfProducts = () => {
                 height={500}
                 sizes="100vw"
                 src={"/images-optimized/groupOfProducts/product-2.webp"}
-                alt="img"
+                alt="Bild"
                 className="rounded-lg w-full h-full"
               />
             </div>
@@ -151,7 +151,7 @@ const GroupOfProducts = () => {
                 height={232}
                 sizes="100vw"
                 src={"/images-optimized/groupOfProducts/product-3.webp"}
-                alt="img"
+                alt="Bild"
                 className="rounded-lg w-full h-full"
               />
               <Image
@@ -159,7 +159,7 @@ const GroupOfProducts = () => {
                 height={232}
                 sizes="100vw"
                 src={"/images-optimized/groupOfProducts/product-4.webp"}
-                alt="img"
+                alt="Bild"
                 className="rounded-lg w-full h-full"
               />
             </div>

@@ -10,9 +10,9 @@ import Card from "@/components/ui/card";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Vexora - Product Details Two",
+  title: "Vexora – Produktinformation 2",
   description:
-    "Vexora - Single Product eCommerce Next.js Template for Tech and Gadget Stores",
+    "Vexora – Next.js-mall för e-handel med en produkt för elektronik- och teknikbutiker",
 };
 
 const ProductDetailsTwo = () => {
@@ -33,7 +33,7 @@ const ProductDetailsTwo = () => {
       <section className="lg:mt-37.5 md:mt-25 mt-20">
         <div className="container">
           <Title size="52" className="font-extrabold text-center">
-            Related Products
+            Liknande produkter
           </Title>
           <div className="mt-12.5 grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-7.5 gap-y-17.5">
             {products.bestProductsData.slice(0, 4).map((product) => (

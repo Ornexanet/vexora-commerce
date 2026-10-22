@@ -151,12 +151,12 @@ const PriceSummary = () => {
 
           <div className="mt-7.5 flex items-center justify-between">
             <span className="text-lg leading-normal">
-              Leverns till{" "}
+              Leverans till{" "}
               <span className="font-bold text-black"></span>
             </span>
 
             <button className="text-blue text-lg underline-offset-4 underline">
-              Ändra address
+              Ändra adress
             </button>
           </div>
         </div>
@@ -189,7 +189,7 @@ const PriceSummary = () => {
             width={360}
             height={52}
             src="/images/payment-card.png"
-            alt="payment"
+            alt="Betalningsalternativ"
           />
         </div>
       </div>

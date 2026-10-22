@@ -12,49 +12,49 @@ import StickyHeader from "@/components/header/stickyHeader";
 export const navMenu = [
   {
     id: 1,
-    label: "Home",
+    label: "Hem",
     path: "#",
     dropdownMenu: [
-      { id: 1, href: "/", label: "Home-1" },
-      { id: 2, href: "/home-2", label: "Home-2" },
+      { id: 1, href: "/", label: "Startsida 1" },
+      { id: 2, href: "/home-2", label: "Startsida 2" },
     ],
   },
-  { id: 2, label: "Shop", path: "/shop", megaMenu: true },
-  { id: 3, label: "Accessories", path: "#" },
+  { id: 2, label: "Butik", path: "/shop", megaMenu: true },
+  { id: 3, label: "Tillbehör", path: "#" },
   {
     id: 4,
-    label: "Pages",
+    label: "Sidor",
     path: "#",
     subMenu: pagesSubmenuList,
   },
   {
     id: 5,
-    label: "Blog",
+    label: "Blogg",
     path: "#",
     dropdownMenu: [
       {
         id: 0,
-        label: "Blog Modern",
+        label: "Modern blogg",
         href: "/blog",
       },
       {
         id: 1,
-        label: "Blog Classic",
+        label: "Klassisk blogg",
         href: "/blog-classic",
       },
       {
         id: 2,
-        label: "Blog Details",
+        label: "Bloggartikel",
         href: "/blog-details",
       },
       {
         id: 3,
-        label: "Blog Details Two",
+        label: "Bloggartikel 2",
         href: "/blog-details-two",
       },
     ],
   },
-  { id: 6, label: "Contact", path: "/contact" },
+  { id: 6, label: "Kontakt", path: "/contact" },
 ];
 
 const Header = () => {
@@ -72,7 +72,7 @@ const Header = () => {
                   width={120}
                   height={40}
                   src={"/images/logo.png"}
-                  alt="logo"
+                  alt="Logotyp"
                 />
               </Link>
               <nav className="xl:block hidden">

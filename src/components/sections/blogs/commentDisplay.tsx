@@ -13,25 +13,25 @@ const comments: Comment[] = [
   {
     id: 1,
     name: "Devon Lane",
-    date: "28 April 2024",
+    date: "28 april 2024",
     avatar: "/images/blogs/comment-user-1.png",
-    text: "As the world continues to fight COVID-19 some property owners are searching for way they can improve the Neque porro quisquam est, qui is dolor emr ipsum quia dolor sit amet the consec tetur is adipisci velit.",
+    text: "Medan världen fortsätter att bekämpa covid-19 söker vissa fastighetsägare efter sätt att förbättra Neque porro quisquam est, qui is dolor emr ipsum quia dolor sit amet the consec tetur is adipisci velit.",
     replies: [
       {
         id: 11,
         name: "Jenny Wilson",
-        date: "28 April 2024",
+        date: "28 april 2024",
         avatar: "/images/blogs/comment-user-2.png",
-        text: "As the world continues to fight COVID-19 some property owners are searching for way they can improve the Neque",
+        text: "Medan världen fortsätter att bekämpa covid-19 söker vissa fastighetsägare efter sätt att förbättra Neque",
       },
     ],
   },
   {
     id: 2,
     name: "Courtney Henry",
-    date: "28 April 2024",
+    date: "28 april 2024",
     avatar: "/images/blogs/comment-user-3.png",
-    text: "As the world continues to fight COVID-19 some property owners are searching for way they can improve the Neque porro quisquam est, qui is dolor emr ipsum quia dolor sit amet the consec tetur is adipisci",
+    text: "Medan världen fortsätter att bekämpa covid-19 söker vissa fastighetsägare efter sätt att förbättra Neque porro quisquam est, qui is dolor emr ipsum quia dolor sit amet the consec tetur is adipisci",
   },
 ];
 
@@ -69,7 +69,7 @@ const CommentCard = ({
         </p>
 
         <button className="mt-5 text-blue text-lg leading-[160%] font-medium hover:underline">
-          Reply
+          Svara
         </button>
       </div>
     </div>
@@ -80,7 +80,7 @@ const CommentDisplay = () => {
   return (
     <div className="mt-20 max-w-[870px] mx-auto px-4">
       <Title asChild size="36">
-        <h3>Comments (5)</h3>
+        <h3>Kommentarer (5)</h3>
       </Title>
 
       <div className="mt-10">

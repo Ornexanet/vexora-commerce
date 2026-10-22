@@ -56,23 +56,23 @@ export const CompareProvider = ({
       const existingItem = prev.find((item) => item.id === product.id);
 
       if (existingItem) {
-        toast.error("Product already in compare list");
+        toast.error("Produkten finns redan i jämförelselistan");
         return prev;
       }
 
       if (prev.length >= 4) {
-        toast.warning("Compare list is full (max 4 products)");
+        toast.warning("Jämförelselistan är full (högst 4 produkter)");
         return prev;
       }
 
-      toast.success("Product added to compare");
+      toast.success("Produkten har lagts till för jämförelse");
       return [...prev, product];
     });
   }, []);
 
   const removeFromCompare = useCallback((productId: number) => {
     setCompareItems((prev) => prev.filter((item) => item.id !== productId));
-    toast.success("Product removed from compare");
+    toast.success("Produkten har tagits bort från jämförelsen");
   }, []);
 
   const isInCompare = useCallback(

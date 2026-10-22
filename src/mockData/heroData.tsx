@@ -38,7 +38,7 @@ backgroundImage: "/images/hero/bg-1.webp",
       {
         id: 3,
         icon: "Map",
-        name: "Advanced Navigation",
+        name: "Avancerad navigering",
       },
     ],
   },

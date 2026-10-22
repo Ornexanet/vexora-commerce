@@ -100,7 +100,7 @@ const TopHeader = () => {
           width={120}
           height={40}
           src="/images/ornexa-logo121.png"
-          alt="Ornexa logo"
+          alt="Ornexas logotyp"
           priority
         />
       </Link>

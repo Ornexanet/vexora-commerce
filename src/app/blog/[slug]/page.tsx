@@ -51,7 +51,7 @@ const BlogDetails = async ({ params }: BlogDetailsProps) => {
       />
 
       <PageHeader
-        title="Blog"
+        title="Blogg"
         praentPageHref="/blog"
         currentPageName={blog.title}
         praentPageName="Blog"

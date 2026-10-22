@@ -15,7 +15,7 @@ export const metadata = generatePageMetadata({
   path: "/mobiler",
   keywords: [
     "Mobiler",
-    "Smartphones",
+    "Smarttelefoner",
     "Apple",
     "Samsung",
     "Xiaomi",

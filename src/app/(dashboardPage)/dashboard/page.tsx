@@ -26,40 +26,40 @@ const page = () => {
             className="text-center flex flex-col justify-center items-center hover:text-blue transition-colors"
           >
             <Heart />
-            <p className="mt-1.5">Wish List</p>
+            <p className="mt-1.5">Önskelista</p>
           </Link>
           <Link
             href={"#"}
             className="text-center flex flex-col justify-center items-center hover:text-blue transition-colors"
           >
             <Ticket />
-            <p className="mt-1.5">Coupons</p>
+            <p className="mt-1.5">Rabattkoder</p>
           </Link>
           <Link
             href={"#"}
             className="text-center flex flex-col justify-center items-center hover:text-blue transition-colors"
           >
             <Truck />
-            <p className="mt-1.5">Track Order</p>
+            <p className="mt-1.5">Spåra beställning</p>
           </Link>
           <Link
             href={"#"}
             className="text-center flex flex-col justify-center items-center hover:text-blue transition-colors"
           >
             <Download />
-            <p className="mt-1.5">Downloads</p>
+            <p className="mt-1.5">Nedladdningar</p>
           </Link>
           <Link
             href={"#"}
             className="text-center flex flex-col justify-center items-center hover:text-blue transition-colors"
           >
             <CreditCard />
-            <p className="mt-1.5">Shopping credit</p>
+            <p className="mt-1.5">Tillgodohavande</p>
           </Link>
         </div>
       </section>
       <div className="mt-10">
-        <h6 className="font-semibold text-2xl mb-4">Recent Order</h6>
+        <h6 className="font-semibold text-2xl mb-4">Senaste beställningen</h6>
         <OrdersTable data={ordersData.slice(0, 3)} />
       </div>
     </div>

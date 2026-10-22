@@ -14,93 +14,93 @@ import { useState } from "react";
 const productCategories = [
   {
     id: 1,
-    name: "Drone",
+    name: "Drönare",
     subcategories: [],
   },
   {
     id: 2,
-    name: "Camera",
+    name: "Kamera",
     subcategories: [],
   },
   {
     id: 3,
-    name: "Headphones",
+    name: "Hörlurar",
     subcategories: [
       {
         id: 31,
-        name: "Noise Canceling",
+        name: "Brusreducering",
       },
       {
         id: 32,
-        name: "Over-Ear",
+        name: "Over-ear",
       },
       {
         id: 33,
-        name: "Sports & Fitness",
+        name: "Sport och träning",
       },
       {
         id: 34,
-        name: "Bluetooth Headphones",
+        name: "Bluetooth-hörlurar",
       },
     ],
   },
   {
     id: 4,
-    name: "Wearable",
+    name: "Bärbar teknik",
     subcategories: [
       {
         id: 35,
-        name: "Noise Canceling",
+        name: "Brusreducering",
       },
       {
         id: 36,
-        name: "Over-Ear",
+        name: "Over-ear",
       },
       {
         id: 37,
-        name: "Sports & Fitness",
+        name: "Sport och träning",
       },
       {
         id: 38,
-        name: "Bluetooth Headphones",
+        name: "Bluetooth-hörlurar",
       },
     ],
   },
   {
     id: 5,
-    name: "Virtual Reality",
+    name: "Virtuell verklighet",
     subcategories: [],
   },
   {
     id: 6,
-    name: "Gadgets",
+    name: "Teknikprylar",
     subcategories: [
       {
         id: 66,
-        name: "Noise Canceling",
+        name: "Brusreducering",
       },
       {
         id: 77,
-        name: "Over-Ear",
+        name: "Over-ear",
       },
       {
         id: 68,
-        name: "Sports & Fitness",
+        name: "Sport och träning",
       },
       {
         id: 69,
-        name: "Bluetooth Headphones",
+        name: "Bluetooth-hörlurar",
       },
     ],
   },
   {
     id: 7,
-    name: "Speakers",
+    name: "Högtalare",
     subcategories: [],
   },
   {
     id: 8,
-    name: "Accessories",
+    name: "Tillbehör",
     subcategories: [],
   },
 ];
@@ -247,7 +247,7 @@ const ProductsFilterSidebar = ({
       {/* price range slider and input */}
       <div>
         <Title asChild size="28" className="font-extrabold mb-[30px]">
-          <h3>Pris Filter</h3>
+          <h3>Prisfilter</h3>
         </Title>
         <div className="flex items-center gap-[15px] mb-6 ">
           <Input
@@ -279,7 +279,7 @@ const ProductsFilterSidebar = ({
           min={0}
           step={1}
           className="w-full"
-          aria-label="Price Range"
+          aria-label="Prisintervall"
         />
         <Button
           variant={"outline"}

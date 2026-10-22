@@ -28,7 +28,7 @@ const FeaturesProductTwo = () => {
                     height={222}
                     sizes="100vw"
                     src={"/images/smarta-klockor/apple-watch-ultra3.webp"}
-                    alt="img"
+                    alt="Bild"
                     className="hover:scale-105 transition-all duration-500"
                   />
                 </Link>

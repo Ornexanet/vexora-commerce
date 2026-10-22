@@ -15,7 +15,7 @@ export const metadata = generatePageMetadata({
   path: "/smarta-klockor",
   keywords: [
     "Smarta klockor",
-    "Smartwatch",
+    "Smartklocka",
     "Apple Watch",
     "Samsung Galaxy Watch",
     "Wear OS",

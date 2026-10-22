@@ -6,7 +6,7 @@ import React from "react";
 const BlogShareIcon = () => {
   return (
     <div className="flex items-center gap-5">
-      <p className="text-lg">Share:</p>
+      <p className="text-lg">Dela:</p>
       <div className="flex flex-wrap gap-2 mt-2">
         <Link
           href={"#"}
