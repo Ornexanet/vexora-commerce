@@ -55,7 +55,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         }
         return [...prev, { ...product, quantity: quantity }];
       });
-      toast.success("Product added to cart");
+      toast.success("Produkten har lagts i varukorgen");
     },
     [],
   );
