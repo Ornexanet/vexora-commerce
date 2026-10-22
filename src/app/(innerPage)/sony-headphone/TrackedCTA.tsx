@@ -20,6 +20,7 @@ export default function TrackedCTA({
       href={href}
       className={className}
       onClick={() => {
+        console.log("[Sony Landig] CTA clicked")
         trackEvent("landing_cta_clicked", {
           productId: 101,
         });
