@@ -13,7 +13,7 @@ const allowedEvent = [
     "hero_pagination_clicked",
     "experiment_exposure",
     "landing_cta_clicked",
-    "landing_page-viewed",
+    "landing_page_viewed",
 
 ];
 export async function POST(request: Request)
