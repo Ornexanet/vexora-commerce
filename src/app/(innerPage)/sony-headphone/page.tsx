@@ -72,6 +72,7 @@ const features = [
 export default function SonyLandingPage() {
   return (
     <main className="bg-white text-slate-900">
+      <LandingPageTracker />
     <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
