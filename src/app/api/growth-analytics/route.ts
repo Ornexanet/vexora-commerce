@@ -121,6 +121,8 @@ const countCartSessions = (variant: "A" | "B") => {
       checkoutsStarted: count("checkout_started"),
       heroPaginationClicks: count("hero_pagination_clicked"),
       landingCtaClicks: count("landing_cta_clicked"),
+      landingPageViews: count("landing_page_viewed"),
+
     });
   } catch (error) {
     console.error("Growth Analytics V2 Error:", error);

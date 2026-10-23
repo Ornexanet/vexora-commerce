@@ -17,6 +17,7 @@ type GrowthData = {
   addToWishlists: number;
   checkoutsStarted: number;
   heroPaginationClicks: number;
+  landingPageViews: number;
   landingCtaClicks: number;
   abTest: {
     A: ABVariantData;
@@ -59,6 +60,13 @@ const metrics = [
     symbol: "↔",
     color: "text-amber-600",
     bg: "bg-amber-50",
+  },
+  {
+    key: "landingPageViews",
+    label: "Sony Landing Page Views",
+    symbol: "◉",
+    color: "text-indigo-600",
+    bg: "bg-indigo-50",
   },
   {
     key: "landingCtaClicks",
@@ -115,9 +123,15 @@ export default function GrowthDashboard() {
     ? abTest.A.exposures + abTest.B.exposures
     : 0;
 
+  const landingCtr =
+    data && data.landingPageViews > 0
+      ? (data.landingCtaClicks / data.landingPageViews) * 100
+      : 0;
+
   return (
     <main className="min-h-screen bg-slate-50 px-4 py-10 text-slate-900 sm:px-8">
       <div className="mx-auto max-w-7xl">
+
         {/* Header */}
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
           <div>
@@ -199,6 +213,86 @@ export default function GrowthDashboard() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Landing Page Conversion */}
+        <section className="mt-10">
+          <div className="mb-5">
+            <p className="text-xs font-bold uppercase tracking-widest text-indigo-600">
+              Landing Page Performance
+            </p>
+
+            <h2 className="mt-2 text-xl font-bold text-slate-900">
+              Sony Landing Page — CTA Performance
+            </h2>
+
+            <p className="mt-2 text-sm text-slate-500">
+              Measuring clicks relative to recorded landing page views.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <p className="text-sm font-medium text-slate-500">
+                Landing Page Views
+              </p>
+
+              <p className="mt-4 text-4xl font-bold text-indigo-600">
+                {data
+                  ? data.landingPageViews.toLocaleString("en-US")
+                  : loading
+                    ? "..."
+                    : "—"}
+              </p>
+
+              <p className="mt-3 text-xs text-slate-400">
+                Recorded page-view events
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <p className="text-sm font-medium text-slate-500">
+                Landing CTA Clicks
+              </p>
+
+              <p className="mt-4 text-4xl font-bold text-cyan-600">
+                {data
+                  ? data.landingCtaClicks.toLocaleString("en-US")
+                  : loading
+                    ? "..."
+                    : "—"}
+              </p>
+
+              <p className="mt-3 text-xs text-slate-400">
+                Recorded CTA-click events
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <p className="text-sm font-medium text-slate-500">
+                Landing CTA CTR
+              </p>
+
+              <p className="mt-4 text-4xl font-bold text-emerald-600">
+                {data && data.landingPageViews > 0
+                  ? `${landingCtr.toFixed(1)}%`
+                  : "—"}
+              </p>
+
+              <p className="mt-3 text-xs text-slate-400">
+                {data
+                  ? `${data.landingCtaClicks} clicks / ${data.landingPageViews} views`
+                  : "Waiting for data"}
+              </p>
+            </div>
+          </div>
+
+          <p className="mt-4 text-xs text-slate-500">
+            CTA CTR = recorded CTA clicks / recorded landing page views.
+            This is an event-count ratio, not a unique-user conversion rate.
+            Historical clicks recorded before page-view tracking began may
+            distort the initial result.
+          </p>
         </section>
 
         {/* Total Events */}

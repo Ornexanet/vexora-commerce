@@ -5,7 +5,7 @@ import Image from "next/image";
 import { allProducts } from "@/mockData/products";
 import { siteConfig } from "@/seo/config/siteConfig";
 import TrackedCTA from "./TrackedCTA";
-
+import LandingPageTracker from "./landingPageTracker";
 
 
 export const metadata: Metadata = {

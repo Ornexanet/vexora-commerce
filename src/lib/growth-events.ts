@@ -8,7 +8,8 @@ export type GrowthEvent =
   | "purchase_completed"
   | "hero_pagination_clicked"
   | "experiment_exposure"
-  | "landing_cta_clicked";
+  | "landing_cta_clicked"
+  | "landing_page_viewed";
 
 
 
@@ -79,6 +80,7 @@ const ga4EventNames: Record<GrowthEvent, string> = {
   hero_pagination_clicked: "hero_pagination_clicked",
   experiment_exposure: "experiment_exposure",
   landing_cta_clicked: "landing_cta_clicked",
+  landing_page_viewed: "landing_page_viewed",
 };
 
 sendGAEvent("event", ga4EventNames[event], {
