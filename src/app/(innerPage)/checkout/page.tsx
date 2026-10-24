@@ -7,7 +7,7 @@ import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
 export const metadata = generatePageMetadata({
   title: "Kassa | Ornexa Shop",
   description:
-    "Slutför ditt köp tryggt och enkelt hos Ornexa. Ange dina uppgifter, granska din order och välj betalningsmetod.",
+    "Testa Ornexas demokassa med din varukorg. Ingen riktig beställning skapas och ingen betalning genomförs.",
   path: "/checkout",
   noindex: true,
 });
@@ -20,7 +20,7 @@ const Checkout = () => {
     name: "Kassa",
     url: "https://shop.ornexa.net/checkout",
     description:
-      "Slutför ditt köp tryggt och enkelt hos Ornexa. Ange dina uppgifter, granska din order och välj betalningsmetod.",
+      "Testa Ornexas demokassa med din varukorg. Ingen riktig beställning skapas och ingen betalning genomförs.",
   },
   {
     "@context": "https://schema.org",

@@ -8,6 +8,7 @@ export type WishlistItem = ProductType;
 
 export interface CartContextType {
   cartItems: CartItem[];
+  isLoaded: boolean;
   addToCart: (product: ProductType, quantity?: number) => void;
   removeFromCart: (productId: number) => void;
   incrementQuantity: (productId: number) => void;
