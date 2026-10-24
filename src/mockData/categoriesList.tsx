@@ -1,10 +1,8 @@
-import path from "path";
 
 export const categoriesList = [
   {
     id: 1,
     label: "Mobiler",
-    path: "/mobiler",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +32,7 @@ export const categoriesList = [
         </defs>
       </svg>
     ),
-    href: "#",
+    href: "/mobiler",
   },
   {
     id: 2,
@@ -68,7 +66,7 @@ export const categoriesList = [
         </defs>
       </svg>
     ),
-    href: "#",
+    href: "/horlurar",
   },
   {
     id: 3,
@@ -102,7 +100,7 @@ export const categoriesList = [
         </defs>
       </svg>
     ),
-    href: "#",
+    href: "/smarta-klockor",
   },
   {
     id: 4,
@@ -136,7 +134,7 @@ export const categoriesList = [
         </defs>
       </svg>
     ),
-    href: "#",
+    href: "/tillbehor",
   },
   
 ];

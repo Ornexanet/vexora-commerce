@@ -20,6 +20,7 @@ import { categoriesList } from "@/mockData/categoriesList";
 import { Search, X, Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import HeaderExtraInfo from "./headerExtraInfo";
 import CartSidebar from "./cartSidebar";
@@ -51,6 +52,7 @@ const levenshteinDistance = (a: string, b: string): number => {
 };
 
 const TopHeader = () => {
+  const router = useRouter();
   const [isShowSearch, setIsShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -113,19 +115,26 @@ const TopHeader = () => {
       >
         <div className="border border-light-gray rounded-[47px] flex items-center lg:pl-[25px] max-h-[50px] overflow-hidden">
           <div className="border-r border-r-light-gray py-1.5 h-full shrink-0">
-            <Select defaultValue="All Categories">
+            <Select
+              value=""
+              onValueChange={(href) => {
+                router.push(href);
+                setSearchQuery("");
+                setIsShowSearch(false);
+              }}
+            >
               <SelectTrigger className="w-[120px] lg:w-[140px] xl:w-[190px] border-none font-bold lg:text-base text-sm lg:pr-4 xl:pr-[37px] focus-visible:ring-0 h-auto max-lg:[&>svg]:size-5">
-             <SelectValue />
+             <SelectValue placeholder="Alla kategorier" />
              </SelectTrigger>
 
 
               <SelectContent className="min-w-[220px]">
-                <SelectItem value="All Categories">
+                <SelectItem value="/shop-with-sidebar">
                   Alla kategorier
                 </SelectItem>
 
-                {categoriesList.map(({ id, label }) => (
-                  <SelectItem key={id} value={label}>
+                {categoriesList.map(({ id, label, href }) => (
+                  <SelectItem key={id} value={href}>
                     {label}
                   </SelectItem>
                 ))}

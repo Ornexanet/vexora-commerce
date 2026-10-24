@@ -4,7 +4,7 @@ import Card from "@/components/ui/card";
 import CardHorizontal from "@/components/ui/cardHorizontal";
 import { useShopGridView } from "@/contextApi/shopGridViewProvider";
 import { cn } from "@/lib/utils";
-import { products } from "@/mockData/products";
+import { allProducts } from "@/mockData/products";
 import { Fragment } from "react";
 
 const ProductsContainer = () => {
@@ -23,7 +23,7 @@ const ProductsContainer = () => {
   }
   return (
     <div className={cn("grid  gap-[30px] mt-[30px]", getGridStyle(shopView))}>
-      {products.bestProductsData.map((product) => (
+      {allProducts.filter((product) => product.categories.includes("smartWatch")).map((product) => (
         <Fragment key={product.id}>
           {shopView === "list" ? (
             <CardHorizontal product={product} />

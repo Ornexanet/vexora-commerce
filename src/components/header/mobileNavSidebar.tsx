@@ -181,6 +181,7 @@ const MobileNavSidebar = () => {
                 <li key={id} className="group">
                   <Link
                     href={href}
+                    onClick={() => setIsOpen(false)}
                     className="text-base font-medium flex items-center gap-2.5 py-2 hover:text-blue transition-all duration-500"
                   >
                     <span className="relative shrink-0 flex items-center justify-center">
