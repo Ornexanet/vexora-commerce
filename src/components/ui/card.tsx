@@ -14,10 +14,6 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ShuffleIcon } from "lucide-react";
 import { trackEvent } from "@/lib/growth-events";
-import {
-  getExperimentVariant,
-  type ExperimentVariant,
-} from "@/lib/experiments";
 
 interface PropsType {
   product: ProductType;
@@ -39,7 +35,6 @@ const Card = ({
   const [open, setOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [variant, setVariant] = useState<ExperimentVariant>("A");
 
   const { addToCart } = useCart();
   const { addToWishlist, isInWishlist } = useWishlist();
@@ -52,23 +47,18 @@ const Card = ({
   const inWishlist = isInWishlist(product.id);
   const inCompare = isInCompare(product.id);
 
-  
-const handleAddToCart = (e: React.MouseEvent) => {
-  e.preventDefault();
-  e.stopPropagation();
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
 
-  addToCart(product);
+    addToCart(product);
 
-  trackEvent("add_to_cart", {
-    productId: product.id,
-    productName: product.title,
-    price: product.price,
-    experiment: "ornexa_add_to_cart_v1",
-    variant: variant,
-  });
-};
-
-
+    trackEvent("add_to_cart", {
+      productId: product.id,
+      productName: product.title,
+      price: product.price,
+    });
+  };
 
   const handleAddToWishlist = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -96,25 +86,6 @@ const handleAddToCart = (e: React.MouseEvent) => {
     }
   };
 
-  
-useEffect(() => {
-  const assignedVariant = getExperimentVariant();
-  setVariant(assignedVariant);
-
-  const exposureKey = "ornexa_add_to_cart_v1_exposure";
-
-  if (sessionStorage.getItem(exposureKey) !== assignedVariant) {
-    sessionStorage.setItem(exposureKey, assignedVariant);
-
-    trackEvent("experiment_exposure", {
-      experiment: "ornexa_add_to_cart_v1",
-      variant: assignedVariant,
-    });
-  }
-}, []);
-
-
-
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -129,7 +100,7 @@ useEffect(() => {
     };
   }, []);
 
-  const showCart = variant === "B" || isHovered || isMobile;
+  const showCart = isHovered || isMobile;
 
   return (
     <>
@@ -184,7 +155,7 @@ useEffect(() => {
             </div>
           )}
 
-          {/* Action buttons container */}
+          {/* Action buttons */}
           <div className="absolute md:bottom-5 bottom-2 right-[15px] flex flex-col items-end md:gap-[15px] gap-1.5 z-20">
 
             {/* Wishlist */}
@@ -273,7 +244,7 @@ useEffect(() => {
               </div>
             </motion.div>
 
-            {/* Add to Cart — A/B Experiment */}
+            {/* Add to Cart — Standard Behavior */}
             <motion.div
               initial="hidden"
               animate={showCart ? "visible" : "hidden"}
