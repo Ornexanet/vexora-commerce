@@ -19,6 +19,7 @@ import { cn } from "@/lib/utils";
 import { categoriesList } from "@/mockData/categoriesList";
 import { Search, X, Heart } from "lucide-react";
 import Image from "next/image";
+import BrandLogo from "@/components/ui/brandLogo";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -98,13 +99,7 @@ const TopHeader = () => {
     <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 lg:gap-5 xl:gap-6 relative w-full">
 
       <Link href="/" className="shrink-0 w-[90px] lg:w-[105px] xl:w-[120px] block">
-        <Image
-          width={120}
-          height={40}
-          src="/images/ornexa-logo121.png"
-          alt="Ornexas logotyp"
-          priority
-        />
+        <BrandLogo priority />
       </Link>
 
       <div

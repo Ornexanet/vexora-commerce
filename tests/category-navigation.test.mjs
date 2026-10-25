@@ -50,6 +50,7 @@ test("the actual dropdown navigates for all categories and resets mobile search"
     react: { ...React, useState: (initial) => [initial, (value) => states.push(value)] },
     "next/navigation": { useRouter: () => ({ push: (href) => pushed.push(href) }) },
     "next/link": Stub, "next/image": Stub,
+    "@/components/ui/brandLogo": Stub,
     "@/components/ui/input-group": { InputGroup: Stub, InputGroupAddon: Stub, InputGroupButton: Stub, InputGroupInput: Stub },
     "@/components/ui/select": { Select, SelectItem, SelectContent: Stub, SelectTrigger: Stub, SelectValue: Stub },
     "@/lib/icons": { MicroPhone: Stub }, "@/lib/utils": { cn: (...args) => args.join(" ") },
