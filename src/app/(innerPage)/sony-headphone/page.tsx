@@ -107,14 +107,15 @@ export default function SonyLandingPage() {
             </p>
 
             <TrackedCTA
-            href={productUrl}
-              className="inline-flex min-h-12 items-center justify-center rounded-xl bg-white px-8 py-4 font-semibold text-slate-900 transition-colors hover:bg-blue-100"
-            >
-              Utforska hörlurarna
-              <span aria-hidden="true" className="ml-3">
-                →
-              </span>
-            </TrackedCTA>
+           href={productUrl}
+          className="inline-flex min-h-12 items-center justify-center rounded-xl bg-white px-8 py-4 font-semibold text-slate-900 hover:bg-blue-600 hover:text-white active:bg-blue-800 transition-colors duration-200"
+           >
+         Se pris och köp
+        <span aria-hidden="true" className="ml-3">
+         →
+      </span>
+      </TrackedCTA>
+
 
             <p className="mt-5 text-sm text-slate-400">
               Upptäck funktioner och produktspecifikationer.
