@@ -93,8 +93,78 @@ const countCartSessions = (variant: "A" | "B") => {
 };
 
 
+const countSonyExposures = (variant: "A" | "B") => {
+  const sessions = new Set<string>();
+
+  for (const item of events) {
+    if (
+      item?.event === "experiment_exposure" &&
+      item?.data?.experiment === "sony_landing_cta_v1" &&
+      item?.data?.variant === variant &&
+      typeof item?.sessionId === "string"
+    ) {
+      sessions.add(item.sessionId);
+    }
+  }
+
+  return sessions.size;
+};
+
+const countSonyClickSessions = (variant: "A" | "B") => {
+  const exposedSessions = new Set<string>();
+  const clickedSessions = new Set<string>();
+
+  for (const item of events) {
+    if (
+      item?.event === "experiment_exposure" &&
+      item?.data?.experiment === "sony_landing_cta_v1" &&
+      item?.data?.variant === variant &&
+      typeof item?.sessionId === "string"
+    ) {
+      exposedSessions.add(item.sessionId);
+    }
+  }
+
+  for (const item of events) {
+    if (
+      item?.event === "landing_cta_clicked" &&
+      item?.data?.experiment === "sony_landing_cta_v1" &&
+      item?.data?.variant === variant &&
+      typeof item?.sessionId === "string" &&
+      exposedSessions.has(item.sessionId)
+    ) {
+      clickedSessions.add(item.sessionId);
+    }
+  }
+
+  return clickedSessions.size;
+};
+
     return NextResponse.json({
       success: true,
+      
+sonyAbTest: {
+  A: {
+    exposures: countSonyExposures("A"),
+    clickSessions: countSonyClickSessions("A"),
+    conversionRate:
+      countSonyExposures("A") > 0
+        ? (countSonyClickSessions("A") /
+            countSonyExposures("A")) * 100
+        : 0,
+  },
+  B: {
+    exposures: countSonyExposures("B"),
+    clickSessions: countSonyClickSessions("B"),
+    conversionRate:
+      countSonyExposures("B") > 0
+        ? (countSonyClickSessions("B") /
+            countSonyExposures("B")) * 100
+        : 0,
+  },
+},
+
+
       abTest: {
   A: {
     exposures: countExposures("A"),

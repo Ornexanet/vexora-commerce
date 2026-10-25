@@ -9,6 +9,12 @@ type ABVariantData = {
   conversionRate: number;
 };
 
+type SonyABVariantData = {
+  exposures: number;
+  clickSessions: number;
+  conversionRate: number;
+};
+
 type GrowthData = {
   success: boolean;
   totalEvents: number;
@@ -22,6 +28,10 @@ type GrowthData = {
   abTest: {
     A: ABVariantData;
     B: ABVariantData;
+  };
+  sonyAbTest: {
+    A: SonyABVariantData;
+    B: SonyABVariantData;
   };
 };
 
@@ -114,6 +124,7 @@ export default function GrowthDashboard() {
   }, [loadAnalytics]);
 
   const abTest = data?.abTest;
+  const sonyAbTest = data?.sonyAbTest;
 
   const difference = abTest
     ? abTest.B.conversionRate - abTest.A.conversionRate
@@ -121,6 +132,15 @@ export default function GrowthDashboard() {
 
   const totalExposures = abTest
     ? abTest.A.exposures + abTest.B.exposures
+    : 0;
+
+  const sonyDifference = sonyAbTest
+    ? sonyAbTest.B.conversionRate -
+      sonyAbTest.A.conversionRate
+    : 0;
+
+  const sonyTotalExposures = sonyAbTest
+    ? sonyAbTest.A.exposures + sonyAbTest.B.exposures
     : 0;
 
   const landingCtr =
@@ -387,7 +407,7 @@ export default function GrowthDashboard() {
           </p>
         </section>
 
-        {/* A/B Experiment */}
+        {/* Experiment 01 */}
         <section className="mt-12">
           <div className="mb-6">
             <p className="text-xs font-bold uppercase tracking-widest text-indigo-600">
@@ -438,7 +458,7 @@ export default function GrowthDashboard() {
                           : "bg-slate-100 text-slate-700"
                       }`}
                     >
-                      {isB ? "B" : "A"}
+                      {variant}
                     </span>
                   </div>
 
@@ -492,7 +512,7 @@ export default function GrowthDashboard() {
             })}
           </div>
 
-          {/* Experiment Summary */}
+          {/* Experiment 01 Summary */}
           <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
             <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-center">
               <div>
@@ -532,6 +552,161 @@ export default function GrowthDashboard() {
                       abTest.B.exposures === 0
                     ? "Insufficient exposure data to compare both variants."
                     : "Descriptive comparison only. More data and statistical analysis are required before declaring a winner."}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Experiment 02 — Sony Landing CTA */}
+        <section className="mt-12">
+          <div className="mb-6">
+            <p className="text-xs font-bold uppercase tracking-widest text-indigo-600">
+              Experiment 02
+            </p>
+
+            <h2 className="mt-2 text-2xl font-bold text-slate-900">
+              A/B Testing — Sony Landing Page CTA
+            </h2>
+
+            <p className="mt-2 text-sm text-slate-500">
+              Testing whether a product-specific CTA improves
+              click-through session conversion.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+            {(["A", "B"] as const).map((variant) => {
+              const result = sonyAbTest?.[variant];
+              const isB = variant === "B";
+
+              return (
+                <div
+                  key={variant}
+                  className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                        {isB ? "Treatment" : "Control"}
+                      </p>
+
+                      <h3 className="mt-2 text-xl font-bold">
+                        Variant {variant}
+                      </h3>
+
+                      <p className="mt-2 text-sm text-slate-500">
+                        {isB
+                          ? "Köp Sony WH-1000XM6"
+                          : "Se pris och köp"}
+                      </p>
+                    </div>
+
+                    <span
+                      className={`rounded-full px-3 py-1 text-xs font-bold ${
+                        isB
+                          ? "bg-indigo-50 text-indigo-700"
+                          : "bg-slate-100 text-slate-700"
+                      }`}
+                    >
+                      {variant}
+                    </span>
+                  </div>
+
+                  <div className="mt-8">
+                    <p className="text-sm font-medium text-slate-500">
+                      CTA Session Conversion Rate
+                    </p>
+
+                    <p
+                      className={`mt-2 text-5xl font-bold tracking-tight ${
+                        isB ? "text-indigo-600" : "text-slate-900"
+                      }`}
+                    >
+                      {result
+                        ? result.exposures > 0
+                          ? `${result.conversionRate.toFixed(2)}%`
+                          : "—"
+                        : "—"}
+                    </p>
+                  </div>
+
+                  <div className="mt-8 grid grid-cols-2 gap-4 border-t border-slate-100 pt-6">
+                    <div>
+                      <p className="text-xs text-slate-500">
+                        Exposed Sessions
+                      </p>
+
+                      <p className="mt-2 text-2xl font-bold">
+                        {result
+                          ? result.exposures.toLocaleString("en-US")
+                          : "—"}
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-xs text-slate-500">
+                        CTA Click Sessions
+                      </p>
+
+                      <p className="mt-2 text-2xl font-bold">
+                        {result
+                          ? result.clickSessions.toLocaleString("en-US")
+                          : "—"}
+                      </p>
+                    </div>
+                  </div>
+
+                  <p className="mt-5 text-xs text-slate-400">
+                    CTA conversion = unique click sessions /
+                    unique exposed sessions
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Experiment 02 Summary */}
+          <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+            <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-center">
+              <div>
+                <p className="text-sm font-medium text-slate-500">
+                  CTA Conversion Difference (B − A)
+                </p>
+
+                <p className="mt-3 text-3xl font-bold text-slate-900">
+                  {sonyAbTest &&
+                  sonyAbTest.A.exposures > 0 &&
+                  sonyAbTest.B.exposures > 0
+                    ? `${sonyDifference > 0 ? "+" : ""}${sonyDifference.toFixed(2)} pp`
+                    : "—"}
+                </p>
+
+                <p className="mt-2 text-xs text-slate-500">
+                  pp = percentage points
+                </p>
+              </div>
+
+              <div className="sm:text-right">
+                <p className="text-sm font-medium text-slate-500">
+                  Total Exposed Sessions
+                </p>
+
+                <p className="mt-3 text-3xl font-bold">
+                  {sonyAbTest
+                    ? sonyTotalExposures.toLocaleString("en-US")
+                    : "—"}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 border-t border-slate-100 pt-5">
+              <p className="text-sm text-slate-600">
+                {!sonyAbTest
+                  ? "Waiting for Sony experiment data."
+                  : sonyAbTest.A.exposures === 0 ||
+                      sonyAbTest.B.exposures === 0
+                    ? "Insufficient exposure data to compare both variants."
+                    : "Descriptive comparison only. More sessions and statistical analysis are needed before declaring a winner."}
               </p>
             </div>
           </div>
