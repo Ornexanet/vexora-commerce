@@ -23,6 +23,7 @@ function nodes(node) {
   return [node, ...React.Children.toArray(node.props.children).flatMap(nodes)];
 }
 const catalog = load("mockData/products.tsx");
+const filters = load("lib/shopFilters.ts", { "@/mockData/products": catalog });
 const { categoriesList } = load("mockData/categoriesList.tsx");
 const Stub = () => null;
 const Select = () => null;
@@ -70,12 +71,13 @@ test("dedicated category pages render only their category in grid and list views
     routes.forEach((route, index) => {
       const Container = load(`app/(innerPage)/${route}/productsContainer.tsx`, {
         "@/mockData/products": catalog,
+        "@/contextApi/shopFiltersProvider": { useShopFilters: () => filters.getShopResults("/" + route, new URLSearchParams()) },
         "@/components/ui/card": Card, "@/components/ui/cardHorizontal": CardHorizontal,
         "@/contextApi/shopGridViewProvider": { useShopGridView: () => ({ shopView }) },
         "@/lib/utils": { cn: (...args) => args.join(" ") },
       }).default;
       const rows = nodes(Container()).filter((node) => node.type === (shopView === "list" ? CardHorizontal : Card));
-      const expected = route === "tillbehor" ? catalog.products.accessoriesData : catalog.allProducts.filter((product) => product.categories.includes(paths[index]));
+      const expected = catalog.allProducts.filter((product) => product.categories.includes(paths[index]));
       assert.ok(rows.length > 0);
       assert.ok(rows.every((row) => row.props.product.categories.includes(paths[index])));
       assert.deepEqual(rows.map((row) => row.props.product.id), Array.from(expected, (product) => product.id));

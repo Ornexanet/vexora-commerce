@@ -6,7 +6,9 @@ import {
   SetStateAction,
   useContext,
   useState,
+  Suspense,
 } from "react";
+import ShopFiltersProvider from "./shopFiltersProvider";
 
 export type ShopContextType = {
   shopView: string;
@@ -19,7 +21,9 @@ const ShopGridViewProvider = ({ children }: { children: ReactNode }) => {
   const [shopView, setShopView] = useState("default");
   return (
     <ShopGridViewContext value={{ shopView, setShopView }}>
-      {children}
+      <Suspense fallback={<p role="status">Läser in produkter …</p>}>
+        <ShopFiltersProvider>{children}</ShopFiltersProvider>
+      </Suspense>
     </ShopGridViewContext>
   );
 };
