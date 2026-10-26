@@ -10,7 +10,7 @@ import { generatePageMetadata } from "@/seo/metadata/pageMetadata";
 
 
 
-export const metadata = generatePageMetadata({
+const shopMetadata = generatePageMetadata({
   title: "Produkter med filter | Ornexa Shop",
   description:
     "Utforska Ornexa Shops sortiment av mobiler, smartklockor, hörlurar och tillbehör med praktiska filter och sortering.",
@@ -26,6 +26,14 @@ export const metadata = generatePageMetadata({
     "Produktfilter",
   ],
 });
+
+export const metadata = {
+  ...shopMetadata,
+  alternates: {
+    ...shopMetadata.alternates,
+    canonical: "https://shop.ornexa.net/shop",
+  },
+};
 
 
 const ShopWithSidebar = async () => {
