@@ -463,7 +463,7 @@ metaDescription:
   
 sourceName: "Apple Sverige",
 sourceUrl:
-  "https://www.apple.com/se/apple-watch-ultra-3/specs/",
+  "https://support.apple.com/sv-se/125095",
 
 
   battery: "Upp till 36 timmars batteritid",

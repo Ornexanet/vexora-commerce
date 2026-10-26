@@ -1,4 +1,5 @@
-import { Instagram, Logo, Twitter, Whatsapp, Youtube } from "@/lib/icons";
+import { Instagram, Twitter, Whatsapp, Youtube } from "@/lib/icons";
+import BrandLogo from "@/components/ui/brandLogo";
 import Link from "next/link";
 import Title from "../ui/title";
 
@@ -95,6 +96,9 @@ const Footer = () => {
         className="bg-no-repeat max-xl:bg-contain bg-right-bottom">
       
         <div className="container">
+          <Link href="/" aria-label="Ornexa – till startsidan" className="mb-10 block w-[156px] sm:w-[177px]">
+            <BrandLogo theme="light" />
+          </Link>
           <Title
             asChild
             size="28"

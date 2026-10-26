@@ -25,6 +25,7 @@ import { useState } from "react";
 import HeaderExtraInfo from "./headerExtraInfo";
 import CartSidebar from "./cartSidebar";
 import { allProducts } from "@/mockData/products";
+import BrandLogo from "@/components/ui/brandLogo";
 
 const levenshteinDistance = (a: string, b: string): number => {
   const previous = Array.from(
@@ -98,13 +99,7 @@ const TopHeader = () => {
     <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 lg:gap-5 xl:gap-6 relative w-full">
 
       <Link href="/" className="shrink-0 w-[90px] lg:w-[105px] xl:w-[120px] block">
-        <Image
-          width={120}
-          height={40}
-          src="/images/ornexa-logo121.png"
-          alt="Ornexas logotyp"
-          priority
-        />
+        <BrandLogo priority />
       </Link>
 
       <div

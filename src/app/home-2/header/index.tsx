@@ -1,5 +1,5 @@
 import { Heart, User } from "@/lib/icons";
-import Image from "next/image";
+import BrandLogo from "@/components/ui/brandLogo";
 import Link from "next/link";
 import CurrencySelect from "./currencySelect";
 import MobileNavSidebarTwo from "./mobileNavSidebarTwo";
@@ -68,12 +68,7 @@ const Header = () => {
                 <MobileNavSidebarTwo />
               </div>
               <Link href={"/home-2"} className="shrink-0">
-                <Image
-                  width={120}
-                  height={40}
-                  src={"/images/logo.png"}
-                  alt="Logotyp"
-                />
+                <BrandLogo className="w-[120px]" />
               </Link>
               <nav className="xl:block hidden">
                 <ul className="flex items-center gap-7.5">

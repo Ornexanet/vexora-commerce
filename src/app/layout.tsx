@@ -40,6 +40,7 @@ export const metadata: Metadata = {
 
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  manifest: "/manifest.webmanifest",
   metadataBase: new URL(siteConfig.url),
 };
 
