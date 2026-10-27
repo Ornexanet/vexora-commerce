@@ -9,6 +9,12 @@ type SonyABVariantData = {
   conversionRate: number;
 };
 
+type CartABVariantData = {
+  exposures: number;
+  cartSessions: number;
+  conversionRate: number;
+};
+
 type GrowthData = {
   success: boolean;
   totalEvents: number;
@@ -22,6 +28,10 @@ type GrowthData = {
   sonyAbTest: {
     A: SonyABVariantData;
     B: SonyABVariantData;
+  };
+  cartAbTest?: {
+    A: CartABVariantData;
+    B: CartABVariantData;
   };
 };
 
@@ -114,6 +124,7 @@ export default function GrowthDashboard() {
   }, [loadAnalytics]);
 
   const sonyAbTest = data?.sonyAbTest;
+  const cartAbTest = data?.cartAbTest;
 
   const sonyDifference = sonyAbTest
     ? sonyAbTest.B.conversionRate -
@@ -123,6 +134,25 @@ export default function GrowthDashboard() {
   const sonyTotalExposures = sonyAbTest
     ? sonyAbTest.A.exposures + sonyAbTest.B.exposures
     : 0;
+
+  const cartDifference = cartAbTest
+    ? cartAbTest.B.conversionRate -
+      cartAbTest.A.conversionRate
+    : 0;
+
+  const cartRelativeUplift =
+    cartAbTest && cartAbTest.A.conversionRate > 0
+      ? (cartDifference / cartAbTest.A.conversionRate) * 100
+      : null;
+
+  const cartTotalExposures = cartAbTest
+    ? cartAbTest.A.exposures + cartAbTest.B.exposures
+    : 0;
+
+  const cartHasBothVariants =
+    !!cartAbTest &&
+    cartAbTest.A.exposures > 0 &&
+    cartAbTest.B.exposures > 0;
 
   const landingCtr =
     data && data.landingPageViews > 0
@@ -536,6 +566,175 @@ export default function GrowthDashboard() {
                       sonyAbTest.B.exposures === 0
                     ? "Insufficient exposure data to compare both variants."
                     : "Descriptive comparison only. More sessions and statistical analysis are needed before declaring a winner."}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Experiment 02 — Add to Cart Color */}
+        <section className="mt-12">
+          <div className="mb-6">
+            <p className="text-xs font-bold uppercase tracking-widest text-indigo-600">
+              Experiment 02
+            </p>
+
+            <h2 className="mt-2 text-2xl font-bold text-slate-900">
+              A/B Testing — Add to Cart Button Color
+            </h2>
+
+            <p className="mt-2 text-sm text-slate-500">
+              Hypothesis: A blue Add to Cart button increases
+              session conversion compared with the original white button.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+            {(["A", "B"] as const).map((variant) => {
+              const result = cartAbTest?.[variant];
+              const isB = variant === "B";
+
+              return (
+                <div
+                  key={variant}
+                  className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                        {isB ? "Treatment" : "Control"}
+                      </p>
+
+                      <h3 className="mt-2 text-xl font-bold">
+                        Variant {variant}
+                      </h3>
+
+                      <p className="mt-2 text-sm text-slate-500">
+                        {isB
+                          ? "Blue Add to Cart Button"
+                          : "White Add to Cart Button"}
+                      </p>
+                    </div>
+
+                    <span
+                      className={`rounded-full px-3 py-1 text-xs font-bold ${
+                        isB
+                          ? "bg-blue-50 text-blue-700"
+                          : "bg-slate-100 text-slate-700"
+                      }`}
+                    >
+                      {variant}
+                    </span>
+                  </div>
+
+                  <div className="mt-8">
+                    <p className="text-sm font-medium text-slate-500">
+                      Add to Cart Session Conversion Rate
+                    </p>
+
+                    <p
+                      className={`mt-2 text-5xl font-bold tracking-tight ${
+                        isB ? "text-blue-600" : "text-slate-900"
+                      }`}
+                    >
+                      {result && result.exposures > 0
+                        ? `${result.conversionRate.toFixed(2)}%`
+                        : "—"}
+                    </p>
+                  </div>
+
+                  <div className="mt-8 grid grid-cols-2 gap-4 border-t border-slate-100 pt-6">
+                    <div>
+                      <p className="text-xs text-slate-500">
+                        Exposed Sessions
+                      </p>
+
+                      <p className="mt-2 text-2xl font-bold">
+                        {result
+                          ? result.exposures.toLocaleString("en-US")
+                          : "—"}
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-xs text-slate-500">
+                        Add to Cart Sessions
+                      </p>
+
+                      <p className="mt-2 text-2xl font-bold">
+                        {result
+                          ? result.cartSessions.toLocaleString("en-US")
+                          : "—"}
+                      </p>
+                    </div>
+                  </div>
+
+                  <p className="mt-5 text-xs text-slate-400">
+                    Session conversion = unique cart sessions /
+                    unique exposed sessions
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Cart Experiment Summary */}
+          <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+              <div>
+                <p className="text-sm font-medium text-slate-500">
+                  Absolute Difference (B − A)
+                </p>
+
+                <p className="mt-3 text-3xl font-bold">
+                  {cartHasBothVariants
+                    ? `${cartDifference > 0 ? "+" : ""}${cartDifference.toFixed(2)} pp`
+                    : "—"}
+                </p>
+
+                <p className="mt-2 text-xs text-slate-500">
+                  Percentage points
+                </p>
+              </div>
+
+              <div>
+                <p className="text-sm font-medium text-slate-500">
+                  Relative Uplift (B vs A)
+                </p>
+
+                <p className="mt-3 text-3xl font-bold">
+                  {cartHasBothVariants &&
+                  cartRelativeUplift !== null
+                    ? `${cartRelativeUplift > 0 ? "+" : ""}${cartRelativeUplift.toFixed(2)}%`
+                    : "—"}
+                </p>
+
+                <p className="mt-2 text-xs text-slate-500">
+                  Relative to control conversion rate
+                </p>
+              </div>
+
+              <div>
+                <p className="text-sm font-medium text-slate-500">
+                  Total Exposed Sessions
+                </p>
+
+                <p className="mt-3 text-3xl font-bold">
+                  {cartAbTest
+                    ? cartTotalExposures.toLocaleString("en-US")
+                    : "—"}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 border-t border-slate-100 pt-5">
+              <p className="text-sm text-slate-600">
+                {!cartAbTest
+                  ? "Waiting for Add to Cart experiment data."
+                  : !cartHasBothVariants
+                    ? "Insufficient exposure data to compare both variants."
+                    : cartRelativeUplift === null
+                      ? "Control conversion rate is zero; relative uplift cannot be calculated."
+                      : "Descriptive results only. Validate event delivery, exposure timing, and sample size before declaring a winning variant."}
               </p>
             </div>
           </div>
