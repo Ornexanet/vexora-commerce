@@ -83,18 +83,31 @@ const ga4EventNames: Record<GrowthEvent, string> = {
   landing_page_viewed: "landing_page_viewed",
 };
 
+
 sendGAEvent("event", ga4EventNames[event], {
   currency: "SEK",
   value: data.price ?? 0,
+
+  ...(data.experiment && {
+    experiment: data.experiment,
+  }),
+
+  ...(data.variant && {
+    variant: data.variant,
+  }),
+
   items: data.productId
-    ? [{
-        item_id: String(data.productId),
-        item_name: data.productName ?? "",
-        price: data.price ?? 0,
-        quantity: data.quantity ?? 1,
-      }]
+    ? [
+        {
+          item_id: String(data.productId),
+          item_name: data.productName ?? "",
+          price: data.price ?? 0,
+          quantity: data.quantity ?? 1,
+        },
+      ]
     : [],
 });
+
 
 
   return payload;

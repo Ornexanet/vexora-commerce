@@ -10,10 +10,15 @@ import { useCart } from "@/contextApi/cartContext";
 import { useWishlist } from "@/contextApi/wishlistContext";
 import { useCompare } from "@/contextApi/compareContext";
 import QuickViewProduct from "../sections/productDetails/quickViewProduct";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ShuffleIcon } from "lucide-react";
 import { trackEvent } from "@/lib/growth-events";
+import {
+  CART_EXPERIMENT_ID,
+  getOrCreateCartVariant,
+  type CartVariant,
+} from "@/lib/addToCartExperiment";
 
 interface PropsType {
   product: ProductType;
@@ -35,6 +40,10 @@ const Card = ({
   const [open, setOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [cartVariant, setCartVariant] =
+    useState<CartVariant | null>(null);
+    const cartButtonRef = useRef<HTMLDivElement>(null);
+
 
   const { addToCart } = useCart();
   const { addToWishlist, isInWishlist } = useWishlist();
@@ -47,9 +56,65 @@ const Card = ({
   const inWishlist = isInWishlist(product.id);
   const inCompare = isInCompare(product.id);
 
+  useEffect(() => {
+    setCartVariant(getOrCreateCartVariant());
+  }, []);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
+useEffect(() => {
+  if (cartVariant === null) return;
+
+  const button = cartButtonRef.current;
+  if (!button) return;
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry.isIntersecting) return;
+
+      const key =
+        `ornexa_exposure_${CART_EXPERIMENT_ID}`;
+
+      if (!sessionStorage.getItem(key)) {
+        sessionStorage.setItem(key, "1");
+
+        trackEvent("experiment_exposure", {
+          experiment: CART_EXPERIMENT_ID,
+          variant: cartVariant,
+        });
+      }
+
+      observer.disconnect();
+    },
+    { threshold: 0.5 }
+  );
+
+  observer.observe(button);
+
+  return () => observer.disconnect();
+}, [cartVariant]);
+
+  const showCart = isHovered || isMobile;
+  const isVariantB = cartVariant === "B";
+
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+
+    if (cartVariant === null) {
+      return;
+    }
 
     addToCart(product);
 
@@ -57,6 +122,8 @@ const Card = ({
       productId: product.id,
       productName: product.title,
       price: product.price,
+      experiment: CART_EXPERIMENT_ID,
+      variant: cartVariant,
     });
   };
 
@@ -85,22 +152,6 @@ const Card = ({
       addToCompare(product);
     }
   };
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkMobile();
-
-    window.addEventListener("resize", checkMobile);
-
-    return () => {
-      window.removeEventListener("resize", checkMobile);
-    };
-  }, []);
-
-  const showCart = isHovered || isMobile;
 
   return (
     <>
@@ -143,7 +194,9 @@ const Card = ({
               <span className="text-blue">
                 <Bolt />
               </span>
-              <p className="text-sm font-medium">{product.tag}</p>
+              <p className="text-sm font-medium">
+                {product.tag}
+              </p>
             </div>
           )}
 
@@ -161,7 +214,9 @@ const Card = ({
             {/* Wishlist */}
             <motion.div
               initial="hidden"
-              animate={isHovered || isMobile ? "visible" : "hidden"}
+              animate={
+                isHovered || isMobile ? "visible" : "hidden"
+              }
               variants={{
                 hidden: {
                   opacity: 0,
@@ -178,7 +233,9 @@ const Card = ({
                   },
                 },
               }}
-              whileHover={isMobile ? {} : { width: 172 }}
+              whileHover={
+                isMobile ? {} : { width: 172 }
+              }
               transition={{
                 duration: 0.3,
                 ease: "easeInOut",
@@ -191,13 +248,17 @@ const Card = ({
               }}
             >
               <span className="absolute left-[14px] font-medium leading-none whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">
-                {inWishlist ? "I favoriter" : "Lägg till i favoriter"}
+                {inWishlist
+                  ? "I favoriter"
+                  : "Lägg till i favoriter"}
               </span>
 
               <div className="md:size-[45px] size-8 rounded-full flex justify-center items-center flex-shrink-0 bg-card relative z-10">
                 <Heart
                   className={
-                    inWishlist ? "fill-red-500 text-red-500" : ""
+                    inWishlist
+                      ? "fill-red-500 text-red-500"
+                      : ""
                   }
                 />
               </div>
@@ -206,7 +267,9 @@ const Card = ({
             {/* Quick View */}
             <motion.div
               initial="hidden"
-              animate={isHovered || isMobile ? "visible" : "hidden"}
+              animate={
+                isHovered || isMobile ? "visible" : "hidden"
+              }
               variants={{
                 hidden: {
                   opacity: 0,
@@ -223,7 +286,9 @@ const Card = ({
                   },
                 },
               }}
-              whileHover={isMobile ? {} : { width: 147 }}
+              whileHover={
+                isMobile ? {} : { width: 147 }
+              }
               transition={{
                 duration: 0.3,
                 ease: "easeInOut",
@@ -244,7 +309,7 @@ const Card = ({
               </div>
             </motion.div>
 
-            {/* Add to Cart — Standard Behavior */}
+            {/* Add to Cart — A/B Color Experiment */}
             <motion.div
               initial="hidden"
               animate={showCart ? "visible" : "hidden"}
@@ -264,22 +329,40 @@ const Card = ({
                   },
                 },
               }}
-              whileHover={isMobile ? {} : { width: 145 }}
+              whileHover={
+                isMobile ? {} : { width: 145 }
+              }
               transition={{
                 duration: 0.3,
                 ease: "easeInOut",
               }}
+              ref={cartButtonRef}
               onClick={handleAddToCart}
-              className="group relative cursor-pointer flex items-center justify-end md:size-[45px] size-8 bg-card shadow rounded-[29px] overflow-hidden"
+              className={cn(
+                "group relative cursor-pointer flex items-center justify-end md:size-[45px] size-8 shadow rounded-[29px] overflow-hidden",
+                isVariantB
+                  ? "bg-blue text-white"
+                  : "bg-card"
+              )}
               style={{
-                pointerEvents: showCart ? "auto" : "none",
+                pointerEvents:
+                  showCart && cartVariant !== null
+                    ? "auto"
+                    : "none",
               }}
             >
               <span className="absolute left-[14px] font-medium leading-none whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">
                 Lägg i varukorgen
               </span>
 
-              <div className="md:size-[45px] size-8 rounded-full flex justify-center items-center flex-shrink-0 bg-card relative z-10">
+              <div
+                className={cn(
+                  "md:size-[45px] size-8 rounded-full flex justify-center items-center flex-shrink-0 relative z-10",
+                  isVariantB
+                    ? "bg-blue text-white"
+                    : "bg-card"
+                )}
+              >
                 <ShopingCartSm />
               </div>
             </motion.div>
@@ -287,7 +370,9 @@ const Card = ({
             {/* Compare */}
             <motion.div
               initial="hidden"
-              animate={isHovered || isMobile ? "visible" : "hidden"}
+              animate={
+                isHovered || isMobile ? "visible" : "hidden"
+              }
               variants={{
                 hidden: {
                   opacity: 0,
@@ -304,7 +389,9 @@ const Card = ({
                   },
                 },
               }}
-              whileHover={isMobile ? {} : { width: 147 }}
+              whileHover={
+                isMobile ? {} : { width: 147 }
+              }
               transition={{
                 duration: 0.3,
                 ease: "easeInOut",
@@ -317,13 +404,17 @@ const Card = ({
               }}
             >
               <span className="absolute left-[14px] font-medium leading-none whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">
-                {inCompare ? "I jämförelsen" : "Jämför"}
+                {inCompare
+                  ? "I jämförelsen"
+                  : "Jämför"}
               </span>
 
               <div className="md:size-[45px] size-8 rounded-full flex justify-center items-center flex-shrink-0 bg-card relative z-10">
                 <ShuffleIcon
                   size={18}
-                  className={inCompare ? "text-blue" : ""}
+                  className={
+                    inCompare ? "text-blue" : ""
+                  }
                 />
               </div>
             </motion.div>
@@ -344,7 +435,8 @@ const Card = ({
               <span className="flex gap-[14px]">
                 <span className="text-blue">
                   {(
-                    product.price - (product.discount ?? 0)
+                    product.price -
+                    (product.discount ?? 0)
                   ).toLocaleString("sv-SE")}{" "}
                   kr
                 </span>
