@@ -6,9 +6,11 @@ import "./globals.css";
 
 import { Providers } from "@/contextApi/providers";
 import { Toaster } from "@/components/ui/sonner";
-import { generateOrganizationSchema } from "@/seo/schemas/organizationSchema";
 import { siteConfig } from "@/seo/config/siteConfig";
-import { generateWebsiteSchema } from "@/seo/schemas/websiteSchema";
+import { generateOrganizationSchema } from "@/seo/dynamic-schema/organization";
+import { generateWebsiteSchema } from "@/seo/dynamic-schema/website";
+
+
 
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -38,6 +40,7 @@ export const metadata: Metadata = {
 
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  manifest: "/manifest.webmanifest",
   metadataBase: new URL(siteConfig.url),
 };
 

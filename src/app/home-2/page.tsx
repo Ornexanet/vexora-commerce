@@ -12,9 +12,9 @@ import TestimonialSlider from "@/components/sections/testimonialSlider";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Vexora - Home",
+  title: "Vexora – Startsida",
   description:
-    "Vexora - Single Product eCommerce Next.js Template for Tech and Gadget Stores",
+    "Vexora – Next.js-mall för e-handel med en produkt för elektronik- och teknikbutiker",
 };
 
 const HomeTwo = () => {

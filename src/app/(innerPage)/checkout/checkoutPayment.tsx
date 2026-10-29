@@ -1,211 +1,109 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { useCart } from "@/contextApi/cartContext";
 import Image from "next/image";
-import Link from "next/link";
+import {
+  DEMO_SHIPPING_METHODS,
+  formatSEK,
+  getCheckoutTotals,
+  getItemUnitPrice,
+  isDemoShippingMethod,
+  type DemoShippingMethod,
+} from "./checkoutSummary";
 
-const CheckoutPayment = () => {
+type CheckoutPaymentProps = {
+  shippingMethod: DemoShippingMethod;
+  onShippingMethodChange: (method: DemoShippingMethod) => void;
+};
+
+const CheckoutPayment = ({ shippingMethod, onShippingMethodChange }: CheckoutPaymentProps) => {
+  const { cartItems, isLoaded, getCartTotal } = useCart();
+
+  if (!isLoaded) return <p role="status">Läser in varukorgen …</p>;
+  if (cartItems.length === 0) return <p role="status">Din varukorg är tom</p>;
+
+  const totalQuantity = cartItems.reduce((quantity, item) => quantity + item.quantity, 0);
+  const totals = getCheckoutTotals(getCartTotal(), totalQuantity, shippingMethod);
+
   return (
-    <div className="bg-[#F5F5F5] sm:p-10 p-7 rounded-xl">
-      <div className="border border-[#999796] sm:p-7.5 p-5 rounded-lg">
-        <p className="bg-primary text-white lg:py-[15px] py-3 lg:text-2xl sm:text-xl text-lg lg:leading-[125%] font-semibold text-center rounded-md">
-          Orderöversikt
-        </p>
-        <div className="overflow-x-auto">
-          <div className="mt-7.5  min-w-[350px]">
-            <div className="flex justify-between border-b-[1.5px] border-b-[#999796] pb-5">
-              <p className="lg:text-2xl sm:text-xl text-lg lg:leading-[125%] font-semibold text-secondary-foreground">
-                Produkt
-              </p>
-              <p className="lg:text-2xl sm:text-xl text-lg lg:leading-[125%] font-semibold text-secondary-foreground">
-                Delsumma
-              </p>
-            </div>
-
-            <div className="mt-7.5 flex flex-col gap-5 border-b-[1.5px] border-b-[#999796] pb-7.5">
-              <div className="flex justify-between">
-                <div className="flex items-center gap-5">
-                  <Image
-                    width={70}
-                    height={70}
-                    src={"/images/bestProducts/camera-1.png"}
-                    alt="img"
-                    className="bg-white max-h-[70px] object-contain"
-                  />
-                  <div>
-                    <p className="text-secondary-foreground lg:text-xl sm:text-lg text-base font-medium">
-                      Go360 4Pro
+    <section aria-labelledby="checkout-summary-title" className="min-w-0 rounded-xl bg-[#F5F5F5] p-7 sm:p-10">
+      <div className="rounded-lg border border-[#999796] p-5 sm:p-7.5">
+        <h2 id="checkout-summary-title" className="rounded-md bg-primary py-3 text-center text-xl font-semibold text-white lg:text-2xl">
+          Ordersammanfattning
+        </h2>
+        <ul aria-label="Produkter i varukorgen" className="mt-7.5 divide-y divide-light-gray">
+          {cartItems.map((item) => {
+            const unitPrice = getItemUnitPrice(item);
+            return (
+              <li key={item.id} className="flex flex-wrap gap-4 py-5">
+                <Image src={item.thumbnail} alt={item.title} width={70} height={70} className="h-17.5 w-17.5 shrink-0 rounded bg-white object-contain" />
+                <div className="min-w-0 flex-1 basis-36">
+                  <h3 className="break-words text-lg font-medium">{item.title}</h3>
+                  <p className="mt-1">Antal: {item.quantity}</p>
+                  <p>Styckpris: {formatSEK(unitPrice)}</p>
+                  {!!item.discount && (
+                    <p className="text-sm text-light-dark">
+                      Ordinarie styckpris: <del>{formatSEK(item.price)}</del>
+                      <br />Rabatt per styck: {formatSEK(item.discount)}
                     </p>
-                    <span className="text-base text-secondary-foreground">
-                      Antal: 2
-                    </span>
-                  </div>
+                  )}
+                  <p className="mt-2 font-semibold">Delsumma: {formatSEK(unitPrice * item.quantity)}</p>
                 </div>
-                <p className="text-secondary-foreground lg:text-xl sm:text-lg text-base font-semibold lg:leading-[150%] mt-2">
-                  $350.00
-                </p>
-              </div>
-            </div>
+              </li>
+            );
+          })}
+        </ul>
 
-            <div className="flex justify-between border-b-[1.5px] border-b-[#999796] pb-5 mt-7.5">
-              <p className="lg:text-xl text-lg lg:leading-[150%] font-medium text-secondary-foreground">
-                Delsumma
-              </p>
-              <p className="lg:text-xl text-lg lg:leading-[150%] font-medium text-secondary-foreground">
-                $1000.00
-              </p>
-            </div>
-
-            <div className="flex justify-between items-center border-b-[1.5px] border-b-[#999796] pb-5 mt-7.5">
-              <p className="lg:text-xl text-lg lg:leading-[150%] font-medium text-secondary-foreground">
-                Frakt
-              </p>
-              <RadioGroup
-                name="shipping_method"
-                defaultValue="0"
-                className="gap-2.5 justify-end"
-              >
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem
-                    value="0"
-                    id="free-shipping"
-                    aria-label="radio"
-                    className="border-light-dark text-transparent "
-                  />
-                  <Label
-                    htmlFor="free-shipping"
-                    className="text-gray-1-foreground text-base"
-                  >
-                    Fri frakt
-                  </Label>
-                </div>
-                <div className="flex items-center space-x-2 ">
-                  <RadioGroupItem
-                    value="10"
-                    id="fat-rate"
-                    aria-label="radio"
-                    className="border-light-dark text-transparent"
-                  />
-                  <Label
-                    htmlFor="fat-rate"
-                    className="text-gray-1-foreground text-base"
-                  >
-                    Fast frakt $10.00
-                  </Label>
-                </div>
-              </RadioGroup>
-            </div>
-
-            <div className="flex justify-between mt-7.5">
-              <p className="text-xl leading-[150%] font-medium text-secondary-foreground">
-                Totalt
-              </p>
-              <p className="text-xl leading-[150%] font-medium text-secondary-foreground">
-                $1025.00
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-10">
-        <RadioGroup
-          name="payment_method"
-          defaultValue="bank-transfer"
-          className="gap-y-5"
-        >
-          <div>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem
-                value="bank-transfer"
-                id="bank-transfer"
-                aria-label="radio"
-                className="border-light-dark text-transparent"
-              />
-              <Label
-                htmlFor="bank-transfer"
-                className="text-secondary-foreground text-base"
-              >
-                Direkt banköverföring
-              </Label>
-            </div>
-            <p className="text-gray-1-foreground mt-3">
-              Betala direkt till vårt bankkonto. Använd ditt ordernummer som betalningsreferens. Din beställning skickas först när betalningen har registrerats på vårt konto.
-
-            </p>
-          </div>
-          <div className="flex items-center space-x-2 ">
-            <RadioGroupItem
-              value="check payments"
-              id="check-payment"
-              aria-label="radio"
-              className="border-light-dark text-transparent"
-            />
-            <Label
-              htmlFor="check-payment"
-              className="text-secondary-foreground text-base"
-            >
-              Checkbetalning
-            </Label>
-          </div>
-          <div className="flex items-center space-x-2 ">
-            <RadioGroupItem
-              value="cash-on-delivery"
-              id="cash-on-delivery"
-              aria-label="radio"
-              className="border-light-dark text-transparent"
-            />
-            <Label
-              htmlFor="cash-on-delivery"
-              className="text-secondary-foreground text-base"
-            >
-              Betalning vid leverans
-            </Label>
-          </div>
-          <div className="flex items-center space-x-2 ">
-            <RadioGroupItem
-              value="paypal"
-              id="paypal"
-              aria-label="radio"
-              className="border-light-dark text-transparent"
-            />
-            <Label
-              htmlFor="paypal"
-              className="text-secondary-foreground text-base"
-            >
-              PayPal
-            </Label>
-          </div>
-        </RadioGroup>
-
-        <div className="flex items-center gap-2.5 mt-10">
-          <Checkbox
-            id="terms"
-            name="terms_agreement"
+        <fieldset className="mt-5 border-t border-light-gray pt-5">
+          <legend className="text-lg font-medium">Frakt – endast demonstration</legend>
+          <p id="demo-shipping-notice" className="mb-4 text-sm text-light-dark">
+            Beloppen är påhittade exempel i SEK, inte verkliga fraktpriser eller leveranslöften.
+          </p>
+          <RadioGroup
+            name="shipping_method"
+            value={shippingMethod}
+            onValueChange={(value) => {
+              if (isDemoShippingMethod(value)) onShippingMethodChange(value);
+            }}
+            aria-label="Välj demofrakt"
+            aria-describedby="demo-shipping-notice"
             required
-            className="rounded-sm [&_svg]:size-4 size-5 border-light-dark"
-          />
-          <Label
-            htmlFor="terms"
-            className="lg:text-lg text-base font-normal text-secondary-foreground"
           >
-            Jag har läst ochgodkänner webbplatsens{" "}
-            <Link href={"/returer-och-aterbetalningar"} className="underline">
-              Villkor
-            </Link>
-            <span className="text-primary-foreground">*</span>{" "}
-          </Label>
-        </div>
+            {DEMO_SHIPPING_METHODS.map((method) => (
+              <div key={method.id} className="flex items-center gap-3">
+                <RadioGroupItem value={method.id} id={`demo-shipping-${method.id}`} />
+                <Label htmlFor={`demo-shipping-${method.id}`} className="flex flex-1 flex-wrap justify-between gap-2 text-base">
+                  <span>{method.label}</span><span>{formatSEK(method.amount)}</span>
+                </Label>
+              </div>
+            ))}
+          </RadioGroup>
+        </fieldset>
 
-        <Button
-          type="submit"
-          className="lg:py-3 w-full mt-10 lg:leading-[166%] lg:text-lg"
-        >
-          Lägg order
-        </Button>
+        <dl aria-live="polite" aria-atomic="true" className="mt-7.5 space-y-4 border-t border-light-gray pt-5">
+          <div className="flex flex-wrap justify-between gap-2"><dt>Delsumma efter produktrabatter</dt><dd>{formatSEK(totals.subtotal)}</dd></div>
+          {totals.bundleDiscount > 0 && (
+            <div className="flex flex-wrap justify-between gap-2"><dt>Paketdeal – 10 % rabatt</dt><dd>−{formatSEK(totals.bundleDiscount)}</dd></div>
+          )}
+          <div className="flex justify-between gap-2"><dt>Demofrakt</dt><dd>{formatSEK(totals.shipping)}</dd></div>
+          <div className="flex flex-wrap justify-between gap-2 border-t border-light-gray pt-4 text-xl font-semibold"><dt>Totalt (demo)</dt><dd>{formatSEK(totals.total)}</dd></div>
+        </dl>
       </div>
-    </div>
+
+      <div className="mt-7.5">
+        <h3 className="text-lg font-semibold">Ingen betalning</h3>
+        <p className="mt-2 text-light-dark">Demokassan saknar betalningsintegration. Inga pengar dras och ingen beställning skickas till en butik.</p>
+        <div className="mt-5 flex items-start gap-3">
+          <Checkbox id="demo-confirmation" name="demo_confirmation" value="on" required className="mt-1 shrink-0" />
+          <Label htmlFor="demo-confirmation" className="text-base font-normal">Jag förstår att detta endast är en demonstration och inte ett riktigt köp.</Label>
+        </div>
+        <Button type="submit" className="mt-7.5 h-auto min-h-[53px] w-full whitespace-normal px-3 text-center lg:text-lg">Testa demokassan – utan köp</Button>
+      </div>
+    </section>
   );
 };
 

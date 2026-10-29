@@ -29,22 +29,22 @@ import Image from "next/image";
 
 const countryList = [
   {
-    label: "United States (USD $)",
+    label: "USA (USD $)",
     value: "us",
     flag: "/images/flags/united-states.png",
   },
   {
-    label: "Canada (CAD $)",
+    label: "Kanada (CAD $)",
     value: "canada",
     flag: "/images/flags/canada.png",
   },
   {
-    label: "France (EUR  €)",
+    label: "Frankrike (EUR €)",
     value: "france",
     flag: "/images/flags/france.png",
   },
   {
-    label: "Hong Kong SAR (HKD $)",
+    label: "Hongkong SAR (HKD $)",
     value: "hong-kong",
     flag: "/images/flags/hong-kong.png",
   },
@@ -54,7 +54,7 @@ const countryList = [
     flag: "/images/flags/japan.png",
   },
   {
-    label: "United Kingdom (GBP £)",
+    label: "Storbritannien (GBP £)",
     value: "united-kingdom",
     flag: "/images/flags/united-kingdom.png",
   },

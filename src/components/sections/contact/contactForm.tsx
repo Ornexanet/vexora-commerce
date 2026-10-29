@@ -29,7 +29,7 @@ const ContactForm = () => {
         <div>
           <Input
             type="Telefonnummer"
-            placeholder="Din telefonnummer"
+            placeholder="Ditt telefonnummer"
             className="h-15 bg-background border-l-light-gray px-5 text-lg rounded-lg placeholder:text-light-dark"
           />
         </div>

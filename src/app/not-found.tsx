@@ -8,13 +8,13 @@ export default function NotFound() {
         404
       </h2>
       <p className="lg:text-[52px] text-[28px] font-extrabold">
-        Oops! Page Not Found
+        Oj! Sidan kunde inte hittas
       </p>
       <p className="lg:text-[28px] text-xl text-light-dark font-medium mt-5">
-        The page you’re looking for doesn’t exist or may have been moved.
+        Sidan du söker finns inte eller kan ha flyttats.
       </p>
       <Button asChild className="lg:mt-10 mt-7">
-        <Link href="/">Go Back to Home</Link>
+        <Link href="/">Till startsidan</Link>
       </Button>
     </div>
   );

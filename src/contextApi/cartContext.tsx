@@ -14,6 +14,23 @@ import { toast } from "sonner";
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
+const isStoredCart = (value: unknown): value is CartItem[] =>
+  Array.isArray(value) &&
+  value.every((item: unknown) => {
+    if (!item || typeof item !== "object") return false;
+    const product = item as Record<string, unknown>;
+    return (
+      typeof product.id === "number" && Number.isFinite(product.id) &&
+      typeof product.title === "string" && product.title.length > 0 &&
+      typeof product.thumbnail === "string" && product.thumbnail.length > 0 &&
+      typeof product.price === "number" && Number.isFinite(product.price) && product.price >= 0 &&
+      typeof product.quantity === "number" && Number.isSafeInteger(product.quantity) && product.quantity > 0 &&
+      (product.discount == null ||
+        (typeof product.discount === "number" && Number.isFinite(product.discount) &&
+          product.discount >= 0 && product.discount <= product.price))
+    );
+  });
+
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {
@@ -28,17 +45,27 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
   // Load cart from localStorage on mount
   useEffect(() => {
-    const savedCart = localStorage.getItem("Vexora-cart");
-    if (savedCart) {
-      setCartItems(JSON.parse(savedCart));
+    try {
+      const savedCart = localStorage.getItem("Vexora-cart");
+      if (savedCart) {
+        const parsedCart: unknown = JSON.parse(savedCart);
+        if (isStoredCart(parsedCart)) setCartItems(parsedCart);
+      }
+    } catch {
+      // An unreadable cart must not prevent checkout from finishing hydration.
+    } finally {
+      setIsLoaded(true);
     }
-    setIsLoaded(true);
   }, []);
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
     if (isLoaded) {
-      localStorage.setItem("Vexora-cart", JSON.stringify(cartItems));
+      try {
+        localStorage.setItem("Vexora-cart", JSON.stringify(cartItems));
+      } catch {
+        // Keep the in-memory cart usable when browser storage is unavailable.
+      }
     }
   }, [cartItems, isLoaded]);
 
@@ -55,7 +82,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         }
         return [...prev, { ...product, quantity: quantity }];
       });
-      toast.success("Product added to cart");
+      toast.success("Produkten har lagts i varukorgen");
     },
     [],
   );
@@ -100,6 +127,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const value = useMemo(
     () => ({
       cartItems,
+      isLoaded,
       addToCart,
       removeFromCart,
       incrementQuantity,
@@ -110,6 +138,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     }),
     [
       cartItems,
+      isLoaded,
       addToCart,
       removeFromCart,
       incrementQuantity,

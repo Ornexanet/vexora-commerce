@@ -3,19 +3,20 @@ export type FAQItem = {
   answer: string;
 };
 
-export function generateFAQSchema(
-  faqs: FAQItem[]
-) {
+export function generateFAQSchema(items: FAQItem[]) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
+
+    mainEntity: items.map((item) => ({
       "@type": "Question",
-      name: faq.question,
+      name: item.question,
+
       acceptedAnswer: {
         "@type": "Answer",
-        text: faq.answer,
+        text: item.answer,
       },
     })),
   };
 }
+

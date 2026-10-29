@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "src/app/growth-dashboard"  ],
   "exclude": [
     "node_modules"
   ]

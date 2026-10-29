@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import CompanyFeaturesSlider from "@/components/sections/companyFeaturesSlider";
 import ProductPagination from "@/components/sections/shop/productPagination";
 import ProductsFilterSidebar from "@/components/sections/shop/productsFilterSidebar";
@@ -8,12 +9,13 @@ import ProductsContainer from "./productsContainer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Vexora - Shop List",
+  title: "Vexora – Produktlista",
   description:
-    "Vexora - Single Product eCommerce Next.js Template for Tech and Gadget Stores",
+    "Vexora – Next.js-mall för e-handel med en produkt för elektronik- och teknikbutiker",
 };
 
-const ShopList = () => {
+const ShopList = async () => {
+  await connection();
   return (
     <main>
       <ShopGridViewProvider>

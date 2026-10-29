@@ -5,7 +5,7 @@ const HighlightedFeatures = ({ product }: { product: ProductType }) => {
     <div className="mt-11">
       <div className="border border-[#E0E4E9] rounded-[15px] py-7.5 pl-7.5 pr-2.5 relative">
         <span className="text-lg font-bold text-light-dark px-2 absolute -top-4 bg-background">
-          Highlighted Features
+          Produktens höjdpunkter
         </span>
         <div className="flex gap-3 overflow-x-auto">
           {product.features?.map((feature, index) => (

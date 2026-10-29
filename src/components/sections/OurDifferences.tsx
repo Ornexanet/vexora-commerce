@@ -71,7 +71,7 @@ const OurDifferences = () => {
                   height={250}
                   src={item.img}
                   sizes="100vw"
-                  alt="img"
+                  alt="Bild"
                   className="w-full"
                 />
               </div>

@@ -56,7 +56,7 @@ const CartSidebar = ({ cartIconTwo }: { cartIconTwo?: boolean }) => {
       >
         <SheetHeader className="py-6 px-6 border-b flex flex-row items-center justify-between">
           <SheetTitle className="font-extrabold text-[22px]">
-            Din Varukorg
+            Din varukorg
           </SheetTitle>
           <SheetClose className="rounded-full size-10 flex items-center justify-center border border-light-dark hover:border-black transition-all duration-500">
             <XIcon size={20} />
@@ -67,7 +67,7 @@ const CartSidebar = ({ cartIconTwo }: { cartIconTwo?: boolean }) => {
             {cartItems.length > 0 && (
               <div className="px-6 py-4 bg-[#F5F5F7] mb-5">
                 <p className="font-medium">
-                  Congratulations! Your order is eligible for FREE Delivery.
+                  Grattis! Din beställning kvalificerar sig för fri frakt.
                 </p>
                 <div className="mt-4 w-full h-1.5 bg-[#16A34A] rounded-lg"></div>
               </div>
@@ -142,7 +142,7 @@ const CartSidebar = ({ cartIconTwo }: { cartIconTwo?: boolean }) => {
             </div>
             <div className="flex items-center gap-2.5 px-6 pt-5 pb-7 justify-between">
               <Button asChild variant={"secondary"}>
-                <Link href={"/cart"}>Visa varukorg</Link>
+                <Link href={"/cart"}>Visa varukorgen</Link>
               </Button>
               <Button asChild>
                 <Link href={"/checkout"}>Till kassan</Link>

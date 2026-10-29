@@ -16,6 +16,13 @@ import Link from "next/link";
 import { Eye, PaymentCardIcon } from "@/lib/icons";
 
 const StatusBadge = ({ status }: { status: OrderStatus }) => {
+  const statusLabels: Record<OrderStatus, string> = {
+    Completed: "Slutförd",
+    Cancelled: "Avbruten",
+    Processing: "Behandlas",
+    Failed: "Misslyckad",
+    Refunded: "Återbetald",
+  };
   const statusConfig = {
     Completed: "bg-[#EAFFF1] border-[#17C65333] text-[#04B440]",
     Cancelled: "bg-[#FFEEF3] border-[#F8285A33] text-[#D81A48]",
@@ -32,7 +39,7 @@ const StatusBadge = ({ status }: { status: OrderStatus }) => {
       )}
     >
       <span className="w-1.5 h-1.5 rounded-full bg-current" />
-      {status}
+      {statusLabels[status]}
     </span>
   );
 };
@@ -47,7 +54,7 @@ export const columns: ColumnDef<Order>[] = [
           (table.getIsSomePageRowsSelected() && "indeterminate")
         }
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        aria-label="Select all"
+        aria-label="Markera alla"
         className="size-5 rounded-sm"
       />
     ),
@@ -55,7 +62,7 @@ export const columns: ColumnDef<Order>[] = [
       <Checkbox
         checked={row.getIsSelected()}
         onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label="Select row"
+        aria-label="Markera raden"
         className="size-5 rounded-sm"
       />
     ),
@@ -64,7 +71,7 @@ export const columns: ColumnDef<Order>[] = [
   },
   {
     accessorKey: "id",
-    header: "Order",
+    header: "Beställning",
     cell: ({ row }) => (
       <Link
         href={`#`}
@@ -76,12 +83,12 @@ export const columns: ColumnDef<Order>[] = [
   },
   {
     accessorKey: "date",
-    header: "Date",
+    header: "Datum",
     cell: ({ row }) => {
       const date = new Date(row.original.date);
       return (
         <span className="text-lg leading-3.5">
-          {date.toLocaleDateString("en-US", {
+          {date.toLocaleDateString("sv-SE", {
             month: "long",
             day: "numeric",
             year: "numeric",
@@ -100,8 +107,8 @@ export const columns: ColumnDef<Order>[] = [
     header: "Total",
     cell: ({ row }) => (
       <span className="text-lg leading-3.5">
-        ${row.original.total.toFixed(2)} for {row.original.itemCount} Item
-        {row.original.itemCount > 1 ? "s" : ""}
+        ${row.original.total.toFixed(2)} för {row.original.itemCount} var
+        {row.original.itemCount > 1 ? "or" : "a"}
       </span>
     ),
   },
@@ -122,7 +129,7 @@ export const columns: ColumnDef<Order>[] = [
                 className="h-10 px-2.5 border-[#E0E4E9] border font-medium text-base"
               >
                 <PaymentCardIcon className="text-light-dark size-5" />
-                Pay
+                Betala
               </Button>
               <Button
                 variant="ghost"
@@ -130,7 +137,7 @@ export const columns: ColumnDef<Order>[] = [
                 className="h-10 px-2.5 border-[#E0E4E9] border font-medium text-base"
               >
                 <Eye className="size-5 text-light-dark" />
-                View
+                Visa
               </Button>
               <Button
                 variant="ghost"
@@ -138,7 +145,7 @@ export const columns: ColumnDef<Order>[] = [
                 className="h-10 px-2.5 border font-medium text-base border-[#FF3B3080] bg-[#FF3B301A] text-[#FF3B30] hover:text-[#FF3B30]"
               >
                 <X className="w-4 h-4" />
-                Cancel
+                Avbryt
               </Button>
             </>
           )}
@@ -149,7 +156,7 @@ export const columns: ColumnDef<Order>[] = [
               className="h-10 px-2.5 border-[#E0E4E9] border font-medium text-base"
             >
               <Eye className="size-5 text-light-dark" />
-              View
+              Visa
             </Button>
           )}
         </div>
@@ -167,13 +174,13 @@ export const columns: ColumnDef<Order>[] = [
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="space-y-0">
           <DropdownMenuItem className="text-base py-2">
-            View Details
+            Visa detaljer
           </DropdownMenuItem>
           <DropdownMenuItem className="text-base py-2">
-            Download Invoice
+            Ladda ner faktura
           </DropdownMenuItem>
           <DropdownMenuItem className="text-red-600 focus:text-red-600 text-base py-2">
-            Delete Order
+            Ta bort beställningen
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

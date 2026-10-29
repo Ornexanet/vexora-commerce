@@ -45,7 +45,7 @@ const HeroVideo = () => {
           </video>
           <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-0"></div>
           <button
-            aria-label={isPlaying ? "pause video" : "play video"}
+            aria-label={isPlaying ? "Pausa videon" : "Spela upp videon"}
             onClick={() => setIsPlaying((s) => !s)}
             className=" size-10 rounded-full border border-white right-5 bottom-5 absolute flex justify-center items-center text-white bg-black/20 p-3 z-20"
           >
@@ -61,21 +61,21 @@ const HeroVideo = () => {
             size="42"
             className="mt-10 font-extralight leading-[1.27]"
           >
-            <p>Pro-Level Outdoor Sports | Superior hardness and durability</p>
+            <p>Utomhusträning på proffsnivå | Enastående hårdhet och hållbarhet</p>
           </Title>
           <div className="mt-10 flex items-center gap-x-7.5 gap-y-4 flex-wrap">
             <div className="flex items-center gap-2.5">
               <span className="text-[#1279F2]">
                 <Sun />
               </span>
-              <p className="text-lg leading-[1.28]">3000 nits Brightness</p>
+              <p className="text-lg leading-[1.28]">Ljusstyrka på 3000 nits</p>
             </div>
             <div className="flex items-center gap-2.5">
               <span className="text-[#1279F2]">
                 <BatteryCharging />
               </span>
               <p className="text-lg leading-[1.28]">
-                Up to 10-Day Battery Life
+                Upp till 10 dagars batteritid
               </p>
             </div>
             <div className="flex items-center gap-2.5">
@@ -83,20 +83,20 @@ const HeroVideo = () => {
                 <Drop />
               </span>
               <p className="text-lg leading-[1.28]">
-                IP6X Water & Dustproof Rating
+                Vatten- och dammskydd enligt IP6X
               </p>
             </div>
           </div>
           <div className="lg:mt-15 mt-10 flex items-center max-[447px]:flex-col flex-row gap-x-9 gap-y-5 w-full justify-center">
             <Button asChild className="max-[447px]:w-full w-auto">
-              <Link href={"/product-details"}>Buy Watch 5 Pro</Link>
+              <Link href={"/product-details"}>Köp Watch 5 Pro</Link>
             </Button>
             <Button
             asChild
               className="max-[447px]:w-full w-auto border-white"
               variant={"outline"}
             >
-              <Link href={"/about"}>Learn More</Link>
+              <Link href={"/about"}>Läs mer</Link>
             </Button>
           </div>
         </div>

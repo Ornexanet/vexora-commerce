@@ -2,6 +2,8 @@ import dynamic from "next/dynamic";
 import Footer from "@/components/sections/footer";
 import Header from "@/components/header";
 import MobileHeader from "@/components/header/mobileHeader";
+
+
 const Ads = dynamic(
   () => import("@/components/sections/ads")
 );

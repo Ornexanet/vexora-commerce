@@ -15,7 +15,7 @@ const OurStory = () => {
               height={850}
               sizes="100vw"
               src="/images-optimized/our-story.webp"
-              alt="Our Story"
+              alt="Vår historia"
             />
           </div>
           <div>

@@ -3,23 +3,23 @@ import React from "react";
 
 const sortinfoData = [
   {
-    title: "Comfort, for longer",
-    description: "Px8 features luxurious materials and purposeful design.",
+    title: "Komfort som varar",
+    description: "Px8 kombinerar exklusiva material med genomtänkt design.",
   },
   {
-    title: "Angled Carbon Cones",
+    title: "Vinklade kolfibermembran",
     description:
-      "Px8’s precisely angled Carbon Cone drive units improve stereo imaging.",
+      "Px8:s noggrant vinklade högtalarelement med kolfibermembran ger en tydligare stereobild.",
   },
   {
-    title: "High-resolution sound ",
+    title: "Högupplöst ljud",
     description:
-      "Px8 uses aptX™ Adaptive wireless technology for  high-resolution sound.",
+      "Px8 använder den trådlösa tekniken aptX™ Adaptive för högupplöst ljud.",
   },
   {
-    title: "Cancel the noise",
+    title: "Stäng ute bruset",
     description:
-      "Px8's proprietary noise-canceling technology ensures outstanding music",
+      "Px8:s egen brusreducering ger en enastående musikupplevelse",
   },
 ];
 const ProductSortInfo = () => {

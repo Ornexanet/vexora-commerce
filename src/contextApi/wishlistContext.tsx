@@ -56,7 +56,7 @@ export const WishlistProvider = ({
       }
       return [...prev, product];
     });
-    toast.success("Product added to wishlist");
+    toast.success("Produkten har lagts i önskelistan");
   }, []);
 
   const removeFromWishlist = useCallback((productId: number) => {

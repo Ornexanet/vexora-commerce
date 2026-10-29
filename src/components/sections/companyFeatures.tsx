@@ -58,7 +58,7 @@ const CompanyFeatures = () => {
               height={860}
               sizes="100vw"
               src={"/images-optimized/companyFeatures.webp"}
-              alt="img"
+              alt="Bild"
               className="rounded-lg"
             />
           </div>

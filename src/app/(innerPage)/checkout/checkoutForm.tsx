@@ -69,14 +69,14 @@ const CheckoutForm = () => {
                 id="country"
                 className="data-[size=default]:h-12.5 w-full py-2.5 mt-2.5"
               >
-                <SelectValue placeholder="Väla land" />
+                <SelectValue placeholder="Välj land" />
               </SelectTrigger>
               <SelectContent className="py-[14px] bg-background ">
                 <SelectItem value="united-states" className="cursor-pointer">
-                  United States
+                  USA
                 </SelectItem>
                 <SelectItem value="united-kingdom" className="cursor-pointer">
-                  United Kingdom
+                  Storbritannien
                 </SelectItem>
                 <SelectItem value="bangladesh" className="cursor-pointer">
                   Bangladesh

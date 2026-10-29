@@ -22,7 +22,7 @@ const SearchModal = () => {
       <DialogTrigger asChild>
         <button className="flex items-center gap-[5px] outline-none">
           <Search size={24} />
-          <span className="font-medium text-lg md:block hidden">Search</span>
+          <span className="font-medium text-lg md:block hidden">Sök</span>
         </button>
       </DialogTrigger>
       <DialogContent
@@ -30,12 +30,12 @@ const SearchModal = () => {
         className="sm:max-w-[800px] sm:py-20 py-10 sm:px-10 px-5"
       >
         <DialogHeader className="hidden">
-          <DialogTitle>Search Products</DialogTitle>
+          <DialogTitle>Sök produkter</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSearch} className="relative">
           <Input
             type="text"
-            placeholder="Search for products..."
+            placeholder="Sök efter produkter..."
             className="w-full py-6 pr-14 pl-6 rounded-full"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}

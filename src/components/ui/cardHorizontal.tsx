@@ -86,7 +86,7 @@ const CardHorizontal = ({
         )}
         {product.discount && (
           <div className="absolute top-[19px] left-0 rounded-tl-none rounded-bl-none rounded-sm py-1.5 pl-2.5 pr-2.5 bg-blue max-h-[30px] text-white flex items-center gap-1">
-            <p className="text-sm"> Save ${product.discount}</p>
+            <p className="text-sm"> Spara ${product.discount}</p>
           </div>
         )}
       </div>
@@ -121,13 +121,11 @@ const CardHorizontal = ({
           </div>
           <span className="h-[21px] w-px bg-[#B0B5BB] block"></span>
           <span className="mdLtext-lg md:leading-normal text-light-dark">
-            59 reviews
+            59 recensioner
           </span>
         </div>
         <p className="md:text-lg leading-6 md:leading-7 text-light-dark">
-          Celebrating the long-standing, award-winning partnership between
-          Bowers & Wilkins and McLaren Automotive and the McLaren supercars and
-          hypercars in which Bowers & Wilkins has been integrated.
+          En hyllning till det långvariga, prisbelönta samarbetet mellan Bowers &amp; Wilkins och McLaren Automotive och de superbilar och hyperbilar från McLaren som har utrustats med ljud från Bowers &amp; Wilkins.
         </p>
         <div className="mt-10 flex flex-wrap gap-6">
           <div className="rounded-lg border-2 border-[#B0B5BB] px-5 py-2.5 md:h-[54px] h-12 inline-flex items-center gap-[15px] max-w-[139px]">
@@ -152,7 +150,7 @@ const CardHorizontal = ({
             className="gap-x-[15px] max-w-[240px]"
           >
             <ShopingBag />
-            Add to Cart
+            Lägg i varukorgen
           </Button>
         </div>
       </div>

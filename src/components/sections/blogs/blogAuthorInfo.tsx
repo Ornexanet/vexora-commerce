@@ -12,16 +12,14 @@ const BlogAuthorInfo = () => {
           height={168}
           sizes="100vw"
           src={"/images/blogs/author.png"}
-          alt="img"
+          alt="Bild"
           className="rounded-xl"
         />
       </div>
       <div className="text-[#5C6671]">
         <b className="font-medium text-[22px]">Eleanor Pena</b>
         <p className="mt-1 text-lg leading-[160%]">
-          Founder and Creative Director of Next, an independent digital creative
-          studio based out of NYC founded in 2011. He has over 15 years
-          experience as an award-winning Creative Director/Art for clients.
+          Grundare och kreativ chef för Next, en oberoende digital designstudio i New York som grundades 2011. Han har över 15 års erfarenhet som prisbelönt kreativ chef och art director för kunder.
         </p>
         <div className="mt-4 flex items-center gap-6">
           <Link

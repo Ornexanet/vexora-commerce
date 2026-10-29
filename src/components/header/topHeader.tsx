@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -16,9 +17,11 @@ import {
 import { MicroPhone } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 import { categoriesList } from "@/mockData/categoriesList";
-import { Search, X } from "lucide-react";
+import { Search, X, Heart } from "lucide-react";
 import Image from "next/image";
+import BrandLogo from "@/components/ui/brandLogo";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import HeaderExtraInfo from "./headerExtraInfo";
 import CartSidebar from "./cartSidebar";
@@ -50,80 +53,83 @@ const levenshteinDistance = (a: string, b: string): number => {
 };
 
 const TopHeader = () => {
+  const router = useRouter();
   const [isShowSearch, setIsShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
- const searchResults = (() => {
-  const query = searchQuery.trim().toLowerCase();
 
-  if (!query) return [];
+  const searchResults = (() => {
+    const query = searchQuery.trim().toLowerCase();
 
-  const exactMatches = allProducts.filter((product) =>
-    product.title.toLowerCase().includes(query)
-  );
+    if (!query) return [];
 
-  if (exactMatches.length > 0) {
-    return exactMatches.slice(0, 5);
-  }
+    const exactMatches = allProducts.filter((product) =>
+      product.title.toLowerCase().includes(query)
+    );
 
-  if (query.length < 3) return [];
+    if (exactMatches.length > 0) {
+      return exactMatches.slice(0, 5);
+    }
 
-  const suggestions = allProducts
-    .map((product) => {
-      const words = [
-        ...product.title.toLowerCase().split(/\s+/),
-        ...(product.brand ? [product.brand.toLowerCase()] : []),
-      ];
+    if (query.length < 3) return [];
 
-      const distance = Math.min(
-        ...words.map((word) => levenshteinDistance(query, word))
-      );
+    const suggestions = allProducts
+      .map((product) => {
+        const words = [
+          ...product.title.toLowerCase().split(/\s+/),
+          ...(product.brand ? [product.brand.toLowerCase()] : []),
+        ];
 
-      return { product, distance };
-    })
-    .filter(({ distance }) => {
-      const maxDistance = query.length >= 6 ? 2 : 1;
-      return distance <= maxDistance;
-    })
-    .sort((a, b) => a.distance - b.distance)
-    .slice(0, 5);
+        const distance = Math.min(
+          ...words.map((word) => levenshteinDistance(query, word))
+        );
 
-  return suggestions.map(({ product }) => product);
-})();
+        return { product, distance };
+      })
+      .filter(({ distance }) => {
+        const maxDistance = query.length >= 6 ? 2 : 1;
+        return distance <= maxDistance;
+      })
+      .sort((a, b) => a.distance - b.distance)
+      .slice(0, 5);
 
-
+    return suggestions.map(({ product }) => product);
+  })();
 
   return (
-    <div className="grid grid-cols-[auto_1fr_auto] items-center gap-[30px] relative w-full">
-      <Link href={"/"} className="shrink-0 w-[120px] block">
-        <Image
-          width={120}
-          height={40}
-          src={"/images/ornexa-logo121.png"}
-          alt="Ornexa logo"
-          priority
-        />
+    <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 lg:gap-5 xl:gap-6 relative w-full">
+
+      <Link href="/" className="shrink-0 w-[90px] lg:w-[105px] xl:w-[120px] block">
+        <BrandLogo priority />
       </Link>
 
       <div
-  className={cn(
-    "relative min-w-0 max-lg:absolute max-lg:left-0 max-lg:top-full max-lg:z-50 max-lg:bg-background max-lg:w-full",
-    isShowSearch ? "block lg:block" : "lg:block hidden"
-  )}
->
+        className={cn(
+          "relative min-w-0 max-lg:absolute max-lg:left-0 max-lg:top-full max-lg:z-50 max-lg:bg-background max-lg:w-full",
+          isShowSearch ? "block lg:block" : "lg:block hidden"
+        )}
+      >
         <div className="border border-light-gray rounded-[47px] flex items-center lg:pl-[25px] max-h-[50px] overflow-hidden">
           <div className="border-r border-r-light-gray py-1.5 h-full shrink-0">
-            <Select defaultValue="All Categories">
-              <SelectTrigger className="lg:w-[190px] border-none font-bold lg:text-base text-sm lg:pr-[37px] focus-visible:ring-0 h-auto max-lg:[&>svg]:size-5">
-                <SelectValue />
-              </SelectTrigger>
+            <Select
+              value=""
+              onValueChange={(href) => {
+                router.push(href);
+                setSearchQuery("");
+                setIsShowSearch(false);
+              }}
+            >
+              <SelectTrigger className="w-[120px] lg:w-[140px] xl:w-[190px] border-none font-bold lg:text-base text-sm lg:pr-4 xl:pr-[37px] focus-visible:ring-0 h-auto max-lg:[&>svg]:size-5">
+             <SelectValue placeholder="Alla kategorier" />
+             </SelectTrigger>
+
 
               <SelectContent className="min-w-[220px]">
-                <SelectItem value={"All Categories"}>
+                <SelectItem value="/shop-with-sidebar">
                   Alla kategorier
                 </SelectItem>
 
-                {categoriesList.map(({ id, label }) => (
-                  <SelectItem key={id} value={label}>
+                {categoriesList.map(({ id, label, href }) => (
+                  <SelectItem key={id} value={href}>
                     {label}
                   </SelectItem>
                 ))}
@@ -132,15 +138,17 @@ const TopHeader = () => {
           </div>
 
           <InputGroup className="h-auto border-none rounded-[47px] [&_svg]:size-5 lg:[&_svg]:size-6 lg:pl-[25px] has-[[data-slot=input-group-control]:focus-visible]:ring-0">
-           <InputGroupInput
-  placeholder="Sök efter produkter..."
-  value={searchQuery}
-  onChange={(e) => setSearchQuery(e.target.value)}
-  className="py-[15px] h-auto rounded-[47px] placeholder:text-[#B0B5BB] text-[#B0B5BB] font-medium"
-/>
+            <InputGroupInput
+              placeholder="Sök efter produkter..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="py-[15px] h-auto rounded-[47px] placeholder:text-[#B0B5BB] text-[#B0B5BB] font-medium"
+            />
 
-
-            <InputGroupAddon align={"inline-end"} className="text-foreground">
+            <InputGroupAddon
+              align="inline-end"
+              className="text-foreground"
+            >
               <InputGroupButton className="lg:mr-3 max-lg:px-0!">
                 <MicroPhone className="size-6" />
               </InputGroupButton>
@@ -158,61 +166,79 @@ const TopHeader = () => {
               </InputGroupButton>
             </InputGroupAddon>
           </InputGroup>
-          {searchQuery.trim() && (
-  <div className="absolute top-full left-0 right-0 z-[100] mt-2 max-h-80 overflow-y-auto rounded-xl border bg-background p-3 shadow-xl">
-    {searchResults.length > 0 ? (
-      searchResults.map((product) => (
-        <Link
-          key={product.id}
-          href={`/product-details/${product.id}`}
-          onClick={() => {
-            setSearchQuery("");
-            setIsShowSearch(false);
-          }}
-          className="flex items-center gap-3 rounded-lg p-2 hover:bg-muted"
-        >
-          <Image
-            src={product.thumbnail}
-            alt={product.title}
-            width={50}
-            height={50}
-            className="h-12 w-12 object-contain"
-          />
-          <div className="min-w-0">
-            <p className="text-sm font-medium text-foreground">
-              {product.title}
-            </p>
-            <p className="text-sm text-muted-foreground">
-              {product.price.toLocaleString("sv-SE")} kr
-            </p>
-          </div>
-        </Link>
-      ))
-    ) : (
-      <p className="p-3 text-sm text-muted-foreground">
-        Inga produkter hittades.
-      </p>
-    )}
-  </div>
-)}
-
         </div>
+
+        {searchQuery.trim() && (
+          <div className="absolute top-full left-0 right-0 z-[100] mt-2 max-h-80 overflow-y-auto rounded-xl border bg-background p-3 shadow-xl">
+            {searchResults.length > 0 ? (
+              searchResults.map((product) => (
+                <Link
+                  key={product.id}
+                  href={`/product-details/${product.id}`}
+                  onClick={() => {
+                    setSearchQuery("");
+                    setIsShowSearch(false);
+                  }}
+                  className="flex items-center gap-3 rounded-lg p-2 hover:bg-muted"
+                >
+                  <Image
+                    src={product.thumbnail}
+                    alt={product.title}
+                    width={50}
+                    height={50}
+                    className="h-12 w-12 object-contain"
+                  />
+
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-foreground">
+                      {product.title}
+                    </p>
+
+                    <p className="text-sm text-muted-foreground">
+                      {product.price.toLocaleString("sv-SE")} kr
+                    </p>
+                  </div>
+                </Link>
+              ))
+            ) : (
+              <p className="p-3 text-sm text-muted-foreground">
+                Inga produkter hittades.
+              </p>
+            )}
+          </div>
+        )}
       </div>
 
-      <div className="flex items-center justify-end gap-[25px] shrink-0">
-        <div
+      <div className="flex items-center justify-end gap-2 lg:gap-3 xl:gap-5 shrink-0">
+        <button
+          type="button"
           onClick={() => setIsShowSearch(true)}
+          aria-label="Sök produkter"
           className="lg:hidden flex items-center gap-2 cursor-pointer"
         >
           <Search size={20} />
-          <span className="text-lg leading-normal font-medium lg:block hidden">
+          <span className="text-lg leading-normal font-medium hidden">
             Sök
           </span>
-        </div>
+        </button>
 
         <div className="xl:flex gap-[25px] hidden">
           <HeaderExtraInfo />
         </div>
+
+        {/* Visible wishlist navigation */}
+        <Link
+          href="/wishlist"
+          className="flex shrink-0 items-center gap-2 text-foreground hover:text-red-500 transition-colors"
+          aria-label="Visa mina favoriter"
+          title="Mina favoriter"
+        >
+          <Heart size={22} aria-hidden="true" />
+
+          <span className="hidden lg:inline text-sm font-medium whitespace-nowrap">
+            Mina favoriter
+          </span>
+        </Link>
 
         <CartSidebar />
       </div>
@@ -221,3 +247,4 @@ const TopHeader = () => {
 };
 
 export default TopHeader;
+

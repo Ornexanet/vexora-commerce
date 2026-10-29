@@ -16,7 +16,7 @@ const NextPrevPost = () => {
           href={"#"}
           className="text-lg hover:text-blue transition-all duration-500 text-start max-w-[307px]"
         >
-          The Rise of Video Content: Trends and Strategies for Success
+          Videoinnehållets framväxt: trender och strategier för framgång
         </Link>
       </div>
       <div className="h-15 w-px bg-[#2E4DFE0D]"></div>
@@ -25,7 +25,7 @@ const NextPrevPost = () => {
           href={"#"}
           className="text-lg hover:text-blue transition-all duration-500 text-end max-w-[307px]"
         >
-          The Rise of Video Content: Trends and Strategies for Success
+          Videoinnehållets framväxt: trender och strategier för framgång
         </Link>
         <Link
           href={"#"}

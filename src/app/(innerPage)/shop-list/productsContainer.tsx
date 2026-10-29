@@ -4,10 +4,11 @@ import Card from "@/components/ui/card";
 import CardHorizontal from "@/components/ui/cardHorizontal";
 import { useShopGridView } from "@/contextApi/shopGridViewProvider";
 import { cn } from "@/lib/utils";
-import { products } from "@/mockData/products";
+import { useShopFilters } from "@/contextApi/shopFiltersProvider";
 import { Fragment, useEffect, useState } from "react";
 
 const ProductsContainer = () => {
+  const { products: filteredProducts } = useShopFilters();
   const { shopView, setShopView } = useShopGridView();
   const [isInitialized, setIsInitialized] = useState(false);
 
@@ -32,7 +33,8 @@ const ProductsContainer = () => {
   }
   return (
     <div className={cn("grid gap-[30px] mt-[30px]", getGridStyle(shopView))}>
-      {products.bestProductsData.map((product) => (
+      {filteredProducts.length === 0 && <p role="status">Inga produkter matchar dina filter.</p>}
+      {filteredProducts.map((product) => (
         <Fragment key={product.id}>
           {shopView === "list" ? (
             <CardHorizontal product={product} />

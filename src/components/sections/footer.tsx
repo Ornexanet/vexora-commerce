@@ -1,5 +1,6 @@
-import { Instagram, Logo, Twitter, Whatsapp, Youtube } from "@/lib/icons";
+import { Instagram, Twitter, Whatsapp, Youtube } from "@/lib/icons";
 import Link from "next/link";
+import BrandLogo from "@/components/ui/brandLogo";
 import Title from "../ui/title";
 
 export interface FooterLinkType {
@@ -95,6 +96,9 @@ const Footer = () => {
         className="bg-no-repeat max-xl:bg-contain bg-right-bottom">
       
         <div className="container">
+          <Link href="/" aria-label="Ornexa – till startsidan" className="mb-10 block w-[156px] sm:w-[177px]">
+            <BrandLogo theme="light" />
+          </Link>
           <Title
             asChild
             size="28"
@@ -245,7 +249,6 @@ const Footer = () => {
         <div className="container flex sm:flex-row flex-col justify-between sm:items-center gap-y-5">
           <p className="md:text-lg font-medium md:leading-normal text-light-dark">
             © {new Date().getFullYear()} Ornexa. Alla rättigheter förbehållna.
-            Reserved
           </p>
           <div className="flex items-center gap-2.5">
             <Glob />

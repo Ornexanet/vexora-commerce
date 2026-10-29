@@ -18,12 +18,12 @@ const Card = ({ item }: { item: testimonialType }) => {
           width={50}
           height={50}
           src={item.image}
-          alt="img"
+          alt="Bild"
           className="rounded-full"
         />
         <div>
           <strong className="md:text-lg md:leading-7">{item.name}</strong>
-          <p className="text-light-dark leading-[25px]">Travel Vlogger</p>
+          <p className="text-light-dark leading-[25px]">Resevloggare</p>
         </div>
       </div>
     </div>
@@ -34,7 +34,7 @@ const Testimonial = () => {
     <section className="bg-[#F5F5F7] lg:pt-37.5 md:pt-25 pt-20 lg:pb-37.5 md:pb-25 pb-20">
       <div className="container">
         <Title className="max-w-[921px]">
-          Hear Directly from Our Community of Users
+          Hör vad våra användare tycker
         </Title>
         <div
           className={`mt-9 relative 

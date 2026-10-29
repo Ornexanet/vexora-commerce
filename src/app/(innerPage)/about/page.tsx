@@ -55,7 +55,7 @@ const About = () => {
             image: "https://shop.ornexa.net/images/ornexa-about-hero.webp",
             areaServed: {
               "@type": "Country",
-              name: "Sweden",
+              name: "Sverige",
             },
           },
         },

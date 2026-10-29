@@ -118,7 +118,7 @@ const OrdersTable = ({ data }: { data: Order[] }) => {
                   colSpan={columns.length}
                   className="h-24 text-center"
                 >
-                  No orders found.
+                  Inga beställningar hittades.
                 </TableCell>
               </TableRow>
             )}
@@ -128,13 +128,13 @@ const OrdersTable = ({ data }: { data: Order[] }) => {
         {/* Pagination */}
         <div className="flex items-center justify-between flex-wrap gap-4 px-5 py-3.5 border-t border-light-gray">
           <div className="flex items-center gap-2.5 text-[13px] text-light-dark">
-            <span>Show</span>
+            <span>Visa</span>
             <Select
               defaultValue="10"
               onValueChange={(value) => table.setPageSize(Number(value))}
             >
               <SelectTrigger className="border-light-gray rounded-md [&_svg]:size-4.5 font-medium data-[size=default]:h-7.5 px-2.5">
-                <SelectValue placeholder="Select a page size" />
+                <SelectValue placeholder="Välj antal per sida" />
               </SelectTrigger>
               <SelectContent>
                 {["10", "20", "30", "40", "50"].map((size) => (
@@ -148,12 +148,12 @@ const OrdersTable = ({ data }: { data: Order[] }) => {
                 ))}
               </SelectContent>
             </Select>
-            <span>per page</span>
+            <span>per sida</span>
           </div>
 
           <div className="flex items-center gap-6">
             <span className="text-sm text-light-dark text-[13px]">
-              {startRow}-{endRow} of {totalRows}
+              {startRow}-{endRow} av {totalRows}
             </span>
 
             <div className="flex items-center gap-1">

@@ -11,15 +11,15 @@ import { useState } from "react";
 
 const colorVariant = [
   {
-    name: "Polished Silver Aluminum Case",
+    name: "Boett i polerat silverfärgat aluminium",
     colors: { top: "#B0B5BB", bottom: "#000000" },
   },
   {
-    name: "Champagne Gold Aluminum Case",
+    name: "Boett i champagneguldfärgat aluminium",
     colors: { top: "#E59F45", bottom: "#50504F" },
   },
   {
-    name: "Matte Black Aluminum Case",
+    name: "Boett i mattsvart aluminium",
     colors: { top: "#2F353D", bottom: "#000000" },
   },
 ];
@@ -27,11 +27,11 @@ const colorVariant = [
 const sizeVariant = [
   {
     name: "41mm",
-    description: "Fits wrists 130 - 210mm around",
+    description: "Passar handleder med 130 - 210mm omkrets",
   },
   {
     name: "45mm",
-    description: "Fits wrists 140 - 220mm around",
+    description: "Passar handleder med 140 - 220mm omkrets",
   },
 ];
 
@@ -40,7 +40,7 @@ const mockProduct: ProductType = {
   title: "Px8 McLaren Edition",
   price: 799,
   description:
-    "Celebrating the long-standing, award-winning partnership between Bowers & Wilkins and McLaren Automotive and the McLaren supercars and hypercars in which Bowers & Wilkins has been integrated.",
+    "En hyllning till det långvariga, prisbelönta samarbetet mellan Bowers & Wilkins och McLaren Automotive och de superbilar och hyperbilar från McLaren som har utrustats med ljud från Bowers & Wilkins.",
   thumbnail: "/images-optimized/product-details/product-single-1.webp",
   categories: ["Headphones"],
   tag: null,
@@ -62,7 +62,7 @@ const ProductOverview = () => {
   };
   return (
     <div className="overflow-hidden">
-      <strong className="text-lg text-light-dark">Wearables</strong>
+      <strong className="text-lg text-light-dark">Bärbar teknik</strong>
       <div>
         <div className="mb-10">
           <Title size="52">Watch 2 Pro</Title>
@@ -76,14 +76,13 @@ const ProductOverview = () => {
           </div>
         </div>
         <p className="text-lg text-light-dark mt-10">
-          A wonderful all rounder, watch pro 2 is the on-the-go health companion
-          you did not know you needed.
+          Watch Pro 2 är en mångsidig hälsopartner på språng som du inte visste att du behövde.
         </p>
       </div>
       <hr className="my-10 border-light-gray"></hr>
       <div className="space-y-5">
         <Title asChild size="28" className="font-extrabold">
-          <p>Choose your size</p>
+          <p>Välj storlek</p>
         </Title>
         {sizeVariant.map((value, index) => (
           <button
@@ -102,7 +101,7 @@ const ProductOverview = () => {
       <hr className="my-10 border-light-gray"></hr>
       <div>
         <Title asChild size="28" className="mb-5 font-extrabold">
-          <p>Choose your color</p>
+          <p>Välj färg</p>
         </Title>
         <div className="flex gap-x-7.5 gap-y-5 flex-wrap items-start">
           {colorVariant.map((value, index) => (
@@ -161,7 +160,7 @@ const ProductOverview = () => {
           </div>
           <Button onClick={handleAddToCart} className="flex-1 max-sm:px-4">
             <ShopingBag />
-            Add to Cart
+            Lägg i varukorgen
           </Button>
         </div>
         <div className="flex items-center gap-3.5 mt-8.5">
@@ -169,14 +168,14 @@ const ProductOverview = () => {
             width={56}
             height={56}
             src={"/images/product-details/pickup-icon.png"}
-            alt="img"
+            alt="Bild"
           />
           <p className="font-medium text-light-dark max-w-[327px]">
-            Enter your zip code{" "}
+            Ange ditt postnummer{" "}
             <Link href={"#"} className="text-blue underline">
-              here
+              här
             </Link>{" "}
-            to find out when this item arrives
+            för att se när varan kan levereras
           </p>
         </div>
       </div>

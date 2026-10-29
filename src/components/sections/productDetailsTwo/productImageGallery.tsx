@@ -13,33 +13,33 @@ const galleryImages = [
   {
     id: 1,
     src: "/images-optimized/product-details-two/gallery-img-2.webp",
-    title: "Your Health Journey",
+    title: "Din väg till bättre hälsa",
     description:
-      "Move to better health Active score, a key tool that quantifies your physical activity based on heart rate data from the last 7 days. ",
+      "Ta steg mot bättre hälsa med aktivitetspoäng, ett viktigt verktyg som mäter din fysiska aktivitet utifrån pulsdata från de senaste sju dagarna.",
     size: "small",
   },
   {
     id: 2,
     src: "/images-optimized/product-details-two/gallery-img-3.webp",
-    title: "Smart  Sleep Algorithm",
+    title: "Smart sömnalgoritm",
     description:
-      "Receive precise sleep data thanks to the upgraded smart sleep technology. Track sleep stages as well as daytime napping",
+      "Få precisa sömndata med den förbättrade smarta sömntekniken. Följ sömnstadier och tupplurar under dagen",
     size: "small",
   },
   {
     id: 3,
     src: "/images-optimized/product-details-two/gallery-img-4.webp",
-    title: "Menstrual Cycle Tracking",
+    title: "Menscykelspårning",
     description:
-      "Manage your menstrual cycle with smart prompts and predictions gaining key insights into your health.",
+      "Följ din menscykel med smarta påminnelser och prognoser som ger värdefulla insikter om din hälsa.",
     size: "small",
   },
   {
     id: 4,
     src: "/images-optimized/product-details-two/gallery-img-5.webp",
-    title: "Wellness Companion",
+    title: "Din hälsopartner",
     description:
-      "Prioritise what matters. Keep an eye on your stress and health with 24/7 heart rate and blood oxygen saturation level monitoring.",
+      "Prioritera det som är viktigt. Följ din stress och hälsa med mätning av puls och syremättnad dygnet runt.",
     size: "small",
   },
 ];
@@ -47,7 +47,7 @@ const ProductImageGallery = () => {
   return (
     <section className="mt-25">
       <div className="container">
-        <Title className="text-center">A Wonderful All-Rounder</Title>
+        <Title className="text-center">En mångsidig följeslagare</Title>
         <div className="mt-12.5 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-7.5">
           {galleryImages.map((item) => {
             if (item.size === "large") {
@@ -61,7 +61,7 @@ const ProductImageGallery = () => {
                     height={650}
                     sizes="100vw"
                     src={item.src}
-                    alt="img"
+                    alt="Bild"
                     className="w-full"
                   />
                 </div>
@@ -74,7 +74,7 @@ const ProductImageGallery = () => {
                     height={457}
                     sizes="100vw"
                     src={item.src}
-                    alt="img"
+                    alt="Bild"
                     className="w-full"
                   />
                   <div className="mt-8 px-[15px]">

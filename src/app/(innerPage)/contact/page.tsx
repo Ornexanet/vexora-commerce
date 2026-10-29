@@ -63,7 +63,7 @@ const Contact = () => {
             "https://shop.ornexa.net/images/ornexa-contact-tech-products.webp",
           areaServed: {
             "@type": "Country",
-            name: "Sweden",
+            name: "Sverige",
           },
           contactPoint: {
             "@type": "ContactPoint",

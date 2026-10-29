@@ -49,7 +49,7 @@ Vad våra kunder uppskattar
                       height={60}
                       sizes="100vw"
                       src={image}
-                      alt="avatar"
+                      alt="Profilbild"
                       className="rounded-full w-15 h-15"
                     />
                     <div>

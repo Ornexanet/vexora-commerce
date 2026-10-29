@@ -43,7 +43,7 @@ const Compare = () => {
 
 
 
-      <PageHeader title="Compare" currentPageName="Compare" />
+      <PageHeader title="Jämför" currentPageName="Jämför" />
       <CompareTable />
     </main>
   );

@@ -20,7 +20,7 @@ const ReviewInput = () => {
       <div className="container">
         <div className="grid lg:grid-cols-[679fr_921fr] gap-x-5 gap-y-12">
           <Title asChild size="52">
-            <h4>Post your review</h4>
+            <h4>Lämna en recension</h4>
           </Title>
           <form>
             <div className="flex md:flex-row flex-col items-start gap-y-3 gap-x-17">
@@ -28,7 +28,7 @@ const ReviewInput = () => {
                 htmlFor=""
                 className="font-medium text-lg shrink-0 w-[150px]"
               >
-                Your rating
+                Ditt betyg
               </label>
               <ul className="flex items-center gap-[5px] w-full">
                 {[1, 2, 3, 4, 5].map((value) => (
@@ -53,7 +53,7 @@ const ReviewInput = () => {
                 htmlFor="review-img"
                 className="font-medium text-lg shrink-0 w-[150px]"
               >
-                Choose pictures
+                Välj bilder
               </label>
               <label
                 htmlFor="review-img"
@@ -62,7 +62,7 @@ const ReviewInput = () => {
                 <input type="file" hidden id="review-img" />
                 <ImageShadow />
                 <span className="font-medium leading-3 inline-block ml-2.5">
-                  Click or Drag & Drop
+                  Klicka eller dra och släpp
                 </span>
                 <span className="text-[#B0B5BB] leading-3 lg:inline-block hidden ml-5">
                   SVG,PNG, JPG (max. 800x400)
@@ -74,7 +74,7 @@ const ReviewInput = () => {
                 htmlFor="review-img"
                 className="font-medium text-lg shrink-0 w-[150px]"
               >
-                Write your review
+                Skriv din recension
               </label>
               <div className="w-full space-y-5">
                 <div className="w-full">
@@ -82,7 +82,7 @@ const ReviewInput = () => {
                     htmlFor="name"
                     className="text-lg mb-2.5 inline-block leading-3.5"
                   >
-                    Name
+                    Namn
                   </label>
                   <Input
                     id="name"
@@ -95,7 +95,7 @@ const ReviewInput = () => {
                     htmlFor="email"
                     className="text-lg mb-2.5 inline-block leading-3.5"
                   >
-                    Email
+                    E-postadress
                   </label>
                   <Input
                     id="email"
@@ -109,25 +109,25 @@ const ReviewInput = () => {
                     htmlFor="review"
                     className="text-lg mb-2.5 inline-block leading-3.5"
                   >
-                    Your review
+                    Din recension
                   </label>
                   <Textarea
                     id="review"
                     className="placeholder:text-[#B0B5BB] border-light-gray rounded-md px-3 py-4.5 min-h-[150px] w-full"
-                    placeholder="Write here..."
+                    placeholder="Skriv här..."
                   />
                 </div>
                 <Button className="w-full mt-2.5">
-                  Submit <ArrowRightIcon />
+                  Skicka <ArrowRightIcon />
                 </Button>
                 <p className="text-light-dark text-sm">
-                  By submitting you agree to the{" "}
+                  Genom att skicka godkänner du{" "}
                   <Link href={"#"} className="underline underline-offset-2">
-                    Terms of Service
+                    användarvillkoren
                   </Link>{" "}
-                  and{" "}
+                  och{" "}
                   <Link href={"#"} className="underline underline-offset-2">
-                    Privacy Policy
+              integritetspolicyn
                   </Link>
                   .
                 </p>

@@ -3,22 +3,19 @@
 import { JSX, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
-
+import "swiper/css/pagination";
 import { Button } from "@/components/ui/button";
 import Title from "@/components/ui/title";
-
 import {
   BatteryCharging,
   Bluetooth,
   Map,
   SoundDecibel,
   VideoRecorder,
-} from "@/lib/icons";
+} from "@/lib/icons"; 
 
 import { heroData, heroDataType } from "@/mockData/heroData";
 
@@ -28,6 +25,9 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { trackEvent } from "@/lib/growth-events";
+
+
 
 function IconsFinder(iconName: string): JSX.Element | null {
   const icons: Record<string, JSX.Element> = {
@@ -51,13 +51,31 @@ const HeroSlider = () => {
   };
 
   return (
-    <section className="w-full overflow-hidden">
+    <section
+  className="w-full overflow-hidden"
+  onClickCapture={(event) => {
+    const target = event.target;
+
+    if (
+      target instanceof Element &&
+      target.closest(".swiper-pagination-bullet")
+    ) {
+      trackEvent("hero_pagination_clicked");
+    }
+  }}
+>
+  
       <Swiper
-        modules={[Autoplay]}
-        speed={900}
+  modules={[Autoplay, Pagination]}
+  speed={900}
+  pagination={{
+  clickable: true,
+  bulletClass: "swiper-pagination-bullet !w-3 !h-3 !mx-2",
+}}
+
         loop
         autoplay={{
-          delay: 4000,
+          delay: 7000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
@@ -98,8 +116,10 @@ const HeroSlider = () => {
                   xl:pt-[150px]
                 "
                 style={{
-                  backgroundImage: `url("${backgroundImage}")`,
-                }}
+              background:
+             "radial-gradient(ellipse at 75% 45%, #E3EEFF 0%, #F4F7FC 48%, #FFFFFF 100%)",
+              }}
+
               >
                 {/* Product image */}
                 <div
@@ -124,7 +144,7 @@ const HeroSlider = () => {
                     md:max-w-[46%]
                     md:-translate-y-1/2
                     lg:right-0
-                    lg:max-w-[50%]
+                    lg:max-w-[44%]
                     xl:max-w-[700px]
                   "
                 >
@@ -164,24 +184,23 @@ const HeroSlider = () => {
                       xl:max-w-[760px]
                     "
                   >
-      <h2
+  <h2
   className="
-    mb-3
-    text-[42px]
-    font-extrabold
-    leading-[0.95]
-    tracking-[-0.04em]
-    sm:text-[50px]
-    md:text-[54px]
-    lg:mb-5
-    lg:text-[72px]
-    xl:text-[96px]
-    2xl:text-[120px]
+    mb-5
+    max-w-[650px]
+    text-[40px]
+    font-bold
+    leading-[1.05]
+    tracking-[-0.045em]
+    text-slate-950
+    sm:text-[48px]
+    md:text-[52px]
+    lg:text-[64px]
+    xl:text-[76px]
   "
 >
   {title}
 </h2>
-
 
                     <Title
                       asChild
@@ -204,7 +223,8 @@ const HeroSlider = () => {
                     <div
                       className="
                         mt-5
-                        flex
+                        hidden
+                        sm:flex
                         flex-col
                         gap-3
                         sm:mt-6

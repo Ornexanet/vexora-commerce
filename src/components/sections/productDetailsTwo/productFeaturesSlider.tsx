@@ -11,42 +11,42 @@ const productFeatures = [
   {
     id: 1,
     icon: "/images/product-details-two/feature-img-1.png",
-    description: "Glance on the go with the larger Actua display.",
+    description: "Få en snabb överblick i farten med den större Actua-skärmen.",
   },
   {
     id: 2,
     icon: "/images/product-details-two/feature-img-2.png",
-    description: "24 hours of battery with always-on display.",
+    description: "24 timmars batteritid med skärmen alltid på.",
   },
   {
     id: 3,
     icon: "/images/product-details-two/feature-img-3.png",
-    description: "Track run performance and 160+ exercises.",
+    description: "Följ din löpning och över 160 träningsformer.",
   },
   {
     id: 4,
     icon: "/images/product-details-two/feature-img-4.png",
-    description: "Balance activity and rest with readiness insights.",
+    description: "Hitta balansen mellan aktivitet och vila med insikter om din återhämtning.",
   },
   {
     id: 5,
     icon: "/images/product-details-two/feature-img-1.png",
-    description: "Glance on the go with the larger Actua display.",
+    description: "Få en snabb överblick i farten med den större Actua-skärmen.",
   },
   {
     id: 6,
     icon: "/images/product-details-two/feature-img-2.png",
-    description: "24 hours of battery with always-on display.",
+    description: "24 timmars batteritid med skärmen alltid på.",
   },
   {
     id: 7,
     icon: "/images/product-details-two/feature-img-3.png",
-    description: "Track run performance and 160+ exercises.",
+    description: "Följ din löpning och över 160 träningsformer.",
   },
   {
     id: 8,
     icon: "/images/product-details-two/feature-img-4.png",
-    description: "Balance activity and rest with readiness insights.",
+    description: "Hitta balansen mellan aktivitet och vila med insikter om din återhämtning.",
   },
 ];
 
@@ -103,7 +103,7 @@ const ProductFeaturesSlider = () => {
           {productFeatures.map(({ description, icon, id }) => (
             <SwiperSlide key={id}>
               <div className="bg-[#F5F5F7] rounded-[30px] px-[25px] pt-[30px] pb-13.5">
-                <Image width={50} height={50} src={icon} alt="img" />
+                <Image width={50} height={50} src={icon} alt="Bild" />
                 <Title size="28" asChild className="mt-7 font-extralight text-light-dark">
                   <p>{description}</p>
                 </Title>

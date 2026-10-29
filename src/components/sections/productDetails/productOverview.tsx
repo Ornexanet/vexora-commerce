@@ -1,6 +1,7 @@
+
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -10,11 +11,8 @@ import { Minus, Plus, ShopingBag } from "@/lib/icons";
 import { ProductType } from "@/mockData/products";
 import CompatibleAccessories from "./compatibleAccessories";
 import { generateProductAEO } from "@/seo/aeo/productAEO";
-import { trackEvent } from "@/lib/analytics";
-import { sendGAEvent } from "@next/third-parties/google";
-
-
-
+import { generateGEODescription } from "@/seo/geo/productGEO";
+import { trackEvent } from "@/lib/growth-events";
 
 
 type ProductOverviewProps = {
@@ -32,37 +30,33 @@ const categoryNames: Record<string, string> = {
   cameras: "Kameror",
 };
 
-const ProductOverview = ({  
+const ProductOverview = ({
   product,
   categoryLink,
   selectedColor,
   onColorChange,
 }: ProductOverviewProps) => {
   const aeoContent = generateProductAEO(product);
+  const geoDescription = generateGEODescription(product);
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
+  const trackedProductId =
+  useRef<ProductType["id"] | null>(null);
   useEffect(() => {
-  // Ornexa Growth Analytics
+  if (trackedProductId.current === product.id) {
+    return;
+  }
+
+  trackedProductId.current = product.id;
+
   trackEvent("product_viewed", {
     productId: product.id,
     productName: product.title,
     price: product.price,
-  });
-
-  // Google Analytics 4 Ecommerce
-  sendGAEvent("event", "view_item", {
-    currency: "SEK",
-    value: product.price,
-    items: [
-      {
-        item_id: String(product.id),
-        item_name: product.title,
-        price: product.price,
-        quantity: 1,
-      },
-    ],
+    quantity: 1,
   });
 }, [product.id, product.title, product.price]);
+
 
   const selectedColorOption =
     product.colorOptions?.find(
@@ -86,21 +80,8 @@ const ProductOverview = ({
     productId: product.id,
     productName: product.title,
     price: product.price,
-    quantity,
+    quantity: quantity,
   });
-  sendGAEvent("event", "add_to_cart", {
-  currency: "SEK",
-  value: product.price * quantity,
-  items: [
-    {
-      item_id: String(product.id),
-      item_name: product.title,
-      price: product.price,
-      quantity: quantity,
-    },
-  ],
-});
-
 };
 
 
@@ -196,7 +177,7 @@ const ProductOverview = ({
       </div>
 
       <p className="text-lg leading-relaxed text-light-dark">
-        {product.description}
+        {geoDescription}
       </p>
 
       {product.colorOptions && product.colorOptions.length > 0 && (
@@ -265,6 +246,20 @@ const ProductOverview = ({
               </div>
             ))}
           </dl>
+          {product.sourceName && product.sourceUrl && (
+  <p className="mt-4 text-sm text-gray-500">
+    Källa för tekniska specifikationer:{" "}
+    <a
+      href={product.sourceUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="underline hover:text-blue-600"
+    >
+      {product.sourceName}
+    </a>
+  </p>
+)}
+
         </section>
       )}
 
@@ -342,3 +337,4 @@ const ProductOverview = ({
 };
 
 export default ProductOverview;
+

@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import CompanyFeaturesSlider from "@/components/sections/companyFeaturesSlider";
 import ProductPagination from "@/components/sections/shop/productPagination";
 import ProductsFilterSidebar from "@/components/sections/shop/productsFilterSidebar";
@@ -15,7 +16,7 @@ export const metadata = generatePageMetadata({
   path: "/mobiler",
   keywords: [
     "Mobiler",
-    "Smartphones",
+    "Smarttelefoner",
     "Apple",
     "Samsung",
     "Xiaomi",
@@ -24,7 +25,8 @@ export const metadata = generatePageMetadata({
 });
 
 
-const ShopWithSidebar = () => {
+const ShopWithSidebar = async () => {
+  await connection();
   return (
     <main>
       <ShopGridViewProvider>

@@ -17,7 +17,7 @@ const Ads = () => {
                 height={534}
                 sizes="100vw"
                 src={"/images/smarta-klockor/galaxy-watch-ultra-1.webp"}
-                alt="img"
+                alt="Bild"
                 className="hover:scale-105 transition-all duration-500 mx-auto"
               />
             </Link>
@@ -37,7 +37,7 @@ const Ads = () => {
               height={658}
               sizes="100vw"
               src={"/images-optimized/ads/bg.webp"}
-              alt="img"
+              alt="Bild"
               className="rounded-tr-[30px] rounded-br-[30px] max-lg:rounded-[30px] lg:h-[clamp(27.5rem,32.813vw+6.5rem,39.313rem)]"
             />
           </div>

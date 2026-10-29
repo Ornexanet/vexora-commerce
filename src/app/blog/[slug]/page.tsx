@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { generateArticleSchema } from "@/seo/schemas/articleSchema";
+import { generateArticleSchema } from "@/seo/dynamic-schema/article";
 import { generateBlogMetadata } from "@/seo/metadata/blogMetadata";
 
 type BlogDetailsProps = {
@@ -51,7 +51,7 @@ const BlogDetails = async ({ params }: BlogDetailsProps) => {
       />
 
       <PageHeader
-        title="Blog"
+        title="Blogg"
         praentPageHref="/blog"
         currentPageName={blog.title}
         praentPageName="Blog"

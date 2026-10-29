@@ -8,7 +8,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
       <Header />
-      <PageHeader title="Orders" currentPageName="Orders" />
+      <PageHeader title="Beställningar" currentPageName="Beställningar" />
       <div className="container mt-20">
         <div className="flex xl:flex-row flex-col items-start gap-7.5">
           <DashboardSidebar />

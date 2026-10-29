@@ -12,13 +12,12 @@ const Cta = () => {
           <span>
             <HeadsetIcon size={60} />
           </span>
-          <Title className="mt-5">Still have questions?</Title>
+          <Title className="mt-5">Har du fler frågor?</Title>
           <p className="text-lg font-semibold mt-3 max-w-[600px]">
-            Our amazing customer service team is available 24/7 to help you with
-            any additional questions or concerns.
+            Vårt fantastiska kundserviceteam finns tillgängligt dygnet runt för att hjälpa dig med ytterligare frågor och funderingar.
           </p>
           <Button asChild className="mt-8">
-            <Link href={"/contact"}>Support Now</Link>
+            <Link href={"/contact"}>Kontakta kundservice</Link>
           </Button>
         </div>
       </div>

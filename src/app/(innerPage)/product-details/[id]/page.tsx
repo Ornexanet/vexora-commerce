@@ -8,8 +8,10 @@ import Card from "@/components/ui/card";
 import { allProducts } from "@/mockData/products";
 import ProductTabs from "@/components/sections/productDetails/productTabs";
 import { generateProductMetadata } from "@/seo/metadata/productMetadata";
-import { generateProductSchema } from "@/seo/schemas/productSchema";
-import { generateBreadcrumbSchema } from "@/seo/schemas/breadcrumbSchema";
+import { generateBreadcrumbSchema } from "@/seo/dynamic-schema/breadcrumb";
+import { generateProductSchema } from "@/seo/dynamic-schema/product";
+import { mapProductToSchema } from "@/seo/dynamic-schema/productMapper";
+
 import {
   getRelatedProducts,
   getProductCategoryLink,
@@ -62,8 +64,19 @@ const ProductDetails = async ({ params }: Props) => {
 
 const relatedProducts = getRelatedProducts(product);
 const categoryLink = getProductCategoryLink(product);
- const productSchema = generateProductSchema(product);
- const breadcrumbSchema = generateBreadcrumbSchema(product);
+ const productSchema = generateProductSchema(
+  mapProductToSchema(product)
+);
+
+ const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: "Hem", path: "/" },
+  { name: "Butik", path: "/shop" },
+  {
+    name: product.title,
+    path: `/product-details/${product.id}`,
+  },
+]);
+
 
 const productUrl = `${siteConfig.url}/product-details/${product.id}`;
 
