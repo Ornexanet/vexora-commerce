@@ -25,7 +25,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { trackEvent } from "@/lib/growth-events";
+
 
 
 
@@ -51,19 +51,7 @@ const HeroSlider = () => {
   };
 
   return (
-    <section
-  className="w-full overflow-hidden"
-  onClickCapture={(event) => {
-    const target = event.target;
-
-    if (
-      target instanceof Element &&
-      target.closest(".swiper-pagination-bullet")
-    ) {
-      trackEvent("hero_pagination_clicked");
-    }
-  }}
->
+  <section className="w-full overflow-hidden">
   
       <Swiper
   modules={[Autoplay, Pagination]}

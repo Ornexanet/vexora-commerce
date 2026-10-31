@@ -10,7 +10,6 @@ const allowedEvent = [
     "add_to_wishlist",
     "checkout_started",
     "purchase_completed",
-    "hero_pagination_clicked",
     "experiment_exposure",
     "landing_cta_clicked",
     "landing_page_viewed",

@@ -126,7 +126,6 @@ export async function GET() {
       addToCarts: count("add_to_cart"),
       addToWishlists: count("add_to_wishlist"),
       checkoutsStarted: count("checkout_started"),
-      heroPaginationClicks: count("hero_pagination_clicked"),
       landingCtaClicks: count("landing_cta_clicked"),
       landingPageViews: count("landing_page_viewed"),
     });

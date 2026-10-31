@@ -16,7 +16,6 @@ type GrowthData = {
   addToCarts: number;
   addToWishlists: number;
   checkoutsStarted: number;
-  heroPaginationClicks: number;
   landingPageViews: number;
   landingCtaClicks: number;
   sonyAbTest: {
@@ -54,13 +53,7 @@ const metrics = [
     color: "text-violet-600",
     bg: "bg-violet-50",
   },
-  {
-    key: "heroPaginationClicks",
-    label: "Hero Slider Clicks",
-    symbol: "↔",
-    color: "text-amber-600",
-    bg: "bg-amber-50",
-  },
+  
   {
     key: "landingPageViews",
     label: "Sony Landing Page Views",
