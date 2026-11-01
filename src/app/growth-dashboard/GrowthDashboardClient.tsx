@@ -8,6 +8,12 @@ type SonyABVariantData = {
   clickSessions: number;
   conversionRate: number;
 };
+type IphoneABVariantData = {
+  exposures: number;
+  cartSessions: number;
+  conversionRate: number;
+};
+
 
 type GrowthData = {
   success: boolean;
@@ -22,6 +28,12 @@ type GrowthData = {
     A: SonyABVariantData;
     B: SonyABVariantData;
   };
+
+iphoneAbTest: {
+  A: IphoneABVariantData;
+  B: IphoneABVariantData;
+};
+
 };
 
 const metrics = [
@@ -105,6 +117,18 @@ export default function GrowthDashboard() {
   useEffect(() => {
     void loadAnalytics();
   }, [loadAnalytics]);
+
+  const iphoneAbTest = data?.iphoneAbTest;
+
+const iphoneRelativeUplift =
+  iphoneAbTest && iphoneAbTest.A.conversionRate > 0
+    ? (
+        (iphoneAbTest.B.conversionRate -
+          iphoneAbTest.A.conversionRate) /
+        iphoneAbTest.A.conversionRate
+      ) * 100
+    : null;
+
 
   const sonyAbTest = data?.sonyAbTest;
 
@@ -380,6 +404,90 @@ export default function GrowthDashboard() {
             conversion rates or a verified session funnel.
           </p>
         </section>
+
+        {/* iPhone 17 Pro A/B Experiment */}
+<section className="mt-10 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+  <p className="text-xs font-bold uppercase tracking-widest text-indigo-600">
+    Experimentation / A-B Testing
+  </p>
+
+  <h2 className="mt-2 text-xl font-bold">
+    iPhone 17 Pro — CTA Experiment
+  </h2>
+
+  <p className="mt-2 text-sm text-slate-500">
+    iphone17pro_cta_v1 · Primary metric: Add-to-Cart Session Rate
+  </p>
+
+  <div className="mt-6 overflow-x-auto">
+    <table className="w-full text-left text-sm">
+      <thead>
+        <tr className="border-b border-slate-200 text-slate-500">
+          <th className="py-3 pr-4">Metric</th>
+          <th className="py-3 pr-4">A — Lägg i varukorgen</th>
+          <th className="py-3">B — Köp nu</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr className="border-b border-slate-100">
+          <td className="py-4 pr-4">Exposed Sessions</td>
+          <td className="py-4 pr-4">
+            {iphoneAbTest?.A.exposures ?? "—"}
+          </td>
+          <td className="py-4">
+            {iphoneAbTest?.B.exposures ?? "—"}
+          </td>
+        </tr>
+
+        <tr className="border-b border-slate-100">
+          <td className="py-4 pr-4">Add-to-Cart Sessions</td>
+          <td className="py-4 pr-4">
+            {iphoneAbTest?.A.cartSessions ?? "—"}
+          </td>
+          <td className="py-4">
+            {iphoneAbTest?.B.cartSessions ?? "—"}
+          </td>
+        </tr>
+
+        <tr>
+          <td className="py-4 pr-4 font-semibold">
+            Conversion Rate
+          </td>
+          <td className="py-4 pr-4 font-semibold">
+            {iphoneAbTest
+              ? `${iphoneAbTest.A.conversionRate.toFixed(1)}%`
+              : "—"}
+          </td>
+          <td className="py-4 font-semibold">
+            {iphoneAbTest
+              ? `${iphoneAbTest.B.conversionRate.toFixed(1)}%`
+              : "—"}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div className="mt-5 rounded-xl bg-slate-50 p-4">
+    <p className="text-sm font-semibold">
+      Relative Uplift (B vs A)
+    </p>
+
+    <p className="mt-2 text-2xl font-bold text-indigo-600">
+      {iphoneRelativeUplift === null
+        ? "—"
+        : `${iphoneRelativeUplift > 0 ? "+" : ""}${iphoneRelativeUplift.toFixed(1)}%`}
+    </p>
+  </div>
+
+  <p className="mt-4 text-xs text-slate-500">
+    Training experiment with self-generated traffic.
+    Results are descriptive only and do not establish
+    statistical significance.
+  </p>
+</section>
+
 
         {/* Footer */}
         <p className="mt-10 text-center text-xs text-slate-400">

@@ -14,6 +14,10 @@ import { generateProductAEO } from "@/seo/aeo/productAEO";
 import { generateGEODescription } from "@/seo/geo/productGEO";
 import { trackEvent } from "@/lib/growth-events";
 
+import {
+  getIPhone17ProVariant,
+  iphone17ProExperiment,
+} from "@/experiments/iphone17pro-cta";
 
 type ProductOverviewProps = {
   product: ProductType;
@@ -39,24 +43,61 @@ const ProductOverview = ({
   const aeoContent = generateProductAEO(product);
   const geoDescription = generateGEODescription(product);
   const { addToCart } = useCart();
+
   const [quantity, setQuantity] = useState(1);
-  const trackedProductId =
-  useRef<ProductType["id"] | null>(null);
+  const [abVariant, setAbVariant] = useState<"A" | "B">("A");
+  const [experimentReady, setExperimentReady] = useState(false);
+
+  const isExperimentProduct =
+    product.id === iphone17ProExperiment.productId;
+
+  // A/B experiment assignment and exposure tracking
   useEffect(() => {
-  if (trackedProductId.current === product.id) {
-    return;
-  }
+    if (!isExperimentProduct) {
+      return;
+    }
 
-  trackedProductId.current = product.id;
+    const assignedVariant = getIPhone17ProVariant();
 
-  trackEvent("product_viewed", {
-    productId: product.id,
-    productName: product.title,
-    price: product.price,
-    quantity: 1,
-  });
-}, [product.id, product.title, product.price]);
+    setAbVariant(assignedVariant);
+    setExperimentReady(true);
 
+    const exposureKey =
+      `exposure_${iphone17ProExperiment.id}_${assignedVariant}`;
+
+    const alreadyTracked =
+      sessionStorage.getItem(exposureKey);
+
+    if (!alreadyTracked) {
+      sessionStorage.setItem(exposureKey, "true");
+
+      trackEvent("experiment_exposure", {
+        experiment: iphone17ProExperiment.id,
+        variant: assignedVariant,
+        productId: product.id,
+        productName: product.title,
+      });
+    }
+  }, [isExperimentProduct, product.id, product.title]);
+
+  // Product view tracking
+  const trackedProductId =
+    useRef<ProductType["id"] | null>(null);
+
+  useEffect(() => {
+    if (trackedProductId.current === product.id) {
+      return;
+    }
+
+    trackedProductId.current = product.id;
+
+    trackEvent("product_viewed", {
+      productId: product.id,
+      productName: product.title,
+      price: product.price,
+      quantity: 1,
+    });
+  }, [product.id, product.title, product.price]);
 
   const selectedColorOption =
     product.colorOptions?.find(
@@ -73,17 +114,27 @@ const ProductOverview = ({
     );
   };
 
+  // Cart conversion tracking
   const handleAddToCart = () => {
-  addToCart(product, quantity);
+    if (isExperimentProduct && !experimentReady) {
+      return;
+    }
 
-  trackEvent("add_to_cart", {
-    productId: product.id,
-    productName: product.title,
-    price: product.price,
-    quantity: quantity,
-  });
-};
+    addToCart(product, quantity);
 
+    trackEvent("add_to_cart", {
+      productId: product.id,
+      productName: product.title,
+      price: product.price,
+      quantity,
+      ...(isExperimentProduct
+        ? {
+            experiment: iphone17ProExperiment.id,
+            variant: abVariant,
+          }
+        : {}),
+    });
+  };
 
   const categoryKey = product.categories?.[0];
 
@@ -91,56 +142,18 @@ const ProductOverview = ({
     ? categoryNames[categoryKey] || categoryKey
     : "Produkter";
 
-  /*
-   * The new product system uses product.specifications.
-   * The fallback below keeps older products working until
-   * all products have been migrated.
-   */
   const legacySpecifications = [
-    {
-      label: "Varumärke",
-      value: product.brand,
-    },
-    {
-      label: "Modell",
-      value: product.model,
-    },
-    {
-      label: "Lagring",
-      value: product.storage,
-    },
-    {
-      label: "Färg",
-      value: product.color,
-    },
-    {
-      label: "Skärm",
-      value: product.display,
-    },
-    {
-      label: "Processor",
-      value: product.processor,
-    },
-    {
-      label: "Kamera",
-      value: product.camera,
-    },
-    {
-      label: "Batteri",
-      value: product.battery,
-    },
-    {
-      label: "Operativsystem",
-      value: product.os,
-    },
-    {
-      label: "Garanti",
-      value: product.warranty,
-    },
-    {
-      label: "Lagerstatus",
-      value: product.availability,
-    },
+    { label: "Varumärke", value: product.brand },
+    { label: "Modell", value: product.model },
+    { label: "Lagring", value: product.storage },
+    { label: "Färg", value: product.color },
+    { label: "Skärm", value: product.display },
+    { label: "Processor", value: product.processor },
+    { label: "Kamera", value: product.camera },
+    { label: "Batteri", value: product.battery },
+    { label: "Operativsystem", value: product.os },
+    { label: "Garanti", value: product.warranty },
+    { label: "Lagerstatus", value: product.availability },
   ].filter(
     (
       specification
@@ -246,20 +259,20 @@ const ProductOverview = ({
               </div>
             ))}
           </dl>
-          {product.sourceName && product.sourceUrl && (
-  <p className="mt-4 text-sm text-gray-500">
-    Källa för tekniska specifikationer:{" "}
-    <a
-      href={product.sourceUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="underline hover:text-blue-600"
-    >
-      {product.sourceName}
-    </a>
-  </p>
-)}
 
+          {product.sourceName && product.sourceUrl && (
+            <p className="mt-4 text-sm text-gray-500">
+              Källa för tekniska specifikationer:{" "}
+              <a
+                href={product.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-blue-600"
+              >
+                {product.sourceName}
+              </a>
+            </p>
+          )}
         </section>
       )}
 
@@ -298,9 +311,12 @@ const ProductOverview = ({
             type="button"
             className="w-full max-w-[435px] flex-1 max-sm:px-4"
             onClick={handleAddToCart}
+            disabled={isExperimentProduct && !experimentReady}
           >
             <ShopingBag />
-            Lägg i varukorgen
+            {isExperimentProduct && experimentReady && abVariant === "B"
+              ? iphone17ProExperiment.variant
+              : iphone17ProExperiment.control}
           </Button>
         </div>
 
@@ -309,6 +325,7 @@ const ProductOverview = ({
           variant="outline"
           className="w-full border-light-dark text-light-dark"
           onClick={handleAddToCart}
+          disabled={isExperimentProduct && !experimentReady}
         >
           Köp nu
         </Button>

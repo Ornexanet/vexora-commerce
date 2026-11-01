@@ -97,9 +97,64 @@ export async function GET() {
 
     const sonyAClicks = countSonyClickSessions("A");
     const sonyBClicks = countSonyClickSessions("B");
+    
+    // iPhone 17 Pro CTA A/B Experiment
+
+    const iphoneExperimentId = "iphone17pro_cta_v1";
+
+    const getIphoneVariantMetrics = (variant: "A" | "B") => {
+      const exposedSessions = new Set<string>();
+      const convertedSessions = new Set<string>();
+
+      for (const item of events) {
+        if (
+          item?.event === "experiment_exposure" &&
+          item?.data?.experiment === iphoneExperimentId &&
+          item?.data?.productId === 2 &&
+          item?.data?.variant === variant &&
+          typeof item?.sessionId === "string"
+        ) {
+          exposedSessions.add(item.sessionId);
+        }
+      }
+
+      for (const item of events) {
+        if (
+          item?.event === "add_to_cart" &&
+          item?.data?.experiment === iphoneExperimentId &&
+          item?.data?.productId === 2 &&
+          item?.data?.variant === variant &&
+          typeof item?.sessionId === "string" &&
+          exposedSessions.has(item.sessionId)
+        ) {
+          convertedSessions.add(item.sessionId);
+        }
+      }
+
+      const exposures = exposedSessions.size;
+      const cartSessions = convertedSessions.size;
+
+      return {
+        exposures,
+        cartSessions,
+        conversionRate:
+          exposures > 0
+            ? (cartSessions / exposures) * 100
+            : 0,
+      };
+    };
+
+    const iphoneAbTest = {
+      A: getIphoneVariantMetrics("A"),
+      B: getIphoneVariantMetrics("B"),
+    };
+
+
 
     return NextResponse.json({
       success: true,
+      iphoneAbTest,
+
 
       sonyAbTest: {
         A: {
