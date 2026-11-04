@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -12,12 +12,6 @@ import { ProductType } from "@/mockData/products";
 import CompatibleAccessories from "./compatibleAccessories";
 import { generateProductAEO } from "@/seo/aeo/productAEO";
 import { generateGEODescription } from "@/seo/geo/productGEO";
-import { trackEvent } from "@/lib/growth-events";
-
-import {
-  getIPhone17ProVariant,
-  iphone17ProExperiment,
-} from "@/experiments/iphone17pro-cta";
 
 type ProductOverviewProps = {
   product: ProductType;
@@ -45,59 +39,6 @@ const ProductOverview = ({
   const { addToCart } = useCart();
 
   const [quantity, setQuantity] = useState(1);
-  const [abVariant, setAbVariant] = useState<"A" | "B">("A");
-  const [experimentReady, setExperimentReady] = useState(false);
-
-  const isExperimentProduct =
-    product.id === iphone17ProExperiment.productId;
-
-  // A/B experiment assignment and exposure tracking
-  useEffect(() => {
-    if (!isExperimentProduct) {
-      return;
-    }
-
-    const assignedVariant = getIPhone17ProVariant();
-
-    setAbVariant(assignedVariant);
-    setExperimentReady(true);
-
-    const exposureKey =
-      `exposure_${iphone17ProExperiment.id}_${assignedVariant}`;
-
-    const alreadyTracked =
-      sessionStorage.getItem(exposureKey);
-
-    if (!alreadyTracked) {
-      sessionStorage.setItem(exposureKey, "true");
-
-      trackEvent("experiment_exposure", {
-        experiment: iphone17ProExperiment.id,
-        variant: assignedVariant,
-        productId: product.id,
-        productName: product.title,
-      });
-    }
-  }, [isExperimentProduct, product.id, product.title]);
-
-  // Product view tracking
-  const trackedProductId =
-    useRef<ProductType["id"] | null>(null);
-
-  useEffect(() => {
-    if (trackedProductId.current === product.id) {
-      return;
-    }
-
-    trackedProductId.current = product.id;
-
-    trackEvent("product_viewed", {
-      productId: product.id,
-      productName: product.title,
-      price: product.price,
-      quantity: 1,
-    });
-  }, [product.id, product.title, product.price]);
 
   const selectedColorOption =
     product.colorOptions?.find(
@@ -114,26 +55,8 @@ const ProductOverview = ({
     );
   };
 
-  // Cart conversion tracking
   const handleAddToCart = () => {
-    if (isExperimentProduct && !experimentReady) {
-      return;
-    }
-
     addToCart(product, quantity);
-
-    trackEvent("add_to_cart", {
-      productId: product.id,
-      productName: product.title,
-      price: product.price,
-      quantity,
-      ...(isExperimentProduct
-        ? {
-            experiment: iphone17ProExperiment.id,
-            variant: abVariant,
-          }
-        : {}),
-    });
   };
 
   const categoryKey = product.categories?.[0];
@@ -311,12 +234,9 @@ const ProductOverview = ({
             type="button"
             className="w-full max-w-[435px] flex-1 max-sm:px-4"
             onClick={handleAddToCart}
-            disabled={isExperimentProduct && !experimentReady}
           >
             <ShopingBag />
-            {isExperimentProduct && experimentReady && abVariant === "B"
-              ? iphone17ProExperiment.variant
-              : iphone17ProExperiment.control}
+            Lägg i varukorgen
           </Button>
         </div>
 
@@ -325,7 +245,6 @@ const ProductOverview = ({
           variant="outline"
           className="w-full border-light-dark text-light-dark"
           onClick={handleAddToCart}
-          disabled={isExperimentProduct && !experimentReady}
         >
           Köp nu
         </Button>

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { allProducts } from "@/mockData/products";
 import { siteConfig } from "@/seo/config/siteConfig";
 import TrackedCTA from "./TrackedCTA";
-import LandingPageTracker from "./landingPageTracker";
+
 
 
 export const metadata: Metadata = {
@@ -72,7 +72,6 @@ const features = [
 export default function SonyLandingPage() {
   return (
     <main className="bg-white text-slate-900">
-      <LandingPageTracker />
     <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
@@ -251,4 +250,3 @@ export default function SonyLandingPage() {
     </main>
   );
 }
-
