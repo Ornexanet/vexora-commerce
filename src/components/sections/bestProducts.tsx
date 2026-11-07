@@ -51,7 +51,7 @@ const BestProducts = () => {
       return "/smarta-klockor";
     }
 
-    return "/shop-with-sidebar";
+    return "/shop";
   };
 
   return (

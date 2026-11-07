@@ -7,6 +7,16 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 const nextConfig: NextConfig = {
   htmlLimitedBots: /.*/,
+  async redirects() {
+  return [
+    {
+      source: "/shop-with-sidebar",
+      destination: "/shop",
+      permanent: true,
+    },
+  ];
+},
+
 
   async headers() {
     return [

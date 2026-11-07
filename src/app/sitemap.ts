@@ -32,12 +32,7 @@ const blogPages: MetadataRoute.Sitemap = blogData.map((blog) => ({
       changeFrequency: "daily",
       priority: 0.9,
     },
-    {
-      url: `${siteConfig.url}/shop-with-sidebar`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
+    
     {
       url: `${siteConfig.url}/mobiler`,
       lastModified: new Date(),

@@ -2,6 +2,7 @@ import { connection } from "next/server";
 import CompanyFeaturesSlider from "@/components/sections/companyFeaturesSlider";
 import ProductPagination from "@/components/sections/shop/productPagination";
 import ProductsFilterSidebarOffacnvise from "@/components/sections/shop/productsFilterSidebarOffacnvise";
+import ProductsFilterSidebar from "@/components/sections/shop/productsFilterSidebar";
 import ProductsSortHeader from "@/components/sections/shop/productsSortHeader";
 import ShopGridViewProvider from "@/contextApi/shopGridViewProvider";
 import ProductsContainer from "./productsContainer";
@@ -34,13 +35,29 @@ const Shop = async () => {
             <h1 className="text-4xl font-bold mb-8">
   Butik
 </h1>
-            <div className="flex md:flex-row flex-col md:items-center justify-between gap-x-[50px] gap-y-4">
-              <ProductsFilterSidebarOffacnvise />
-              <ProductsSortHeader />
-            </div>
-            <ProductsContainer />
-            <ProductPagination />
-          </div>
+            
+            
+            <div className="flex xl:flex-row flex-col gap-[30px]">
+  {/* Desktop filters */}
+  <aside className="hidden xl:block shrink-0">
+    <ProductsFilterSidebar heading="Filtrera hela sortimentet" />
+  </aside>
+
+  {/* Products */}
+  <div className="flex-1 min-w-0">
+    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+      <div className="xl:hidden">
+        <ProductsFilterSidebarOffacnvise />
+      </div>
+
+      <ProductsSortHeader />
+    </div>
+
+    <ProductsContainer />
+    <ProductPagination />
+  </div>
+</div>
+</div>
         </section>
         <CompanyFeaturesSlider
         

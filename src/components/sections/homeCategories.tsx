@@ -14,31 +14,31 @@ import { useEffect, useRef, useState } from "react";
 
 const categoriesList = [
   {
-  id: 1,
-  title: "Mobiler",
-  href: "/shop-with-sidebar?category=mobiler",
-  icon: <Watch />,
-},
-{
-  id: 2,
-  title: "Hörlurar",
-  href: "/shop-with-sidebar?category=headphones",
-  icon: <Headphones />,
-},
-{
-  id: 3,
-  title: "Smarta klockor",
-  href: "/shop-with-sidebar?category=smartWatch",
-  icon: <Watch />,
-},
-{
-  id: 4,
-  title: "Tillbehör",
-  href: "/shop-with-sidebar?category=accessories",
-  icon: <Cable />,
-},
-
+    id: 1,
+    title: "Mobiler",
+    href: "/shop?category=mobiler",
+    icon: <Watch />,
+  },
+  {
+    id: 2,
+    title: "Hörlurar",
+    href: "/shop?category=headphones",
+    icon: <Headphones />,
+  },
+  {
+    id: 3,
+    title: "Smarta klockor",
+    href: "/shop?category=smartWatch",
+    icon: <Watch />,
+  },
+  {
+    id: 4,
+    title: "Tillbehör",
+    href: "/shop?category=accessories",
+    icon: <Cable />,
+  },
 ];
+
 
 const HomeCategories = () => {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);

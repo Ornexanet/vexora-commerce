@@ -53,7 +53,7 @@ test("multiple brands use OR, category and price use AND, and unknown brands ret
   assert.equal(results("/mobiler", "brand=nonexistent").products.length, 0);
   assert.equal(results("/mobiler", "min=100&max=0").products.length, 0);
   assert.equal(results("/mobiler", "min=invalid&max=Infinity").products.length, base.products.length);
-  assert.equal(results("/shop-with-sidebar", "category=mobiler").products.length, base.products.length);
+  assert.equal(results("/shop", "category=mobiler").products.length, base.products.length);
   assert.equal(results("/mobiler", "category=headphones").category, "mobiler");
 });
 
@@ -81,7 +81,7 @@ test("URL updates preserve other filters and reset only brand and price selectio
 
 test("every listing uses the shared filtered products and an empty state", () => {
   const card = () => null;
-  for (const route of ["mobiler", "horlurar", "smarta-klockor", "tillbehor", "shop", "shop-with-sidebar", "shop-list"]) {
+  for (const route of ["mobiler", "horlurar", "smarta-klockor", "tillbehor", "shop", "shop", "shop-list"]) {
     const Container = load(`app/(innerPage)/${route}/productsContainer.tsx`, {
       react: { ...React, useState: () => [true, () => {}], useEffect: () => {} },
       "@/components/ui/card": card, "@/components/ui/cardHorizontal": card,

@@ -124,7 +124,7 @@ const TopHeader = () => {
 
 
               <SelectContent className="min-w-[220px]">
-                <SelectItem value="/shop-with-sidebar">
+                <SelectItem value="/shop">
                   Alla kategorier
                 </SelectItem>
 
