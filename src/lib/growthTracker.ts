@@ -29,7 +29,6 @@ export function trackEvent(
   eventName: GrowthEventName,
   productId?: number
 ): void {
-    console.log("trackEvent called");
   const event: GrowthEventPayload = {
     event_id: createEventId(),
     event_name: eventName,
