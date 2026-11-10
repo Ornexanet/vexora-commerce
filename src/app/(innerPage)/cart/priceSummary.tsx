@@ -7,6 +7,7 @@ import { useCart } from "@/contextApi/cartContext";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { trackEvent } from "@/lib/growthTracker";
 
 const PriceSummary = () => {
   const { getCartTotal, cartItems } = useCart();
@@ -173,7 +174,11 @@ const PriceSummary = () => {
         {/* Checkout Button */}
         <div className="my-7.5 pr-7.5 pl-5">
           <Button asChild className="w-full">
-            <Link href="/checkout">
+            <Link
+            href="/checkout"
+            onClick={() =>
+            trackEvent("checkout_started")}
+            >
               Gå till kassan
             </Link>
           </Button>
