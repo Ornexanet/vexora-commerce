@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react"
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -12,6 +12,7 @@ import { ProductType } from "@/mockData/products";
 import CompatibleAccessories from "./compatibleAccessories";
 import { generateProductAEO } from "@/seo/aeo/productAEO";
 import { generateGEODescription } from "@/seo/geo/productGEO";
+import { trackEvent } from "@/lib/growthTracker";
 
 type ProductOverviewProps = {
   product: ProductType;
@@ -37,7 +38,9 @@ const ProductOverview = ({
   const aeoContent = generateProductAEO(product);
   const geoDescription = generateGEODescription(product);
   const { addToCart } = useCart();
-
+  useEffect(() => {
+    trackEvent( "product_viewed", product.id);
+  }, [product.id]);
   const [quantity, setQuantity] = useState(1);
 
   const selectedColorOption =
