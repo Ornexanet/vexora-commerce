@@ -60,6 +60,7 @@ const ProductOverview = ({
 
   const handleAddToCart = () => {
     addToCart(product, quantity);
+    trackEvent( "add_to_cart" , product.id);
   };
 
   const categoryKey = product.categories?.[0];
