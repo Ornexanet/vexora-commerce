@@ -16,6 +16,8 @@ import { XIcon } from "lucide-react";
 import { useCart } from "@/contextApi/cartContext";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { trackEvent } from "@/lib/growthTracker";
+
 
 const CartSidebar = ({ cartIconTwo }: { cartIconTwo?: boolean }) => {
   const { cartItems, removeFromCart, getCartTotal, getCartCount } = useCart();
@@ -145,7 +147,13 @@ const CartSidebar = ({ cartIconTwo }: { cartIconTwo?: boolean }) => {
                 <Link href={"/cart"}>Visa varukorgen</Link>
               </Button>
               <Button asChild>
-                <Link href={"/checkout"}>Till kassan</Link>
+                <Link
+            href="/checkout"
+            onClick={() => trackEvent("checkout_started")}
+            >
+           Till kassan
+           </Link>
+
               </Button>
             </div>
           </div>
