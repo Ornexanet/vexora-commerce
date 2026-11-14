@@ -6,16 +6,17 @@ import { useState } from "react";
 import type {
   GrowthOverview,
   ConversionFunnel as ConversionFunnelData,
-  ProductAnalytics,
+  ProductAnalytics as ProductAnalyticsData,
 } from "@/lib/growthAnalyticsTypes";
 
 import OverviewKpis from "@/components/growth/OverviewKpis";
 import ConversionFunnel from "@/components/growth/ConversionFunnel";
+import ProductAnalytics from "@/components/growth/ProductAnalytics";
 
 type Props = {
   overview: GrowthOverview;
   funnel: ConversionFunnelData;
-  products: ProductAnalytics[];
+  products: ProductAnalyticsData[];
 };
 
 const modules = [
@@ -156,19 +157,7 @@ export default function GrowthDashboardClient({
               ) : activeModule === "funnels" ? (
                 <ConversionFunnel data={funnel} />
               ) : activeModule === "products" ? (
-                <section className="rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
-                  <h3 className="text-lg font-semibold">
-                    Product Analytics
-                  </h3>
-
-                  <p className="mt-3 text-sm text-slate-500">
-                    Product data received: {products.length} products.
-                  </p>
-
-                  <p className="mt-2 text-sm text-slate-500">
-                    Product analytics visualization pending.
-                  </p>
-                </section>
+                <ProductAnalytics data={products} />
               ) : (
                 <section
                   className="rounded-xl border
