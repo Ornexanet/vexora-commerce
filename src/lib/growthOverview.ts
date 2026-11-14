@@ -1,5 +1,6 @@
 
 import "server-only";
+
 import { supabaseAdmin } from "./supabaseAdmin";
 import type { GrowthOverview } from "./growthAnalyticsTypes";
 
@@ -22,6 +23,8 @@ export async function getGrowthOverview(): Promise<GrowthOverview> {
     trackedSessions: Number(result.tracked_sessions),
     productViews: Number(result.product_views),
     addToCartEvents: Number(result.add_to_cart_events),
+    wishlistEvents: Number(result.wishlist_events),
+    checkoutStarted: Number(result.checkout_started),
   };
 }
 

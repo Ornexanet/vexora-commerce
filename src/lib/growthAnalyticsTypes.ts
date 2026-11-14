@@ -3,4 +3,6 @@ export type GrowthOverview = {
   trackedSessions: number;
   productViews: number;
   addToCartEvents: number;
+  wishlistEvents: number;
+  checkoutStarted: number;
 };
