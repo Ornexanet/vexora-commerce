@@ -2,11 +2,15 @@
 "use client";
 
 import { useState } from "react";
-import type { GrowthOverview } from "@/lib/growthAnalyticsTypes";
+import type {
+  GrowthOverview,
+  ConversionFunnel,
+} from "@/lib/growthAnalyticsTypes";
 import OverviewKpis from "@/components/growth/OverviewKpis";
 
 type Props = {
   overview: GrowthOverview;
+  funnel: ConversionFunnel;
 };
 
 const modules = [
@@ -20,6 +24,7 @@ const modules = [
 
 export default function GrowthDashboardClient({
   overview,
+  funnel,
 }: Props) {
   const [activeModule, setActiveModule] = useState("overview");
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -138,6 +143,54 @@ export default function GrowthDashboardClient({
             <div className="mx-auto max-w-7xl">
               {activeModule === "overview" ? (
                 <OverviewKpis data={overview} />
+              ) : activeModule === "funnels" ? (
+                <section className="rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
+                  <h3 className="text-lg font-semibold">
+                    Conversion Funnel
+                  </h3>
+
+                  <p className="mt-2 text-sm text-slate-500">
+                    Ordered session-based funnel · Test data
+                  </p>
+
+                  <div className="mt-6 grid gap-4 md:grid-cols-3">
+                    <div className="rounded-lg bg-slate-50 p-5">
+                      <p className="text-sm text-slate-500">
+                        Product Viewed
+                      </p>
+                      <p className="mt-2 text-3xl font-bold">
+                        {funnel.viewedSessions}
+                      </p>
+                      <p className="text-xs text-slate-500">
+                        Sessions
+                      </p>
+                    </div>
+
+                    <div className="rounded-lg bg-slate-50 p-5">
+                      <p className="text-sm text-slate-500">
+                        Add to Cart
+                      </p>
+                      <p className="mt-2 text-3xl font-bold">
+                        {funnel.cartSessions}
+                      </p>
+                      <p className="text-xs text-slate-500">
+                        Sessions
+                      </p>
+                    </div>
+
+                    <div className="rounded-lg bg-slate-50 p-5">
+                      <p className="text-sm text-slate-500">
+                        Checkout Started
+                      </p>
+                      <p className="mt-2 text-3xl font-bold">
+                        {funnel.checkoutSessions}
+                      </p>
+                      <p className="text-xs text-slate-500">
+                        Sessions
+                      </p>
+                    </div>
+                  </div>
+                </section>
               ) : (
                 <section
                   className="rounded-xl border
