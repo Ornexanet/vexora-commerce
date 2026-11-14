@@ -6,6 +6,7 @@ import { useState } from "react";
 import type {
   GrowthOverview,
   ConversionFunnel as ConversionFunnelData,
+  ProductAnalytics,
 } from "@/lib/growthAnalyticsTypes";
 
 import OverviewKpis from "@/components/growth/OverviewKpis";
@@ -14,6 +15,7 @@ import ConversionFunnel from "@/components/growth/ConversionFunnel";
 type Props = {
   overview: GrowthOverview;
   funnel: ConversionFunnelData;
+  products: ProductAnalytics[];
 };
 
 const modules = [
@@ -28,6 +30,7 @@ const modules = [
 export default function GrowthDashboardClient({
   overview,
   funnel,
+  products,
 }: Props) {
   const [activeModule, setActiveModule] = useState("overview");
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -52,7 +55,11 @@ export default function GrowthDashboardClient({
           className={`fixed inset-y-0 left-0 z-40 w-64
             bg-slate-950 text-white transition-transform
             lg:static lg:translate-x-0
-            ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
+            ${
+              sidebarOpen
+                ? "translate-x-0"
+                : "-translate-x-full"
+            }`}
         >
           <div className="border-b border-slate-800 px-6 py-7">
             <h1 className="text-2xl font-bold tracking-wider">
@@ -148,6 +155,20 @@ export default function GrowthDashboardClient({
                 <OverviewKpis data={overview} />
               ) : activeModule === "funnels" ? (
                 <ConversionFunnel data={funnel} />
+              ) : activeModule === "products" ? (
+                <section className="rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
+                  <h3 className="text-lg font-semibold">
+                    Product Analytics
+                  </h3>
+
+                  <p className="mt-3 text-sm text-slate-500">
+                    Product data received: {products.length} products.
+                  </p>
+
+                  <p className="mt-2 text-sm text-slate-500">
+                    Product analytics visualization pending.
+                  </p>
+                </section>
               ) : (
                 <section
                   className="rounded-xl border

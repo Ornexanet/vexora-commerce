@@ -14,3 +14,12 @@ export type ConversionFunnel = {
   checkoutSessions: number;
 };
 
+export type ProductAnalytics = {
+  productId: number;
+  productViews: number;
+  cartAdds: number;
+  wishlistAdds: number;
+  viewSessions: number;
+  cartSessions: number;
+  wishlistSessions: number;
+};
