@@ -27,6 +27,14 @@ export default function ProductAnalytics({ data }: Props) {
     0
   );
 
+  function formatConversionRate(rate: number | null): string {
+    if (rate === null) {
+      return "N/A";
+    }
+
+    return `${rate.toFixed(1)}%`;
+  }
+
   return (
     <section className="space-y-6">
       <div>
@@ -35,7 +43,7 @@ export default function ProductAnalytics({ data }: Props) {
         </h3>
 
         <p className="mt-1 text-sm text-slate-500">
-          Product-level engagement metrics from tracked events.
+          Product-level engagement and conversion metrics.
         </p>
       </div>
 
@@ -73,7 +81,7 @@ export default function ProductAnalytics({ data }: Props) {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[850px] text-left text-sm">
+          <table className="w-full min-w-[1100px] text-left text-sm">
             <thead className="bg-slate-50 text-slate-600">
               <tr>
                 <th className="px-5 py-4 font-semibold">
@@ -97,6 +105,12 @@ export default function ProductAnalytics({ data }: Props) {
                 <th className="px-5 py-4 font-semibold">
                   Wishlist Sessions
                 </th>
+                <th className="px-5 py-4 font-semibold">
+                  Converted Sessions
+                </th>
+                <th className="px-5 py-4 font-semibold">
+                  View-to-Cart Rate
+                </th>
               </tr>
             </thead>
 
@@ -109,23 +123,37 @@ export default function ProductAnalytics({ data }: Props) {
                   <td className="px-5 py-4 font-semibold text-slate-900">
                     #{product.productId}
                   </td>
+
                   <td className="px-5 py-4">
                     {product.productViews}
                   </td>
+
                   <td className="px-5 py-4">
                     {product.cartAdds}
                   </td>
+
                   <td className="px-5 py-4">
                     {product.wishlistAdds}
                   </td>
+
                   <td className="px-5 py-4">
                     {product.viewSessions}
                   </td>
+
                   <td className="px-5 py-4">
                     {product.cartSessions}
                   </td>
+
                   <td className="px-5 py-4">
                     {product.wishlistSessions}
+                  </td>
+
+                  <td className="px-5 py-4 font-medium">
+                    {product.convertedSessions}
+                  </td>
+
+                  <td className="px-5 py-4 font-semibold text-blue-600">
+                    {formatConversionRate(product.conversionRate)}
                   </td>
                 </tr>
               ))}
@@ -133,7 +161,7 @@ export default function ProductAnalytics({ data }: Props) {
               {products.length === 0 && (
                 <tr>
                   <td
-                    colSpan={7}
+                    colSpan={9}
                     className="px-5 py-10 text-center text-slate-500"
                   >
                     No product analytics data available.
@@ -146,9 +174,10 @@ export default function ProductAnalytics({ data }: Props) {
       </div>
 
       <p className="text-xs text-slate-500">
-        Event counts represent tracked actions. Session counts
-        represent distinct sessions per product and event type.
-        Data currently includes testing activity.
+        Conversion rate measures sessions where a product
+        was added to cart after being viewed in the same
+        session. N/A means no tracked view sessions.
+        Data currently represents testing activity.
       </p>
     </section>
   );

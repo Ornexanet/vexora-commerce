@@ -14,6 +14,7 @@ export type ConversionFunnel = {
   checkoutSessions: number;
 };
 
+
 export type ProductAnalytics = {
   productId: number;
   productViews: number;
@@ -22,4 +23,8 @@ export type ProductAnalytics = {
   viewSessions: number;
   cartSessions: number;
   wishlistSessions: number;
+  convertedSessions: number;
+  conversionRate: number | null;
 };
+
+

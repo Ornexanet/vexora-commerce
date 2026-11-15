@@ -12,11 +12,13 @@ type ProductAnalyticsRow = {
   view_sessions: number;
   cart_sessions: number;
   wishlist_sessions: number;
+  converted_sessions: number;
+  conversion_rate: number | null;
 };
 
 export async function getProductAnalytics(): Promise<ProductAnalytics[]> {
   const { data, error } = await supabaseAdmin.rpc(
-    "get_product_analytics"
+    "get_product_analytics_v2"
   );
 
   if (error) {
@@ -39,6 +41,11 @@ export async function getProductAnalytics(): Promise<ProductAnalytics[]> {
     viewSessions: Number(row.view_sessions),
     cartSessions: Number(row.cart_sessions),
     wishlistSessions: Number(row.wishlist_sessions),
+    convertedSessions: Number(row.converted_sessions),
+    conversionRate:
+      row.conversion_rate === null
+        ? null
+        : Number(row.conversion_rate),
   }));
 }
 
