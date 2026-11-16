@@ -9,6 +9,8 @@ import type {
   ProductAnalytics as ProductAnalyticsData,
 } from "@/lib/growthAnalyticsTypes";
 
+import type { LandingAnalytics } from "@/lib/growthLandingAnalytics";
+
 import OverviewKpis from "@/components/growth/OverviewKpis";
 import ConversionFunnel from "@/components/growth/ConversionFunnel";
 import ProductAnalytics from "@/components/growth/ProductAnalytics";
@@ -17,6 +19,7 @@ type Props = {
   overview: GrowthOverview;
   funnel: ConversionFunnelData;
   products: ProductAnalyticsData[];
+  landing: LandingAnalytics[];
 };
 
 const modules = [
@@ -32,6 +35,7 @@ export default function GrowthDashboardClient({
   overview,
   funnel,
   products,
+  landing,
 }: Props) {
   const [activeModule, setActiveModule] = useState("overview");
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -39,6 +43,31 @@ export default function GrowthDashboardClient({
   const currentModule = modules.find(
     (module) => module.id === activeModule
   );
+
+  const pixelLanding = landing.find(
+    (item) => item.productId === 24
+  );
+
+  const landingMetrics = [
+    {
+      label: "View Sessions",
+      value: pixelLanding?.viewSessions ?? 0,
+      description: "Unique sessions that viewed the landing page",
+    },
+    {
+      label: "CTA Click Sessions",
+      value: pixelLanding?.clickSessions ?? 0,
+      description: "Viewing sessions that clicked the purchase CTA",
+    },
+    {
+      label: "CTA CTR",
+      value:
+        pixelLanding?.ctaCtr == null
+          ? "N/A"
+          : `${pixelLanding.ctaCtr.toFixed(2)}%`,
+      description: "Percentage of viewing sessions with CTA clicks",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
@@ -158,6 +187,75 @@ export default function GrowthDashboardClient({
                 <ConversionFunnel data={funnel} />
               ) : activeModule === "products" ? (
                 <ProductAnalytics data={products} />
+              ) : activeModule === "landing" ? (
+                <section className="space-y-8">
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-900">
+                      Landing Page Analytics
+                    </h3>
+
+                    <p className="mt-2 text-sm text-slate-500">
+                      Track landing page engagement and purchase
+                      CTA performance.
+                    </p>
+                  </div>
+
+                  <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div className="flex flex-wrap items-center justify-between gap-4">
+                      <div>
+                        <h4 className="text-lg font-semibold text-slate-900">
+                          Google Pixel 11 Pro
+                        </h4>
+
+                        <p className="mt-1 text-sm text-slate-500">
+                          Product ID: 24
+                        </p>
+                      </div>
+
+                      <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
+                        Landing Page V1
+                      </span>
+                    </div>
+
+                    {pixelLanding ? (
+                      <div className="mt-8 grid gap-4 md:grid-cols-3">
+                        {landingMetrics.map((metric) => (
+                          <div
+                            key={metric.label}
+                            className="rounded-xl border border-slate-200 bg-slate-50 p-6"
+                          >
+                            <p className="text-sm font-medium text-slate-500">
+                              {metric.label}
+                            </p>
+
+                            <p className="mt-3 text-3xl font-bold tracking-tight text-slate-900">
+                              {metric.value}
+                            </p>
+
+                            <p className="mt-3 text-xs leading-5 text-slate-500">
+                              {metric.description}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="mt-8 text-sm text-slate-500">
+                        No landing page analytics available.
+                      </p>
+                    )}
+
+                    <div className="mt-8 border-t border-slate-100 pt-5">
+                      <p className="text-xs text-slate-500">
+                        Source: Supabase PostgreSQL
+                      </p>
+
+                      <p className="mt-1 text-xs text-slate-500">
+                        Metrics are calculated using unique sessions.
+                        CTA CTR is not a purchase conversion rate.
+                      </p>
+                    </div>
+                  </div>
+                </section>
               ) : (
                 <section
                   className="rounded-xl border
