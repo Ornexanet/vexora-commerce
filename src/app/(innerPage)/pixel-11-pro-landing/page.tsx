@@ -2,6 +2,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { allProducts } from "@/mockData/products";
+import Image from "next/image";
+
 
 export const metadata: Metadata = {
   title: "Google Pixel 11 Pro | Ornexa",
@@ -59,17 +61,18 @@ export default function PixelLandingPage() {
         </div>
 
         <div className="order-1 flex items-center justify-center md:order-2">
-          <div className="flex min-h-[360px] w-full items-center justify-center rounded-3xl bg-white p-8 shadow-sm md:min-h-[520px]">
-            <div className="text-center">
-              <p className="text-lg font-medium text-slate-500">
-                Google Pixel 11 Pro
-              </p>
-              <p className="mt-2 text-sm text-slate-400">
-                Produktbild läggs till i nästa steg
-              </p>
-            </div>
-          </div>
-        </div>
+  <div className="relative flex min-h-[360px] w-full items-center justify-center overflow-hidden rounded-3xl bg-white p-8 shadow-sm md:min-h-[520px]">
+    <Image
+      src={product.thumbnail}
+      alt={product.title}
+      width={500}
+      height={600}
+      priority
+      className="max-h-[480px] w-auto max-w-full object-contain"
+    />
+  </div>
+</div>
+
       </section>
     </main>
   );
