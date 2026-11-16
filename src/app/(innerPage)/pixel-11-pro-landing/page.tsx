@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { allProducts } from "@/mockData/products";
+import PixelLandingTracking from "@/components/growth/PixelLandingTracking";
+import TrackedPurchaseLink from "@/components/growth/TrackedPurchaseLink";
+
 
 export const metadata: Metadata = {
   title: "Google Pixel 11 Pro – Upptäck mobilen | Ornexa",
@@ -48,7 +51,7 @@ export default function PixelLandingPage() {
 
   return (
     <main className="overflow-hidden bg-white text-slate-900">
-
+    <PixelLandingTracking />
       {/* HERO SECTION */}
       <section className="bg-[#F5F6F8]">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:min-h-[680px] md:grid-cols-2 md:px-12 lg:gap-16 lg:py-24">
@@ -79,12 +82,12 @@ export default function PixelLandingPage() {
             </div>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
-              <Link
+              <TrackedPurchaseLink
                 href={productUrl}
                 className="inline-flex min-h-14 items-center justify-center rounded-xl bg-blue-600 px-10 text-base font-semibold text-white transition hover:bg-blue-700"
               >
                 Köp nu
-              </Link>
+              </TrackedPurchaseLink>
 
               <a
                 href="#funktioner"

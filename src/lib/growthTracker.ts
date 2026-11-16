@@ -2,7 +2,9 @@ export type GrowthEventName =
 | "product_viewed"
 | "add_to_cart"
 | "add_to_wishlist"
-| "checkout_started";
+| "checkout_started"
+| "landing_page_viewed"
+| "landing_cta_clicked";
 export type GrowthEventPayload = {
   event_id: string;
   event_name: GrowthEventName;

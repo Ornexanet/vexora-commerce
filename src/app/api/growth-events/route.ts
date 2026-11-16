@@ -7,6 +7,8 @@ const allowedEvents = [
   "add_to_cart",
   "add_to_wishlist",
   "checkout_started",
+  "landing_page_viewed",
+  "landing_cta_clicked",
 ] as const;
 
 export async function POST(request: NextRequest) {
