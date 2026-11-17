@@ -86,7 +86,7 @@ export default function PixelLandingPage() {
                 href={productUrl}
                 className="inline-flex min-h-14 items-center justify-center rounded-xl bg-blue-600 px-10 text-base font-semibold text-white transition hover:bg-blue-700"
               >
-                Köp nu
+    
               </TrackedPurchaseLink>
 
               <a
